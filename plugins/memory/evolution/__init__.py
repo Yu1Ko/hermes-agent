@@ -31,7 +31,12 @@ EVOLUTION_MEMORY_SCHEMA = {
         "properties": {
             "action": {
                 "type": "string",
-                "enum": ["add", "search", "feedback", "delete", "stats"],
+                "enum": [
+                    "add", "search", "feedback", "delete", "stats",
+                    "expression_store", "expression_list", "expression_search",
+                    "expression_check", "expression_forget",
+                    "person_observe", "person_profile",
+                ],
             },
             "content": {"type": "string", "description": "Memory content for add."},
             "query": {"type": "string", "description": "Search query."},
@@ -58,6 +63,34 @@ EVOLUTION_MEMORY_SCHEMA = {
             "reason": {"type": "string", "description": "Deletion reason."},
             "note": {"type": "string", "description": "Optional feedback note."},
             "limit": {"type": "integer", "description": "Maximum search results."},
+            "expression_situation": {
+                "type": "string",
+                "description": "When (situation) the expression is used, max 80 chars.",
+            },
+            "expression_style": {
+                "type": "string",
+                "description": "The language style or specific phrasing, max 80 chars.",
+            },
+            "expression_id": {
+                "type": "integer",
+                "description": "Expression id for check/forget.",
+            },
+            "expression_suitable": {
+                "type": "boolean",
+                "description": "Whether the expression is suitable to use.",
+            },
+            "person_id": {
+                "type": "string",
+                "description": "Person identifier (user_id hash or name).",
+            },
+            "person_name": {
+                "type": "string",
+                "description": "Known name for this person.",
+            },
+            "person_observation": {
+                "type": "string",
+                "description": "An observation about this person (preference, trait, habit).",
+            },
         },
         "required": ["action"],
     },
@@ -203,8 +236,18 @@ class EvolutionMemoryProvider(MemoryProvider):
         return (
             "# Evolution Memory\n"
             "Active local long-term memory. It stores episodes, stable facts, "
-            "procedural lessons, social preferences, confidence feedback, and deletions. "
-            "Use evolution_memory for explicit add/search/feedback/delete operations."
+            "procedural lessons, social preferences, confidence feedback, and deletions.\n\n"
+            "## Expression Learning\n"
+            "You can learn and use conversational expressions. When you notice recurring "
+            "language patterns, slang, or stylistic choices in the conversation, store "
+            "them with `expression_store` (situation + style pairs, max 80 chars each). "
+            "Before using a learned expression, check it with `expression_check`. "
+            "Search relevant expressions for the current context with `expression_search`. "
+            "List known expressions with `expression_list`.\n\n"
+            "## Person Understanding\n"
+            "Track what you learn about individuals. Use `person_observe` to record "
+            "preferences, traits, habits, and communication style. Use `person_profile` "
+            "to recall what you know about someone before interacting with them."
         )
 
     def prefetch(self, query: str, *, session_id: str = "") -> str:
@@ -403,6 +446,108 @@ class EvolutionMemoryProvider(MemoryProvider):
 
             if action == "stats":
                 return json.dumps({"success": True, "stats": self._store.stats()})
+
+            if action == "expression_store":
+                situation = args.get("expression_situation", "")
+                style = args.get("expression_style", "")
+                if not situation or not style:
+                    return tool_error("expression_situation and expression_style are required")
+                result = self._store.upsert_expression(
+                    situation=situation,
+                    style=style,
+                    source="tool:expression_store",
+                    scope=args.get("scope", "workspace"),
+                    session_id=self._session_id,
+                )
+                return json.dumps({"success": True, **result}, ensure_ascii=False)
+
+            if action == "expression_list":
+                results = self._store.list_expressions(
+                    scope=args.get("scope"),
+                    min_count=int(args.get("min_count", 1)),
+                    exclude_rejected=args.get("exclude_rejected", True) is not False,
+                    limit=int(args.get("limit", 10)),
+                )
+                return json.dumps({
+                    "success": True,
+                    "expressions": [
+                        {"id": r["id"], "situation": r["situation"], "style": r["style"],
+                         "count": r["count"], "checked": bool(r["checked"]),
+                         "rejected": bool(r["rejected"])}
+                        for r in results
+                    ],
+                    "count": len(results),
+                }, ensure_ascii=False)
+
+            if action == "expression_search":
+                query = args.get("query", "")
+                if not query:
+                    return tool_error("query is required for expression_search")
+                results = self._store.search_expressions(
+                    query,
+                    scope=args.get("scope"),
+                    exclude_rejected=args.get("exclude_rejected", True) is not False,
+                    limit=int(args.get("limit", 5)),
+                )
+                return json.dumps({
+                    "success": True,
+                    "expressions": [
+                        {"id": r["id"], "situation": r["situation"], "style": r["style"],
+                         "count": r["count"], "rejected": bool(r["rejected"])}
+                        for r in results
+                    ],
+                    "count": len(results),
+                }, ensure_ascii=False)
+
+            if action == "expression_check":
+                eid = int(args["expression_id"])
+                suitable = args.get("expression_suitable", True)
+                result = self._store.check_expression(eid, suitable=suitable)
+                return json.dumps({"success": True, **result})
+
+            if action == "expression_forget":
+                eid = int(args["expression_id"])
+                deleted = self._store.forget_expression(eid)
+                return json.dumps({"success": True, "deleted": deleted})
+
+            if action == "person_observe":
+                pid = args.get("person_id", "")
+                name = args.get("person_name", "")
+                obs = args.get("person_observation", "")
+                if not pid or not obs:
+                    return tool_error("person_id and person_observation are required")
+                # Store observation as a social memory
+                self._store.upsert_memory(
+                    kind="social",
+                    content=f"Person {name or pid}: {_clip(obs, 500)}",
+                    source="tool:person_observe",
+                    scope="user",
+                    confidence=0.7,
+                    session_id=self._session_id,
+                )
+                # Also register entity
+                self._store._upsert_entity(name or pid)
+                return json.dumps({"success": True, "person_id": pid})
+
+            if action == "person_profile":
+                pid = args.get("person_id", "")
+                if not pid:
+                    return tool_error("person_id is required")
+                import time
+                profile = self._store.get_person_profile(pid)
+                if profile is None or (
+                    profile.get("expires_at") is not None
+                    and time.time() >= float(profile.get("expires_at", 0))
+                ):
+                    profile = self._store.aggregate_person_profile(pid)
+                return json.dumps({
+                    "success": True,
+                    "person_id": profile.get("person_id", pid),
+                    "person_name": profile.get("person_name", ""),
+                    "aliases": profile.get("aliases", []),
+                    "traits": profile.get("traits", []),
+                    "profile_text": profile.get("profile_text", ""),
+                }, ensure_ascii=False)
 
             return tool_error(f"Unknown action: {action}")
         except KeyError as exc:
