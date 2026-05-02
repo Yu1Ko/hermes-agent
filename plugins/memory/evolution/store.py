@@ -122,6 +122,18 @@ CREATE INDEX IF NOT EXISTS idx_expressions_scope ON expressions(scope);
 CREATE INDEX IF NOT EXISTS idx_expressions_count ON expressions(count DESC);
 CREATE INDEX IF NOT EXISTS idx_expressions_updated ON expressions(updated_at DESC);
 CREATE INDEX IF NOT EXISTS idx_expressions_deleted ON expressions(deleted_at);
+
+CREATE TABLE IF NOT EXISTS person_profiles (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    person_id TEXT NOT NULL UNIQUE,
+    person_name TEXT NOT NULL DEFAULT '',
+    aliases_json TEXT NOT NULL DEFAULT '[]',
+    memory_traits_json TEXT NOT NULL DEFAULT '[]',
+    profile_text TEXT NOT NULL DEFAULT '',
+    expires_at REAL,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
 """
 
 
@@ -626,6 +638,176 @@ class EvolutionMemoryStore:
             )
             self._conn.commit()
             return cur.rowcount > 0
+
+    def upsert_person_profile(
+        self,
+        *,
+        person_id: str,
+        person_name: str = "",
+        aliases: list[str] | None = None,
+        memory_traits: list[str] | None = None,
+        profile_text: str = "",
+        ttl_seconds: float = 6 * 3600,
+    ) -> dict[str, Any]:
+        import time
+
+        pid = (person_id or "").strip()
+        if not pid:
+            raise ValueError("person_id must not be empty")
+
+        now = time.time()
+        expires_at = now + ttl_seconds if ttl_seconds > 0 else None
+
+        with self._lock:
+            existing = self._conn.execute(
+                "SELECT id FROM person_profiles WHERE person_id = ?", (pid,)
+            ).fetchone()
+
+            if existing:
+                self._conn.execute(
+                    """
+                    UPDATE person_profiles
+                    SET person_name = COALESCE(NULLIF(?, ''), person_name),
+                        aliases_json = ?,
+                        memory_traits_json = ?,
+                        profile_text = COALESCE(NULLIF(?, ''), profile_text),
+                        expires_at = ?,
+                        updated_at = CURRENT_TIMESTAMP
+                    WHERE person_id = ?
+                    """,
+                    (
+                        person_name or "",
+                        json.dumps(aliases or [], ensure_ascii=False),
+                        json.dumps(memory_traits or [], ensure_ascii=False),
+                        profile_text or "",
+                        expires_at,
+                        pid,
+                    ),
+                )
+            else:
+                self._conn.execute(
+                    """
+                    INSERT INTO person_profiles (person_id, person_name, aliases_json, memory_traits_json, profile_text, expires_at)
+                    VALUES (?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        pid,
+                        person_name or "",
+                        json.dumps(aliases or [], ensure_ascii=False),
+                        json.dumps(memory_traits or [], ensure_ascii=False),
+                        profile_text or "",
+                        expires_at,
+                    ),
+                )
+            self._conn.commit()
+
+        return {"person_id": pid, "updated": True}
+
+    def get_person_profile(
+        self,
+        person_id: str,
+        *,
+        force_refresh: bool = False,
+        ttl_seconds: float = 6 * 3600,
+    ) -> dict[str, Any] | None:
+        import time
+
+        pid = (person_id or "").strip()
+        if not pid:
+            return None
+
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT * FROM person_profiles WHERE person_id = ?", (pid,)
+            ).fetchone()
+
+            if row is None:
+                return None
+
+            profile = dict(row)
+            expires = profile.get("expires_at")
+            if not force_refresh and expires is not None and time.time() < float(expires):
+                try:
+                    profile["aliases"] = json.loads(profile.pop("aliases_json") or "[]")
+                except Exception:
+                    profile["aliases"] = []
+                try:
+                    profile["memory_traits"] = json.loads(profile.pop("memory_traits_json") or "[]")
+                except Exception:
+                    profile["memory_traits"] = []
+                return profile
+            return profile  # stale — caller rebuilds
+
+    def aggregate_person_profile(
+        self,
+        person_id: str,
+        *,
+        ttl_seconds: float = 6 * 3600,
+    ) -> dict[str, Any]:
+        import time
+
+        pid = (person_id or "").strip()
+        if not pid:
+            return {"person_id": pid, "profile_text": ""}
+
+        with self._lock:
+            # Collect aliases from entities
+            entity = self._conn.execute(
+                "SELECT name FROM entities WHERE name LIKE ? OR name = ?",
+                (f"%{pid}%", pid),
+            ).fetchone()
+            aliases: list[str] = [entity["name"]] if entity else [pid]
+
+            # Collect traits from social memories
+            social_rows = self._conn.execute(
+                """
+                SELECT content, confidence FROM memories
+                WHERE kind = 'social' AND scope = 'user'
+                  AND deleted_at IS NULL AND confidence >= 0.3
+                ORDER BY confidence DESC LIMIT 12
+                """
+            ).fetchall()
+            traits = [r["content"] for r in social_rows]
+
+            # Collect relations
+            rel_rows = self._conn.execute(
+                """
+                SELECT e1.name AS subject, r.relation, e2.name AS object
+                FROM relations r
+                JOIN entities e1 ON r.source_entity_id = e1.id
+                JOIN entities e2 ON r.target_entity_id = e2.id
+                WHERE e1.name = ? OR e2.name = ?
+                LIMIT 10
+                """,
+                (aliases[0], aliases[0]),
+            ).fetchall()
+            relations = [f"{r['subject']} {r['relation']} {r['object']}" for r in rel_rows]
+
+            # Build profile text
+            lines = [f"Person: {aliases[0]}"]
+            if len(aliases) > 1:
+                lines.append(f"Aliases: {', '.join(aliases[1:6])}")
+            if traits:
+                lines.append(f"Known traits/preferences: {'; '.join(traits[:6])}")
+            if relations:
+                lines.append(f"Relations: {'; '.join(relations[:5])}")
+            profile_text = "\n".join(lines)
+
+            self.upsert_person_profile(
+                person_id=pid,
+                person_name=aliases[0],
+                aliases=aliases,
+                memory_traits=traits,
+                profile_text=profile_text,
+                ttl_seconds=ttl_seconds,
+            )
+            return {
+                "person_id": pid,
+                "person_name": aliases[0],
+                "aliases": aliases,
+                "traits": traits,
+                "profile_text": profile_text,
+            }
 
     def close(self) -> None:
         with self._lock:
