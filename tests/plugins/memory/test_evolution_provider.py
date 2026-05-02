@@ -1,5 +1,7 @@
 import json
 
+import pytest
+
 from agent.memory_manager import MemoryManager
 from plugins.memory import discover_memory_providers, load_memory_provider
 from plugins.memory.evolution import EvolutionMemoryProvider
@@ -211,3 +213,146 @@ def test_evolution_provider_is_discoverable_and_manager_routable():
     manager = MemoryManager()
     manager.add_provider(provider)
     assert manager.has_tool("evolution_memory")
+
+
+class TestExpressionTools:
+    """Test expression_store, expression_list, expression_check, expression_search, expression_forget tool actions."""
+
+    @pytest.fixture
+    def provider(self, tmp_path):
+        from plugins.memory.evolution import EvolutionMemoryProvider
+        p = EvolutionMemoryProvider()
+        p.initialize(session_id="test_session", hermes_home=str(tmp_path))
+        yield p
+        p.shutdown()
+
+    def test_expression_store_and_list(self, provider):
+        r1 = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_store",
+            "expression_situation": "expressing strong agreement",
+            "expression_style": "use +1",
+        }))
+        assert r1["success"] is True
+        assert r1["merged"] is False
+
+        r2 = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_list",
+            "limit": 10,
+        }))
+        assert r2["success"] is True
+        assert r2["count"] >= 1
+        assert any(e["style"] == "use +1" for e in r2["expressions"])
+
+    def test_expression_dedup(self, provider):
+        r1 = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_store",
+            "expression_situation": "expressing surprise",
+            "expression_style": "use 'whoa'",
+        }))
+        r2 = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_store",
+            "expression_situation": "expressing a surprise",
+            "expression_style": "use 'whoa'",
+        }))
+        assert r2["merged"] is True
+
+    def test_expression_search_finds_match(self, provider):
+        provider.handle_tool_call("evolution_memory", {
+            "action": "expression_store",
+            "expression_situation": "code review feedback",
+            "expression_style": "use LGTM",
+        })
+        r = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_search",
+            "query": "code review",
+        }))
+        assert r["success"] is True
+        assert r["count"] >= 1
+
+    def test_expression_check_and_forget(self, provider):
+        provider.handle_tool_call("evolution_memory", {
+            "action": "expression_store",
+            "expression_situation": "test situation",
+            "expression_style": "test style",
+        })
+        results = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_list",
+        }))
+        eid = results["expressions"][0]["id"]
+
+        c = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_check",
+            "expression_id": eid,
+            "expression_suitable": True,
+        }))
+        assert c["checked"] is True
+        assert c["rejected"] is False
+
+        f = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_forget",
+            "expression_id": eid,
+        }))
+        assert f["deleted"] is True
+
+    def test_expression_store_missing_args(self, provider):
+        r = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "expression_store",
+        }))
+        assert r.get("error") is not None
+
+
+class TestPersonaTools:
+    """Test person_observe and person_profile tool actions."""
+
+    @pytest.fixture
+    def provider(self, tmp_path):
+        from plugins.memory.evolution import EvolutionMemoryProvider
+        p = EvolutionMemoryProvider()
+        p.initialize(session_id="test_session", hermes_home=str(tmp_path))
+        yield p
+        p.shutdown()
+
+    def test_person_observe_creates_memory(self, provider):
+        r = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "person_observe",
+            "person_id": "alice_123",
+            "person_name": "Alice",
+            "person_observation": "Prefers short answers, dislikes small talk.",
+        }))
+        assert r["success"] is True
+
+    def test_person_profile_aggregates(self, provider):
+        provider.handle_tool_call("evolution_memory", {
+            "action": "person_observe",
+            "person_id": "bob_456",
+            "person_name": "Bob",
+            "person_observation": "Python developer, works best with examples.",
+        })
+        provider.handle_tool_call("evolution_memory", {
+            "action": "person_observe",
+            "person_id": "bob_456",
+            "person_name": "Bob",
+            "person_observation": "Prefers answers in English.",
+        })
+        r = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "person_profile",
+            "person_id": "bob_456",
+        }))
+        assert r["success"] is True
+        # profile should contain evidence from observations
+        assert "Python" in r["profile_text"] or any(
+            "Python" in t for t in r.get("traits", [])
+        )
+
+    def test_person_profile_nonexistent_returns_empty(self, provider):
+        r = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "person_profile",
+            "person_id": "nonexistent_999",
+        }))
+        assert r["success"] is True
+
+    def test_person_observe_missing_args(self, provider):
+        r = json.loads(provider.handle_tool_call("evolution_memory", {
+            "action": "person_observe",
+        }))
+        assert r.get("error") is not None
