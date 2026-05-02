@@ -121,6 +121,7 @@ CREATE TABLE IF NOT EXISTS expressions (
 CREATE INDEX IF NOT EXISTS idx_expressions_scope ON expressions(scope);
 CREATE INDEX IF NOT EXISTS idx_expressions_count ON expressions(count DESC);
 CREATE INDEX IF NOT EXISTS idx_expressions_updated ON expressions(updated_at DESC);
+CREATE INDEX IF NOT EXISTS idx_expressions_deleted ON expressions(deleted_at);
 """
 
 
@@ -398,12 +399,20 @@ class EvolutionMemoryStore:
             ).fetchone()[0]
             entities = self._conn.execute("SELECT COUNT(*) FROM entities").fetchone()[0]
             relations = self._conn.execute("SELECT COUNT(*) FROM relations").fetchone()[0]
+            expressions_active = self._conn.execute(
+                "SELECT COUNT(*) FROM expressions WHERE deleted_at IS NULL"
+            ).fetchone()[0]
+            expressions_deleted = self._conn.execute(
+                "SELECT COUNT(*) FROM expressions WHERE deleted_at IS NOT NULL"
+            ).fetchone()[0]
             return {
                 "episodes": int(episodes),
                 "active_memories": int(active),
                 "deleted_memories": int(deleted),
                 "entities": int(entities),
                 "relations": int(relations),
+                "expressions_active": int(expressions_active),
+                "expressions_deleted": int(expressions_deleted),
             }
 
     def recent(
@@ -459,23 +468,31 @@ class EvolutionMemoryStore:
                 (scope or "workspace",),
             ).fetchall()
 
+            # Exact-match fast path via _expression_key
+            key = _expression_key(situation, style)
             best_id: int | None = None
             best_sim = 0.0
             for row in existing:
-                sim = difflib.SequenceMatcher(None, situation, row["situation"]).ratio()
-                if sim > similarity_threshold and sim > best_sim:
-                    best_sim = sim
+                if _expression_key(row["situation"], row["style"]) == key:
                     best_id = int(row["id"])
+                    best_sim = 1.0
+                    break
+            if best_id is None:
+                # Fuzzy match via difflib
+                for row in existing:
+                    sim = difflib.SequenceMatcher(None, situation, row["situation"]).ratio()
+                    if sim > similarity_threshold and sim > best_sim:
+                        best_sim = sim
+                        best_id = int(row["id"])
 
             if best_id is not None and best_sim >= similarity_threshold:
-                # Merge: append context, bump count
-                contexts = json.loads(
-                    self._conn.execute(
-                        "SELECT context_list_json FROM expressions WHERE id = ?", (best_id,)
-                    ).fetchone()["context_list_json"] or "[]"
-                )
+                # Find the matched row from in-memory results (no second query)
+                matched_row = next(r for r in existing if r["id"] == best_id)
+                contexts = json.loads(matched_row["context_list_json"] or "[]")
                 if situation not in contexts:
                     contexts.append(situation)
+                if len(contexts) > 20:
+                    contexts = contexts[-20:]
                 self._conn.execute(
                     """
                     UPDATE expressions
@@ -573,7 +590,7 @@ class EvolutionMemoryStore:
             rows = self._conn.execute(
                 f"""
                 SELECT id, situation, style, context_list_json, count, checked, rejected,
-                       source, scope, updated_at
+                       source, scope, session_id, created_at, updated_at
                 FROM expressions
                 WHERE {' AND '.join(clauses)}
                 ORDER BY count DESC, updated_at DESC
