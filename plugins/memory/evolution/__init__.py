@@ -115,6 +115,11 @@ _SOCIAL_RE = re.compile(
     r"\b(?:tone|style|reply|answer|language|Chinese|English|concise|verbose|short)\b",
     re.IGNORECASE,
 )
+_EXPRESSION_CUE_RE = re.compile(
+    r"\b(?:like|as)\s+\w+\s+(?:says|said|would\s+say)\b|"
+    r"\b(?:you\s+guys|people|everyone)\s+(?:always|usually|often|say)\b",
+    re.IGNORECASE,
+)
 
 
 def _load_plugin_config() -> dict[str, Any]:
@@ -253,6 +258,10 @@ class EvolutionMemoryProvider(MemoryProvider):
     def prefetch(self, query: str, *, session_id: str = "") -> str:
         if not self._store or not query:
             return ""
+
+        blocks: list[str] = []
+
+        # Existing memory search
         try:
             results = self._store.search(
                 query,
@@ -267,16 +276,54 @@ class EvolutionMemoryProvider(MemoryProvider):
                 )
         except Exception as exc:
             logger.debug("Evolution memory prefetch failed: %s", exc)
-            return ""
-        if not results:
-            return ""
+            results = []
 
-        lines = ["## Evolution Memory"]
-        for item in results:
-            confidence = float(item.get("confidence", 0.0))
-            kind = item.get("kind", "semantic")
-            lines.append(f"- [{kind} {confidence:.2f}] {item.get('content', '')}")
-        return "\n".join(lines)
+        if results:
+            lines = ["## Evolution Memory"]
+            for item in results:
+                confidence = float(item.get("confidence", 0.0))
+                kind = item.get("kind", "semantic")
+                lines.append(f"- [{kind} {confidence:.2f}] {item.get('content', '')}")
+            blocks.append("\n".join(lines))
+
+        # Expression matching
+        try:
+            expressions = self._store.search_expressions(
+                query,
+                limit=4,
+                exclude_rejected=True,
+            )
+            if expressions:
+                expr_lines = ["## Relevant Expressions"]
+                for expr in expressions:
+                    expr_lines.append(
+                        f"- When {expr['situation']}: use \"{expr['style']}\" "
+                        f"(used {expr['count']}x, id={expr['id']})"
+                    )
+                blocks.append("\n".join(expr_lines))
+        except Exception as exc:
+            logger.debug("Expression prefetch failed: %s", exc)
+
+        # Person profile injection
+        try:
+            user_id = self._metadata.get("user_id", "")
+            user_name = self._metadata.get("user_name", "")
+            if user_id:
+                import hashlib
+                person_id = hashlib.md5(f"{self._platform}_{user_id}".encode()).hexdigest()
+                profile = self._store.get_person_profile(person_id)
+                if profile and profile.get("profile_text"):
+                    blocks.append(f"## Person Profile\n{profile['profile_text']}")
+            elif user_name:
+                import hashlib
+                person_id = hashlib.md5(user_name.encode()).hexdigest()
+                profile = self._store.get_person_profile(person_id)
+                if profile and profile.get("profile_text"):
+                    blocks.append(f"## Person Profile\n{profile['profile_text']}")
+        except Exception as exc:
+            logger.debug("Person profile prefetch failed: %s", exc)
+
+        return "\n\n".join(blocks) if blocks else ""
 
     def sync_turn(self, user_content: str, assistant_content: str, *, session_id: str = "") -> None:
         if not self._store or not user_content:
@@ -615,6 +662,16 @@ class EvolutionMemoryProvider(MemoryProvider):
                 "source": f"{source_prefix}:procedural",
                 "scope": "workspace",
                 "confidence": 0.58,
+            })
+
+        # Expression auto-capture: detect style mirroring cues in user content
+        if _EXPRESSION_CUE_RE.search(content):
+            memories.append({
+                "kind": "expressive",
+                "content": f"Style observation: {content}",
+                "source": f"{source_prefix}:expression_cue",
+                "scope": "workspace",
+                "confidence": 0.35,
             })
         return memories
 
