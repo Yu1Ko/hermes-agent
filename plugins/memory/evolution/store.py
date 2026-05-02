@@ -101,6 +101,26 @@ CREATE INDEX IF NOT EXISTS idx_memories_kind ON memories(kind);
 CREATE INDEX IF NOT EXISTS idx_memories_scope ON memories(scope);
 CREATE INDEX IF NOT EXISTS idx_memories_confidence ON memories(confidence DESC);
 CREATE INDEX IF NOT EXISTS idx_memories_deleted ON memories(deleted_at);
+
+CREATE TABLE IF NOT EXISTS expressions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    situation TEXT NOT NULL,
+    style TEXT NOT NULL,
+    context_list_json TEXT NOT NULL DEFAULT '[]',
+    count INTEGER NOT NULL DEFAULT 1,
+    checked INTEGER NOT NULL DEFAULT 0,
+    rejected INTEGER NOT NULL DEFAULT 0,
+    source TEXT NOT NULL DEFAULT '',
+    scope TEXT NOT NULL DEFAULT 'workspace',
+    session_id TEXT NOT NULL DEFAULT '',
+    deleted_at TEXT,
+    created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_expressions_scope ON expressions(scope);
+CREATE INDEX IF NOT EXISTS idx_expressions_count ON expressions(count DESC);
+CREATE INDEX IF NOT EXISTS idx_expressions_updated ON expressions(updated_at DESC);
 """
 
 
@@ -115,6 +135,13 @@ def _json_dumps(value: dict[str, Any] | None) -> str:
 def _content_key(kind: str, scope: str, content: str) -> str:
     normalized = " ".join(content.strip().lower().split())
     return f"{kind.strip().lower()}:{scope.strip().lower()}:{normalized}"
+
+
+def _expression_key(situation: str, style: str) -> str:
+    """Normalize situation+style into a dedup key."""
+    sit = " ".join((situation or "").strip().lower().split())
+    sty = " ".join((style or "").strip().lower().split())
+    return f"{sit}|||{sty}"
 
 
 def _fts_query(query: str) -> str:
@@ -405,6 +432,183 @@ class EvolutionMemoryStore:
                 params,
             ).fetchall()
             return [self._row_to_memory(row) for row in rows]
+
+    def upsert_expression(
+        self,
+        *,
+        situation: str,
+        style: str,
+        source: str = "",
+        scope: str = "workspace",
+        session_id: str = "",
+        similarity_threshold: float = 0.72,
+    ) -> dict[str, Any]:
+        """Insert or merge an expression. Returns dict with id, merged, similarity."""
+        import difflib
+
+        situation = " ".join((situation or "").split())
+        style = " ".join((style or "").split())
+        if not situation or not style:
+            raise ValueError("situation and style must not be empty")
+        if len(situation) > 80 or len(style) > 80:
+            raise ValueError("situation and style must be <= 80 chars")
+
+        with self._lock:
+            existing = self._conn.execute(
+                "SELECT id, situation, style, context_list_json, count FROM expressions WHERE scope = ?",
+                (scope or "workspace",),
+            ).fetchall()
+
+            best_id: int | None = None
+            best_sim = 0.0
+            for row in existing:
+                sim = difflib.SequenceMatcher(None, situation, row["situation"]).ratio()
+                if sim > similarity_threshold and sim > best_sim:
+                    best_sim = sim
+                    best_id = int(row["id"])
+
+            if best_id is not None and best_sim >= similarity_threshold:
+                # Merge: append context, bump count
+                contexts = json.loads(
+                    self._conn.execute(
+                        "SELECT context_list_json FROM expressions WHERE id = ?", (best_id,)
+                    ).fetchone()["context_list_json"] or "[]"
+                )
+                if situation not in contexts:
+                    contexts.append(situation)
+                self._conn.execute(
+                    """
+                    UPDATE expressions
+                    SET context_list_json = ?,
+                        count = count + 1,
+                        checked = 0,
+                        updated_at = CURRENT_TIMESTAMP
+                    WHERE id = ?
+                    """,
+                    (json.dumps(contexts, ensure_ascii=False), best_id),
+                )
+                self._conn.commit()
+                return {"id": best_id, "merged": True, "similarity": round(best_sim, 4)}
+
+            # New record
+            contexts = [situation]
+            cur = self._conn.execute(
+                """
+                INSERT INTO expressions (situation, style, context_list_json, source, scope, session_id)
+                VALUES (?, ?, ?, ?, ?, ?)
+                RETURNING id
+                """,
+                (
+                    situation,
+                    style,
+                    json.dumps(contexts, ensure_ascii=False),
+                    source or "",
+                    scope or "workspace",
+                    session_id or "",
+                ),
+            )
+            row = cur.fetchone()
+            self._conn.commit()
+            return {"id": int(row["id"]), "merged": False, "similarity": 1.0}
+
+    def list_expressions(
+        self,
+        *,
+        scope: str | None = None,
+        min_count: int = 1,
+        exclude_rejected: bool = True,
+        limit: int = 10,
+    ) -> list[dict[str, Any]]:
+        limit = max(1, min(int(limit or 10), 30))
+        clauses = ["deleted_at IS NULL"]
+        params: list[Any] = []
+        if scope:
+            clauses.append("scope = ?")
+            params.append(scope)
+        if min_count > 1:
+            clauses.append("count >= ?")
+            params.append(min_count)
+        if exclude_rejected:
+            clauses.append("rejected = 0")
+        params.append(limit)
+
+        with self._lock:
+            rows = self._conn.execute(
+                f"""
+                SELECT id, situation, style, context_list_json, count, checked, rejected,
+                       source, scope, session_id, created_at, updated_at
+                FROM expressions
+                WHERE {' AND '.join(clauses)}
+                ORDER BY count DESC, updated_at DESC
+                LIMIT ?
+                """,
+                params,
+            ).fetchall()
+            return [dict(row) for row in rows]
+
+    def search_expressions(
+        self,
+        query: str,
+        *,
+        scope: str | None = None,
+        exclude_rejected: bool = True,
+        limit: int = 5,
+    ) -> list[dict[str, Any]]:
+        """Search expressions by situation text (simple LIKE)."""
+        query_norm = " ".join((query or "").strip().split())
+        if not query_norm:
+            return []
+        limit = max(1, min(int(limit or 5), 15))
+
+        clauses = ["situation LIKE ?", "deleted_at IS NULL"]
+        params: list[Any] = [f"%{query_norm}%"]
+        if scope:
+            clauses.append("scope = ?")
+            params.append(scope)
+        if exclude_rejected:
+            clauses.append("rejected = 0")
+        params.append(limit)
+
+        with self._lock:
+            rows = self._conn.execute(
+                f"""
+                SELECT id, situation, style, context_list_json, count, checked, rejected,
+                       source, scope, updated_at
+                FROM expressions
+                WHERE {' AND '.join(clauses)}
+                ORDER BY count DESC, updated_at DESC
+                LIMIT ?
+                """,
+                params,
+            ).fetchall()
+            return [dict(row) for row in rows]
+
+    def check_expression(self, expression_id: int, *, suitable: bool) -> dict[str, Any]:
+        with self._lock:
+            row = self._conn.execute(
+                "SELECT id, checked, rejected FROM expressions WHERE id = ?", (int(expression_id),)
+            ).fetchone()
+            if row is None:
+                raise KeyError(f"expression_id {expression_id} not found")
+            self._conn.execute(
+                """
+                UPDATE expressions
+                SET checked = 1, rejected = ?, updated_at = CURRENT_TIMESTAMP
+                WHERE id = ?
+                """,
+                (0 if suitable else 1, int(expression_id)),
+            )
+            self._conn.commit()
+            return {"id": int(expression_id), "checked": True, "rejected": not suitable}
+
+    def forget_expression(self, expression_id: int) -> bool:
+        with self._lock:
+            cur = self._conn.execute(
+                "UPDATE expressions SET deleted_at = CURRENT_TIMESTAMP, updated_at = CURRENT_TIMESTAMP WHERE id = ? AND deleted_at IS NULL",
+                (int(expression_id),),
+            )
+            self._conn.commit()
+            return cur.rowcount > 0
 
     def close(self) -> None:
         with self._lock:
