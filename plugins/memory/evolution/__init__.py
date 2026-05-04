@@ -6,8 +6,14 @@ import json
 import logging
 import importlib
 import re
+import sys
 from pathlib import Path
 from typing import Any
+
+# Allow graphrag imports from mile-knowledge directory
+_mile_knowledge = Path("/root/.hermes/mile-knowledge")
+if str(_mile_knowledge) not in sys.path:
+    sys.path.insert(0, str(_mile_knowledge))
 
 from agent.memory_provider import MemoryProvider
 from hermes_cli.config import cfg_get
@@ -154,6 +160,7 @@ class EvolutionMemoryProvider(MemoryProvider):
         self._metadata: dict[str, Any] = {}
         self._max_prefetch = int(self._config.get("max_prefetch", 5))
         self._min_confidence = float(self._config.get("min_confidence", 0.2))
+        self._enable_graphrag_prefetch = bool(self._config.get("enable_graphrag_prefetch", False))
 
     @property
     def name(self) -> str:
@@ -221,6 +228,11 @@ class EvolutionMemoryProvider(MemoryProvider):
                 "key": "min_confidence",
                 "description": "Minimum confidence for automatic recall",
                 "default": "0.2",
+            },
+            {
+                "key": "enable_graphrag_prefetch",
+                "description": "Enable GraphRAG knowledge graph prefetch (uses embedding API, no local model)",
+                "default": "false",
             },
         ]
 
@@ -303,6 +315,17 @@ class EvolutionMemoryProvider(MemoryProvider):
                 blocks.append("\n".join(expr_lines))
         except Exception as exc:
             logger.debug("Expression prefetch failed: %s", exc)
+
+        # Knowledge Graph (GraphRAG) search — enabled via plugins.evolution.enable_graphrag_prefetch.
+        # Uses embedding API (mnapi.com) — no local model needed.
+        if self._enable_graphrag_prefetch:
+            try:
+                from graphrag.lightweight_search import graphrag_prefetch_block
+                _gr_block = graphrag_prefetch_block(query, top_k=3)
+                if _gr_block:
+                    blocks.append(_gr_block)
+            except Exception as exc:
+                logger.debug("GraphRAG prefetch failed: %s", exc)
 
         # Person profile injection
         try:
