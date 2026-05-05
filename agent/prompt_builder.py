@@ -513,6 +513,13 @@ PLATFORM_HINTS = {
         "image and is the WRONG path. Bare Unicode emoji in text is also not a substitute "
         "— when a sticker is the right response, use yb_send_sticker."
     ),
+    "agentspace": (
+        "You are on WPS AgentSpace (数字员工开发平台), a WPS enterprise collaboration platform. "
+        "Messages are text-only via WebSocket — no media attachments, no markdown rendering. "
+        "Keep replies concise and practical. You have access to WPS 365 skills (通讯录, 日历, "
+        "会议, 云文档, 多维表, IM) via the wps365 skill set. "
+        "Use plain text formatting; avoid markdown syntax."
+    ),
 }
 
 # ---------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+name: agentspace-platform
+kind: platform
+version: 1.0.0
+description: >
+  WPS Agentspace (数字员工开发平台) gateway adapter for Hermes Agent.
+  Connects to agentspace.wps.cn via WebSocket and relays messages
+  between the platform and Hermes.
+  Requires a WPS wps_sid token configured in config.yaml.
+author: MiLe
+requires_env: []
