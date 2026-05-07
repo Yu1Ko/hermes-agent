@@ -1,0 +1,23 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("perfeye_start")	10	采集数据
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UINodeControl.BtnTrigger("BtnChangeMini","WidgetContentChat")	5	关闭下方聊天栏
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd DungeonApi.SetAutoFightDieTime(5000)	3	指定100分钟的boss
+/cmd DungeonApi.Specifyboss(6,8)	3	指定第二个boss
+/cmd RobotControl.CMD("Start")	60	初始化副本操作
+/gm player.SwitchMap(687,51379,56239,1095040)	20	传送前置条件
+/cmd QualityMgr.SetQualityByType(GameQualityType.HIGH)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType.EXTREME_HIGH)	10	最高画质才会泄漏
+/cmd DungeonApi.SetPlayerBuff(2)	10	设置副本难度
+/cmd RobotControl.CMD("TeleportRobot")	20	召唤机器人操作
+/gm player.SetPosition(49304, 6543, 1041472); local scene=player.GetScene();for i=1,2 do scene.SetProgress(i,true) end	5	设置boss
+/gm local szName='BOSS_SQ';t=player.GetScene().GetNpcByNickName(szName);t.FireAIEvent(2011, 0, 0)	5	设置boss
+/cmd CreateEmptyFile("Dungeons")	10	启动副本
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RobotControl.CMD("TeleportRobot")	20	召唤机器人操作
+/cmd RobotControl.CMD("RequestLeaveTeam")	20	解除组队
+/gm player.SwitchMap(653,26658,111423,1124608)	20	传送回出生点
+/cmd SendGMCommand("player.SetPosition(26658,111423,1124608)");	300	设置初始视角
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

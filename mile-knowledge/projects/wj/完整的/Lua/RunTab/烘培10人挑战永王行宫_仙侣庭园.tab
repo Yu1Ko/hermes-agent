@@ -1,0 +1,12 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SwitchMap(234,71709,25543,116624)	30	切换地图
+/gm player.AddBuff(0,99,203,1,7200);player.AddBuff(0,99,1900,1,7200);player.AddBuff(0,99,8233,10,7200);player.AddBuff(0,99,297,3,7200);player.nLifeReplenishExt=9000000;player.nPhysicsReflection=1000000;	5	无敌buff
+/cmd BakingModel.GetStartEnd("10人挑战永王行宫_仙侣庭园")	5	设置读取表
+/cmd tbCircle.SetAngle(2000)	5	设置参数
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("BakingMap")	20	结束游戏
+/cmd CreateEmptyFile("perfeye_stop")	5	结束采集
+/cmd CreateEmptyFile("ExitGame")	20	结束游戏

@@ -1,0 +1,3 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginSwitchMap")	20	开始跑图
+/cmd TriggerCrash()	60	触发宕机

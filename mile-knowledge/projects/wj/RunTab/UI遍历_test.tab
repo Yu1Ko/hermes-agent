@@ -1,0 +1,12 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(1,0,0,0)	30	切换地图
+/cmd QualityMgr.SetCurQuality(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetCurQuality(GameQualityType._video1_)	10	切换原本画质质
+/cmd TurnTo(85)	2	调整面向
+/cmd CreateEmptyFile("perfeye_start")	400	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Stop()	2	玩家停止
+/gm player.DelBuff(6008,1);player.DelBuff(13798,1);player.DelBuff(1459,1)	1	去除隐身buff
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

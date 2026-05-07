@@ -1,0 +1,65 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------楚州
+/cmd UIMgr.Close(VIEW_ID.PanelHotSpotBanner)	5	首次下载游戏会出现这个弹窗
+/cmd PlayerLevelUpToNew(120)	40	升级
+/cmd UINodeControl.BtnTriggerByLable("BtnClose","跳过当前教学")	2	关闭花萼楼教程面板
+/cmd UIMgr.Close(1705)	2	关闭升级弹窗
+/cmd UIMgr.Close(1701)	2	关闭升级弹窗
+/cmd UIMgr.Close(110)	1	关闭新手教程面板
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	2	加隐身
+/gm player.AddBuff(0,99,377,1,7200)	2	开启无敌
+/gm player.SwitchMap(581,1, 32945, 118953, 1049014)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd PlayerAutoFly(3330, 3496, 600)	300	AutoFly
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------七秀
+/gm player.SwitchMap(16,1, 84011, 78853, 1059711)	30	切换地图
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd PlayerAutoFly(591, 1335, 600)	300	AutoFly
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------纯阳
+/gm player.SwitchMap(7,1, 13262, 81122, 1221448)	30	切换地图
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd PlayerAutoFly(577, 582, 600)	300	AutoFly
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------百溪
+/gm player.SwitchMap(579,1, 97117, 77787, 1048665)	30	切换地图
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd PlayerAutoFly(3448, 3452, 600)	300	AutoFly
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------润扬
+/gm player.SwitchMap(582,1, 21804, 28469, 1047808)	30	切换地图
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd PlayerAutoFly(3469, 3475, 600)	300	AutoFly
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------扬州
+/gm player.SwitchMap(6,1, 81390, 14413, 1049600)	30	切换地图
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd PlayerAutoFly(90, 1211, 600)	300	AutoFly
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------楚州定点
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	2	加隐身
+/gm player.SwitchMap(581,1, _X_, _Y_, _Z_)	30	切换地图
+/gm player.SetPosition(49404, 65020, 1055680)	15	设置坐标
+/cmd local O = KG3DEngine.Get3DEngineOption();O.fCameraAngle = 0.84;KG3DEngine.Set3DEngineOption(O)	1	调整广角48
+/gm player.Die()	2	自杀
+/cmd TurnTo(241);SetCameraStatus(2000, 1, 2.42, -0.217);	200	调整面向
+/gm player.Stop()	2	玩家停止
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图-----------------------------------------楚州定点镜头朝向天空
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	2	加隐身
+/gm player.AddBuff(0,99,377,1,7200)	2	开启无敌
+/gm player.SwitchMap(581,_X_, _Y_, _Z_)	30	切换地图
+/gm player.SetPosition(19684,67006,1073408)	15	设置坐标
+/cmd SetCameraStatus(2000, 1, 5.22,2)	200	调整面向
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集

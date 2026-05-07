@@ -1,0 +1,28 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(108,81314, 67657, 1070208)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.AddBuff(player.dwID,player.nLevel,210,1,3600)	1	红名NPC不会主动来攻击
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	1	加隐身
+/cmd CreateEmptyFile("perfeye_start")	20	采集数据
+/cmd CreateEmptyFile("CustomRunMap_start")	2	开启跑图
+x	y	z	stay	mapid	action
+76996	67660	1070208	15	108	1
+75598	67700	1070208	15	108	1
+74895	67669	1070208	15	108	1
+73973	67656	1070208	15	108	1
+72952	67669	1070464	15	108	1
+71945	67651	1071872	15	108	1
+70902	67646	1072384	15	108	1
+69942	67646	1072384	15	108	1
+68967	67646	1072384	15	108	1
+67897	67646	1072384	15	108	1
+66928	67646	1072320	15	108	1
+65961	67646	1072384	15	108	1
+65021	67684	1072384	15	108	1
+60740	67696	1072384	15	108	1
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Die()	2	死亡
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

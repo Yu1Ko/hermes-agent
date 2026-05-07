@@ -1,0 +1,2045 @@
+﻿--*************************************** 工具生成 ***************************************
+UIDeviceModelRecommendQualityTab = 
+{
+    ["iPad4,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air (1g)",
+        ["szDeviceModel"]="iPad4,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad4,2"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air (1g)",
+        ["szDeviceModel"]="iPad4,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad4,4"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 2 (1g)",
+        ["szDeviceModel"]="iPad4,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad4,6"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 2 (1g)",
+        ["szDeviceModel"]="iPad4,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad4,7"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 2 (1g)",
+        ["szDeviceModel"]="iPad4,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad5,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 4 (2g)",
+        ["szDeviceModel"]="iPad5,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad5,2"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 4 (2g)",
+        ["szDeviceModel"]="iPad5,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad5,3"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 2 (1383/2048/68%) (iOS 10.2.1)",
+        ["szDeviceModel"]="iPad5,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad5,4"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 2 (1383/2048/68%) (iOS 10.2.1)",
+        ["szDeviceModel"]="iPad5,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad6,3"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 9.7 (1395/1971/71%)",
+        ["szDeviceModel"]="iPad6,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad6,4"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 9.7 (1395/1971/71%)",
+        ["szDeviceModel"]="iPad6,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad6,7"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 (3058/3999/76%) A9X",
+        ["szDeviceModel"]="iPad6,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad6,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 (3058/3999/76%) A9X",
+        ["szDeviceModel"]="iPad6,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 2代 (3058/3999/76%) A10X",
+        ["szDeviceModel"]="iPad7,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 2代 (3058/3999/76%) A10X",
+        ["szDeviceModel"]="iPad7,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 10.5 (3057/4000/76%) A10X",
+        ["szDeviceModel"]="iPad7,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 10.5 (3057/4000/76%) A10X",
+        ["szDeviceModel"]="iPad7,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,5"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 6 (2g)",
+        ["szDeviceModel"]="iPad7,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,6"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 6 (2g)",
+        ["szDeviceModel"]="iPad7,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 (2858/3769/76%) A12X",
+        ["szDeviceModel"]="iPad8,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 (2858/3769/76%) A12X",
+        ["szDeviceModel"]="iPad8,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 (2858/3769/76%) A12X",
+        ["szDeviceModel"]="iPad8,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 (2858/3769/76%) A12X",
+        ["szDeviceModel"]="iPad8,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 3代 (3058/3999/76%) A12X",
+        ["szDeviceModel"]="iPad8,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 3代 (3058/3999/76%) A12X",
+        ["szDeviceModel"]="iPad8,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,7"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 3代 (3058/3999/76%) A12X",
+        ["szDeviceModel"]="iPad8,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 3代 (3058/3999/76%) A12X",
+        ["szDeviceModel"]="iPad8,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,9"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 2代 (6g) A12Z",
+        ["szDeviceModel"]="iPad8,9",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPod9,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPod touch 7 (2g)",
+        ["szDeviceModel"]="iPod9,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad11,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 5 (3g) A12",
+        ["szDeviceModel"]="iPad11,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad11,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 5 (3g) A12",
+        ["szDeviceModel"]="iPad11,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad11,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 3 (3g) A12",
+        ["szDeviceModel"]="iPad11,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad11,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 3 (3g) A12",
+        ["szDeviceModel"]="iPad11,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad11,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 8 (3g) A12",
+        ["szDeviceModel"]="iPad11,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad11,7"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 8 (3g) A12",
+        ["szDeviceModel"]="iPad11,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad12,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 9 (3g) A13",
+        ["szDeviceModel"]="iPad12,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad12,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 9 (3g) A13",
+        ["szDeviceModel"]="iPad12,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 4 (4g) A14",
+        ["szDeviceModel"]="iPad13,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 4 (4g) A14",
+        ["szDeviceModel"]="iPad13,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 3代 (8g) M1",
+        ["szDeviceModel"]="iPad13,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 3代 (8g) M1",
+        ["szDeviceModel"]="iPad13,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 3代 (8g) M1",
+        ["szDeviceModel"]="iPad13,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,7"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 3代 (8g) M1",
+        ["szDeviceModel"]="iPad13,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 5代 (8g) M1",
+        ["szDeviceModel"]="iPad13,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,9"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 5代 (8g) M1",
+        ["szDeviceModel"]="iPad13,9",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad14,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 6 (4g) A15",
+        ["szDeviceModel"]="iPad14,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad14,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 6 (4g) A15",
+        ["szDeviceModel"]="iPad14,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad14,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 4代 (8g) M2",
+        ["szDeviceModel"]="iPad14,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad14,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 4代 (8g) M2",
+        ["szDeviceModel"]="iPad14,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad14,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 6代 (8g) M2",
+        ["szDeviceModel"]="iPad14,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad14,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 6代 (8g) M2",
+        ["szDeviceModel"]="iPad14,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad14,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 11 2024 (8g) M2",
+        ["szDeviceModel"]="iPad14,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad14,9"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 11 2024 (8g) M2",
+        ["szDeviceModel"]="iPad14,9",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad15,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 13 2025 (8g) M3",
+        ["szDeviceModel"]="iPad15,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad15,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 13 2025 (8g) M3",
+        ["szDeviceModel"]="iPad15,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad15,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 13 2025 (8g) M3",
+        ["szDeviceModel"]="iPad15,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad15,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 13 2025 (8g) M3",
+        ["szDeviceModel"]="iPad15,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad15,7"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 11 (6g) A16",
+        ["szDeviceModel"]="iPad15,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad15,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 11 (6g) A16",
+        ["szDeviceModel"]="iPad15,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad16,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 7 (8g) A17 Pro",
+        ["szDeviceModel"]="iPad16,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad16,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Mini 7 (8g) A17 Pro",
+        ["szDeviceModel"]="iPad16,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad16,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 2024 (8g) M4",
+        ["szDeviceModel"]="iPad16,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad16,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 2024 (8g) M4",
+        ["szDeviceModel"]="iPad16,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad16,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 13 2024 (8g) M4",
+        ["szDeviceModel"]="iPad16,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad16,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 13 2024 (8g) M4",
+        ["szDeviceModel"]="iPad16,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad17,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 2025 (12g) M5",
+        ["szDeviceModel"]="iPad17,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad17,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 2025 (12g) M5",
+        ["szDeviceModel"]="iPad17,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad17,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 13 2025 (12g) M5",
+        ["szDeviceModel"]="iPad17,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad17,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 13 2025 (12g) M5",
+        ["szDeviceModel"]="iPad17,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad6,11"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 5 (2g)",
+        ["szDeviceModel"]="iPad6,11",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad6,12"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 5 (2g)",
+        ["szDeviceModel"]="iPad6,12",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,11"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 7 (1844/2998/62%) A10",
+        ["szDeviceModel"]="iPad7,11",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad7,12"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 7 (1844/2998/62%) A10",
+        ["szDeviceModel"]="iPad7,12",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,10"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 11 2代 (6g) A12Z",
+        ["szDeviceModel"]="iPad8,10",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,11"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 4代 (6g) A12Z",
+        ["szDeviceModel"]="iPad8,11",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad8,12"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 4代 (6g) A12Z",
+        ["szDeviceModel"]="iPad8,12",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,10"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 5代 (8g) M1",
+        ["szDeviceModel"]="iPad13,10",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,11"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Pro 12.9 5代 (8g) M1",
+        ["szDeviceModel"]="iPad13,11",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,16"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 5 (8g) M1",
+        ["szDeviceModel"]="iPad13,16",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,17"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 5 (8g) M1",
+        ["szDeviceModel"]="iPad13,17",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,18"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 10 (4g) A14",
+        ["szDeviceModel"]="iPad13,18",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad13,19"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad 10 (4g) A14",
+        ["szDeviceModel"]="iPad13,19",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPad14,10"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 13 2024 (8g) M2",
+        ["szDeviceModel"]="iPad14,10",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPad14,11"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPad Air 13 2024 (8g) M2",
+        ["szDeviceModel"]="iPad14,11",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone6,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 5s (1g)",
+        ["szDeviceModel"]="iPhone6,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone6,2"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 5s (1g)",
+        ["szDeviceModel"]="iPhone6,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone7,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 6 Plus (1g)",
+        ["szDeviceModel"]="iPhone7,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone7,2"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 6 (1g)",
+        ["szDeviceModel"]="iPhone7,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone8,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 6s (1396/2048/68%)",
+        ["szDeviceModel"]="iPhone8,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone8,2"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 6s Plus (1392/2048/68%)",
+        ["szDeviceModel"]="iPhone8,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone8,4"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone SE (1395/2048/69%)",
+        ["szDeviceModel"]="iPhone8,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone9,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 7 (1395/2048/68%)",
+        ["szDeviceModel"]="iPhone9,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone9,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 7 Plus (2040/3072/66%) A10",
+        ["szDeviceModel"]="iPhone9,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone9,3"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 7 (1395/2048/68%)",
+        ["szDeviceModel"]="iPhone9,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone9,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 7 Plus (2040/3072/66%) A10",
+        ["szDeviceModel"]="iPhone9,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone10,1"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 8 (1364/1990/70%)",
+        ["szDeviceModel"]="iPhone10,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone10,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 8 Plus (3g) A11",
+        ["szDeviceModel"]="iPhone10,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone10,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone X (1700/2785/50%) A11",
+        ["szDeviceModel"]="iPhone10,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone10,4"]=
+    {
+        ["bIsForbid"]=true,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 8 (1364/1990/70%)",
+        ["szDeviceModel"]="iPhone10,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone10,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 8 Plus (3g) A11",
+        ["szDeviceModel"]="iPhone10,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone10,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone X (1700/2785/50%) A11",
+        ["szDeviceModel"]="iPhone10,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone11,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone XS (2040/3754/54%) A12",
+        ["szDeviceModel"]="iPhone11,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone11,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone XS Max (2039/3735/55%) A12",
+        ["szDeviceModel"]="iPhone11,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone11,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone XS Max (2039/3735/55%) A12",
+        ["szDeviceModel"]="iPhone11,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone11,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone XR (1792/2813/63%) A12",
+        ["szDeviceModel"]="iPhone11,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone12,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="IPhone 11 (2068/3844/54%) A13",
+        ["szDeviceModel"]="iPhone12,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone12,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 11 Pro (4g) A13",
+        ["szDeviceModel"]="iPhone12,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone12,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 11 Pro Max (2067/3740/55%) A13",
+        ["szDeviceModel"]="iPhone12,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone12,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone SE (2020) (2091/2951/71%) A13",
+        ["szDeviceModel"]="iPhone12,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone13,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 12 mini (4g) A14",
+        ["szDeviceModel"]="iPhone13,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone13,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 12 (4g) A14",
+        ["szDeviceModel"]="iPhone13,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone13,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 12 Pro (6g) A14",
+        ["szDeviceModel"]="iPhone13,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone13,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 12 Pro Max (6g) A14",
+        ["szDeviceModel"]="iPhone13,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 13 Pro (6g) A15",
+        ["szDeviceModel"]="iPhone14,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 13 Pro Max (6g) A15",
+        ["szDeviceModel"]="iPhone14,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 13 mini (4g) A15",
+        ["szDeviceModel"]="iPhone14,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 13 (4g) A15",
+        ["szDeviceModel"]="iPhone14,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,6"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone SE 3 (4g) A15",
+        ["szDeviceModel"]="iPhone14,6",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,7"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 14 (6g) A15",
+        ["szDeviceModel"]="iPhone14,7",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone14,8"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 14 Plus (6g) A15",
+        ["szDeviceModel"]="iPhone14,8",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["iPhone15,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 14 Pro (6g) A16",
+        ["szDeviceModel"]="iPhone15,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone15,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 14 Pro Max (6g) A16",
+        ["szDeviceModel"]="iPhone15,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone15,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 15 (6g) A16",
+        ["szDeviceModel"]="iPhone15,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone15,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 15 Plus (6g) A16",
+        ["szDeviceModel"]="iPhone15,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone16,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=2,
+        ["szDeviceName"]="iPhone 15 Pro (8g) A17",
+        ["szDeviceModel"]="iPhone16,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone16,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 15 Pro Max (8g) A17",
+        ["szDeviceModel"]="iPhone16,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone17,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 16 Pro (8g) A18 Pro",
+        ["szDeviceModel"]="iPhone17,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone17,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 16 Pro Max (8g) A18 Pro",
+        ["szDeviceModel"]="iPhone17,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone17,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 16 (8g) A18",
+        ["szDeviceModel"]="iPhone17,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone17,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 16 Plus (8g) A18",
+        ["szDeviceModel"]="iPhone17,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone17,5"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 16 E (8g) A18",
+        ["szDeviceModel"]="iPhone17,5",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone18,1"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 17 Pro (12g) A19 Pro",
+        ["szDeviceModel"]="iPhone18,1",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone18,2"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 17 Pro Max (12g) A19 Pro",
+        ["szDeviceModel"]="iPhone18,2",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone18,3"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 17 (8g) A19",
+        ["szDeviceModel"]="iPhone18,3",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["iPhone18,4"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=true,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="iPhone 17 Air (12g) A19 Pro",
+        ["szDeviceModel"]="iPhone18,4",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=true
+    },
+    ["vivo V2190A"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="vivo S15e(Exynos1080, Mali-G78 MP10)",
+        ["szDeviceModel"]="vivo V2190A",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["vivo V2231A"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=2,
+        ["szDeviceName"]="vivo iQOO Neo7(天玑8200, Mali-G610 MC6)",
+        ["szDeviceModel"]="vivo V2231A",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HONOR FNE-AN00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="HONOR 70(骁龙778G+, Adreno642L)",
+        ["szDeviceModel"]="HONOR FNE-AN00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI DMG-W00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="MatePad 11.5S 灵动版(麒麟9000WM, Maleoon910)",
+        ["szDeviceModel"]="HUAWEI DMG-W00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI JEF-NX9"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova7(麒麟985, Mali-G77 MP8)",
+        ["szDeviceModel"]="HUAWEI JEF-NX9",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=true,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI TGR-W10"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="MatePad 11.5S 柔光版(麒麟9000WL, Maleoon910)",
+        ["szDeviceModel"]="HUAWEI TGR-W10",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI ADA-AL00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova12Pro(麒麟8000, Mali-G610)",
+        ["szDeviceModel"]="HUAWEI ADA-AL00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI ANA-AN00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei P40(麒麟990 5G, Mali-G76 MP16)",
+        ["szDeviceModel"]="HUAWEI ANA-AN00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI BMH-AN10"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Honor 30(麒麟985, Mali-G77 MP8)",
+        ["szDeviceModel"]="HUAWEI BMH-AN10",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI BRQ-AN00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova8Pro(麒麟985, Mali-G77 MP8)",
+        ["szDeviceModel"]="HUAWEI BRQ-AN00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI CET-AL00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=2,
+        ["szDeviceName"]="Huawei HUAWEI Mate50(骁龙8+gen1, Adreno730)",
+        ["szDeviceModel"]="HUAWEI CET-AL00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI DCO-AL00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=2,
+        ["szDeviceName"]="Huawei Mate50 Pro(骁龙8+gen1, Adreno730)",
+        ["szDeviceModel"]="HUAWEI DCO-AL00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=4,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI ELS-AN00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei P40Pro(麒麟990 5G, Mali-G76 MP16)",
+        ["szDeviceModel"]="HUAWEI ELS-AN00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI JEF-AN00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova7(麒麟985, Mali-G77 MP8)",
+        ["szDeviceModel"]="HUAWEI JEF-AN00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=true,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI JEF-AN20"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova7(麒麟985, Mali-G77 MP8)",
+        ["szDeviceModel"]="HUAWEI JEF-AN20",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=true,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI JER-AN10"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova7Pro(麒麟985, Mali-G77 MP8)",
+        ["szDeviceModel"]="HUAWEI JER-AN10",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI TAS-AL00"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Mate30(麒麟990, Mali-G76 MP16)",
+        ["szDeviceModel"]="HUAWEI TAS-AL00",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["Xiaomi 2106118C"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Xiaomi MIX4(骁龙888, Adreno660)",
+        ["szDeviceModel"]="Xiaomi 2106118C",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["Xiaomi M2101K9C"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Xiaomi 11Lite(骁龙778G, Adreno642L)",
+        ["szDeviceModel"]="Xiaomi M2101K9C",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=1,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["HUAWEI ADA-AL10U"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Huawei Nova12Ultra(麒麟9000SL, Maleoon910)",
+        ["szDeviceModel"]="HUAWEI ADA-AL10U",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=2,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["Xiaomi 22061218C"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Xiaomi Mix Fold2(8gen1，Adreno (TM) 730)",
+        ["szDeviceModel"]="Xiaomi 22061218C",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    },
+    ["Xiaomi 2308CPXD0C"]=
+    {
+        ["bIsForbid"]=false,
+        ["bHasBlueRay"]=false,
+        ["nFramQuality"]=0,
+        ["szDeviceName"]="Xiaomi Mix Fold3(8gen2，Adreno (TM) 740)",
+        ["szDeviceModel"]="Xiaomi 2308CPXD0C",
+        ["nMemoryRequire"]=3.1,
+        ["bCanSwitchQuality"]=true,
+        ["nRecommendQuality"]=3,
+        ["bDisableCameraLight"]=false,
+        ["bCanSwitchExtremeHighFrame"]=false
+    }
+}
