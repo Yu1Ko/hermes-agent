@@ -74,34 +74,21 @@ def _format_conversation(messages: list[dict[str, Any]]) -> str:
 
 def evaluate_session(session_id: str, messages: list[dict[str, Any]]) -> dict[str, Any]:
     """Score a single session using DeepSeek."""
-    api_key = os.environ.get("DEEPSEEK_API_KEY", "")
-    if not api_key:
-        return {"accuracy": 0, "consistency": 0, "responsiveness": 0,
-                "notes": "DEEPSEEK_API_KEY not set"}
+    from agents._model import call_llm
 
     content = _format_conversation(messages)
 
-    from openai import OpenAI
-
-    base_url = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
-    model = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
-    client = OpenAI(api_key=api_key, base_url=base_url)
-
-    try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": EVAL_PROMPT},
-                {"role": "user", "content": content},
-            ],
-            temperature=0.1,
-            max_tokens=1024,
-        )
-        raw = response.choices[0].message.content or ""
-        return _parse_eval_json(raw)
-    except Exception:
-        logger.exception("Evaluation failed for %s.", session_id)
+    raw = call_llm(
+        messages=[
+            {"role": "system", "content": EVAL_PROMPT},
+            {"role": "user", "content": content},
+        ],
+        temperature=0.1,
+        max_tokens=1024,
+    )
+    if raw is None:
         return {"accuracy": 0, "consistency": 0, "responsiveness": 0, "notes": "api error"}
+    return _parse_eval_json(raw)
 
 
 def _parse_eval_json(raw: str) -> dict[str, Any]:
@@ -183,13 +170,9 @@ def extract_case_from_session(
     if acc >= 5 and con >= 5:
         return None
     _load_env()
-    from openai import OpenAI
-    api_key = os.environ.get("DEEPSEEK_API_KEY", "")
-    if not api_key:
-        return None
-    base_url = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
-    model = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
-    client = OpenAI(api_key=api_key, base_url=base_url)
+
+    from agents._model import call_llm
+
     dialog = "\n".join(
         f"{m['role']}: {m['content'][:500]}" for m in messages[-10:]
     )
@@ -201,14 +184,16 @@ def extract_case_from_session(
         '{"scenario": "场景简述", "bad": "AI做错了什么", "good": "正确做法", "trigger_keywords": ["关键词"]}\n'
         "如果无法提取有意义的案例，返回空字段。"
     )
+
+    raw = call_llm(
+        messages=[{"role": "user", "content": prompt}],
+        temperature=0.1,
+        max_tokens=512,
+    )
+    if raw is None:
+        return None
+
     try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=[{"role": "user", "content": prompt}],
-            temperature=0.1,
-            max_tokens=512,
-        )
-        raw = response.choices[0].message.content or ""
         raw = raw.strip()
         if raw.startswith("```"):
             raw = raw.split("\n", 1)[-1].rsplit("```", 1)[0]

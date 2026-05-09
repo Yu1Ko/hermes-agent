@@ -22,9 +22,9 @@ def _load_dotenv(path: Path) -> None:
 ENV_FILE = Path.home() / ".hermes" / ".env"
 _load_dotenv(ENV_FILE)
 
-DEEPSEEK_API_KEY = os.environ.get("DEEPSEEK_API_KEY", "")
-DEEPSEEK_BASE_URL = os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
-DEEPSEEK_MODEL = os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
+DEEPSEEK_API_KEY = os.environ.get("V4FLASH_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", "")
+DEEPSEEK_BASE_URL = os.environ.get("V4FLASH_BASE_URL") or os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
+DEEPSEEK_MODEL = os.environ.get("V4FLASH_MODEL") or os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
 
 # Embedding API (方案3: mnapi.com)
 EMBEDDING_API_KEY = os.environ.get("EMBEDDING_API_KEY", "")

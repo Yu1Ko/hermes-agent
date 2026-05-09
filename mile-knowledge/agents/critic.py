@@ -137,7 +137,7 @@ def check_reply(
         case_library = _load_case_library()
 
     _load_env()
-    api_key = os.environ.get("CRITIC_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", "")
+    api_key = os.environ.get("V4FLASH_API_KEY") or os.environ.get("CRITIC_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", "")
     if not api_key:
         return {"pass": True, "reason": "CRITIC_API_KEY not set, skipping check"}
 
@@ -156,8 +156,8 @@ def check_reply(
 
     from openai import OpenAI
 
-    base_url = os.environ.get("CRITIC_API_BASE") or os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
-    model = os.environ.get("CRITIC_MODEL") or os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
+    base_url = os.environ.get("V4FLASH_BASE_URL") or os.environ.get("CRITIC_API_BASE") or os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
+    model = os.environ.get("V4FLASH_MODEL") or os.environ.get("CRITIC_MODEL") or os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
     client = OpenAI(api_key=api_key, base_url=base_url)
 
     prompt = CRITIC_PROMPT.format(
@@ -193,14 +193,14 @@ def rewrite_reply(
 ) -> str | None:
     """Rewrite a flagged reply based on the fix_hint. Returns None on failure."""
     _load_env()
-    api_key = os.environ.get("CRITIC_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", "")
+    api_key = os.environ.get("V4FLASH_API_KEY") or os.environ.get("CRITIC_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", "")
     if not api_key:
         return None
 
     from openai import OpenAI
 
-    base_url = os.environ.get("CRITIC_API_BASE") or os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
-    model = os.environ.get("CRITIC_MODEL") or os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
+    base_url = os.environ.get("V4FLASH_BASE_URL") or os.environ.get("CRITIC_API_BASE") or os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
+    model = os.environ.get("V4FLASH_MODEL") or os.environ.get("CRITIC_MODEL") or os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
     client = OpenAI(api_key=api_key, base_url=base_url)
 
     rewrite_prompt = f"""用户的消息是：

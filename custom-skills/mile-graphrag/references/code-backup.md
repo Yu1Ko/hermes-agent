@@ -1,8 +1,7 @@
 # MiLe 代码备份流程
 
-> **⚠️ 当前状态（2026-05-08）**：本地备份已准备完成（7828 文件，360M），**但 GitHub push 尚未执行**。
-> `https://github.com/Yu1Ko/hermes-agent` 当前只含上游 hermes-agent 代码 + 少量本地提交，**不含 custom-skills/ 和 mile-knowledge/**。
-> 原因：服务器无 Classic PAT token（`ghp_*`），无法认证推送。精细 PAT 即使有 Contents:RW 也 403。
+> **当前状态（2026-05-08 updated）**：✅ 已 push 到 main 分支，7829 文件含 custom-skills/ + mile-knowledge/。
+> 仓库 `https://github.com/Yu1Ko/hermes-agent`（fork of NousResearch/hermes-agent）。
 
 备份目标仓库：`https://github.com/Yu1Ko/hermes-agent`
 
@@ -18,7 +17,8 @@
 # 1. Clone 目标仓库
 cd /tmp && git clone https://github.com/Yu1Ko/hermes-agent.git
 
-# 2. 创建 .gitignore（排除大文件）
+# 2. 创建 mile-knowledge 目录及 .gitignore（排除大文件）
+mkdir -p hermes-agent/mile-knowledge
 cat > hermes-agent/mile-knowledge/.gitignore << 'EOF'
 projects/wj/task_controller/Perfeye-*/
 projects/wj/task_controller/logs/
@@ -53,6 +53,7 @@ rsync -av \
 rm -rf /tmp/hermes-agent/mile-knowledge/projects/wj/task_controller/.git
 
 # 5. 复制自定义 skills
+mkdir -p /tmp/hermes-agent/custom-skills
 cp -r /root/.hermes/skills/{konata-default-persona,mile-graphrag,web-access,wps365} \
   /tmp/hermes-agent/custom-skills/
 

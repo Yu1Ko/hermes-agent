@@ -28,10 +28,13 @@ mile-knowledge/              # 根目录 (/root/.hermes/mile-knowledge/)
 │   ├── embedding.py         # Embedding API 封装（mnapi.com, 批量编码+余弦相似度）
 │   ├── config.py            # 自动读 ~/.hermes/.env（含 embedding API 配置）
 │   └── cli.py               # 6 子命令入口 (python -m graphrag <cmd>)
-├── agents/                  # 后台 Cron Agent (769 行)
+├── agents/                  # 后台 Cron Agent + 模型 fallback
+│   ├── _model.py            # V4Flash → DeepSeek 官网自动 fallback
 │   ├── reflect.py           # 反思循环 — 每日 03:00
 │   ├── evaluate.py          # 评价体系 — 每日 04:00
-│   └── consolidate.py       # 整合器   — 每日 05:00
+│   ├── critic.py            # 实时拦截器 (Layer 1)
+│   ├── consolidate.py       # 整合器   — 每日 05:00
+│   └── optimize.py          # Prompt 自动进化 (Layer 4)
 ├── data/                    # 持久化数据
 │   ├── graph.pkl            # NetworkX 图快照
 │   ├── embeddings.npz       # 实体向量索引
@@ -63,7 +66,7 @@ result = check_reply(user_message, bot_reply, case_library)
 
 - 检查十一项：未按明确指令执行（不只做文字说明，也不替代执行）、上下文污染、分段忘记拆/机械分段、句尾违规、文档化输出、空泛机制化建议、未验证本地环境就下结论、故障反馈空泛化、无请求时挂下一步钩子、静默协议违背（有[SILENT]要求时无关输出即判失败）、只给文件路径不解释
 - 从 `data/case_library.json` 检索相似历史失败案例作为 few-shot
-- 使用独立模型配置（`CRITIC_API_KEY/BASE/MODEL` 环境变量），当前为 mnapi `gemini-3-flash-preview`。未设置时 fallback 到 DeepSeek
+- 使用独立模型配置（`CRITIC_API_KEY/BASE/MODEL` 环境变量），未设置时 fallback 到 `DEEPSEEK_*`（当前指向 SenseNova `token.sensenova.cn/v1`）。SenseNova 模型 quirks 见 `references/sensenova-platform.md`
 - API 故障时默认放行（fail-open）
 - CLI: `python3 agents/critic.py --user-msg "..." --bot-reply "..."`
 - **Hook 接入详情**：见 `references/critic-gateway-hook.md`
@@ -140,20 +143,57 @@ DeepSeek API key 从 `~/.hermes/.env` 自动加载（`DEEPSEEK_API_KEY`），无
 
 ## 模型配置
 
-**Agent 任务默认使用 `deepseek-v4-flash`**（更轻量，适合非对话批处理）。可通过环境变量覆盖：
+**Agent 任务默认使用 `deepseek-v4-flash`**（更轻量，适合非对话批处理）。通过环境变量覆盖。
 
-```bash
-export DEEPSEEK_MODEL=deepseek-v4-flash  # 默认值，三处 config 一致
+### 环境变量优先级（reflect.py / evaluate.py）
+
+```python
+api_key = os.environ.get("V4FLASH_API_KEY") or os.environ.get("DEEPSEEK_API_KEY", "")
+base_url = os.environ.get("V4FLASH_BASE_URL") or os.environ.get("DEEPSEEK_BASE_URL", "https://api.deepseek.com/v1")
+model    = os.environ.get("V4FLASH_MODEL")    or os.environ.get("DEEPSEEK_MODEL", "deepseek-v4-flash")
 ```
 
-模型定义在：
-- `graphrag/config.py` → `DEEPSEEK_MODEL` 常量
-- `agents/reflect.py` → `model` 局部变量
-- `agents/evaluate.py` → `model` 局部变量
+**优先级**：`V4FLASH_*` > `DEEPSEEK_*` > 代码默认值。
+
+**为什么有 V4FLASH_***：`DEEPSEEK_API_KEY` 被主 Hermes 模型（deepseek-v4-pro，config.yaml `provider: deepseek`）和后台 agent **共享**。如果直接改 `DEEPSEEK_API_KEY` 切换到其他端点（如 SenseNova），主模型也会断开，导致 gateway 无响应（俗称"自杀"）。`V4FLASH_*` 变量提供独立的 agent 端点，不影响主模型。
+
+```bash
+# ~/.hermes/.env 中的配置示例
+V4FLASH_API_KEY=sk-xxx                        # SenseNova 或其他代理端点
+V4FLASH_BASE_URL=https://token.sensenova.cn/v1
+V4FLASH_MODEL=deepseek-v4-flash
+
+DEEPSEEK_API_KEY=sk-original-key              # 保持不动，供主模型使用
+DEEPSEEK_BASE_URL=https://api.deepseek.com
+DEEPSEEK_MODEL=deepseek-v4-flash
+```
 
 `consolidate.py` 通过 `graphrag/embedding.py` 调 mnapi.com API 做相似度计算，不依赖本地模型。
 
-`critic.py` 使用独立环境变量（`CRITIC_API_KEY/BASE/MODEL`），不从 DeepSeek 配置继承。当前已切换为 mnapi `gemini-3-flash-preview`。改模型时只需更新 `~/.hermes/.env` 中这三个变量即可，不需要改代码。
+`critic.py` 使用独立环境变量（`CRITIC_API_KEY/BASE/MODEL`），未设置时 fallback 到 `DEEPSEEK_*`。当前 `DEEPSEEK_*` 已指向 SenseNova token 端点（`token.sensenova.cn/v1`），未单独设 `CRITIC_*` 的 critic 会自动走 SenseNova 上的 `deepseek-v4-flash`。
+
+SenseNova 平台各模型的接口路径、quirks 和 pitfall 详见 `references/sensenova-platform.md`。
+
+### V4Flash → DeepSeek 官网自动 Fallback
+
+`agents/_model.py` 提供 `call_llm()` 统一入口，reflect.py 和 evaluate.py 的所有 OpenAI 调用都走它：
+
+```python
+from agents._model import call_llm
+
+raw = call_llm(
+    messages=[{"role": "system", "content": prompt}, {"role": "user", "content": text}],
+    temperature=0.2,
+    max_tokens=4096,
+)
+```
+
+**Fallback 逻辑**：
+1. 优先用 `V4FLASH_*` 环境变量指定的端点（当前是 SenseNova `token.sensenova.cn/v1`）
+2. 如果 `V4FLASH_BASE_URL` 不是 `api.deepseek.com`（即走的是第三方代理），且调用失败，自动切到 DeepSeek 官网（`https://api.deepseek.com/v1` + `DEEPSEEK_API_KEY` + `deepseek-v4-flash`）
+3. 如果一开始就是 DeepSeek 官网，失败不重试（避免无意义循环）
+
+需要 fallback 的三个调用点已全部接入：`reflect.py` 的 `analyse_with_deepseek`、`evaluate.py` 的 `evaluate_session` 和 `extract_case_from_session`
 
 ## GraphRAG CLI
 
@@ -327,6 +367,11 @@ python3 scripts/verify-interfaces.py --quick  # 仅导入检查（不调 API）
 21. **Critic 拦截器仅在 agent 回复管道生效**：Hook 挂载在 `~/.hermes/hooks/critic-intercept/`，在 `agent:end` 事件触发。系统级自动生成的消息（如后台进程通知、平台适配器生成的下载指引）不经过此 hook，不会被 critic 检查。当用户质疑某条消息格式违规但未被拦截时，先判断消息是否走了 agent 回复通道。**可疑来源**：`background_process_notifications: all` 配置会在 tar/打包等后台进程完成时发送通知，可能被平台转成模板式结构化消息。症状：gateway/agent 日志无此消息痕迹。对策：`hermes config set background_process_notifications errors` 或 `none`。
 22. **WJ RobotDeathLoop 坑**：① 操作对象是服务端机器人（`RobotControl.CMD`），不要用 `GetClientPlayer()` 或 `player:IsDead()` 读玩家状态。② 顺序是"复活→自杀"，别反过来。③ `Timer.AddCycle(10秒)` 就够了，别换成帧计数器过度设计。详见 `references/wj-plugin-architecture.md`。
 23. **WJ 插件不自启是缺 RunMap 解析器**：所有 WJ 插件必须带模块级的 RunMap.tab 加载 + `Timer.AddFrameCycle` 命令解析器，否则 `Start()` 永不被调用。标准模板见 `references/wj-plugin-architecture.md`。
-24. **HotPointMap 分支1去重架构**：两分支应基于 MapFarming/CustomRunMap（一个格子 10+ 条数据）而非 HotPointRunMapOneDepth（固定 4 条）。MapFarming 的 `Process()` 已有实时去重（比较 Memory），本质就是分支1。切分支2只需关闭去重。另外验证脚本 `scripts/test-hotpoint-dedup.py` 可本地测试去重逻辑。完整说明见 `references/wj-hotpoint-dedup.md`。
+24. **HotPointMap 分支1去重架构**：不同插件版本的数据格式不同，StringSplit(",") 后的列偏移量因相机格式（有无尾逗号）而变。MapFarming2 比较 FPS（parts[10]），`<` 取最低帧率。详见 `references/wj-hotpoint-mapfarming-branch1.md`。
+24b. **MapFarming.lua 三版对比**：原版（面数去重）→ 分支1（Ms去重）→ 分支2（全量保留不去重）。三个版本只改 `Process()`，其余一致。分支2 最简单但数据量大，依赖热力图平台端排序。⚠️ MapFarming.lua 和 MapFarming2.lua 的 `StringSplit` 列偏移不同（`parts[10]` 在一者是 Ms、在另一者是 FPS），不可混用。详见 `references/wj-mapfarming-branch-comparison.md`。
 25. **WJ 用户偏好极简改动**：做功能开关时优先改 .lua 默认值或 .tab 硬编码，不要另建目录、不要改 .py 加 changeStrInFile 管道。用户明确拒绝过"另建 HotPointRunMapOneDepthB1 目录 + Interface.ini 条目"的方案。
-26. **代码备份到 GitHub（⚠️ 尚未完成推送）**：本地备份已准备（7828 文件，360M，已排除 Perfeye/日志/APK），但 push 步骤未执行。GitHub fork `https://github.com/Yu1Ko/hermes-agent` 当前仅含上游代码 + 少量本地提交（agentspace、graphrag tool），不含 custom-skills/ 和 mile-knowledge/。推送需要 Classic PAT (`ghp_*`)，精细 PAT 会 403。完整流程 + 排除规则见 `references/code-backup.md`。
+26. **代码备份到 GitHub**：本地备份已准备（7828 文件，360M，已排除 Perfeye/日志/APK），但 push 步骤未执行。GitHub fork `https://github.com/Yu1Ko/hermes-agent` 当前仅含上游代码 + 少量本地提交（agentspace、graphrag tool），不含 custom-skills/ 和 mile-knowledge/。推送需要 Classic PAT (`ghp_*`)，精细 PAT 会 403。完整流程 + 排除规则见 `references/code-backup.md`。
+27. **切换后台 agent 端点时不要直接改 DEEPSEEK_API_KEY**：`DEEPSEEK_API_KEY` 被两个消费者共享——主 Hermes 模型（config.yaml `provider: deepseek`，用于实时对话）和后台 agent（reflect.py / evaluate.py，用于批量分析）。直接改成其他端点（如 SenseNova）会导致主模型断开、gateway 无响应。**正确做法**：新增 `V4FLASH_API_KEY` / `V4FLASH_BASE_URL` / `V4FLASH_MODEL` 环境变量，agent 代码优先读 `V4FLASH_*`，未设置才回退到 `DEEPSEEK_*`。详见「模型配置」章节。
+28. **WJ MapFarming CSV 列偏移：GetHotPointReader vs GetPerfData**：两个数据源的 CSV 格式完全不同。GetHotPointReader 版本（分支1/2、模板版）相机串有尾逗号 `"(0.00, 0.00, 0.00),"` → Split 后 FPS=parts[10]、Ms=parts[11]。GetPerfData 版本（最终版）相机串无尾逗号 → FPS=parts[7]。用错列索引会拿到完全错误的数据。完整版本对照见 `references/wj-hotpoint-mapfarming-branch1.md`。
+29. **WJ 最小改动原则**：用户对公用文件偏好最小改动。模板版的 nIndex 去重 + CompareConfig 切换策略是最小实现——不需要 GridTracker、不需要 GridPointData、不需要改 key 格式。分支2 版本的最小分支1化只需改 Process() 里 6 行，复用已有 GridPointData。不要为单一策略添加新结构。
+30. **SenseNova (token.sensenova.cn) 端点不稳定**：商汤代理偶尔不可用（可能导致 evaluate/reflect 空跑）。`agents/_model.py` 已内置自动 fallback 到 DeepSeek 官网。症状：cron evaluate 全部返回 0 分且 notes=api error。验证方法：`curl https://token.sensenova.cn/v1/models -H "Authorization: Bearer $V4FLASH_API_KEY"`。如果通但还是失败，检查 `V4FLASH_BASE_URL` 是否正确设置。
