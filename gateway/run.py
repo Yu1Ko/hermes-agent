@@ -5331,6 +5331,13 @@ class GatewayRunner:
                 return None
             return BlueBubblesAdapter(config)
 
+        elif platform == Platform.QQ:
+            from gateway.platforms.qq import NapCatQQAdapter, check_qq_requirements
+            if not check_qq_requirements():
+                logger.warning("QQ: requests/websockets missing or NapCat OneBot not configured")
+                return None
+            return NapCatQQAdapter(config)
+
         elif platform == Platform.QQBOT:
             from gateway.platforms.qqbot import QQAdapter, check_qq_requirements
             if not check_qq_requirements():
@@ -5385,6 +5392,7 @@ class GatewayRunner:
             Platform.WECOM_CALLBACK: "WECOM_CALLBACK_ALLOWED_USERS",
             Platform.WEIXIN: "WEIXIN_ALLOWED_USERS",
             Platform.BLUEBUBBLES: "BLUEBUBBLES_ALLOWED_USERS",
+            Platform.QQ: "QQ_ALLOWED_USERS",
             Platform.QQBOT: "QQ_ALLOWED_USERS",
             Platform.YUANBAO: "YUANBAO_ALLOWED_USERS",
         }
@@ -5411,6 +5419,7 @@ class GatewayRunner:
             Platform.WECOM_CALLBACK: "WECOM_CALLBACK_ALLOW_ALL_USERS",
             Platform.WEIXIN: "WEIXIN_ALLOW_ALL_USERS",
             Platform.BLUEBUBBLES: "BLUEBUBBLES_ALLOW_ALL_USERS",
+            Platform.QQ: "QQ_ALLOW_ALL_USERS",
             Platform.QQBOT: "QQ_ALLOW_ALL_USERS",
             Platform.YUANBAO: "YUANBAO_ALLOW_ALL_USERS",
         }
@@ -14933,6 +14942,9 @@ class GatewayRunner:
 
             # Background review delivery — send "💾 Memory updated" etc. to user
             def _bg_review_send(message: str) -> None:
+                mem_cfg = user_config.get("memory", {}) if user_config else {}
+                if not mem_cfg.get("background_review_notify", True):
+                    return
                 if not _status_adapter or not _run_still_current():
                     return
                 if not _bg_review_release.is_set():
