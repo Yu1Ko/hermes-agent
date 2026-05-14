@@ -1,0 +1,63 @@
+---
+title: WJ 自动化测试框架
+description: 剑网3无界自动化测试系统 (WJ) 完整文档
+---
+
+# WJ 自动化测试框架
+
+剑网3无界 (JX3 Ultimate) 的 Lua 自动化测试插件系统。
+共 **66** 个测试模块, 覆盖 **10** 个领域, **506** 个导出 API。
+
+## 架构
+
+```
+task_controller/     Python 调度层
+  └─ Interface/       Lua 测试模块 (66个)
+       ├─ 核心框架    SearchPanel (53 API)
+       ├─ 跑图系统    16 模块 (121 API)
+       ├─ 战斗系统    9 模块 (66 API)
+       ├─ 任务系统    13 模块 (58 API)
+       ├─ 登录系统    5 模块 (76 API)
+       ├─ UI遍历      6 模块 (27 API)
+       ├─ 经济制造    8 模块 (41 API)
+       ├─ 商城系统    4 模块 (37 API)
+       ├─ 副本系统    2 模块 (9 API)
+       └─ 性能测试    5 模块 (18 API)
+  └─ RunTab/          数据表
+  └─ 完整的/          游戏UI参考代码 (5700+文件)
+```
+
+## 领域索引
+
+- **[核心框架](核心框架.mdx)** — 1模块, 53API
+  SearchPanel
+
+- **[跑图系统](跑图系统.mdx)** — 16模块, 121API
+  BasicRunMap, BasicRunMapRobot, CustomRunMap, CustomRunMapByAutoWay, CustomRunMapByData, Displacement ... (+10)
+
+- **[战斗系统](战斗系统.mdx)** — 9模块, 66API
+  ArenaPvP, CloakSociety, FlySkill, HangUpFight, LightSkill, PlayerAuto ... (+3)
+
+- **[任务系统](任务系统.mdx)** — 13模块, 58API
+  DSSectTask, DaoxiangchunTask, MainTask, NewDaoxiangchunTask, NewDaoxiangchunTaskTest, SectTask ... (+7)
+
+- **[登录系统](登录系统.mdx)** — 5模块, 76API
+  AutoLogin, LoginChangeFace, LoginCreateRole, LoginFace, LoginResizeWindow
+
+- **[UI遍历](UI遍历.mdx)** — 6模块, 27API
+  AllUITraversal, ChatTraversal, StudioTraversal, UITest, UITraversal, UITrl
+
+- **[经济制造](经济制造.mdx)** — 8模块, 41API
+  AwardGatherView, BakingModel, BaseTrade, EquipmentEnchant, Fabric, ManualCollectData ... (+2)
+
+- **[商城系统](商城系统.mdx)** — 4模块, 37API
+  Randomstore, ShopErgodic, ShopErgodicPark, ShopErgodicTDR
+
+- **[副本系统](副本系统.mdx)** — 2模块, 9API
+  Dungeons, UIDungeonPanel
+
+- **[性能测试](性能测试.mdx)** — 5模块, 18API
+  GetPerfData, Perfeye, RagDollTest, RecurrentDump, Test
+
+---
+*文档由 API 提取扫描自动生成*

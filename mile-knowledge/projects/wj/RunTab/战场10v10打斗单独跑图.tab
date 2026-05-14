@@ -1,0 +1,16 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(712,player.dwID,7653,24931,1036992)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd UIMgr.Close(1527)	10	关闭弹窗
+/gm player.AddBuff(0,99,377,1,7200)	5	加无敌
+/gm player.SetCamp(1)	2	加入阵营
+/cmd Displacement.SetCenterPoint(7653,24931,1036992)	5	设置中心点
+/cmd Displacement.SetPoint(800)	5	设置跑动
+/cmd Displacement.Start()	5	开始
+/cmd CreateEmptyFile("perfeye_start")	900	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Stop()	2	玩家停止
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -5344,6 +5344,12 @@ class GatewayRunner:
                 logger.warning("QQBot: aiohttp/httpx missing or QQ_APP_ID/QQ_CLIENT_SECRET not configured")
                 return None
             return QQAdapter(config)
+        elif platform == Platform.AGENTSPACE:
+            from gateway.platforms.agentspace import AgentSpaceAdapter, check_agentspace_requirements
+            if not check_agentspace_requirements():
+                logger.warning("AgentSpace: aiohttp missing")
+                return None
+            return AgentSpaceAdapter(config)
 
         elif platform == Platform.YUANBAO:
             from gateway.platforms.yuanbao import YuanbaoAdapter, WEBSOCKETS_AVAILABLE
@@ -5351,6 +5357,18 @@ class GatewayRunner:
                 logger.warning("Yuanbao: websockets not installed. Run: pip install websockets")
                 return None
             return YuanbaoAdapter(config)
+
+        # ── AgentSpace (WPS 数字员工平台) ──────────────────────────────
+        elif platform.value == "agentspace":
+            try:
+                from plugins.platforms.agentspace.adapter import AgentspaceAdapter, check_requirements as _as_check
+                if not _as_check():
+                    logger.warning("Agentspace: aiohttp not installed")
+                    return None
+                return AgentspaceAdapter(config, platform)
+            except ImportError as e:
+                logger.warning("Agentspace: adapter import failed: %s", e)
+                return None
 
         return None
     def _is_user_authorized(self, source: SessionSource) -> bool:
@@ -5395,6 +5413,7 @@ class GatewayRunner:
             Platform.QQ: "QQ_ALLOWED_USERS",
             Platform.QQBOT: "QQ_ALLOWED_USERS",
             Platform.YUANBAO: "YUANBAO_ALLOWED_USERS",
+            Platform.AGENTSPACE: "AGENTSPACE_ALLOWED_USERS",
         }
         platform_group_user_env_map = {
             Platform.TELEGRAM: "TELEGRAM_GROUP_ALLOWED_USERS",
@@ -5422,6 +5441,7 @@ class GatewayRunner:
             Platform.QQ: "QQ_ALLOW_ALL_USERS",
             Platform.QQBOT: "QQ_ALLOW_ALL_USERS",
             Platform.YUANBAO: "YUANBAO_ALLOW_ALL_USERS",
+            Platform.AGENTSPACE: "AGENTSPACE_ALLOW_ALL_USERS",
         }
         # Bots admitted by {PLATFORM}_ALLOW_BOTS bypass the human allowlist (#4466).
         platform_allow_bots_map = {
@@ -5607,6 +5627,8 @@ class GatewayRunner:
                 Platform.WEIXIN:   "WEIXIN_ALLOWED_USERS",
                 Platform.BLUEBUBBLES: "BLUEBUBBLES_ALLOWED_USERS",
                 Platform.QQBOT:    "QQ_ALLOWED_USERS",
+                Platform.YUANBAO:  "YUANBAO_ALLOWED_USERS",
+                Platform.AGENTSPACE: "AGENTSPACE_ALLOWED_USERS",
             }
             platform_group_env_map = {
                 Platform.TELEGRAM: (
@@ -7659,11 +7681,23 @@ class GatewayRunner:
             if _footer_line and response and not agent_result.get("already_sent"):
                 response = f"{response}\n\n{_footer_line}"
 
-            # Emit agent:end hook
-            await self.hooks.emit("agent:end", {
+            # Emit agent:end hook with reply interception support.
+            # Hooks registered for agent:end can return {"action": "rewrite",
+            # "reason": "...", "fix_hint": "...", "new_text": "..."} to
+            # intercept and rewrite the response before delivery.
+            _end_results = await self.hooks.emit_collect("agent:end", {
                 **hook_ctx,
-                "response": (response or "")[:500],
+                "response": (response or ""),
             })
+            for _end_res in (_end_results or []):
+                if isinstance(_end_res, dict) and _end_res.get("action") == "rewrite":
+                    _new_text = _end_res.get("new_text", "")
+                    if _new_text:
+                        logger.info(
+                            "agent:end hook rewrite — reason: %s",
+                            _end_res.get("reason", ""),
+                        )
+                        response = _new_text
             
             # Check for pending process watchers (check_interval on background processes)
             try:

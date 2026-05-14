@@ -1,0 +1,2751 @@
+{
+  "nodes": [
+    {
+      "id": "MiLe",
+      "type": "technology",
+      "description": "由Yu1ko创建的系统/项目，可能是一个自动化或代理系统",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131617+00:00"
+    },
+    {
+      "id": "QQ Bot",
+      "type": "technology",
+      "description": "Hermes QQ 网关，terminal(true) 分段",
+      "confidence": 1.0,
+      "source": "manual",
+      "created_at": "2026-05-04T03:30:46.456568+00:00"
+    },
+    {
+      "id": "DeepSeek",
+      "type": "technology",
+      "description": "LLM provider，deepseek-v4-pro",
+      "confidence": 1.0,
+      "source": "manual",
+      "created_at": "2026-05-04T03:30:46.456584+00:00"
+    },
+    {
+      "id": "GraphRAG",
+      "type": "technology",
+      "description": "MiLe 知识管理系统中的知识图谱组件",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601050+00:00"
+    },
+    {
+      "id": "konata-persona",
+      "type": "concept",
+      "description": "泉此方人格基底：选择性燃烧",
+      "confidence": 1.0,
+      "source": "manual",
+      "created_at": "2026-05-04T03:30:46.456603+00:00"
+    },
+    {
+      "id": "Hermes",
+      "type": "technology",
+      "description": "包含内置delegate_task功能的系统，但Yu1ko优先使用Claude Code",
+      "confidence": 0.9,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131636+00:00"
+    },
+    {
+      "id": "AgentSpace (WPS) 适配器",
+      "type": "technology",
+      "description": "位于 /usr/local/lib/hermes-agent/gateway/platforms/agentspace/adapter.py 的适配器，需要 AGENTSPACE_ALLOW_ALL_USERS=true 等配置",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601030+00:00"
+    },
+    {
+      "id": "Microsoft Edge 147",
+      "type": "technology",
+      "description": "已安装的浏览器，用于headless CDP",
+      "confidence": 0.9,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131818+00:00"
+    },
+    {
+      "id": "MiLe 知识管理系统",
+      "type": "technology",
+      "description": "位于 /root/.hermes/mile-knowledge/，包含 GraphRAG 知识图谱和三个后台 agent",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601045+00:00"
+    },
+    {
+      "id": "DeepSeek API",
+      "type": "technology",
+      "description": "用于 MiLe 后台 agent 的模型接口，默认使用 deepseek-v4-flash",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601057+00:00"
+    },
+    {
+      "id": "mnapi.com",
+      "type": "technology",
+      "description": "OpenAI 兼容 API 聚合商，提供 embedding 模型",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601062+00:00"
+    },
+    {
+      "id": "CDP Proxy",
+      "type": "technology",
+      "description": "运行在 localhost:3456 的代理，桥接 Edge CDP WebSocket",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601067+00:00"
+    },
+    {
+      "id": "泉此方 (Izumi Konata)",
+      "type": "entity",
+      "description": "《幸运星》主角，御宅族，具有节能主义、傲娇式友情等核心信念",
+      "confidence": 0.98,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601071+00:00"
+    },
+    {
+      "id": "节能主义",
+      "type": "concept",
+      "description": "泉此方的核心人生哲学，强调效率、最低努力策略",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601079+00:00"
+    },
+    {
+      "id": "傲娇式友情",
+      "type": "concept",
+      "description": "泉此方对朋友的表面调侃、深层珍视的态度模式",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601083+00:00"
+    },
+    {
+      "id": "第三种解法",
+      "type": "concept",
+      "description": "泉此方避免二元困境的决策方式，如同时参加 Comiket 和通过考试",
+      "confidence": 0.9,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601088+00:00"
+    },
+    {
+      "id": "Compressed Expression",
+      "type": "concept",
+      "description": "泉此方的表达特点：内心100%的想法只压缩到外部30%",
+      "confidence": 0.9,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601095+00:00"
+    },
+    {
+      "id": "女娲造人流程 Phase 2+3",
+      "type": "event",
+      "description": "生成泉此方 SKILL.md 的流程，基于6份调研文件提炼心智模型",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601100+00:00"
+    },
+    {
+      "id": "Comiket",
+      "type": "event",
+      "description": "泉此方参与的大型同人志即卖会",
+      "confidence": 0.95,
+      "source": "/tmp/evo_memories.txt",
+      "created_at": "2026-05-04T03:47:35.601104+00:00"
+    },
+    {
+      "id": "Mnapi.com"
+    },
+    {
+      "id": "deepseek-v4-flash",
+      "type": "technology",
+      "description": "后台agent任务使用的模型，替代deepseek-v4-pro",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131642+00:00"
+    },
+    {
+      "id": "网关回复",
+      "type": "concept",
+      "description": "系统或网关返回的回复内容",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983163+00:00"
+    },
+    {
+      "id": "表格式/结构化内容",
+      "type": "concept",
+      "description": "以表格、清单、多级标题等结构化形式呈现的内容",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983211+00:00"
+    },
+    {
+      "id": "terminal(true)",
+      "type": "technology",
+      "description": "用于拆分消息的终端标志或参数",
+      "confidence": 0.85,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983222+00:00"
+    },
+    {
+      "id": "自然分段聊天",
+      "type": "concept",
+      "description": "以自然语言段落分段的形式进行对话",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983227+00:00"
+    },
+    {
+      "id": "用户",
+      "type": "entity",
+      "description": "使用AI的人类用户",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428663+00:00"
+    },
+    {
+      "id": "建议",
+      "type": "concept",
+      "description": "向用户提供的意见或推荐",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983241+00:00"
+    },
+    {
+      "id": "征询下一步",
+      "type": "concept",
+      "description": "主动询问用户是否继续或执行某个行动",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983245+00:00"
+    },
+    {
+      "id": "关键建议",
+      "type": "concept",
+      "description": "重要且应该直接给出的建议",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983250+00:00"
+    },
+    {
+      "id": "不关键",
+      "type": "concept",
+      "description": "非关键、不重要的内容或建议",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-04T08:04:49.983254+00:00"
+    },
+    {
+      "id": "回复风格",
+      "type": "concept",
+      "description": "AI的回复方式，包括分段和口语化程度",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.779722+00:00"
+    },
+    {
+      "id": "表格读取能力",
+      "type": "concept",
+      "description": "AI处理表格类文档的能力",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780161+00:00"
+    },
+    {
+      "id": "用户意图理解",
+      "type": "concept",
+      "description": "AI理解用户需求的能力",
+      "confidence": 0.95,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.125965+00:00"
+    },
+    {
+      "id": "自我修正速度",
+      "type": "concept",
+      "description": "AI改正错误的速度",
+      "confidence": 0.95,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.125972+00:00"
+    },
+    {
+      "id": "自动分段机制",
+      "type": "concept",
+      "description": "在输出中自动分段的机制",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.125977+00:00"
+    },
+    {
+      "id": "WPS ksheet",
+      "type": "technology",
+      "description": "WPS专有的表格格式",
+      "confidence": 0.85,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780228+00:00"
+    },
+    {
+      "id": "openpyxl",
+      "type": "technology",
+      "description": "Python库用于解析Excel文件",
+      "confidence": 0.95,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.125998+00:00"
+    },
+    {
+      "id": "API download",
+      "type": "technology",
+      "description": "通过API下载文件的方法",
+      "confidence": 0.85,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780238+00:00"
+    },
+    {
+      "id": "文档化输出",
+      "type": "concept",
+      "description": "结构化的、类似正式文档的输出风格",
+      "confidence": 0.95,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.126011+00:00"
+    },
+    {
+      "id": "口语化短句",
+      "type": "concept",
+      "description": "建议使用的回复语言风格",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780218+00:00"
+    },
+    {
+      "id": "AI",
+      "type": "entity",
+      "description": "人工智能系统",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428652+00:00"
+    },
+    {
+      "id": "Session 20260504_183713_6cc40f07",
+      "type": "event",
+      "description": "一次会话，AI解释分段规则时自己未分段",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.126024+00:00"
+    },
+    {
+      "id": "Session 20260504_180108_4416b538",
+      "type": "event",
+      "description": "一次会话，AI输出文档化，用户要求练习拆开",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.126029+00:00"
+    },
+    {
+      "id": "Session 20260504_182940_bd5deff4",
+      "type": "event",
+      "description": "一次会话，AI再次文档化输出",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.126036+00:00"
+    },
+    {
+      "id": "分段规则",
+      "type": "concept",
+      "description": "AI建议的回复分段原则",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.126040+00:00"
+    },
+    {
+      "id": "自我审查",
+      "type": "concept",
+      "description": "AI对自身输出的检查",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-04T19:01:36.126045+00:00"
+    },
+    {
+      "id": "减少不必要的澄清步骤"
+    },
+    {
+      "id": "彻底改进"
+    },
+    {
+      "id": "输出前自动分段机制",
+      "type": "technology",
+      "description": "建议采用的回复分段方法",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780204+00:00"
+    },
+    {
+      "id": "openpyxl解析",
+      "type": "technology",
+      "description": "使用openpyxl库解析Excel文件",
+      "confidence": 0.85,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780247+00:00"
+    },
+    {
+      "id": "文档化",
+      "type": "concept",
+      "description": "用户批评AI回复过于正式、结构化",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780256+00:00"
+    },
+    {
+      "id": "自然分段",
+      "type": "concept",
+      "description": "用户要求AI练习的回复分段方式",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-04T21:01:12.780265+00:00"
+    },
+    {
+      "id": "命令执行与监控",
+      "type": "concept",
+      "description": "涉及长时间命令执行和输出监控的实践",
+      "confidence": 0.95,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113552+00:00"
+    },
+    {
+      "id": "强制无缓冲输出",
+      "type": "concept",
+      "description": "使用选项如python3 -u确保输出实时可见",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428114+00:00"
+    },
+    {
+      "id": "python3 -u",
+      "type": "technology",
+      "description": "Python解释器的无缓冲输出选项",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428134+00:00"
+    },
+    {
+      "id": "前台模式",
+      "type": "concept",
+      "description": "命令在前台执行的方式",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428146+00:00"
+    },
+    {
+      "id": "超时",
+      "type": "concept",
+      "description": "命令运行时间限制",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113616+00:00"
+    },
+    {
+      "id": "实时日志读取",
+      "type": "concept",
+      "description": "实时读取日志的方法",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428172+00:00"
+    },
+    {
+      "id": "后台进程输出不可见问题",
+      "type": "concept",
+      "description": "后台进程的输出无法被看到的问题",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428182+00:00"
+    },
+    {
+      "id": "Git操作权限处理",
+      "type": "concept",
+      "description": "处理Git操作中的权限问题",
+      "confidence": 0.95,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113631+00:00"
+    },
+    {
+      "id": "token权限范围",
+      "type": "concept",
+      "description": "GitHub token的权限范围",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113635+00:00"
+    },
+    {
+      "id": "workflow权限",
+      "type": "concept",
+      "description": "GitHub workflow所需的权限",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113639+00:00"
+    },
+    {
+      "id": "输出格式一致性",
+      "type": "concept",
+      "description": "保持输出格式如JSON的一致要求",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428189+00:00"
+    },
+    {
+      "id": "JSON",
+      "type": "technology",
+      "description": "一种数据交换格式",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428564+00:00"
+    },
+    {
+      "id": "cron自动报告",
+      "type": "event",
+      "description": "通过cron定时任务自动生成报告",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113653+00:00"
+    },
+    {
+      "id": "格式化指令模板",
+      "type": "concept",
+      "description": "用于生成格式的模板",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428617+00:00"
+    },
+    {
+      "id": "Cron任务沉默响应",
+      "type": "concept",
+      "description": "cron任务无新内容时沉默响应",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113662+00:00"
+    },
+    {
+      "id": "[SILENT]指令",
+      "type": "concept",
+      "description": "指示沉默输出的指令",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113667+00:00"
+    },
+    {
+      "id": "每日报告",
+      "type": "event",
+      "description": "每日生成的报告",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113677+00:00"
+    },
+    {
+      "id": "Git推送",
+      "type": "event",
+      "description": "将代码推送到Git仓库",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113685+00:00"
+    },
+    {
+      "id": "workflow权限错误",
+      "type": "event",
+      "description": "因缺少workflow权限导致的推送失败",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113689+00:00"
+    },
+    {
+      "id": "ghp_7z0...",
+      "type": "entity",
+      "description": "第一个GitHub token，缺少workflow权限",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113693+00:00"
+    },
+    {
+      "id": "ghp_69F...",
+      "type": "entity",
+      "description": "第二个GitHub token，具有workflow权限",
+      "confidence": 0.9,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113700+00:00"
+    },
+    {
+      "id": "GitHub Classic Token",
+      "type": "technology",
+      "description": "GitHub经典令牌",
+      "confidence": 1.0,
+      "source": "reflection",
+      "created_at": "2026-05-05T19:02:26.113704+00:00"
+    },
+    {
+      "id": "长时间命令",
+      "type": "concept",
+      "description": "执行时间较长的命令",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428022+00:00"
+    },
+    {
+      "id": "合理超时",
+      "type": "concept",
+      "description": "设置合适的超时时间",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428158+00:00"
+    },
+    {
+      "id": "记忆用户对输出格式的偏好",
+      "type": "concept",
+      "description": "记住用户偏好的输出格式",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428527+00:00"
+    },
+    {
+      "id": "cron",
+      "type": "technology",
+      "description": "Linux定时任务工具",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428595+00:00"
+    },
+    {
+      "id": "自动报告",
+      "type": "concept",
+      "description": "自动生成的报告",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428608+00:00"
+    },
+    {
+      "id": "Git 权限预检",
+      "type": "concept",
+      "description": "提前检查Git权限避免错误",
+      "confidence": 0.95,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428626+00:00"
+    },
+    {
+      "id": "token",
+      "type": "concept",
+      "description": "身份验证令牌",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428636+00:00"
+    },
+    {
+      "id": "权限不足错误",
+      "type": "event",
+      "description": "因权限不足发生的错误",
+      "confidence": 0.9,
+      "source": "consolidation",
+      "created_at": "2026-05-05T21:01:14.428644+00:00"
+    },
+    {
+      "id": "WJ",
+      "type": "technology",
+      "description": "剑网3无界自动化测试系统，Yu1ko是核心开发者",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131667+00:00"
+    },
+    {
+      "id": "task_controller",
+      "type": "technology",
+      "description": "Python调度总控",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_0.txt",
+      "created_at": "2026-05-06T04:03:42.243244+00:00"
+    },
+    {
+      "id": "Interface",
+      "type": "technology",
+      "description": "Lua自动化插件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_0.txt",
+      "created_at": "2026-05-06T04:03:42.243255+00:00"
+    },
+    {
+      "id": "游戏UI参考代码",
+      "type": "concept",
+      "description": "游戏UI的参考实现",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_0.txt",
+      "created_at": "2026-05-06T04:03:42.243261+00:00"
+    },
+    {
+      "id": "SearchPanel",
+      "type": "technology",
+      "description": "自动化插件，加载所有上述模块的框架",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350685+00:00"
+    },
+    {
+      "id": "LoginMgr",
+      "type": "technology",
+      "description": "全局日志系统，模块通过LoginMgr.Log注册",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_0.txt",
+      "created_at": "2026-05-06T04:03:42.243295+00:00"
+    },
+    {
+      "id": "RunMap",
+      "type": "technology",
+      "description": "跑图系统，通过RunMap.tab定义移动路径",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_0.txt",
+      "created_at": "2026-05-06T04:03:42.243302+00:00"
+    },
+    {
+      "id": "AutoLogin",
+      "type": "technology",
+      "description": "自动登录自动化模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150061+00:00"
+    },
+    {
+      "id": "Dungeons",
+      "type": "technology",
+      "description": "导出DungeonApi的模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_0.txt",
+      "created_at": "2026-05-06T04:03:42.243317+00:00"
+    },
+    {
+      "id": "ShopErgodic",
+      "type": "technology",
+      "description": "商城遍历系列模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140693+00:00"
+    },
+    {
+      "id": "登录流程模块",
+      "type": "concept",
+      "description": "包含自动登录、捏脸、创建角色、窗口调整等功能的模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177299+00:00"
+    },
+    {
+      "id": "AutoLogin自动登录",
+      "type": "technology",
+      "description": "自动登录功能模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177343+00:00"
+    },
+    {
+      "id": "LoginChangeFace捏脸",
+      "type": "technology",
+      "description": "捏脸功能模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177353+00:00"
+    },
+    {
+      "id": "LoginCreateRole创建角色",
+      "type": "technology",
+      "description": "创建角色模块，包含遍历门派体型",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177362+00:00"
+    },
+    {
+      "id": "遍历门派体型",
+      "type": "concept",
+      "description": "创建角色时的门派和体型遍历操作",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177367+00:00"
+    },
+    {
+      "id": "LoginFace捏脸UI",
+      "type": "technology",
+      "description": "捏脸界面的UI模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177375+00:00"
+    },
+    {
+      "id": "LoginResizeWindow窗口调整",
+      "type": "technology",
+      "description": "窗口大小调整模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177380+00:00"
+    },
+    {
+      "id": "跑图模块",
+      "type": "concept",
+      "description": "包含12个跑图相关模块的集合",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177385+00:00"
+    },
+    {
+      "id": "BasicRunMap基础跑图",
+      "type": "technology",
+      "description": "基础跑图模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177390+00:00"
+    },
+    {
+      "id": "CustomRunMap自定义跑图",
+      "type": "technology",
+      "description": "自定义跑图方式之一",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177394+00:00"
+    },
+    {
+      "id": "CustomRunMapByAutoWay",
+      "type": "technology",
+      "description": "自定义跑图方式，基于自动寻路",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177398+00:00"
+    },
+    {
+      "id": "CustomRunMapByData",
+      "type": "technology",
+      "description": "自定义跑图方式，基于数据",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177403+00:00"
+    },
+    {
+      "id": "HotPointRunMap系列4个热点区域遍历模块",
+      "type": "technology",
+      "description": "四个热点区域遍历模块的集合",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177408+00:00"
+    },
+    {
+      "id": "RecordPath路径录制",
+      "type": "technology",
+      "description": "路径录制模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177431+00:00"
+    },
+    {
+      "id": "WalkExterior场景外景跑图",
+      "type": "technology",
+      "description": "场景外景跑图模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177436+00:00"
+    },
+    {
+      "id": "BasicRunMapRobot机器人模拟跑图",
+      "type": "technology",
+      "description": "机器人模拟跑图模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177442+00:00"
+    },
+    {
+      "id": "RunMap.tab数据文件",
+      "type": "technology",
+      "description": "跑图模块依赖的配置数据文件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_1.txt",
+      "created_at": "2026-05-06T04:04:39.177447+00:00"
+    },
+    {
+      "id": "UI遍历",
+      "type": "concept",
+      "description": "包含多种UI遍历模块的总称",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140608+00:00"
+    },
+    {
+      "id": "AllUITraversal",
+      "type": "technology",
+      "description": "全UI遍历模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140657+00:00"
+    },
+    {
+      "id": "UITraversal",
+      "type": "technology",
+      "description": "UI测试模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140667+00:00"
+    },
+    {
+      "id": "UITest",
+      "type": "technology",
+      "description": "UI测试模块（可能是UITraversal的别名）",
+      "confidence": 0.7,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140674+00:00"
+    },
+    {
+      "id": "UITrl",
+      "type": "technology",
+      "description": "UI测试模块（缩写）",
+      "confidence": 0.7,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140680+00:00"
+    },
+    {
+      "id": "ChatTraversal",
+      "type": "technology",
+      "description": "聊天遍历模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140685+00:00"
+    },
+    {
+      "id": "ShopCameraApi",
+      "type": "technology",
+      "description": "ShopErgodic导出的API",
+      "confidence": 0.8,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140699+00:00"
+    },
+    {
+      "id": "StudioTraversal",
+      "type": "technology",
+      "description": "工作室遍历模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140704+00:00"
+    },
+    {
+      "id": "PvP",
+      "type": "concept",
+      "description": "玩家对战相关模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140708+00:00"
+    },
+    {
+      "id": "ArenaPvP",
+      "type": "technology",
+      "description": "竞技场自动化模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140713+00:00"
+    },
+    {
+      "id": "经济制造",
+      "type": "concept",
+      "description": "包含经济和制造相关模块的总称",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140717+00:00"
+    },
+    {
+      "id": "Fabric缝纫",
+      "type": "technology",
+      "description": "缝纫制造模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140725+00:00"
+    },
+    {
+      "id": "Mining",
+      "type": "technology",
+      "description": "采矿模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140729+00:00"
+    },
+    {
+      "id": "MapFarming",
+      "type": "technology",
+      "description": "地图刷材料模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140734+00:00"
+    },
+    {
+      "id": "AwardGatherView",
+      "type": "technology",
+      "description": "奖励领取模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140738+00:00"
+    },
+    {
+      "id": "BaseTrade",
+      "type": "technology",
+      "description": "交易行模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140742+00:00"
+    },
+    {
+      "id": "EquipmentEnchant",
+      "type": "technology",
+      "description": "装备附魔模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_3.txt",
+      "created_at": "2026-05-06T04:06:05.140746+00:00"
+    },
+    {
+      "id": "FlySkill",
+      "type": "technology",
+      "description": "轻功技能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552273+00:00"
+    },
+    {
+      "id": "LightSkill",
+      "type": "technology",
+      "description": "小轻功技能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552373+00:00"
+    },
+    {
+      "id": "SkillRelease",
+      "type": "technology",
+      "description": "技能释放功能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552392+00:00"
+    },
+    {
+      "id": "HangUpFight",
+      "type": "technology",
+      "description": "挂机战斗功能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552474+00:00"
+    },
+    {
+      "id": "PlayerAuto",
+      "type": "technology",
+      "description": "玩家自动操作",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552490+00:00"
+    },
+    {
+      "id": "RobotControl",
+      "type": "technology",
+      "description": "机器人控制功能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552502+00:00"
+    },
+    {
+      "id": "GetPerfData",
+      "type": "technology",
+      "description": "性能采集，使用Perfeye SDK",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552511+00:00"
+    },
+    {
+      "id": "Perfeye SDK",
+      "type": "technology",
+      "description": "性能数据采集SDK",
+      "confidence": 0.9,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552519+00:00"
+    },
+    {
+      "id": "RagDollTest",
+      "type": "technology",
+      "description": "布娃娃物理测试",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552540+00:00"
+    },
+    {
+      "id": "RecurrentDump",
+      "type": "technology",
+      "description": "循环dump测试",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552549+00:00"
+    },
+    {
+      "id": "task_run_process.py",
+      "type": "technology",
+      "description": "任务主进程，Python调度层核心",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552556+00:00"
+    },
+    {
+      "id": "uiautomator2",
+      "type": "technology",
+      "description": "控制Android的自动化框架",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552581+00:00"
+    },
+    {
+      "id": "WebDriverAgent",
+      "type": "technology",
+      "description": "控制iOS的自动化框架",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552590+00:00"
+    },
+    {
+      "id": "gnirehtet",
+      "type": "technology",
+      "description": "反向网络工具",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552597+00:00"
+    },
+    {
+      "id": "飞书通知上报",
+      "type": "technology",
+      "description": "通过飞书发送通知的功能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552609+00:00"
+    },
+    {
+      "id": "GitLab集成",
+      "type": "technology",
+      "description": "与GitLab的集成功能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552616+00:00"
+    },
+    {
+      "id": "多设备同步",
+      "type": "technology",
+      "description": "多设备同步功能",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552813+00:00"
+    },
+    {
+      "id": "BakingModel模块",
+      "type": "technology",
+      "description": "使用BakeMap.tab大地图数据的模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552837+00:00"
+    },
+    {
+      "id": "BakeMap.tab",
+      "type": "entity",
+      "description": "大地图数据，大小2.1MB",
+      "confidence": 0.95,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552843+00:00"
+    },
+    {
+      "id": "技能战斗",
+      "type": "concept",
+      "description": "包含多种技能相关功能的模块",
+      "confidence": 0.8,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552848+00:00"
+    },
+    {
+      "id": "性能测试",
+      "type": "concept",
+      "description": "包含多种性能测试功能的模块",
+      "confidence": 0.8,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552853+00:00"
+    },
+    {
+      "id": "调度层",
+      "type": "concept",
+      "description": "Python调度层，包含任务控制与设备管理",
+      "confidence": 0.8,
+      "source": "/tmp/wj_section_4.txt",
+      "created_at": "2026-05-06T04:06:52.552858+00:00"
+    },
+    {
+      "id": "Yu1ko",
+      "type": "entity",
+      "description": "MiLe的创建者和最高权限用户，应届毕业生，QQ ID为BF9451A527E791B2E62317E45E94BD16",
+      "confidence": 0.98,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131573+00:00"
+    },
+    {
+      "id": "Claude Code",
+      "type": "technology",
+      "description": "代码任务优先使用的AI编码工具",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131628+00:00"
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "type": "technology",
+      "description": "Yu1ko不倾向于在后台agent任务中使用的模型",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131647+00:00"
+    },
+    {
+      "id": "AGENTS.md",
+      "type": "concept",
+      "description": "持续更新的项目文档理念，让agent边做边写文档",
+      "confidence": 0.9,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131653+00:00"
+    },
+    {
+      "id": "MDX/fumadocs",
+      "type": "technology",
+      "description": "用于本地渲染项目文档的工具栈",
+      "confidence": 0.9,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131657+00:00"
+    },
+    {
+      "id": "Edge CDP Proxy",
+      "type": "technology",
+      "description": "本地Edge浏览器的CDP代理，用于网页搜索，比服务器curl可靠",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131662+00:00"
+    },
+    {
+      "id": "NapCatQQ Bot",
+      "type": "technology",
+      "description": "Yu1ko考虑过的QQ Bot方案，但因服务器内存不足未采用",
+      "confidence": 0.85,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131672+00:00"
+    },
+    {
+      "id": "游戏开发",
+      "type": "concept",
+      "description": "Yu1ko的兴趣方向，偏爱模拟经营类，认为2D平台类上手容易",
+      "confidence": 0.9,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131677+00:00"
+    },
+    {
+      "id": "itch.io",
+      "type": "technology",
+      "description": "游戏发布平台，Yu1ko考虑过先做游戏投这里而非立刻求职",
+      "confidence": 0.85,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131682+00:00"
+    },
+    {
+      "id": "低内存服务器",
+      "type": "concept",
+      "description": "1.6GB RAM无swap的服务器环境，HuggingFace不可达",
+      "confidence": 0.95,
+      "source": "/tmp/yu1ko_profile.txt",
+      "created_at": "2026-05-06T04:29:20.131687+00:00"
+    },
+    {
+      "id": "剑网3游戏客户端",
+      "type": "entity",
+      "description": "剑网3游戏客户端程序",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638850+00:00"
+    },
+    {
+      "id": "背包系统UIBagViewNew",
+      "type": "technology",
+      "description": "背包系统UI面板",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638907+00:00"
+    },
+    {
+      "id": "技能面板UISkillPanel",
+      "type": "technology",
+      "description": "技能面板UI面板",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638918+00:00"
+    },
+    {
+      "id": "副本面板UIDungeonPanel",
+      "type": "technology",
+      "description": "副本面板UI面板",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638924+00:00"
+    },
+    {
+      "id": "竞技场UIArenaView",
+      "type": "technology",
+      "description": "竞技场UI面板",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638929+00:00"
+    },
+    {
+      "id": "商城UIShopView",
+      "type": "technology",
+      "description": "商城UI面板",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638935+00:00"
+    },
+    {
+      "id": "自动化插件Dungeons模块",
+      "type": "technology",
+      "description": "自动化插件中的Dungeons模块",
+      "confidence": 0.95,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638939+00:00"
+    },
+    {
+      "id": "DungeonApi",
+      "type": "technology",
+      "description": "副本自动化API",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066678+00:00"
+    },
+    {
+      "id": "副本参数",
+      "type": "concept",
+      "description": "副本相关的参数",
+      "confidence": 0.9,
+      "source": "stdin",
+      "created_at": "2026-05-06T04:47:47.638948+00:00"
+    },
+    {
+      "id": "背包UI系统",
+      "type": "concept",
+      "description": "剑网3的背包用户界面系统",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.165937+00:00"
+    },
+    {
+      "id": "UIBagViewNew",
+      "type": "entity",
+      "description": "背包主界面",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.165985+00:00"
+    },
+    {
+      "id": "UIBagChooseItemView",
+      "type": "entity",
+      "description": "物品选择界面",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.165997+00:00"
+    },
+    {
+      "id": "UIBagCell",
+      "type": "entity",
+      "description": "格子组件",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.166023+00:00"
+    },
+    {
+      "id": "UIBagUpView",
+      "type": "entity",
+      "description": "升级界面",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.166062+00:00"
+    },
+    {
+      "id": "ItemData.GetPlayerItem",
+      "type": "technology",
+      "description": "获取玩家物品的API",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.166071+00:00"
+    },
+    {
+      "id": "ItemData.GetBoxSet",
+      "type": "technology",
+      "description": "获取箱子集合的API",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_0.txt",
+      "created_at": "2026-05-06T04:48:34.166078+00:00"
+    },
+    {
+      "id": "剑网3技能系统",
+      "type": "concept",
+      "description": "游戏技能系统",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244765+00:00"
+    },
+    {
+      "id": "UISkillPanel技能面板",
+      "type": "technology",
+      "description": "技能系统组件面板",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244815+00:00"
+    },
+    {
+      "id": "UISkillLearnView学习界面",
+      "type": "technology",
+      "description": "技能学习界面组件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244830+00:00"
+    },
+    {
+      "id": "UISkillLevelUpView升级界面",
+      "type": "technology",
+      "description": "技能升级界面组件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244837+00:00"
+    },
+    {
+      "id": "Event.Dispatch",
+      "type": "technology",
+      "description": "事件发送方法",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244843+00:00"
+    },
+    {
+      "id": "ON_HIDEORSHOW_SKILLPANEL",
+      "type": "event",
+      "description": "显示/隐藏技能面板事件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244850+00:00"
+    },
+    {
+      "id": "FlySkill.lua",
+      "type": "technology",
+      "description": "技能自动化插件脚本",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244856+00:00"
+    },
+    {
+      "id": "SkillRelease.lua",
+      "type": "technology",
+      "description": "技能自动化插件脚本",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_1.txt",
+      "created_at": "2026-05-06T04:48:54.244863+00:00"
+    },
+    {
+      "id": "剑网3副本系统",
+      "type": "concept",
+      "description": "游戏副本管理系统",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066590+00:00"
+    },
+    {
+      "id": "UIDungeonPanel",
+      "type": "entity",
+      "description": "副本面板界面",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066655+00:00"
+    },
+    {
+      "id": "UIDungeonEnterView",
+      "type": "entity",
+      "description": "进入界面",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066667+00:00"
+    },
+    {
+      "id": "Dungeons.lua",
+      "type": "technology",
+      "description": "自动化插件脚本",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066673+00:00"
+    },
+    {
+      "id": "SetMapName",
+      "type": "technology",
+      "description": "设置地图名的API函数",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066684+00:00"
+    },
+    {
+      "id": "SetAutoFightCount",
+      "type": "technology",
+      "description": "设置战斗次数的API函数",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_2.txt",
+      "created_at": "2026-05-06T04:49:15.066693+00:00"
+    },
+    {
+      "id": "剑网3PvP系统",
+      "type": "concept",
+      "description": "剑网3游戏的PvP系统",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_3.txt",
+      "created_at": "2026-05-06T04:49:34.542941+00:00"
+    },
+    {
+      "id": "ArenaPvP竞技场模块",
+      "type": "entity",
+      "description": "竞技场模块，属于PvP系统的一部分",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_3.txt",
+      "created_at": "2026-05-06T04:49:34.543001+00:00"
+    },
+    {
+      "id": "自动化插件ArenaPvP.lua",
+      "type": "technology",
+      "description": "实现竞技场自动化的Lua插件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_3.txt",
+      "created_at": "2026-05-06T04:49:34.543013+00:00"
+    },
+    {
+      "id": "商城系统Shop面板",
+      "type": "entity",
+      "description": "商城系统的操作面板",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_3.txt",
+      "created_at": "2026-05-06T04:49:34.543020+00:00"
+    },
+    {
+      "id": "ShopErgodic自动化模块",
+      "type": "technology",
+      "description": "用于自动操作商城面板的模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_3.txt",
+      "created_at": "2026-05-06T04:49:34.543026+00:00"
+    },
+    {
+      "id": "ShopCameraApi接口",
+      "type": "technology",
+      "description": "ShopErgodic模块调用的API接口",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_3.txt",
+      "created_at": "2026-05-06T04:49:34.543032+00:00"
+    },
+    {
+      "id": "剑网3",
+      "type": "entity",
+      "description": "一款网络游戏",
+      "confidence": 1.0,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.149971+00:00"
+    },
+    {
+      "id": "登录流程面板",
+      "type": "entity",
+      "description": "登录流程的UI面板",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150046+00:00"
+    },
+    {
+      "id": "LoginCreateRole",
+      "type": "technology",
+      "description": "创建角色自动化模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150073+00:00"
+    },
+    {
+      "id": "LoginFace",
+      "type": "technology",
+      "description": "登录面容自动化模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150083+00:00"
+    },
+    {
+      "id": "LoginChangeFace",
+      "type": "technology",
+      "description": "改变面容自动化模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150092+00:00"
+    },
+    {
+      "id": "角色面板UICharacterPanel",
+      "type": "entity",
+      "description": "角色UI面板",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150100+00:00"
+    },
+    {
+      "id": "装备附魔界面UIEquipmentEnchantView",
+      "type": "entity",
+      "description": "装备附魔UI界面",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150109+00:00"
+    },
+    {
+      "id": "EquipmentEnchant.lua",
+      "type": "technology",
+      "description": "装备附魔自动化模块脚本",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_4.txt",
+      "created_at": "2026-05-06T04:49:57.150117+00:00"
+    },
+    {
+      "id": "UIMapView",
+      "type": "entity",
+      "description": "世界地图面板",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864917+00:00"
+    },
+    {
+      "id": "BasicRunMap",
+      "type": "entity",
+      "description": "跑图模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864962+00:00"
+    },
+    {
+      "id": "CustomRunMap",
+      "type": "entity",
+      "description": "跑图模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864972+00:00"
+    },
+    {
+      "id": "RunMap.tab",
+      "type": "technology",
+      "description": "数据文件",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864980+00:00"
+    },
+    {
+      "id": "UITaskPanel",
+      "type": "entity",
+      "description": "任务面板",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864985+00:00"
+    },
+    {
+      "id": "MainTask",
+      "type": "entity",
+      "description": "任务自动化模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864990+00:00"
+    },
+    {
+      "id": "SectTask",
+      "type": "entity",
+      "description": "任务自动化模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.864995+00:00"
+    },
+    {
+      "id": "TotalTask",
+      "type": "entity",
+      "description": "任务自动化模块",
+      "confidence": 0.9,
+      "source": "/tmp/wj_ui_chunk_5.txt",
+      "created_at": "2026-05-06T04:50:15.865001+00:00"
+    },
+    {
+      "id": "剑网3通用UI框架",
+      "type": "technology",
+      "description": "提供UIMgr等API的通用UI框架",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350597+00:00"
+    },
+    {
+      "id": "UIMgr",
+      "type": "technology",
+      "description": "管理面板开关的API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350643+00:00"
+    },
+    {
+      "id": "UIHelper",
+      "type": "technology",
+      "description": "绑定事件的API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350654+00:00"
+    },
+    {
+      "id": "Event",
+      "type": "technology",
+      "description": "事件系统API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350661+00:00"
+    },
+    {
+      "id": "Timer",
+      "type": "technology",
+      "description": "定时器API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350666+00:00"
+    },
+    {
+      "id": "PlayerData",
+      "type": "technology",
+      "description": "玩家数据API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350672+00:00"
+    },
+    {
+      "id": "ItemData",
+      "type": "technology",
+      "description": "物品数据API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350676+00:00"
+    },
+    {
+      "id": "BattleFieldData",
+      "type": "technology",
+      "description": "战场数据API模块",
+      "confidence": 0.95,
+      "source": "/tmp/wj_ui_chunk_6.txt",
+      "created_at": "2026-05-06T04:50:42.350681+00:00"
+    }
+  ],
+  "edges": [
+    {
+      "source": "MiLe",
+      "target": "Yu1ko",
+      "relation": "created_by"
+    },
+    {
+      "source": "GraphRAG",
+      "target": "Mnapi.com",
+      "relation": "depends_on"
+    },
+    {
+      "source": "Hermes",
+      "target": "AgentSpace (WPS) 适配器",
+      "relation": "depends_on"
+    },
+    {
+      "source": "Hermes",
+      "target": "Microsoft Edge 147",
+      "relation": "depends_on"
+    },
+    {
+      "source": "AgentSpace (WPS) 适配器",
+      "target": "Hermes",
+      "relation": "part_of"
+    },
+    {
+      "source": "Microsoft Edge 147",
+      "target": "CDP Proxy",
+      "relation": "related_to"
+    },
+    {
+      "source": "MiLe 知识管理系统",
+      "target": "GraphRAG",
+      "relation": "contains"
+    },
+    {
+      "source": "MiLe 知识管理系统",
+      "target": "DeepSeek API",
+      "relation": "depends_on"
+    },
+    {
+      "source": "DeepSeek API",
+      "target": "deepseek-v4-flash",
+      "relation": "is_a"
+    },
+    {
+      "source": "CDP Proxy",
+      "target": "Microsoft Edge 147",
+      "relation": "depends_on"
+    },
+    {
+      "source": "泉此方 (Izumi Konata)",
+      "target": "节能主义",
+      "relation": "is_a"
+    },
+    {
+      "source": "泉此方 (Izumi Konata)",
+      "target": "傲娇式友情",
+      "relation": "is_a"
+    },
+    {
+      "source": "泉此方 (Izumi Konata)",
+      "target": "第三种解法",
+      "relation": "is_a"
+    },
+    {
+      "source": "泉此方 (Izumi Konata)",
+      "target": "Compressed Expression",
+      "relation": "is_a"
+    },
+    {
+      "source": "泉此方 (Izumi Konata)",
+      "target": "Comiket",
+      "relation": "related_to"
+    },
+    {
+      "source": "节能主义",
+      "target": "第三种解法",
+      "relation": "related_to"
+    },
+    {
+      "source": "女娲造人流程 Phase 2+3",
+      "target": "泉此方 (Izumi Konata)",
+      "relation": "created_by"
+    },
+    {
+      "source": "网关回复",
+      "target": "表格式/结构化内容",
+      "relation": "related_to"
+    },
+    {
+      "source": "网关回复",
+      "target": "terminal(true)",
+      "relation": "depends_on"
+    },
+    {
+      "source": "网关回复",
+      "target": "自然分段聊天",
+      "relation": "contradicts"
+    },
+    {
+      "source": "用户",
+      "target": "建议",
+      "relation": "related_to"
+    },
+    {
+      "source": "用户",
+      "target": "AI",
+      "relation": "contradicts"
+    },
+    {
+      "source": "用户",
+      "target": "ghp_69F...",
+      "relation": "created_by"
+    },
+    {
+      "source": "关键建议",
+      "target": "征询下一步",
+      "relation": "contradicts"
+    },
+    {
+      "source": "不关键",
+      "target": "用户",
+      "relation": "depends_on"
+    },
+    {
+      "source": "回复风格",
+      "target": "自动分段机制",
+      "relation": "related_to"
+    },
+    {
+      "source": "回复风格",
+      "target": "口语化短句",
+      "relation": "related_to"
+    },
+    {
+      "source": "表格读取能力",
+      "target": "WPS ksheet",
+      "relation": "depends_on"
+    },
+    {
+      "source": "表格读取能力",
+      "target": "openpyxl",
+      "relation": "depends_on"
+    },
+    {
+      "source": "表格读取能力",
+      "target": "API download",
+      "relation": "depends_on"
+    },
+    {
+      "source": "表格读取能力",
+      "target": "openpyxl解析",
+      "relation": "depends_on"
+    },
+    {
+      "source": "用户意图理解",
+      "target": "减少不必要的澄清步骤",
+      "relation": "related_to"
+    },
+    {
+      "source": "自我修正速度",
+      "target": "彻底改进",
+      "relation": "related_to"
+    },
+    {
+      "source": "文档化输出",
+      "target": "口语化短句",
+      "relation": "contradicts"
+    },
+    {
+      "source": "口语化短句",
+      "target": "回复风格",
+      "relation": "related_to"
+    },
+    {
+      "source": "AI",
+      "target": "回复风格",
+      "relation": "related_to"
+    },
+    {
+      "source": "AI",
+      "target": "表格读取能力",
+      "relation": "related_to"
+    },
+    {
+      "source": "AI",
+      "target": "用户意图理解",
+      "relation": "related_to"
+    },
+    {
+      "source": "AI",
+      "target": "自我修正速度",
+      "relation": "related_to"
+    },
+    {
+      "source": "AI",
+      "target": "分段规则",
+      "relation": "contradicts"
+    },
+    {
+      "source": "AI",
+      "target": "口语化短句",
+      "relation": "contradicts"
+    },
+    {
+      "source": "AI",
+      "target": "用户",
+      "relation": "related_to"
+    },
+    {
+      "source": "Session 20260504_183713_6cc40f07",
+      "target": "分段规则",
+      "relation": "related_to"
+    },
+    {
+      "source": "Session 20260504_180108_4416b538",
+      "target": "文档化输出",
+      "relation": "related_to"
+    },
+    {
+      "source": "Session 20260504_182940_bd5deff4",
+      "target": "文档化输出",
+      "relation": "related_to"
+    },
+    {
+      "source": "自我审查",
+      "target": "自我修正速度",
+      "relation": "extends"
+    },
+    {
+      "source": "输出前自动分段机制",
+      "target": "回复风格",
+      "relation": "related_to"
+    },
+    {
+      "source": "文档化",
+      "target": "回复风格",
+      "relation": "contradicts"
+    },
+    {
+      "source": "自然分段",
+      "target": "回复风格",
+      "relation": "extends"
+    },
+    {
+      "source": "强制无缓冲输出",
+      "target": "python3 -u",
+      "relation": "related_to"
+    },
+    {
+      "source": "前台模式",
+      "target": "实时日志读取",
+      "relation": "related_to"
+    },
+    {
+      "source": "后台进程输出不可见问题",
+      "target": "长时间命令",
+      "relation": "related_to"
+    },
+    {
+      "source": "Git操作权限处理",
+      "target": "token权限范围",
+      "relation": "depends_on"
+    },
+    {
+      "source": "token权限范围",
+      "target": "workflow权限",
+      "relation": "is_a"
+    },
+    {
+      "source": "输出格式一致性",
+      "target": "JSON",
+      "relation": "related_to"
+    },
+    {
+      "source": "输出格式一致性",
+      "target": "记忆用户对输出格式的偏好",
+      "relation": "depends_on"
+    },
+    {
+      "source": "cron自动报告",
+      "target": "输出格式一致性",
+      "relation": "depends_on"
+    },
+    {
+      "source": "格式化指令模板",
+      "target": "输出格式一致性",
+      "relation": "related_to"
+    },
+    {
+      "source": "Cron任务沉默响应",
+      "target": "[SILENT]指令",
+      "relation": "depends_on"
+    },
+    {
+      "source": "每日报告",
+      "target": "cron自动报告",
+      "relation": "is_a"
+    },
+    {
+      "source": "Git推送",
+      "target": "workflow权限错误",
+      "relation": "related_to"
+    },
+    {
+      "source": "workflow权限错误",
+      "target": "workflow权限",
+      "relation": "related_to"
+    },
+    {
+      "source": "ghp_7z0...",
+      "target": "GitHub Classic Token",
+      "relation": "is_a"
+    },
+    {
+      "source": "ghp_69F...",
+      "target": "GitHub Classic Token",
+      "relation": "is_a"
+    },
+    {
+      "source": "长时间命令",
+      "target": "强制无缓冲输出",
+      "relation": "depends_on"
+    },
+    {
+      "source": "记忆用户对输出格式的偏好",
+      "target": "JSON",
+      "relation": "related_to"
+    },
+    {
+      "source": "cron",
+      "target": "自动报告",
+      "relation": "related_to"
+    },
+    {
+      "source": "Git 权限预检",
+      "target": "token",
+      "relation": "depends_on"
+    },
+    {
+      "source": "权限不足错误",
+      "target": "token",
+      "relation": "depends_on"
+    },
+    {
+      "source": "WJ",
+      "target": "Yu1ko",
+      "relation": "created_by"
+    },
+    {
+      "source": "task_controller",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "Interface",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "游戏UI参考代码",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "Interface",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "UIMgr",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "UIHelper",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "Event",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "Timer",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "PlayerData",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "ItemData",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SearchPanel",
+      "target": "BattleFieldData",
+      "relation": "depends_on"
+    },
+    {
+      "source": "LoginMgr",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "RunMap",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "AutoLogin",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "Dungeons",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "ShopErgodic",
+      "target": "WJ",
+      "relation": "is_a"
+    },
+    {
+      "source": "ShopErgodic",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "AutoLogin自动登录",
+      "target": "登录流程模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "LoginChangeFace捏脸",
+      "target": "登录流程模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "LoginCreateRole创建角色",
+      "target": "登录流程模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "遍历门派体型",
+      "target": "LoginCreateRole创建角色",
+      "relation": "related_to"
+    },
+    {
+      "source": "LoginFace捏脸UI",
+      "target": "登录流程模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "LoginFace捏脸UI",
+      "target": "LoginChangeFace捏脸",
+      "relation": "related_to"
+    },
+    {
+      "source": "LoginResizeWindow窗口调整",
+      "target": "登录流程模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "BasicRunMap基础跑图",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "BasicRunMap基础跑图",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "CustomRunMap自定义跑图",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "CustomRunMap自定义跑图",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "CustomRunMapByAutoWay",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "CustomRunMapByAutoWay",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "CustomRunMapByData",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "CustomRunMapByData",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "HotPointRunMap系列4个热点区域遍历模块",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "HotPointRunMap系列4个热点区域遍历模块",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "RecordPath路径录制",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "RecordPath路径录制",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "WalkExterior场景外景跑图",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "WalkExterior场景外景跑图",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "BasicRunMapRobot机器人模拟跑图",
+      "target": "跑图模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "BasicRunMapRobot机器人模拟跑图",
+      "target": "RunMap.tab数据文件",
+      "relation": "depends_on"
+    },
+    {
+      "source": "AllUITraversal",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "UITraversal",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "UITest",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "UITrl",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "ChatTraversal",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "ShopCameraApi",
+      "target": "ShopErgodic",
+      "relation": "depends_on"
+    },
+    {
+      "source": "StudioTraversal",
+      "target": "UI遍历",
+      "relation": "is_a"
+    },
+    {
+      "source": "ArenaPvP",
+      "target": "PvP",
+      "relation": "is_a"
+    },
+    {
+      "source": "Fabric缝纫",
+      "target": "经济制造",
+      "relation": "is_a"
+    },
+    {
+      "source": "Mining",
+      "target": "经济制造",
+      "relation": "is_a"
+    },
+    {
+      "source": "MapFarming",
+      "target": "经济制造",
+      "relation": "is_a"
+    },
+    {
+      "source": "AwardGatherView",
+      "target": "经济制造",
+      "relation": "is_a"
+    },
+    {
+      "source": "BaseTrade",
+      "target": "经济制造",
+      "relation": "is_a"
+    },
+    {
+      "source": "EquipmentEnchant",
+      "target": "经济制造",
+      "relation": "is_a"
+    },
+    {
+      "source": "FlySkill",
+      "target": "技能战斗",
+      "relation": "related_to"
+    },
+    {
+      "source": "LightSkill",
+      "target": "技能战斗",
+      "relation": "related_to"
+    },
+    {
+      "source": "SkillRelease",
+      "target": "技能战斗",
+      "relation": "related_to"
+    },
+    {
+      "source": "HangUpFight",
+      "target": "技能战斗",
+      "relation": "related_to"
+    },
+    {
+      "source": "PlayerAuto",
+      "target": "技能战斗",
+      "relation": "related_to"
+    },
+    {
+      "source": "RobotControl",
+      "target": "技能战斗",
+      "relation": "related_to"
+    },
+    {
+      "source": "GetPerfData",
+      "target": "性能测试",
+      "relation": "related_to"
+    },
+    {
+      "source": "GetPerfData",
+      "target": "Perfeye SDK",
+      "relation": "depends_on"
+    },
+    {
+      "source": "RagDollTest",
+      "target": "性能测试",
+      "relation": "related_to"
+    },
+    {
+      "source": "RecurrentDump",
+      "target": "性能测试",
+      "relation": "related_to"
+    },
+    {
+      "source": "task_run_process.py",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "uiautomator2",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "WebDriverAgent",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "gnirehtet",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "飞书通知上报",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "GitLab集成",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "多设备同步",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "BakingModel模块",
+      "target": "调度层",
+      "relation": "related_to"
+    },
+    {
+      "source": "BakingModel模块",
+      "target": "BakeMap.tab",
+      "relation": "depends_on"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "Claude Code",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "deepseek-v4-flash",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "AGENTS.md",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "MDX/fumadocs",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "Edge CDP Proxy",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "NapCatQQ Bot",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "游戏开发",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "itch.io",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "低内存服务器",
+      "relation": "related_to"
+    },
+    {
+      "source": "Yu1ko",
+      "target": "Microsoft Edge 147",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3游戏客户端",
+      "target": "背包系统UIBagViewNew",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3游戏客户端",
+      "target": "技能面板UISkillPanel",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3游戏客户端",
+      "target": "副本面板UIDungeonPanel",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3游戏客户端",
+      "target": "竞技场UIArenaView",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3游戏客户端",
+      "target": "商城UIShopView",
+      "relation": "related_to"
+    },
+    {
+      "source": "自动化插件Dungeons模块",
+      "target": "DungeonApi",
+      "relation": "depends_on"
+    },
+    {
+      "source": "DungeonApi",
+      "target": "副本参数",
+      "relation": "related_to"
+    },
+    {
+      "source": "DungeonApi",
+      "target": "SetMapName",
+      "relation": "related_to"
+    },
+    {
+      "source": "DungeonApi",
+      "target": "SetAutoFightCount",
+      "relation": "related_to"
+    },
+    {
+      "source": "背包UI系统",
+      "target": "UIBagViewNew",
+      "relation": "related_to"
+    },
+    {
+      "source": "背包UI系统",
+      "target": "UIBagChooseItemView",
+      "relation": "related_to"
+    },
+    {
+      "source": "背包UI系统",
+      "target": "UIBagCell",
+      "relation": "related_to"
+    },
+    {
+      "source": "背包UI系统",
+      "target": "UIBagUpView",
+      "relation": "related_to"
+    },
+    {
+      "source": "背包UI系统",
+      "target": "ItemData.GetPlayerItem",
+      "relation": "depends_on"
+    },
+    {
+      "source": "背包UI系统",
+      "target": "ItemData.GetBoxSet",
+      "relation": "depends_on"
+    },
+    {
+      "source": "剑网3技能系统",
+      "target": "UISkillPanel技能面板",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3技能系统",
+      "target": "UISkillLearnView学习界面",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3技能系统",
+      "target": "UISkillLevelUpView升级界面",
+      "relation": "related_to"
+    },
+    {
+      "source": "UISkillPanel技能面板",
+      "target": "ON_HIDEORSHOW_SKILLPANEL",
+      "relation": "created_by"
+    },
+    {
+      "source": "ON_HIDEORSHOW_SKILLPANEL",
+      "target": "Event.Dispatch",
+      "relation": "depends_on"
+    },
+    {
+      "source": "FlySkill.lua",
+      "target": "剑网3技能系统",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SkillRelease.lua",
+      "target": "剑网3技能系统",
+      "relation": "depends_on"
+    },
+    {
+      "source": "剑网3副本系统",
+      "target": "UIDungeonPanel",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3副本系统",
+      "target": "UIDungeonEnterView",
+      "relation": "related_to"
+    },
+    {
+      "source": "Dungeons.lua",
+      "target": "DungeonApi",
+      "relation": "depends_on"
+    },
+    {
+      "source": "Dungeons.lua",
+      "target": "剑网3副本系统",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3PvP系统",
+      "target": "ArenaPvP竞技场模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "自动化插件ArenaPvP.lua",
+      "target": "ArenaPvP竞技场模块",
+      "relation": "related_to"
+    },
+    {
+      "source": "ShopErgodic自动化模块",
+      "target": "商城系统Shop面板",
+      "relation": "related_to"
+    },
+    {
+      "source": "ShopErgodic自动化模块",
+      "target": "ShopCameraApi接口",
+      "relation": "depends_on"
+    },
+    {
+      "source": "登录流程面板",
+      "target": "AutoLogin",
+      "relation": "related_to"
+    },
+    {
+      "source": "登录流程面板",
+      "target": "LoginCreateRole",
+      "relation": "related_to"
+    },
+    {
+      "source": "登录流程面板",
+      "target": "LoginFace",
+      "relation": "related_to"
+    },
+    {
+      "source": "登录流程面板",
+      "target": "LoginChangeFace",
+      "relation": "related_to"
+    },
+    {
+      "source": "角色面板UICharacterPanel",
+      "target": "EquipmentEnchant.lua",
+      "relation": "related_to"
+    },
+    {
+      "source": "装备附魔界面UIEquipmentEnchantView",
+      "target": "EquipmentEnchant.lua",
+      "relation": "related_to"
+    },
+    {
+      "source": "BasicRunMap",
+      "target": "RunMap.tab",
+      "relation": "depends_on"
+    },
+    {
+      "source": "CustomRunMap",
+      "target": "RunMap.tab",
+      "relation": "depends_on"
+    },
+    {
+      "source": "MainTask",
+      "target": "UITaskPanel",
+      "relation": "depends_on"
+    },
+    {
+      "source": "SectTask",
+      "target": "UITaskPanel",
+      "relation": "depends_on"
+    },
+    {
+      "source": "TotalTask",
+      "target": "UITaskPanel",
+      "relation": "depends_on"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "UIMgr",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "UIHelper",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "Event",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "Timer",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "PlayerData",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "ItemData",
+      "relation": "related_to"
+    },
+    {
+      "source": "剑网3通用UI框架",
+      "target": "BattleFieldData",
+      "relation": "related_to"
+    }
+  ],
+  "stats": {
+    "num_entities": 218,
+    "num_relations": 201,
+    "density": 0.922,
+    "entity_types": [
+      "entity",
+      "technology",
+      "event",
+      "concept"
+    ]
+  }
+}

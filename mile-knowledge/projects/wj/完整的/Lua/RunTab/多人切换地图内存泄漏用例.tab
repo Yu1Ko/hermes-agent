@@ -1,0 +1,8 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd PlayerLevelUpToNew(130)	40	升级130
+/cmd RobotControl.CMD("SetRobot")	20	连接机器人
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("switchmap_start")	10	切图
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

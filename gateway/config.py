@@ -110,6 +110,7 @@ class Platform(Enum):
     QQ = "qq"
     QQBOT = "qqbot"
     YUANBAO = "yuanbao"
+    AGENTSPACE = "agentspace"
     @classmethod
     def _missing_(cls, value):
         """Accept unknown platform names only for known plugin adapters.

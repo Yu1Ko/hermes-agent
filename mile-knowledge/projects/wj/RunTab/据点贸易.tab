@@ -1,0 +1,15 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd PlayerLevelUpToNew(130)	30	升级
+/gm player.SwitchMap(21,39587,57726,1058880)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SetCamp(1)	5	加入阵营
+/gm player.AddExp(500000);player.AddMoney(10000,0,0);player.AddTrain(500000)	5	加钱
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	5	加隐身
+/gm player.AddBuff(0,99,8233,10,7200)	5	加速
+/gm player.AddBuff(0,99,203,1,7200);player.AddBuff(0,99,1900,1,7200);player.AddBuff(0,99,8233,10,7200);player.AddBuff(0,99,297,3,7200);	10	加速
+/cmd CreateEmptyFile("perfeye_start")	2	采集数据
+/cmd CreateEmptyFile("BaseTrade_start")	10	开始
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,16 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd HotPointRunMapOneDepth.SetStepSize(_MapStepSize_)	1	设置跑图间距
+/cmd HotPointRunMapOneDepth.SetRunType(_RunType_)	1	设置跑图类型
+/gm player.SwitchMap(_mapid_,_mapIndex_,_Pos_,0)	30	传送
+/gm player.SetPosition(_Pos_,0)	10	传送
+/cmd HotPointRunMapOneDepth.SetWaitTime(5,3)	2	设置切点sleep时间
+/gm player.Revive()	2	复活
+/gm player.Stop()	2	停止
+/cmd CreateEmptyFile("perfeye_start")	2	采集数据开
+/cmd CreateEmptyFile("HotPoint_Start")	20	信号：开始
+/cmd CreateEmptyFile("HotPoint_Stop")	20	信号：关闭
+/cmd CreateEmptyFile("perfeye_stop")	2	采集数据关
+/cmd CreateEmptyFile("ExitGame")	2	关闭游戏

@@ -1,0 +1,20 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(108,73314,64263,1070336)	30	传送
+/gm player.AddExp(500000);player.AddMoney(10000,0,0);player.AddTrain(500000)	5	经验值和金币
+/cmd CreateEmptyFile("perfeye_start")	10	采集数据
+/gm player.AddItem(5,107)	5	忘忧草获取
+/cmd UIMgr.Open(24)	5	打开菜单
+/cmd UIMgr.Open(117)	5	打开半屏背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1,1).dwID)	2	选中忘忧草
+/cmd UINodeControl.BtnTriggerByPath("BtnTipOperation","/WidgetOperation/ScrollViewNegativeOp//WidgetBtnTipOperation/BtnTipOperation",4)	5	选中寄卖
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelSellItem):OnEditPerItemPriceChanged(0, 0, 10)	5	调整寄卖价格
+/cmd UINodeControl.BtnTrigger("BtnBuy")	5	寄卖出去
+/cmd TradingData.InitTradingHouse()	5	打开交易行界面
+/cmd TeachEvent.CloseAllTeach()	5	关闭新手教程
+/cmd UINodeControl.BtnTrigger("BtnRefresh")	5	刷新面板
+/cmd UINodeControl.BtnTrigger("BtnLabelGroup")	5	点击忘忧草
+/cmd UINodeControl.BtnTrigger("BtnBuy")	5	购买
+/cmd UINodeControl.BtnTrigger("BtnOk")	5	确认
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏
