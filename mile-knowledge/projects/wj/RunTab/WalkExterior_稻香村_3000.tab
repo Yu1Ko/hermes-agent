@@ -1,0 +1,17 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(1,0, 0, 0)	30	传送
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd SearchExterior.Apply(2)	10	初始化套装
+/gm player.SetPosition(7262, 13446, 1062976);player.BirdFlyTo(7262, 13446, 1062976)	20	传送
+/cmd WalkExterior.SetCount(3000)	2	设置服装数
+/cmd WalkExterior.SetCountLine(2500)	2	 结束
+/cmd TurnTo(22)	1	调整面向
+/cmd UIMgr.Open(VIEW_ID.PanelCharacter)	6	打开主界面菜单-角色
+/cmd CreateEmptyFile("perfeye_start")	5	开始采集
+/cmd CreateEmptyFile("WalkExterior start")	20	开始换装
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd UIMgr.Close(VIEW_ID.PanelCharacter)	6	关闭主界面菜单-角色
+/cmd SearchExterior.Apply(2)	10	初始化套装
+/cmd CreateEmptyFile("ExitGame")	2	关闭游戏

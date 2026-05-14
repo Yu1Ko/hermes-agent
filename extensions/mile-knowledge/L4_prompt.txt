@@ -1,0 +1,24 @@
+在 /root/.hermes/mile-knowledge/ 下创建 agents/optimize.py，实现 Layer 4 自动 Prompt 进化。
+
+## 功能
+
+当 case_library.json 中同一类错误场景累积达到阈值时，自动分析错误模式并生成 SOUL.md 的修改建议。
+
+## API 配置
+
+- base_url: https://ai.centos.hk/v1
+- model: claude-opus-4-7
+- api_key: 从环境变量 PROMPT_OPT_API_KEY 读，config.py 里已有默认值
+- 用 openai 库调
+
+## 核心逻辑
+
+1. scan(threshold=10): 扫描 data/case_library.json，按 scenario 聚类。返回达到阈值的 scenario 列表
+2. analyze(scenario_group): 把所有案例的 bad+good 发给 claude-opus-4-7，分析 SOUL.md 哪里写得不清楚导致这个错误反复出现，给出具体修改建议
+3. main(): CLI 入口，支持 --scan / --dry-run 参数。输出报告存到 data/optimization_report.json
+
+## 关键约束
+
+- 用 openai.OpenAI(base_url='https://ai.centos.hk/v1', api_key=...) 
+- sys.path.insert(0, str(Path(__file__).parent.parent))
+- 完成后验证: python3 agents/optimize.py --scan

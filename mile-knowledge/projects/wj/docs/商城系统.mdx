@@ -1,0 +1,70 @@
+---
+title: 商城系统
+description: 剑网3无界自动化测试 - 商城遍历、商城拍照、随机商店相关模块
+---
+
+# 商城系统
+
+商城遍历、商城拍照、随机商店相关模块
+
+## Randomstore
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/Randomstore/Randomstore.lua`
+- **总行数**: 117
+
+### API 函数 (1个)
+
+- `Randomstore.FrameUpdate()` (例: `if GetTickCount()-Randomstore.nCurrentTime>Randomstore.nNextTime*1000 then local nShopContents = math.random(1, 2) UIMgr...`)
+
+## ShopErgodic
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/ShopErgodic/ShopErgodic.lua`
+- **总行数**: 504
+
+### API 函数 (6个)
+
+- `Shop.ApiCount(bSwitchCount,nErgodicCount)` (例: `if tonumber(bSwitchCount) == 1 then ShopErgodic.bSwitchCount = true...`)
+- `ShopTitle.initialization()` (例: `for _, tbClass in ipairs(CoinShopData.GetList()) do if tbClass.tList and #tbClass.tList > 0 then for _, tbTitle in ipair...`)
+- `ShopCameraApi.SetCamera(nRotate,nRotateTime)` — 参数：是否开启人物旋转1为开启  旋转的完成一圈的时间 (例: `if nRotate ~= nil then nCameraSwitch = tonumber(nRotate)...`)
+- `ShopErgodic.FrameUpdate()` (例: `if not nShopTitle then ShopTitle.initialization() nShopTitle = true...`)
+- `ShopHomeGoods.Initialization()` — 限时抢购商品初始化 (例: `nShopHomeTitleTotal = #CoinShopData.GetHomeList()[1].tList for i=1 ,nShopHomeTitleTotal do for _,tbShop in pairs(CoinSho...`)
+- `Shop.Reset()` — 重置所参数 (例: `nTitleLine = 1 ShopGood.nStart = false ShopErgodic.nstarTime = 0...`)
+
+### ShopCameraApi (API table)
+
+## ShopErgodicPark
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/ShopErgodicPark/ShopErgodicPark.lua`
+- **总行数**: 508
+
+### API 函数 (6个)
+
+- `Shop.ApiCount(bSwitchCount,nErgodicCount)` (例: `if tonumber(bSwitchCount) == 1 then ShopErgodic.bSwitchCount = true...`)
+- `ShopTitle.initialization()` (例: `for _, tbClass in ipairs(CoinShopData.GetList()) do if tbClass.tList and #tbClass.tList > 0 then for _, tbTitle in ipair...`)
+- `ShopCameraApi.SetCamera(nRotate,nRotateTime)` — 参数：是否开启人物旋转1为开启  旋转的完成一圈的时间 (例: `if nRotate ~= nil then nCameraSwitch = tonumber(nRotate)...`)
+- `ShopErgodic.FrameUpdate()` (例: `if not nShopTitle then ShopTitle.initialization() nShopTitle = true...`)
+- `ShopHomeGoods.Initialization()` — 限时抢购商品初始化 (例: `nShopHomeTitleTotal = #CoinShopData.GetHomeList()[1].tList for i=1 ,nShopHomeTitleTotal do for _,tbShop in pairs(CoinSho...`)
+- `Shop.Reset()` — 重置所参数 (例: `nTitleLine = 1 ShopGood.nStart = false ShopErgodic.nstarTime = 0...`)
+
+### ShopCameraApi (API table)
+
+## ShopErgodicTDR
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/ShopErgodicTDR/ShopErgodicTDR.lua`
+- **总行数**: 447
+
+### API 函数 (4个)
+
+- `ShopTitle.initialization()` (例: `for _, tbClass in ipairs(CoinShopData.GetList()) do if tbClass.tList and #tbClass.tList > 0 then for _, tbTitle in ipair...`)
+- `ShopCameraApi.SetCamera(nRotate,nRotateTime)` — 参数：是否开启人物旋转1为开启  旋转的完成一圈的时间 (例: `if nRotate ~= nil then nCameraSwitch = tonumber(nRotate)...`)
+- `ShopErgodic.FrameUpdate()` (例: `if not nShopTitle then ShopTitle.initialization() nShopTitle = true...`)
+- `ShopHomeGoods.Initialization()` — 限时抢购商品初始化 (例: `nShopHomeTitleTotal = #CoinShopData.GetHomeList()[1].tList for i=1 ,nShopHomeTitleTotal do for _,tbShop in pairs(CoinSho...`)
+
+### ShopCameraApi (API table)
+
+---
+*4 个模块, 17 个导出 API*

@@ -1,0 +1,32 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SwitchMap(21,21724,7806,1062848)	30	切换地图
+/gm player.AddBuff(0,99,8665,1,7200)	10	无限气力值
+/gm player.SetPosition(21724,7806,1062848)	10	移动坐标
+/cmd CreateEmptyFile("perfeye_start")	20	采集数据
+/cmd CreateEmptyFile("FlySkill_Start")	10	启动轻功
+x	y	z	stay	mapid	action	Jump1	Jump2	Jump3	Jump4	Jump5
+15176	26184	1056192	10	21	0	0.3	0.5	3	2	15
+16908	34609	1056256	10	21	0	0.3	0.5	3	2	15
+27073	47152	1059136	10	21	0	0.3	0.5	3	2	15
+34223	55190	1059072	10	21	0	0.3	0.5	3	2	15
+49281	45666	1059584	10	21	0	0.3	0.5	3	2	15
+54553	45720	1061760	10	21	0	0.3	0.5	3	2	15
+59866	44974	1056448	10	21	0	0.3	0.5	3	2	15
+77083	47610	1070592	10	21	0	0.3	0.5	3	2	15
+87082	55473	1072640	10	21	0	0.3	0.5	3	2	15
+79761	52690	1072512	10	21	0	0.3	0.5	3	2	15
+72238	55411	1091776	10	21	0	0.3	0.5	3	2	15
+67507	61529	1097088	10	21	0	0.3	0.5	3	2	15
+73021	44136	1059328	10	21	0	0.3	0.5	3	6	15
+74854	28251	1057600	10	21	0	0.3	0.5	3	2	15
+65377	16579	1052736	10	21	0	0.3	0.5	3	2	15
+44355	21858	1065344	10	21	0	0.5	0.5	3	4	15
+45337	33160	1054144	10	21	0	0.5	0.5	3	5	15
+/gm player.SetPosition(21724,7806,1062848)	10	移动坐标
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Die()	2	死亡
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

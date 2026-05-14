@@ -1,0 +1,23 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd TeachEvent.UnInit()	5	关闭所有教程
+/cmd PlayerLevelUpToNew(130)	80	升级120
+/cmd TurnTo(234)	10	调整面向
+/cmd TurnToFaceDirection()	10	调整面向
+/gm player.SwitchMap(655,16383,16383,1056640)	40	传送个人家园指定地点
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("Test")	60	采集数据
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd StabilityController.SetDungeons(707)	10	设置副本
+/cmd DungeonApi.SetMapName("太极宫")	5	设置对应的副本
+/cmd RobotControl.CMD("Start")	60	初始化副本操作
+/cmd UINodeControl.BtnTrigger("BtnChangeMini","WidgetContentChat")	5	关闭下方聊天栏
+/gm player.SwitchMap(707,34645,4322,1269056)	30	传送前置条件
+/gm player.SetPosition(44502,3024, 1268032)	30	传送剧情
+/cmd CreateEmptyFile("DungeonsTask")	10	启动副本
+/cmd TurnTo(234)	10	调整面向
+/cmd TurnToFaceDirection()	10	调整面向
+/gm player.SwitchMap(655,16383,16383,1056640)	40	传送个人家园指定地点
+/cmd CreateEmptyFile("Test")	60	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	5	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

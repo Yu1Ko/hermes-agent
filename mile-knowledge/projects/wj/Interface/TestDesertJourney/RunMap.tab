@@ -1,0 +1,13 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(MAP_ID_HEXI,258918,69237,1321344)	30	切换到河西瀚漠
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原画质
+/gm player.SetLevel(120)	2	升级到120级
+/gm player.AddBuff(0,99,377,1,7200)	2	添加无敌buff
+/gm player.AddBuff(0,99,8665,1,7200)	1	增加气血最大值
+/cmd QuestData.AcceptQuest(27251)	5	领取任务：大漠之旅
+/cmd CreateEmptyFile("perfeye_start")	5	开始性能采集（打点开始）
+/cmd CreateEmptyFile("DesertJourneyTask")	30	启动大漠之旅任务
+/cmd CreateEmptyFile("perfeye_stop")	5	结束性能采集（打点结束）
+/cmd CreateEmptyFile("ExitGame")	2	退出游戏

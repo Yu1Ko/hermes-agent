@@ -1,0 +1,8 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(_mapid_,_mapIndex_, _X_, _Y_, _Z_)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SetPosition(49404,65020,1055680)	15	设置坐标
+/cmd Camera_SetRTParams(1.000,8.66,-0.166)	5	调整镜头视角
+/cmd Camera_SetParams(1,2000, 0, 0, 1)	5	调整镜头距离

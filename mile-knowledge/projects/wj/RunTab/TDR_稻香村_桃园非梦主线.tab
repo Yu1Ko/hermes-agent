@@ -1,0 +1,10 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd UIMgr.Close(VIEW_ID.PanelHotSpotBanner)	5	首次下载游戏会出现这个弹窗
+/cmd SetCameraStatus(1083,1,2.2,-0.1369)	1	初始化视角
+/cmd CreateEmptyFile("perfeye_start")	10	采集数据
+/cmd CreateEmptyFile("Dungeons")	10	启动副本
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

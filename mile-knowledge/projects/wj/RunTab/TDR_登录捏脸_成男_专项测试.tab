@@ -1,0 +1,9 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	5	开始跑图
+/cmd AutoLogin.SetAutoLoginInfo(nil,nil,'纯阳','成男')	2	设置体型
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("LoginChangeFace")	10	开始
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏
