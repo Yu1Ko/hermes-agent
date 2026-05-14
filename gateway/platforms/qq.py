@@ -1,11 +1,10 @@
-"""Shim installed into Hermes as gateway/platforms/qq.py.
+"""NapCat/OneBot QQ adapter for Hermes Gateway.
 
-The implementation lives in the external hermes_qq package so the QQ adapter can
-be shared independently from the Hermes core repository while still satisfying
-Hermes Gateway's native platform import path.
+The implementation lives in gateway/platforms/qq_napcat/ so the QQ adapter
+is versioned together with the Hermes core without external package deps.
 """
 
-from hermes_qq import (  # noqa: F401
+from gateway.platforms.qq_napcat import (  # noqa: F401
     NapCatClient,
     NapCatQQAdapter,
     QQBridgeError,
