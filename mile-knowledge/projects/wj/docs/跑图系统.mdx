@@ -1,0 +1,268 @@
+---
+title: 跑图系统
+description: 剑网3无界自动化测试 - 角色移动、地图遍历、路径录制、机器人模拟跑图相关模块
+---
+
+# 跑图系统
+
+角色移动、地图遍历、路径录制、机器人模拟跑图相关模块
+
+## BasicRunMap
+
+- **类型**: entity
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/BasicRunMap/BasicRunMap.lua`
+- **总行数**: 109
+
+## BasicRunMapRobot
+
+- **类型**: entity
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/BasicRunMapRobot/BasicRunMapRobot.lua`
+- **总行数**: 109
+
+## CustomRunMap
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/CustomRunMap/CustomRunMap.lua`
+- **总行数**: 144
+
+### API 函数 (7个)
+
+- `CustomRunMap.SetRunMapCount(nRunMapCount)` (例: `CustomRunMap.nRunMapCount=nRunMapCount...`)
+- `CustomRunMap.SetRunCircle(nCircle)` (例: `if nCircle then CustomRunMap.bCircle=true...`)
+- `CustomRunMap.SetRunType(nType)` — 设置跑图类型 1自定义 2自动寻路 默认1 (例: `if nType then CustomRunMap.nRunType=nType...`)
+- `CustomRunMap.SetVideoSwitch(nVideoSwitch)` (例: `if nVideoSwitch then CustomRunMap.bVideoSwitch=true...`)
+- `CustomRunMap.FrameUpdate()` (例: `if not CustomRunMap.bSwitch then return...`)
+- `CustomRunMap.SetCamera(nSetCamera)` (例: `if tonumber(nSetCamera) == 1 then CustomRunMap.bCamerafollow = true...`)
+- `CustomRunMap.CheckRunMapEnd()` (例: `if CustomRunMap.nRunType==1 then if CustomRunMapByData.IsEnd() then CustomRunMapByData.bRunMapEnd=false...`)
+
+## CustomRunMapByAutoWay
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/CustomRunMapByAutoWay/CustomRunMapByAutoWay.lua`
+- **总行数**: 432
+
+**配置项**: `CustomRunMapByAutoWay.bSwitch` = `false`, `CustomRunMapByAutoWay.bVideoSwitch` = `false --是否开启切画质`, `CustomRunMapByAutoWay.bVideoSwitch` = `bVideoSwitch`, `CustomRunMapByAutoWay.bSwitch` = `true`, `CustomRunMapByAutoWay.bSwitch` = `false` — 关闭跑图帧更新, `CustomRunMapByAutoWay.bSwitch` = `false` — 关闭跑图帧更新
+
+### API 函数 (6个)
+
+- `CustomRunMapByAutoWay.SetCamera(nSetCamera)` (例: `if tonumber(nSetCamera) == 1 then CustomRunMapByAutoWay.bCamerafollow = true...`)
+- `CustomRunMapByAutoWay.Start(tbRunMapData,nRunMapCount,bCircle,bVideoSwitch,bCamerafollow)` (例: `if not tbRunMapData then LOG.INFO("CustomRunMapByAutoWay not tbRunMapData") return...`)
+- `CustomRunMapByAutoWay.IsEnd()` — 获取 是否跑图完成 (例: `return CustomRunMapByAutoWay.bRunMapEnd...`)
+- `tbCircle.Circle()` (例: `if tbCircle.nIndex>=tbCircle.fEndIndex or tbCircle.nIndex<=tbCircle.fStartIndex then tbCircle.fStep=-tbCircle.fStep...`)
+- `CustomRunMapByAutoWay.FrameUpdate()` (例: `if not CustomRunMapByAutoWay.bSwitch then return...`)
+- `tbVideoSwitch.SwitchVideo()` (例: `if GetTickCount()-tbVideoSwitch.nTimer>tbVideoSwitch.nSetpTime*1000 then tbVideoSwitch.nTimer=GetTickCount() QualityMgr....`)
+
+## CustomRunMapByData
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/CustomRunMapByData/CustomRunMapByData.lua`
+- **总行数**: 496
+
+### API 函数 (10个)
+
+- `CustomRunMapByData.SetCamera(nSetCamera)` (例: `if tonumber(nSetCamera) == 1 then CustomRunMapByData.bCamerafollow = true...`)
+- `CustomRunMapByData.Start(tbRunMapData,nRunMapCount,bCircle,bVideoSwitch,bCamerafollow)` (例: `if not tbRunMapData then LOG.INFO("CustomRunMapByData not tbRunMapData") return...`)
+- `CustomRunMapByData.IsEnd()` — 获取 是否跑图完成 (例: `return CustomRunMapByData.bRunMapEnd...`)
+- `CustomRunMapByData.SetSfxTime(nTime)` — 特效设置执行时间 (例: `nSfxNextTime = nTime...`)
+- `CustomRunMapByData.SetSfxCmd(szCmd)` — 特效设置CMD指令 (例: `szSfxCmd = szCmd...`)
+- `tbCircle.Circle()` (例: `if tbCircle.nIndex>=tbCircle.fEndIndex or tbCircle.nIndex<=tbCircle.fStartIndex then tbCircle.fStep=-tbCircle.fStep...`)
+- `CustomRunMapByData.FrameUpdate()` (例: `if not CustomRunMapByData.bSwitch then return...`)
+- `tbVideoSwitch.SwitchVideo()` (例: `if GetTickCount()-tbVideoSwitch.nTimer>tbVideoSwitch.nSetpTime*1000 then tbVideoSwitch.nTimer=GetTickCount() if SearchPa...`)
+- `CustomCamera.FrameUpdatefYaw()` — 调高镜头 (例: `local _,fYaw  = Camera_GetRTParams() SetCameraStatus(1083,1,fYaw,0.1)...`)
+- `CustomRunMapByData.SetCameraYaw(nCustomCamera)` (例: `if tonumber(nCustomCamera) == 1 then Timer.AddCycle(CustomCamera,1,function () CustomCamera.FrameUpdatefYaw()...`)
+
+## Displacement
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/Displacement/Displacement.lua`
+- **总行数**: 79
+
+### API 函数 (8个)
+
+- `Displacement.SetCenterPoint(nX,nY,nZ)` (例: `Displacement.nXcenter = nX Displacement.nYcenter = nY Displacement.nZcenter = nZ...`)
+- `Displacement.SenDistance(nDistance)` (例: `Displacement.nDistance=nDistance...`)
+- `Displacement.GetAngle(nRadius,nAngle)` — 根据中心点,半径,角度 推算出坐标 (例: `local angle_rad = math.rad(nAngle)  -- 角度转弧度 local x = Displacement.nXcenter + nRadius * math.cos(angle_rad) local y = D...`)
+- `Displacement.GetPoint()` — 根据角度算出全部坐标 (例: `for i=0,360,60 do local nXpoint ,nYpoint = Displacement.GetAngle(Displacement.nDistance,i) local tbCoordinate = {...`)
+- `Displacement.SetPoint(nRange)` — 设置范围 (例: `local nRangeNum = tonumber(nRange) for i=0,360,60 do local nXpoint ,nYpoint = Displacement.GetAngle(nRangeNum,i)...`)
+- `Displacement.FrameUpdate()` (例: `if not Displacement.bPlayerMove then CustomRunMapByData.Start(Displacement.tbCustom) Displacement.bPlayerMove = true...`)
+- `Displacement.Stop()` — 跑动结束 (例: `Timer.DelAllTimer(Displacement) Displacement.tbCustom = {}...`)
+- `Displacement.Start()` — 跑动开始 (例: `Timer.AddCycle(Displacement,1,function () Displacement.FrameUpdate()...`)
+
+## HotPointRunMap
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/HotPointRunMap/HotPointRunMap.lua`
+- **总行数**: 489
+
+### API 函数 (8个)
+
+- `HotPointRunMap.IsValidPos(x,y,z)` — 判断目标点是否在设定的边界内 (例: `if x >= HotPointRunMap.MinX and x < HotPointRunMap.MaxX then if y >= HotPointRunMap.MinY and y < HotPointRunMap.MaxY the...`)
+- `HotPointRunMap.X(nStep)` — 单X轴坐标点合法性和可用性验证 (例: `local hotPointReader = GetHotPointReader() local player = GetClientPlayer() local scene = player.GetScene()...`)
+- `HotPointRunMap.Y(nStep)` (例: `local hotPointReader = GetHotPointReader() local player = GetClientPlayer() local scene = player.GetScene()...`)
+- `HotPointRunMap.Z(nStep)` (例: `local hotPointReader = GetHotPointReader() local player = GetClientPlayer() local scene = player.GetScene()...`)
+- `HotPointRunMap.FrameUpdate()` (例: `if not HotPointRunMap.IsRun then return...`)
+- `HotPointRunMap.PrintPos()` (例: `local player = GetClientPlayer() if not player then return...`)
+- `HotPointRunMap.Start()` — 创建数据库，启动帧更新 (例: `if HotPointRunMap.IsRun then return...`)
+- `HotPointRunMap.Stop()` (例: `HotPointRunMap.IsRun = false bFlag=true pCurrentTime=GetTickCount()...`)
+
+## HotPointRunMapOneDepth
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/HotPointRunMapOneDepth/HotPointRunMapOneDepth.lua`
+- **总行数**: 596
+
+### API 函数 (12个)
+
+- `HotPointRunMapOneDepth.SetMapRange(nMinX,nMinY,nMaxX,nMaxY)` (例: `HotPointRunMapOneDepth.nMinX=nMinX HotPointRunMapOneDepth.nMinY=nMinY HotPointRunMapOneDepth.nMaxX=nMaxX...`)
+- `HotPointRunMapOneDepth.SetRunType(nRunType)` — 3套方案  1重高空往下接触的第一个位置(房顶问题)    2直接设置Z坐标为0(陷到地底的问题) 3自定义z坐标 (例: `HotPointRunMapOneDepth.nRunType=nRunType...`)
+- `HotPointRunMapOneDepth.SetCustomRangeZ(nCustomRangeZ)` (例: `HotPointRunMapOneDepth.nCustomRangeZ=nCustomRangeZ...`)
+- `HotPointRunMapOneDepth.SetStepSize(nStepSize)` (例: `HotPointRunMapOneDepth.nStepSize=nStepSize...`)
+- `HotPointRunMapOneDepth.SetWaitTime(nNextPointSleep,nCameraRotationSleep)` (例: `if nNextPointSleep>=0 then tbSleepTime[tbSleepType.NextPointSleep]=nNextPointSleep...`)
+- `tbGetPlayerInfo.GetPlayerInfo()` (例: `local player=GetClientPlayer() HotPointRunMapOneDepth.nRecordZ=player.nZ --记录Z坐标 客户端会更新脚本 tbGetPlayerInfo.szKey=string.f...`)
+- `HotPointRunMapOneDepth.SetNullData(nX,nY)` (例: `local szKey=string.format("(%d,%d,%d)",nX,1000000,nY) if not tbHotPointData.performanceData[szKey] then tbHotPointData.p...`)
+- `tbNextPoint.IsValidPosition(nX,nY)` (例: `if nX>HotPointRunMapOneDepth.nMaxX or nY>HotPointRunMapOneDepth.nMaxY then return false else...`)
+- `tbNextCamera.RotationCamera()` (例: `local nRotationIndex=tbNextCamera.nRotationIndex%#HotPointRunMapOneDepth.list_CameraStatue if  nRotationIndex==0 then nR...`)
+- `HotPointRunMapOneDepth.ScreenShot()` — 创建截图文件,通知自动化截图 (例: `local player = GetClientPlayer() local scene = player.GetScene() local strPos=string.format("(%d,%d,%d)",HotPointRunMapO...`)
+- `HotPointRunMapOneDepth.CreateEmptyFile(filename)` (例: `local file = io.open(SearchPanel.szWorkPath.."hotpointscreen/" .. filename, "w") file:close()...`)
+- `HotPointRunMapOneDepth.FrameUpdate()` (例: `if not HotPointRunMapOneDepth.bSwitch then return...`)
+
+## HotPointRunMapOneDepth2
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/HotPointRunMapOneDepth2/HotPointRunMapOneDepth2.lua`
+- **总行数**: 424
+
+### API 函数 (7个)
+
+- `HotPointRunMapOneDepth.SetMapRange(nMinX,nMinY,nMaxX,nMaxY)` (例: `HotPointRunMapOneDepth.nMinX=nMinX HotPointRunMapOneDepth.nMinY=nMinY HotPointRunMapOneDepth.nMaxX=nMaxX...`)
+- `HotPointRunMapOneDepth.SetStepSize(nStepSize)` (例: `HotPointRunMapOneDepth.nStepSize=nStepSize...`)
+- `HotPointRunMapOneDepth.SetWaitTime(nNextPointSleep,nCameraRotationSleep)` (例: `if nNextPointSleep>=0 then tbSleepTime[tbSleepType.NextPointSleep]=nNextPointSleep...`)
+- `tbGetPlayerInfo.GetPlayerInfo()` (例: `local player=GetClientPlayer() HotPointRunMapOneDepth.nRecordZ=player.nZ --记录Z坐标 客户端会更新脚本 tbGetPlayerInfo.szKey=string.f...`)
+- `tbNextPoint.IsValidPosition(nX,nY)` (例: `if nX>HotPointRunMapOneDepth.nMaxX or nY>HotPointRunMapOneDepth.nMaxY then return false else...`)
+- `tbNextCamera.RotationCamera()` (例: `local nRotationIndex=tbNextCamera.nRotationIndex%#HotPointRunMapOneDepth.list_CameraStatue if  nRotationIndex==0 then nR...`)
+- `HotPointRunMapOneDepth.FrameUpdate()` (例: `if not HotPointRunMapOneDepth.bSwitch then return...`)
+
+## HotPointRunMap_1
+
+- **类型**: entity
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/HotPointRunMap_1/HotPointRunMap.lua`
+- **总行数**: 123
+
+## RecordPath
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/RecordPath/RecordPath.lua`
+- **总行数**: 103
+
+**配置项**: `RecordPath.bSwitch` = `false`, `RecordPath.bSwitch` = `true` — 重置数据, `RecordPath.bSwitch` = `false`, `RecordPath.bSwitch` = `true`
+
+### API 函数 (5个)
+
+- `RecordPath.FrameUpdate()` (例: `player=GetClientPlayer() if not player then return...`)
+- `RecordPath.Start()` (例: `player=GetClientPlayer() if not player then return...`)
+- `RecordPath.Pause()` — 采集暂停 (例: `RecordPath.bSwitch=false...`)
+- `RecordPath.continue()` — 采集继续 (例: `RecordPath.bSwitch=true...`)
+- `RecordPath.Stop()` — 停止采集 (例: `if RecordPath.file then RecordPath.file:close()...`)
+
+## RobotControl
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/RobotControl/RobotControl.lua`
+- **总行数**: 423
+
+### API 函数 (40个)
+
+- `RobotControl.IniRobot(nIndex,nCount,szNameHead)` (例: `print("RobotControl.IniRobot") RobotControl.nIndex=nIndex RobotControl.nCount=nCount...`)
+- `RobotControl.GetScript()` (例: `print("RobotControl.GetScript") RobotControl.script=UIMgr.GetViewScript(VIEW_ID.PanelRobotItem) if not RobotControl.scri...`)
+- `RobotControl.DelScript()` (例: `print("RobotControl.DelScript") RobotControl.script=UIMgr.GetViewScript(VIEW_ID.PanelRobotItem) if RobotControl.script t...`)
+- `RobotControl.CMD(szCMD,...)` (例: `self.GetScript() LOG.INFO(szCMD) self.SetRobot()...`)
+- `RobotControl.SetRobot(nIndex,nCount,szNameHead)` — 连接机器人 (例: `SearchRobot.tbRobot={} --清除机器人选中数据 if not nIndex then nIndex=RobotControl.nIndex...`)
+- `RobotControl.Start()` — 一键准备打副本所需的机器人环境 (例: `local list_szFun= { 'RobotControl.KillMySelf()', --先杀死机器人...`)
+- `RobotControl.StabilityStart(RobotCount)` (例: `local StabilityRobotCount = RobotCount local list_szFun= {...`)
+- `RobotControl.StartBattlefield()` — 10v10一键准备环境 (例: `local list_szFun= { 'RobotControl.SetRobot()', --初始化机器人...`)
+- `RobotControl.Arena()` — 3v3竞技场一键准备环境 (例: `local list_szFun= { 'RobotControl.SetRobot()', --初始化机器人...`)
+- `RobotControl.TeleportRobot()` — 召唤机器人 (例: `RobotControl.script:TeleportRobot()...`)
+- `RobotControl.InviteToTeam()` — 机器人入队 (例: `ServerRobotTeamManager.tbTeamSetting[2].fnCallBack()...`)
+- `RobotControl.GetTeamLeader()` — 获取团队权限 (例: `ServerRobotTeamManager.tbTeamSetting[1].fnCallBack()...`)
+- `RobotControl.RequestLeaveTeam()` — 通知退组 (例: `ServerRobotTeamManager.tbTeamSetting[3].fnCallBack()...`)
+- `RobotControl.CreateTeamByRobot()` — 机器人间组队 (例: `ServerRobotTeamManager.tbTeamSetting[4].fnCallBack()...`)
+- `RobotControl.AddImmortal()` — 不死buff (例: `local szCmd = "for i=1,10 do player.AddBuff(player.dwID,player.nLevel,203,1,100) end"; local szMsg  = string.format("g_m...`)
+- `RobotControl.DelImmortal()` — 删除不死buff (例: `local szMsg = string.format("for i=1,340 do player.GetSelectCharacter().DelBuff(203,1) end") SearchRobot:SendCustomMessa...`)
+- `RobotControl.StartFollow()` — 请跟随我 (例: `RobotControl.script:StartFollow()...`)
+- `RobotControl.StopFollow()` — 停止跟随我 (例: `RobotControl.script:StopFollow()...`)
+- `RobotControl.SetTarget()` — 设置目标 (例: `ServerRobotFightSettings.tbFightSettingSetting[4].fnCallBack()...`)
+- `RobotControl.ReviveMySelf()` — 复活 (例: `ServerRobotFightSettings.tbFightSettingSetting[7].fnCallBack()...`)
+- `RobotControl.EnchangeBuff()` — Buff 增强 (例: `RobotControl.script:EnchangeBuff()...`)
+- `RobotControl.CampfightBuff()` — 战斗常用BUFF (例: `ServerRobotBufff.tbBuffSetting[1].fnCallBack()...`)
+- `RobotControl.BloodBuff()` — 超级血量BUFF (例: `ServerRobotBufff.tbBuffSetting[2].fnCallBack()...`)
+- `RobotControl.StartFight()` — 开启战斗 (例: `ServerRobotFightSettings.tbFightSettingSetting[5].fnCallBack()...`)
+- `RobotControl.StopFight()` — 结束战斗 (例: `ServerRobotFightSettings.tbFightSettingSetting[6].fnCallBack()...`)
+- `RobotControl.AddFriend()` — 添加好友 (例: `RobotControl.script:AddFriend()...`)
+- `RobotControl.ReviveAndBloodBuff()` — 复活并添加超级血量 (例: `local szMsg = string.format("g_m:player.Revive();for i=1,50 do player.AddBuff(0,99,4136,1,7200) end;player.fCurrentLife6...`)
+- `RobotControl.KillMySelf()` — 自杀 (例: `ServerRobotFightSettings.tbFightSettingSetting[9].fnCallBack()...`)
+- `RobotControl.RandomStand(nXTop,nYTop,nZTop,nX,nY)` — 范围站立 (例: `if not nX then nX=100...`)
+- `RobotControl.JoinArenaQueue()` — 竞技场排队 (例: `local szMsg = string.format("custom:JoinArenaQueue(1, false, 1, false)") print('test:'..szMsg) SearchRobot:SendCustomMes...`)
+- `RobotControl.Negative1()` — 竞技场清除消极buff1 (例: `local szMsg = string.format("for i=1,340 do player.GetSelectCharacter().DelBuff(11880,1) end") print('test:'..szMsg) Sea...`)
+- `RobotControl.Negative2()` — 竞技场清除消极buff2 (例: `local szMsg = string.format("for i=1,2129 do player.GetSelectCharacter().DelBuff(11881,1) end") print('test:'..szMsg) Se...`)
+- `RobotControl.LeaveArenaQueuee()` — 退出竞技场排队 (例: `local szMsg = string.format("custom:LeaveArenaQueue()") SearchRobot:SendCustomMessage(szMsg, 2)...`)
+- `RobotControl.CheckTeamCount()` — 检查组队人数 (例: `local hTeam = GetClientTeam() local nTeamSize = hTeam.GetTeamSize() if RobotControl.nCount == (nTeamSize-1) then...`)
+- `RobotControl.StartCamp()` — 开启阵营模式 (例: `local  szMsg = string.format("g_m:player.OpenCampFlag()") OutputMessage("MSG_ANNOUNCE_RED", szMsg) SearchRobot:SendCusto...`)
+- `RobotControl.CancelCamp()` (例: `local  szMsg = string.format("g_m:player.SetCamp(0)") OutputMessage("MSG_ANNOUNCE_RED", szMsg) SearchRobot:SendCustomMes...`)
+- `RobotControl.SetHaoqiCamp()` — 设置浩气阵营 (例: `local szMsg = string.format("g_m:player.SetCamp(1)") SearchRobot:SendCustomMessage(szMsg, 1)...`)
+- `RobotControl.SetErenCamp()` — 设置恶人阵营 (例: `local  szMsg = string.format("g_m:player.SetCamp(2)") SearchRobot:SendCustomMessage(szMsg, 1)...`)
+- `RobotControl.AverageCamp()` — 均分阵营(浩气:恶人) (例: `local  szMsg1 = string.format("g_m:player.SetCamp(1)") local  szMsg2 = string.format("g_m:player.SetCamp(2)") SearchRobo...`)
+- `RobotControl.StartRandomStand()` (例: `local RobotRandomStand ={} Timer.AddCycle(RobotRandomStand,30,function () RobotControl.RandomStand(7653,24931,1036992,60...`)
+
+## SwitchMap
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/SwitchMap/SwitchMap.lua`
+- **总行数**: 259
+
+### API 函数 (3个)
+
+- `SwitchMap.Stop()` — 结束切图 (例: `Timer.DelAllTimer(SwitchMap) bFlag = true AutoTestLog.INFO("[SwitchMap] SwitchMap Stop")...`)
+- `SwitchMap.FrameUpdate()` — 切图切画质帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then nReplaceMapStartTime = GetTickCount() return...`)
+- `SwitchMap.Start()` (例: `if not SwitchMap.bSwitch then return...`)
+
+## SwitchRobot
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/SwitchRobot/SwitchRobot.lua`
+- **总行数**: 199
+
+### API 函数 (4个)
+
+- `SwitchRobot.SetMapData()`
+- `SwitchRobot.MapSwitch()` — 自定义切换地图 (例: `if SwitchRobot.nMapCount == 1 then local szCmd = string.format("/gm player.SwitchMap(%s)", tostring(SwitchRobot.nMapID1....`)
+- `SwitchRobot.FrameUpdate()` — 切图切画质帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `SwitchRobot.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(SummoningRobot) fsm:AddState(PlayerSwicth)...`)
+
+## WalkExterior
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/WalkExterior/WalkExterior.lua`
+- **总行数**: 176
+
+### API 函数 (4个)
+
+- `WalkExterior.SetCount(nCount)` — 设置需要遍历服装的数量 (例: `WalkExterior.nLine = nCount...`)
+- `WalkExterior.SetCountLine(nSetCount)` (例: `WalkExterior.nSetLine = nSetCount...`)
+- `PlayerTurnTo.FrameUpdate()` (例: `if PlayerTurnTo.Line == 280 then PlayerTurnTo.Line = 20 return...`)
+- `WalkExterior.TraverseExterior()` — 更换外观 (例: `if not WalkExterior.bSwitch then return...`)
+
+## WalkExteriorTemp
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/WalkExteriorTemp/WalkExteriorTemp.lua`
+- **总行数**: 149
+
+**配置项**: `CameraPlayer.bSwitch` = `true`, `CameraPlayer.nNextTime` = `1`
+
+### API 函数 (2个)
+
+- `PlayerTurnTo.FrameUpdate()` (例: `if PlayerTurnTo.Line == 280 then PlayerTurnTo.Line = 20 return...`)
+- `WalkExterior.TraverseExterior()` — 更换外观 (例: `if not WalkExterior.bSwitch then return...`)
+
+---
+*16 个模块, 116 个导出 API*

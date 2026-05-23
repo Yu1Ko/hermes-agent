@@ -1,0 +1,7 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd CreateEmptyFile("perfeye_start")	40	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Stop()	2	玩家停止
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

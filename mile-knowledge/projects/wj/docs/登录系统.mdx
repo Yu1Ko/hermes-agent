@@ -1,0 +1,102 @@
+---
+title: 登录系统
+description: 剑网3无界自动化测试 - 自动登录、角色创建、捏脸、窗口适配相关模块
+---
+
+# 登录系统
+
+自动登录、角色创建、捏脸、窗口适配相关模块
+
+## AutoLogin
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/AutoLogin/AutoLogin.lua`
+- **总行数**: 615
+
+### API 函数 (12个)
+
+- `AutoLogin.SetAutoLoginInfo(szRoleNameTemp,szAccountTemp,szSchooltypeTemp,szRoletypeTemp)` — 设置自动登录参数 (例: `if szRoleNameTemp then szRoleName=szRoleNameTemp...`)
+- `AutoLogin.SetAccount(szAccountTemp)` (例: `if szAccountTemp then szAccount=szAccountTemp...`)
+- `AutoLogin.SetSchooltype(szSchooltypeTemp)` (例: `if szSchooltypeTemp then szSchooltype=szSchooltypeTemp...`)
+- `AutoLogin.SetRoleName(szRoleNameTemp)` (例: `if szRoleNameTemp then szRoleName=szRoleNameTemp...`)
+- `AutoLogin.SetRoletype(szRoletypeTemp)` (例: `if szRoletypeTemp then szRoletype=szRoletypeTemp...`)
+- `tbPakResource.Start()` — 开启下载 (例: `Timer.AddCycle(tbPakResource,1,function () tbPakResource.FrameUpdate()...`)
+- `tbPakResource.ParkCorePack()` (例: `local tCorePackIDList =  PakDownloadMgr.GetCorePackIDList() local tCoreStateInfo = PakDownloadMgr.GetStateInfoByPackIDLi...`)
+- `tbPakResource.ParkStartbase()` — 基础包下载 (例: `local nState, _, _ = PakDownloadMgr.GetBasicPackState() if nState == DOWNLOAD_OBJECT_STATE.DOWNLOADED then if tbPakResou...`)
+- `tbPakResource.ParkStartID(tbPackId)` — 指定包体下载资源 (例: `if GetCheckDLCContentId(tbPackId) and tbPakResource.ParkCorePack() and tbPakResource.ParkStartbase() then UIMgr.Close(VI...`)
+- `tbPakResource.ParkStartExtend()` — 全部资源下载 (例: `if CheckDLCContent() then UIMgr.Close(VIEW_ID.PanelResourcesDownload, RESOURCES_PAGE.DOWNLOADING) return true...`)
+- `tbPakResource.Download(nRePackID)` — 下载资源接口 nRePackID包的id (例: `PakDownloadMgr.DownloadPack(nRePackID)...`)
+- `tbPakResource.FrameUpdate()` — 下载资源帧函数 (例: `if tbPakResource.base==1 then if tbPakResource.ParkStartbase() then tbPakResource.bDowloadEnd = true...`)
+
+## LoginChangeFace
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/LoginChangeFace/LoginChangeFace.lua`
+- **总行数**: 780
+
+### API 函数 (9个)
+
+- `AutoLogin.SetAutoLoginInfo(szRoleNameTemp,szAccountTemp,szSchooltypeTemp,szRoletypeTemp)` — 设置自动登录参数 (例: `if szRoleNameTemp then szRoleName=szRoleNameTemp...`)
+- `AutoLogin.SetAccount(szAccountTemp)` (例: `if szAccountTemp then szAccount=szAccountTemp...`)
+- `AutoLogin.SetSchooltype(szSchooltypeTemp)` (例: `if szSchooltypeTemp then szSchooltype=szSchooltypeTemp...`)
+- `AutoLogin.SetRoleName(szRoleNameTemp)` (例: `if szRoleNameTemp then szRoleName=szRoleNameTemp...`)
+- `AutoLogin.SetRoletype(szRoletypeTemp)` (例: `if szRoletypeTemp then szRoletype=szRoletypeTemp...`)
+- `Download.FrameUpdate()` — 检测下载的帧函数 (例: `if GetTickCount()-nCurrentTime>nDownloadtime*1000 then local nState, _, _ = PakDownloadMgr.GetBasicPackState() if nState...`)
+- `FacePresetsLeft.Initialization()` — 初始化预设列表数据 (例: `tbFacePresetsLeft = UINodeControl.GetToggroup("TogGroupDefaultList") nFacePresetsLeftCount = #tbFacePresetsLeft...`)
+- `FacePresetsRight.LayoutList()` — 初始化左侧面板 (例: `tbFacePresetsRight = #UINodeControl.GetToggroup("LayoutList1") nTogCount = tbFacePresetsRight...`)
+- `DetailPanel.Start()` (例: `if not DetailPanel.bSwitch then return...`)
+
+## LoginCreateRole
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/LoginCreateRole/LoginCreateRole.lua`
+- **总行数**: 385
+
+**配置项**: `EnterLoginServer.bSwitch` = `true	-- 登录账号界面遍历按钮操作开关 （例如：公告等）`, `EnterLoginServer.nNextTime` = `6	-- 登录账号界面遍历按钮间隔时间`, `EnterLoginServer.bSwitch` = `true` — 登录账号界面遍历按钮操作, `EnterLoginServer.bSwitch` = `false`
+
+### API 函数 (6个)
+
+- `SectRole.GetSectTable()` — 获取门派表和门派总数 (例: `SectRole.tbSectData = UINodeControl.GetToggroup("ToggleGroupSchool") SectRole.nSectDataCount = #SectRole.tbSectData...`)
+- `SectRole.GetBodyData()` — 获取对应体型和返回体型总数 (例: `SectRole.tbBodyData = UINodeControl.GetToggroup("ToggleGroupBodilyForm") SectRole.nBodyData = #SectRole.tbBodyData retur...`)
+- `SectRole.FrameUpdate()` (例: `if GetTickCount()-SectRole.nstarTime >= SectRole.nNextTime*1000 then if not SectRole.bStart then SectRole.GetSectTable()...`)
+- `SectRole.Start()` — 开始门派角色遍历 (例: `if not SectRole.bSwitch then return...`)
+- `ServerList.GetRegionTable()` — 获取大区表并返回大区行数 (例: `ServerList.tbRegionData = UINodeControl.GetToggroup("AreanToggleGroup") ServerList.nRegionCount = #ServerList.tbRegionDa...`)
+- `ServerList.GetServerTable()` — 获取服务器表并返回服务器行数 (例: `ServerList.tbServerData = UINodeControl.GetToggroup("CellToggleGroup") ServerList.nServerCount = #ServerList.tbServerDat...`)
+
+## LoginFace
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/LoginFace/LoginFace.lua`
+- **总行数**: 821
+
+### API 函数 (20个)
+
+- `AutoLogin.SetAutoLoginInfo(szRoleNameTemp,szAccountTemp,szSchooltypeTemp,szRoletypeTemp)` — 设置自动登录参数 (例: `if szRoleNameTemp then szRoleName=szRoleNameTemp...`)
+- `AutoLogin.SetAccount(szAccountTemp)` (例: `if szAccountTemp then szAccount=szAccountTemp...`)
+- `AutoLogin.SetSchooltype(szSchooltypeTemp)` (例: `if szSchooltypeTemp then szSchooltype=szSchooltypeTemp...`)
+- `AutoLogin.SetRoleName(szRoleNameTemp)` (例: `if szRoleNameTemp then szRoleName=szRoleNameTemp...`)
+- `AutoLogin.SetRoletype(szRoletypeTemp)` (例: `if szRoletypeTemp then szRoletype=szRoletypeTemp...`)
+- `Download.FrameUpdate()` — 检测下载的帧函数 (例: `if GetTickCount()-nCurrentTime>nDownloadtime*1000 then local nState, _, _ = PakDownloadMgr.GetBasicPackState() if nState...`)
+- `Preset.GetFirstDirectoryCount()` — 初始化一级目录 (例: `local nTabTypeCount = UINodeControl.GetToggroup("TogGroupTabType") Preset.FirstDirectoryCount = #nTabTypeCount...`)
+- `Preset.GetSecondDirectoryCount()` — 初始化二级目录 (例: `local nDirectoryCount if Preset.FirstDirectoryLine == 1 then local nDefaultListCount = UINodeControl.GetToggroup("Scroll...`)
+- `Preset.RightFristFrameUpdate()` — 预设界面右边部分 (例: `if not Preset.bStart then Preset.GetFirstDirectoryCount() Preset.bStart = true...`)
+- `Preset.RightSecondFrameUpdate()` (例: `if GetTickCount()-LoginFace.LeftStartTime >= LoginFace.LeftNextTime*1000 then if not Preset.SecondDirectory.bStart then ...`)
+- `FaceChange.GetSliderPercent()` — 滑动条的数据的总数 (例: `UINodeControl.DealWithException(EventType.OnChangeSliderPercent) FaceChange.nSliderCount = #UINodeControl.tbUINodeData['...`)
+- `FaceChange.GetColorCell()` — 妆容颜色的总数 (例: `FaceChange.nColorCount = #UINodeControl.GetToggroup("TogGroupColorCell")...`)
+- `FaceChange.FristCount()` — 一级目录 (例: `FaceChange.nFristCount = #UINodeControl.GetToggroup("TogGroupPage") return FaceChange.nFristCount...`)
+- `FaceChange.SecondCount()` — 二级目录 (例: `FaceChange.nSecondCount = #UINodeControl.GetToggroup("ScrollViewTab2") return FaceChange.nSecondCount...`)
+- `FaceChange.ThirdCount()` — 三级目录 (例: `FaceChange.nThirdCount = #UINodeControl.GetToggroup("TogGroupClass1") return FaceChange.nThirdCount...`)
+- `FaceChange.RightFrameUpdate()` (例: `if bDetailPanelRight and GetTickCount()-LoginFace.LeftStartTime >= LoginFace.LeftNextTime*1000 then if not bInitial then...`)
+- `FaceValueChange.GetCount()` (例: `if FaceChange.nFristLine == 1 and FaceChange.nThirdLine == 2  then FaceValueChange.nCount = #UINodeControl.GetToggroup("...`)
+- `FaceValueChange.Check()` (例: `if FaceChange.nFristLine == 1 and FaceChange.nThirdLine == 2  then UINodeControl.TogTriggerByIndex("TogGroupDefault",Fac...`)
+- `FaceChange.LeftFrameUpdate()` (例: `if FaceChange.RightStatus and GetTickCount()-LoginFace.RightStartTime >= LoginFace.RightNextTime*1000 then if not FaceCh...`)
+- `FaceChange.Reset()` — 重置所有参数 (例: `FaceMakeupChange.nCount = 0 FaceMakeupChange.Line = 1 FaceMakeupChange.bFlag = false...`)
+
+## LoginResizeWindow
+
+- **类型**: entity
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/LoginResizeWindow/LoginResizeWindow.lua`
+- **总行数**: 2
+
+---
+*5 个模块, 47 个导出 API*

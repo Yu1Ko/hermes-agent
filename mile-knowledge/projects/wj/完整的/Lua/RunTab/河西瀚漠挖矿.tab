@@ -1,0 +1,17 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UIMgr.Close(VIEW_ID.PanelHotSpotBanner)	5	首次下载游戏会出现这个弹窗
+/cmd UIMgr.Close(VIEW_ID.PanelHintSelectMode)	2	操作模式
+/cmd PlayerLevelUpToNew(130)	40	升级
+/cmd UIMgr.Close(VIEW_ID.Panel130NightPop)	2	关闭升级弹窗
+/gm player.SwitchMap(697,31361,19479,1253440)	30	切换地图
+/gm player.SetCamp(1)	3	加入阵营(1浩气2恶人)
+/cmd player.SetPosition(12995,41814,1316288)	20	传送到林旭接取任务
+/cmd Event.Dispatch(EventType.OnSceneInteractByHotkey, false)	10	交互
+/cmd UINodeControl.BtnTrigger("BtnContent_1","WidgetOldDialogueContent2",2)	10	领取任务
+/cmd UINodeControl.BtnTrigger("BtnOperation")	5	接受任务
+/cmd UINodeControl.BtnTrigger("BtnOperation")	5	接受任务
+/cmd CreateEmptyFile("perfeye_start")	2	采集数据
+/cmd CreateEmptyFile("Mining_start")	120	开始
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

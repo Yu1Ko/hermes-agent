@@ -1,0 +1,6 @@
+name: group-timing-gate
+version: 1.0.0
+description: "Group chat timing gate — speak less when chat is active, more when quiet. Uses pre_gateway_dispatch hook to intercept group messages and run a lightweight LLM judge (Groq free tier) before the main agent is invoked."
+author: "MiLe"
+provides_hooks:
+  - pre_gateway_dispatch

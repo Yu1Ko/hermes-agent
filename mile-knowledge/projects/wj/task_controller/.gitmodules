@@ -1,0 +1,38 @@
+[submodule "UAutoProfilerTool"]
+	path = UAutoProfilerTool
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/uautoprofilertool.git
+[submodule "projects/tgame"]
+	path = projects/tgame
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/tgame.git
+	branch = main
+[submodule "projects/jxsj3"]
+	path = projects/jxsj3
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/jxsj3.git
+	branch = new_process
+[submodule "projects/jxsjorigin"]
+	path = projects/jxsjorigin
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/jxsjorigin.git
+[submodule "projects/yycs"]
+	path = projects/yycs
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/yycs.git
+	branch = new_process
+[submodule "projects/jx1pocket"]
+	path = projects/jx1pocket
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/jx1
+	branch = new_process
+[submodule "projects/jxsj4"]
+	path = projects/jxsj4
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/jxsj4.git
+	branch = new_process
+[submodule "projects/jw3qptqjb"]
+	path = projects/jw3qptqjb
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/jw3qptqjb.git
+[submodule "projects/JX3"]
+	path = projects/JX3
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/JX3.git
+	branch = main
+[submodule "projects/JX3CLASSIC"]
+	path = projects/JX3CLASSIC
+	url = https://ngitlab.testplus.cn/tcdev/automationgroup/JX3.git
+	branch = main
+

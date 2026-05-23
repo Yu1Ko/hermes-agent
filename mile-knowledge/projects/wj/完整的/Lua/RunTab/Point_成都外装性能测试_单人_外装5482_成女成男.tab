@@ -1,0 +1,19 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(108,3,59319,67887,1072384)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd SearchExterior.InitTools()	10	初始化外装
+/cmd SearchHair.InitTools()	10	初始化发型
+/cmd PlayerData.GetClientPlayer().HideHat(not false)	10	关闭隐藏帽子
+/cmd SearchHair.Apply_ByName_Head("5482anew_head_HD")	10	白发型
+/cmd SearchExterior.Apply_ByName("5482new_body_hd",false)	10	穿戴外装
+/gm player.AddBuff(0,99,108,1,7200)	10	隐身
+/gm player.SetPosition(61564,65610,1072384)	10	调整面向和视角
+/cmd SetCameraStatus(287.822,0.689,3.174,-0.131);	10	视角
+/cmd SetCameraStatus(287.822,0.689,3.174,-0.131);	10	视角
+/cmd TurnTo(59)	15	调整面向
+/cmd CreateEmptyFile("perfeye_start")	60	采集数据
+/cmd CreateEmptyFile("Test")	120	结束游戏
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

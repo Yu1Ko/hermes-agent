@@ -1,0 +1,16 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.AddBuff(0,99,377,1,7200)	2	开启无敌
+/gm player.SwitchMap(_mapid_,_mapIndex_,99548,87992,2034368)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SetPosition(77449,34498,1950656)	40	设置坐标
+/cmd local O = KG3DEngine.Get3DEngineOption();O.fCameraAngle = 0.84;KG3DEngine.Set3DEngineOption(O)	1	调整广角48
+/gm player.Revive()	2	复活
+/gm player.Stop()	2	玩家停止
+/gm player.Die()	2	自杀
+/cmd SetCameraStatus(24.855,20,4.27,-0.188)	2	调整面向
+/gm player.Stop()	10	玩家停止
+/gm player.Revive()	2	复活
+/gm player.SetPosition(99548,87992,2034368)	5	设置坐标
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏
