@@ -1,0 +1,13 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.AddBuff(0,99,377,1,7200)	2	开启无敌
+/gm player.SwitchMap(_mapid_,_mapIndex_, _X_, _Y_, _Z_)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd UIMgr.Close(VIEW_ID.PanelHotSpotBanner)	1	首次下载游戏会出现这个弹窗
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd PlayerAutoFly(_trafficID1_, _trafficID2_, _flyTime_)	200	AutoFly
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd SetCameraStatus(2000, 1, 5.766,-0.395)	1	调整面向
+/cmd CreateEmptyFile("ExitGame")	10	结束游戏

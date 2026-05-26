@@ -1,0 +1,11 @@
+登录创角案例 时间均为毫秒
+account=jx3x3d3     -- 账号
+password=123456     -- 密码
+StepTime=10000      -- 登录命令执行时间
+Switch=1            -- 自动登录脚本(0:关闭,1:打开)
+SectTraversalTime=  -- 门派遍历时间
+BodyTraversalTime=  -- 体型遍历时间
+ServerTime=         -- 服务器执行遍历时间
+BodyCameraTime=     -- 每个体型摄像机遍历时间
+szDisplayRegion=BVT  -- 登录最后要选择的大区
+szDisplayServer=BVT服务器   -- 登录最后要选择的服务器

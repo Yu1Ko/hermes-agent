@@ -1,0 +1,129 @@
+[一号boss:骆耀阳]
+x	y	z	stay	mapid	action
+43603	29440	1050112	0	687	0
+43812	29407	1050112	0	687	0
+44021	29367	1050176	0	687	0
+44230	29323	1050112	0	687	0
+44439	29279	1050112	0	687	0
+44648	29235	1050112	0	687	0
+44857	29191	1050112	0	687	0
+45066	29147	1050112	0	687	0
+FlowGM=player.GetScene().SetCustomBoolean(3,true)
+Sleep=120
+Fight=1
+Btn=Event.Dispatch(EventType.OnSceneInteractByHotkey,false)
+[拾取]
+Sleep=5
+Btn=UINodeControl.BtnTrigger("BtnCloseRight","WidgetAnchorRight")
+[二号boss:韦柔丝]
+x	y	z	stay	mapid	action
+21255	40012	1035520	0	687	0
+21442	39907	1035520	0	687	0
+21629	39808	1035520	0	687	0
+21816	39709	1035520	0	687	0
+22003	39610	1035520	0	687	0
+22190	39511	1035520	0	687	0
+22377	39412	1035520	0	687	0
+22564	39313	1035520	0	687	0
+FlowGM=player.GetScene().SetProgress(1,true);player.GetScene().SetProgress(11,true)
+Sleep=40
+SpecialGM=player.GetScene().GetNpcByNickName('WRS').nCurrentMana=0
+Fight=1
+Btn=Event.Dispatch(EventType.OnSceneInteractByHotkey,false)
+[拾取]
+Sleep=5
+Btn=UINodeControl.BtnTrigger("BtnCloseRight","WidgetAnchorRight")
+[三号boss:宋泉]
+FlowGM=player.GetScene().SetProgress(2,true);player.GetScene().GetNpcByNickName('BOSS_SQ').FireAIEvent(2011,0,0)
+x	y	z	stay	mapid	action
+43082	2532	1041280	0	687	0
+47834	4848	1041280	0	687	0
+47977	5004	1041280	0	687	0
+48120	5169	1041280	0	687	0
+48263	5334	1041280	0	687	0
+48406	5499	1041280	0	687	0
+48548	5664	1041280	0	687	0
+48680	5829	1041280	0	687	0
+48821	5994	1041280	0	687	0
+48964	6159	1041280	0	687	0
+49107	6324	1041280	0	687	0
+49233	6473	1041280	0	687	0
+Sleep=30
+Fight=1
+Btn=Event.Dispatch(EventType.OnSceneInteractByHotkey,false)
+[拾取]
+Sleep=5
+Btn=UINodeControl.BtnTrigger("BtnCloseRight","WidgetAnchorRight")
+[四号boss:伍靖远]
+FlowGM=player.GetScene().GetNpcByNickName("YZK_JQZK4").FireAIEvent(2001,0,0)
+x	y	z	stay	mapid	action
+35420	11354	1041280	0	687	0
+35343	11156	1041280	0	687	0
+35266	10958	1041280	0	687	0
+35183	10760	1041280	0	687	0
+35095	10562	1041280	0	687	0
+35007	10364	1041280	0	687	0
+34919	10166	1041280	0	687	0
+34831	9968	1041280	0	687	0
+34743	9770	1041280	0	687	0
+34655	9572	1041280	0	687	0
+34567	9374	1041280	0	687	0
+34479	9176	1041280	0	687	0
+34391	8978	1041280	0	687	0
+Sleep=30
+Fight=1
+Btn=Event.Dispatch(EventType.OnSceneInteractByHotkey,false)
+[拾取]
+Sleep=5
+Btn=UINodeControl.BtnTrigger("BtnCloseRight","WidgetAnchorRight")
+[五号boss:苏什]
+FlowGM=player.GetScene().SetProgress(4,true)
+x	y	z	stay	mapid	action
+8982	20563	1065024	0	687	0
+8791	20461	1064960	0	687	0
+8593	20373	1064960	0	687	0
+8395	20285	1064960	0	687	0
+8205	20197	1064960	0	687	0
+8007	20109	1064960	0	687	0
+7809	20021	1064960	0	687	0
+7611	19933	1064960	0	687	0
+7413	19845	1064960	0	687	0
+7245	19727	1064960	0	687	0
+7047	19639	1064960	0	687	0
+6735	19567	1064960	0	687	0
+6569	20641	1064960	0	687	0
+Sleep=30
+Fight=1
+Sleep=10
+Btn=Event.Dispatch(EventType.OnSceneInteractByHotkey,false)
+[拾取]
+Sleep=5
+Btn=UINodeControl.BtnTrigger("BtnCloseRight","WidgetAnchorRight")
+[六号boss:芭德]
+FlowGM=player.GetScene().SetProgress(5,true)
+x	y	z	stay	mapid	action
+6894	45133	1081024	0	687	0
+6861	45342	1081088	0	687	0
+6828	45551	1081152	0	687	0
+6795	45758	1081216	0	687	0
+6762	45965	1081152	0	687	0
+6729	46174	1081152	0	687	0
+6696	46383	1081152	0	687	0
+6663	46592	1081152	0	687	0
+6630	46801	1081152	0	687	0
+6597	47010	1081152	0	687	0
+6564	47219	1081152	0	687	0
+6531	47428	1081152	0	687	0
+6491	47637	1081152	0	687	0
+6447	47846	1081152	0	687	0
+6403	48055	1081152	0	687	0
+6359	48264	1081152	0	687	0
+6315	48473	1081152	0	687	0
+SpecialGM=player.AddBuff(player.dwID,player.nLevel,18694,1,3600)
+Sleep=30
+Fight=1
+Btn=Event.Dispatch(EventType.OnSceneInteractByHotkey,false)
+[拾取]
+Sleep=5
+Btn=UINodeControl.BtnTrigger("BtnCloseRight","WidgetAnchorRight")
+[结束副本]

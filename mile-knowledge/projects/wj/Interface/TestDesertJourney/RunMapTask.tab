@@ -1,0 +1,25 @@
+[到达任务点，画面稳定10秒]
+x	y	z	stay	mapid	action
+258918	69237	1321344	0	MAP_ID_HEXI	0
+Sleep=10
+[开始第一段任务——需按实际流程补充坐标]
+x	y	z	stay	mapid	action
+258918	69237	1321344	0	MAP_ID_HEXI	0
+257000	69000	1322000	0	MAP_ID_HEXI	0
+255000	68800	1322500	0	MAP_ID_HEXI	0
+Dialogue=1
+Sleep=5
+[下一段任务——坐标占位，请替换为实际任务路径]
+x	y	z	stay	mapid	action
+253000	68600	1323000	0	MAP_ID_HEXI	0
+251000	68400	1323500	0	MAP_ID_HEXI	0
+Fight=1
+Sleep=15
+[任务流程继续——坐标占位]
+x	y	z	stay	mapid	action
+249000	68200	1324000	0	MAP_ID_HEXI	0
+Dialogue=1
+Sleep=5
+[任务结束段]
+x	y	z	stay	mapid	action
+258918	69237	1321344	10	MAP_ID_HEXI	1

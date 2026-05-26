@@ -1,0 +1,67 @@
+---
+title: 核心框架
+description: 剑网3无界自动化测试 - 底层框架模块，提供面板搜索、GM指令、路径管理等核心能力
+---
+
+# 核心框架
+
+底层框架模块，提供面板搜索、GM指令、路径管理等核心能力
+
+## SearchPanel
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/SearchPanel/SearchPanel.lua`
+- **总行数**: 905
+
+### API 函数 (47个)
+
+- `SearchPanel.PSMSetSwitch(bOption)` (例: `SearchPanel.PSM.bSwitch=false...`)
+- `SearchPanel.SetPSMFPS(nFps)` (例: `SearchPanel.PSM.nFPS=nFps...`)
+- `SearchPanel.GetCodeVer()` — 获取安装包版本号文件 (例: `local tbCode = {} table.insert(tbCode,GetVersionName()) table.insert(tbCode,GetVersionCode())...`)
+- `SearchPanel.GetResourceVer()` — 获取资源包版本号文件 (例: `return GetPakV5Version()...`)
+- `SearchPanel.CreateVersion()` — 创建资源包和安装包版本号文件 (例: `local szVersionPath = SearchPanel.szRunMapResultPath.."version.ini" local iniVersion = Ini.Open(szVersionPath, true) if ...`)
+- `SearchPanel.GetModule(szInterface)` — 获取插件 (例: `return SearchPanel.tbModule[szInterface]...`)
+- `SearchPanel.Switch(nSwitch)` — 插件开关 (例: `local bSwitch=true if nSwitch==0 then bSwitch=false...`)
+- `SearchPanel.GetRandomKeyInTable(tb)` — 随机返回表中的键 (例: `local tbKey={} local nIndex=1 for szKey in pairs(tb) do...`)
+- `SearchPanel.IsFileExist(szFilePath)` — 判断文件是否存在 (例: `local file=io.open(szFilePath,'r') if file then file:close()...`)
+- `SearchPanel.RemoveFile(szFilePath)` — 移除文件 (例: `if SearchPanel.IsFileExist(szFilePath) then os.remove(szFilePath) return true...`)
+- `SearchPanel.CreateDirectory(szDirPath)` — 创建目录 (例: `if szDirPath and szDirPath ~= "" and not SearchPanel.fileUtil:isDirectoryExist(szDirPath) then SearchPanel.fileUtil:crea...`)
+- `SearchPanel.StringSplit(str,splitchar)` — 字符串分割 (例: `str=str..splitchar local resultStrList = {} for s in (str):gmatch("(.-)"..splitchar) do...`)
+- `SearchPanel.LoadRunMapFile(szFilePath,nDataLen)` — 加载tab文件   参数1：路径   参数2：获取表中几列数据  返回值：二维数组2*nDataLen  去除了表头 (例: `local tbData={} for i=1,nDataLen do table.insert(tbData,{})...`)
+- `SearchPanel.MyExecuteScriptCommand(szScript)` — 执行脚本命令 (例: `szScript='return '..szScript local fun = loadstring(szScript) setfenv(fun, _G)...`)
+- `SearchPanel.RunCommand(szCMD)` — 执行命令 (例: `if type(szCMD) ~= "string" then LoginMgr.Log("SeachPanel","CMD Error:[%s]",szCMD) return...`)
+- `SearchPanel.IsEnterPanelByTrigger(func,nCycleTime,...)` (例: `if SearchPanel.tbEnterPanelByTrigger.bSwitch then return...`)
+- `SearchPanel.IsFromLoadingEnterGame()` — 是否从地图加载界面进入了游戏 (例: `local player = GetClientPlayer() if player then local bOpened =  UIMgr.IsViewOpened(VIEW_ID.PanelLoading) or UIMgr.IsVie...`)
+- `VideoFailed.FrameUpdate()` (例: `if UIMgr.IsViewOpened(VIEW_ID.PanelNormalConfirmation) or GetTickCount()-nVideoFailedStartTime >= nVideoFailedNextTime*1...`)
+- `SearchPanel.DealWithTips()` (例: `for nIndex,tip in ipairs(SearchPanel.tbTips.tips) do if UIMgr.IsViewOpened(tip) then if tip == VIEW_ID.PanelNormalConfir...`)
+- `SearchPanel.DelRepeatTips()` (例: `if not SearchPanel.tbRepeatTips.bSwitch then return...`)
+- `SearchPanel.DelRepeatTipsSwitch(bSwitch)` (例: `SearchPanel.tbRepeatTips.bSwitch=bSwitch...`)
+- `AutoRoadWay.Start(nX,nY,nZ)` — 开启自动寻路 (例: `local player = GetClientPlayer() if not player then return...`)
+- `AutoRoadWay.Stop()` — 关闭自动寻路 (例: `AutoNav.StopNav()...`)
+- `AutoRoadWay.IsRun()` — 是否在自动寻路 (例: `local player = GetClientPlayer() if not player then return...`)
+- `SearchPanel.CameraZoomStart()` — 启动镜头拉远拉近 (例: `Timer.AddFrameCycle(tbCameraZoom, 1, function () tbCameraZoom.FrameUpdate()...`)
+- `SearchPanel.CameraZoomStop()` (例: `Timer.DelAllTimer(tbCameraZoom)...`)
+- `tbCircle.SetAngle(nAngleCount)` (例: `tbCircle.nAngle = tonumber(nAngleCount)...`)
+- `SearchPanel.CircleStart()` (例: `Timer.AddFrameCycle(tbCircle, 1, function () tbCircle.FrameUpdate()...`)
+- `SearchPanel.CircleStop()` (例: `Timer.DelAllTimer(tbCircle)...`)
+- `tbVideoSwitch.SwitchVideo()` (例: `if GetTickCount()-tbVideoSwitch.nTimer>tbVideoSwitch.nSetpTime*1000 then tbVideoSwitch.nTimer=GetTickCount() if SearchPa...`)
+- `SearchPanel.VideoSwitchStart()` (例: `tbVideoSwitch.list_Video = SearchPanel.GetDevicesOptionList() Timer.AddFrameCycle(tbVideoSwitch, 1, function () tbVideoS...`)
+- `SearchPanel.VideoSwitchStop()` (例: `Timer.DelAllTimer(tbVideoSwitch)...`)
+- `tbJumpSwitch.SwitchJump()` (例: `if GetTickCount()-tbJumpSwitch.nTimer>tbJumpSwitch.nSetpTime*1000 then tbJumpSwitch.nTimer=GetTickCount() if tbJumpSwitc...`)
+- `SearchPanel.JumpSwitchStart()` (例: `Timer.AddFrameCycle(tbJumpSwitch, 1, function () tbJumpSwitch.SwitchJump()...`)
+- `SearchPanel.JumpSwitchStop()` (例: `Timer.DelAllTimer(tbJumpSwitch)...`)
+- `SearchPanel.DownloadGM()` — 下载GM (例: `Timer.AddCycle(SearchPanel.GM, 3, function () SearchPanel.GM.download()...`)
+- `TbSwitchMap.SwitchMapFrameUpdate()` — 检查是否到达地图 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `SearchPanel.PlayerSwitchMap(mapId,ndwID,nMapX,nMapY,nMapZ)` — 地图id 地图x坐标 地图y坐标 地图z坐标 (例: `SendGMCommand(string.format("player.SwitchMap(%d,%d,%d,%d,%d)", mapId,ndwID,nMapX,nMapY,nMapZ)) nMapId = mapId nDw = ndw...`)
+- `SearchPanel.SetCustomOptions(szColumn,szColumnCount)` — 例如 SearchPanel.SetCustomOptions("同屏玩家数",0) 能控同屏玩家数和npc (例: `local nColumnCount = tonumber(szColumnCount) SetGameSetting(SettingCategory.Quality, QUALITY.RENDER_EFFICIENCY, szColumn...`)
+- `SearchPanel.SetSFXLimitOptions(nColumnCount)` — 同屏特效数 (例: `QualityMgr.ModifyCurQuality("nClientSFXLimit", tonumber(nColumnCount), false) QualityMgr.ModifyCurQuality("nClientUnderW...`)
+- `SearchPanel.SetPlaySFXLimitOptions(nColumnCount)` — 其他玩家特效数 (例: `QualityMgr.ModifyCurQuality("nClientOtherPlaySFXLimit",tonumber(nColumnCount), false) Event.Dispatch(EventType.OnQuality...`)
+- `SearchPanel.GetDefaultQuality()` — 获取默认画质的接口 (例: `for key, value in pairs(tbVideoSwitch.list_Video) do if QualityMgr.GetRecommendQualityType() == key then return value...`)
+- `SearchPanel.StartTimingMap(nSetX,nSetY,nSetZ)` (例: `Timer.AddCycle(SearchPanel.Timing,4,function () SearchPanel.Timing.SettimingMap(tonumber(nSetX),tonumber(nSetY),tonumber...`)
+- `SearchPanel.SetSuperResolution(szSuperResolutionCount)` — 超分接口 (例: `local nColumnCount = tonumber(szSuperResolutionCount) local szSuperResolution local tbSuperResolution ={...`)
+- `SearchPanel.Startfight()` — 武学助手自动开启 (例: `local nIntervalTime = 0.155 Timer.AddCycle(AutoBattle, nIntervalTime, AutoBattle.CastSkillCycle) SprintData.ToggleViewSt...`)
+- `SearchPanel.GetDevicesOptionList()` — 获取设备对应的画质 (例: `local tbDevicesOptionList ={} for _, quality in pairs(QualityMgr.GetSettingOptionList()) do if quality ~= GameQualityTyp...`)
+- `SearchPanel.CheckDevicesQuality(nGameQualityType)` — 检测是否可以切当前画质 (例: `local nQualityType = nGameQualityType local bResult = true if not QualityMgr.CanSwitchQuality() then...`)
+
+---
+*1 个模块, 47 个导出 API*

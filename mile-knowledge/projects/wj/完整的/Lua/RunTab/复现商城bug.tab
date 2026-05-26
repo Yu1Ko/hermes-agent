@@ -1,0 +1,8 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	10	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd CreateEmptyFile("perfeye_start")	10	开始采集
+/cmd CreateEmptyFile("ShopStart")	10	开始采集
+/cmd CreateEmptyFile("perfeye_stop")	10	开始采集
+/cmd CreateEmptyFile("ExitGame")	20	结束游戏

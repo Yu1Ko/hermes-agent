@@ -1,0 +1,28 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(6,69220, 62631, 1052928)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd local fCameraToObjectEyeScale, fYaw, fPitch=Camera_GetRTParams();Camera_SetRTParams(fCameraToObjectEyeScale,0,fPitch)	5	设置视角
+/cmd CreateEmptyFile("perfeye_start")	20	采集数据
+x	y	z	stay	mapid	action
+69220	62631	1052928	0	6	0
+69220	62841	1052992	0	6	0
+69083	62989	1052992	0	6	0
+68989	63166	1052928	0	6	0
+68923	63364	1052928	0	6	0
+69017	63544	1052608	0	6	0
+69181	63665	1052288	0	6	0
+69304	63842	1051968	0	6	0
+69252	64036	1051968	0	6	0
+69100	64184	1051968	0	6	0
+68932	64300	1051968	0	6	0
+68933	64512	1051968	0	6	0
+69068	64674	1051968	0	6	0
+69254	64776	1051968	0	6	0
+69306	64970	1051968	0	6	0
+69183	65141	1051968	0	6	0
+69122	65341	1051968	0	6	0
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,44 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UINodeControl.BtnTrigger("BtnGm")	10	点击下面板
+/cmd UINodeControl.BtnTriggerByLable("BtnClose","GM")	5	关闭面板
+/cmd PlayerLevelUpToNew(120)	40	升级
+/gm player.SwitchMap(108,69421,61098,1074112)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm SetArenaMapToArenaQueue(362, 1)	20	设置地图
+/cmd RobotControl.CMD("Arena")	60	初始化pvp环境
+/cmd UINodeControl.BtnTrigger("BtnInteractive","WidgetInteractive1")	10	对话
+/cmd UINodeControl.TogTriggerByIndex("WidgetAnchorBottom",2)	10	点击3v3
+/cmd UINodeControl.BtnTriggerByLable("BtnTeamMatching","组队匹配")	10	点击组队匹配
+/cmd CreateEmptyFile("ArenaPvP")	2	开启跑图
+/gm player.Revive()	10	复活
+x	y	z	stay	mapid	action
+4841	11225	1057344	0	362	0
+4841	11434	1057344	0	362	0
+4841	11643	1057088	0	362	0
+4841	11852	1057088	0	362	0
+4841	12061	1057088	0	362	0
+4841	12270	1057152	0	362	0
+4841	12479	1057152	0	362	0
+4841	12688	1057152	0	362	0
+4841	12897	1057152	0	362	0
+4841	13106	1057152	0	362	0
+4841	13315	1057152	0	362	0
+4841	13524	1057152	0	362	0
+4841	13733	1057152	0	362	0
+4841	13942	1057152	0	362	0
+4841	14151	1057152	0	362	0
+4841	14360	1057152	0	362	0
+4841	14574	1057728	0	362	0
+4841	14793	1058304	0	362	0
+4841	15002	1058304	0	362	0
+4841	15211	1058304	0	362	0
+4841	15420	1058368	0	362	0
+4841	15629	1058240	0	362	0
+4841	15838	1058240	0	362	0
+4841	16047	1058368	0	362	0
+4841	16256	1058368	0	362	0
+4841	16465	1058560	0	362	0
+4841	16674	1058560	0	362	0
+4841	16883	1058560	0	362	0

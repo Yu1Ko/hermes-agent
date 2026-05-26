@@ -1,0 +1,24 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginSwitchMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SetCamp(1)	2	加入阵营(1浩气2恶人)
+/gm player.AddMoney(10000,1000,1000)	10	获取金钱
+/gm ApplyCreateTong(player.dwID,player.szName)	2	根据角色名字创建帮会
+/gm player.AddItem(5 ,5284)	2	九天逍遥装备获取
+/cmd UIMgr.Open(24)	2	打开菜单
+/cmd UIMgr.Open(117)	2	打开半屏背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 2).dwID)	2	选中九天逍遥
+/cmd UINodeControl.BtnTriggerByLable("BtnTipOperation","使用")	2	使用九天逍遥
+/cmd UINodeControl.BtnTriggerByLable("BtnContent_1","升级到120")	30	升级到120级并获得PVE装备
+/cmd UIMgr.Close(1705)	2	关闭升级弹窗
+/cmd UIMgr.Close(1701)	10	关闭升级弹窗
+/cmd UIMgr.Close(117)	2	关闭半屏背包
+/cmd UIMgr.Close(24)	2	关闭菜单
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	2	加隐身
+/gm player.SwitchMap(653,1,45085,94584,1116800)	30	传送
+/cmd CreateEmptyFile("perfeye_start")	2	采集数据
+/cmd CreateEmptyFile("UIErgodic")	10	开始
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd DisbandSelfTong()	20	解散帮会
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏
