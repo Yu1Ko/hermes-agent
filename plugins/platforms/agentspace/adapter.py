@@ -400,9 +400,12 @@ class AgentSpaceAdapter(BasePlatformAdapter):
 
         self._reconnecting = True
         try:
-            # Cancel old listen/heartbeat tasks
+            # Cancel old listen/heartbeat tasks. If reconnect is triggered from one of
+            # those tasks, don't cancel the current task or the scheduled reconnect
+            # gets cancelled right after logging "reconnect #N in ...".
+            current_task = asyncio.current_task()
             for task in [self._listen_task, self._heartbeat_task]:
-                if task and not task.done():
+                if task and task is not current_task and not task.done():
                     task.cancel()
 
             while self._running:
