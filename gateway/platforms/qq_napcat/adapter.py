@@ -50,6 +50,7 @@ logger = logging.getLogger(__name__)
 IMAGE_EXTS = {".bmp", ".gif", ".jpeg", ".jpg", ".png", ".webp"}
 VIDEO_EXTS = {".avi", ".mkv", ".mov", ".mp4", ".webm"}
 AUDIO_EXTS = {".aac", ".amr", ".flac", ".m4a", ".mp3", ".ogg", ".opus", ".wav", ".wma"}
+QQ_OUTBOUND_SPLIT_MARKERS = ("<<<QQ_SPLIT>>>", "\u241eQQ_SPLIT\u241e")
 
 
 def check_qq_requirements() -> bool:
@@ -302,12 +303,38 @@ class NapCatQQAdapter(BasePlatformAdapter):
         self._pending_batch_tasks.clear()
         self._pending_batches.clear()
 
+    @staticmethod
+    def _split_outbound_text(content: str) -> List[str]:
+        """Split one logical gateway reply into multiple QQ messages.
+
+        The marker is intentionally explicit rather than newline-based so code
+        blocks, markdown, paths, and normal paragraphs keep their original shape.
+        Empty marker-adjacent chunks are ignored, making accidental leading or
+        trailing markers harmless.
+        """
+        text = str(content or "")
+        for marker in QQ_OUTBOUND_SPLIT_MARKERS[1:]:
+            text = text.replace(marker, QQ_OUTBOUND_SPLIT_MARKERS[0])
+        if QQ_OUTBOUND_SPLIT_MARKERS[0] not in text:
+            return [text]
+        return [part.strip() for part in text.split(QQ_OUTBOUND_SPLIT_MARKERS[0]) if part.strip()]
+
     async def send(self, chat_id: str, content: str, reply_to: Optional[str] = None, metadata: Optional[Dict[str, Any]] = None) -> SendResult:
         source = self._source_from_chat_id(chat_id)
         try:
-            result = await asyncio.to_thread(self._client.send_text, source, content)
-            data = result.get("data") or {}
-            return SendResult(success=True, message_id=str(data.get("message_id") or ""), raw_response=result)
+            parts = self._split_outbound_text(content)
+            if not parts:
+                parts = [str(content or "")]
+            results = []
+            for part in parts:
+                results.append(await asyncio.to_thread(self._client.send_text, source, part))
+            last_result = results[-1] if results else {}
+            data = last_result.get("data") or {}
+            return SendResult(
+                success=True,
+                message_id=str(data.get("message_id") or ""),
+                raw_response=last_result if len(results) == 1 else {"parts": results},
+            )
         except Exception as exc:
             logger.warning("[QQ] send failed: %s", exc)
             return SendResult(success=False, error=str(exc))

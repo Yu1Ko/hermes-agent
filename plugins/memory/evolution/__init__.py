@@ -290,7 +290,26 @@ class EvolutionMemoryProvider(MemoryProvider):
             logger.debug("Evolution memory prefetch failed: %s", exc)
             results = []
 
-        if results:
+        # Hybrid retrieval: fuse FTS5 + GraphRAG into unified Knowledge Context block.
+        # When graphrag prefetch is enabled, results from both sources are merged,
+        # deduplicated, and ranked by relevance. Falls back to separate FTS5 block
+        # if hybrid retrieval is unavailable.
+        if self._enable_graphrag_prefetch:
+            try:
+                from graphrag.hybrid_retrieval import hybrid_prefetch_block
+                hybrid_block = hybrid_prefetch_block(query, results, top_k=5)
+                if hybrid_block:
+                    blocks.append(hybrid_block)
+            except Exception as exc:
+                logger.debug("Hybrid prefetch failed, using FTS5 only: %s", exc)
+                if results:
+                    lines = ["## Evolution Memory"]
+                    for item in results:
+                        confidence = float(item.get("confidence", 0.0))
+                        kind = item.get("kind", "semantic")
+                        lines.append(f"- [{kind} {confidence:.2f}] {item.get('content', '')}")
+                    blocks.append("\n".join(lines))
+        elif results:
             lines = ["## Evolution Memory"]
             for item in results:
                 confidence = float(item.get("confidence", 0.0))
@@ -315,17 +334,6 @@ class EvolutionMemoryProvider(MemoryProvider):
                 blocks.append("\n".join(expr_lines))
         except Exception as exc:
             logger.debug("Expression prefetch failed: %s", exc)
-
-        # Knowledge Graph (GraphRAG) search — enabled via plugins.evolution.enable_graphrag_prefetch.
-        # Uses embedding API (mnapi.com) — no local model needed.
-        if self._enable_graphrag_prefetch:
-            try:
-                from graphrag.lightweight_search import graphrag_prefetch_block
-                _gr_block = graphrag_prefetch_block(query, top_k=3)
-                if _gr_block:
-                    blocks.append(_gr_block)
-            except Exception as exc:
-                logger.debug("GraphRAG prefetch failed: %s", exc)
 
         # Person profile injection
         try:
