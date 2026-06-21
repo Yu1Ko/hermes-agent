@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import importlib
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -22,6 +23,89 @@ from tools.registry import tool_error
 from .store import EvolutionMemoryStore
 
 logger = logging.getLogger(__name__)
+
+_DEFAULT_PER_USER_DB_TEMPLATE = (
+    "$HERMES_HOME/evolution_memory/users/{platform}/{user_hash}/memory.db"
+)
+
+
+def _truthy(value: Any) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return False
+    if isinstance(value, (int, float)):
+        return bool(value)
+    return str(value).strip().lower() in {"1", "true", "yes", "on", "enabled"}
+
+
+def _string_list(value: Any) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, (list, tuple, set)):
+        return [str(item).strip().lower() for item in value if str(item).strip()]
+    raw = str(value).strip()
+    if not raw or raw == "*":
+        return []
+    if raw.startswith("["):
+        try:
+            loaded = json.loads(raw)
+            if isinstance(loaded, list):
+                return [str(item).strip().lower() for item in loaded if str(item).strip()]
+        except Exception:
+            pass
+    return [part.strip().lower() for part in re.split(r"[,\s]+", raw) if part.strip()]
+
+
+def _slug(value: Any, default: str = "unknown") -> str:
+    text = str(value or "").strip().lower()
+    text = re.sub(r"[^a-z0-9_.-]+", "_", text).strip("._-")
+    return text or default
+
+
+def _expand_home(path: str, hermes_home: Path) -> str:
+    return path.replace("$HERMES_HOME", str(hermes_home)).replace(
+        "${HERMES_HOME}", str(hermes_home)
+    )
+
+
+def _per_user_identity(kwargs: dict[str, Any]) -> str:
+    for key in ("user_id", "user_id_alt", "user_name"):
+        value = kwargs.get(key)
+        if value:
+            return str(value)
+    return ""
+
+
+def _per_user_db_path(config: dict[str, Any], hermes_home: Path, kwargs: dict[str, Any]) -> str | None:
+    if not _truthy(config.get("per_user_db")):
+        return None
+
+    platform = _slug(kwargs.get("platform"))
+    allowed_platforms = _string_list(config.get("per_user_db_platforms"))
+    if allowed_platforms and platform not in allowed_platforms:
+        return None
+
+    identity = _per_user_identity(kwargs)
+    if not identity:
+        return None
+
+    user_hash = hashlib.sha256(f"{platform}:{identity}".encode("utf-8")).hexdigest()[:16]
+    template = str(config.get("per_user_db_path_template") or _DEFAULT_PER_USER_DB_TEMPLATE)
+    try:
+        rendered = template.format(
+            platform=platform,
+            user_hash=user_hash,
+            identity_hash=user_hash,
+        )
+    except Exception as exc:
+        logger.warning("Invalid evolution per-user db template %r: %s", template, exc)
+        rendered = _DEFAULT_PER_USER_DB_TEMPLATE.format(
+            platform=platform,
+            user_hash=user_hash,
+            identity_hash=user_hash,
+        )
+    return _expand_home(rendered, hermes_home)
 
 
 EVOLUTION_MEMORY_SCHEMA = {
@@ -105,25 +189,46 @@ EVOLUTION_MEMORY_SCHEMA = {
 
 _PREFERENCE_RE = re.compile(
     r"\b(?:I|i)\s+(?:prefer|like|love|want|need|always|usually|never)\b|"
-    r"\bmy\s+(?:default|preferred|favorite)\b",
+    r"\bmy\s+(?:default|preferred|favorite)\b|"
+    r"(?:我|用户|对方)?(?:更?偏好|喜欢|希望|默认|习惯|不喜欢|讨厌|反感|别|不要|禁止|记住|倾向)|"
+    r"(?:以后(?:回复|回答|都|默认|别|不要))",
     re.IGNORECASE,
 )
 _PROJECT_RE = re.compile(
     r"\b(?:we\s+(?:decided|agreed|chose)|project\s+(?:uses|needs|requires)|"
-    r"repo\s+(?:uses|needs|requires))\b",
+    r"repo\s+(?:uses|needs|requires))\b|"
+    r"(?:项目|仓库|代码库|配置|系统|网关|插件|脚本).{0,30}(?:使用|采用|需要|依赖|默认|决定|约定|配置为|跑在)",
     re.IGNORECASE,
 )
 _PROCEDURAL_RE = re.compile(
-    r"\b(?:use|run|remember to|workflow|tests?|commands?|scripts?/)\b",
+    r"\b(?:use|run|remember to|workflow|tests?|commands?|scripts?/)\b|"
+    r"\b(?:pytest|passed|failed|exit_code|traceback)\b|"
+    r"(?:流程|命令|脚本|测试|验证|排查|修复|坑|踩坑|经验|以后遇到|正确做法|先.*再|必须|需要)",
     re.IGNORECASE,
 )
 _SOCIAL_RE = re.compile(
-    r"\b(?:tone|style|reply|answer|language|Chinese|English|concise|verbose|short)\b",
+    r"\b(?:tone|style|reply|answer|language|Chinese|English|concise|verbose|short)\b|"
+    r"(?:语气|风格|回复|回答|中文|英文|口语|短句|编号|列表|句号|颜文字|测评腔|报告式|自然)",
+    re.IGNORECASE,
+)
+_ASSISTANT_DURABLE_RE = re.compile(
+    r"\b(?:verified|confirmed|fixed|root cause|regression|tests? passed|workflow|pitfall)\b|"
+    r"(?:已验证|确认|修复|根因|回归|测试通过|流程|坑|踩坑|以后|正确做法|必须|需要|默认|配置为)",
+    re.IGNORECASE,
+)
+_TOOL_DURABLE_RE = re.compile(
+    r"\b(?:pytest|passed|failed|exit_code|traceback|error|success)\b|"
+    r"(?:测试|通过|失败|报错|错误|成功)",
+    re.IGNORECASE,
+)
+_MEMORY_CONTEXT_RE = re.compile(
+    r"<\s*memory-context\s*>[\s\S]*?</\s*memory-context\s*>",
     re.IGNORECASE,
 )
 _EXPRESSION_CUE_RE = re.compile(
     r"\b(?:like|as)\s+\w+\s+(?:says|said|would\s+say)\b|"
-    r"\b(?:you\s+guys|people|everyone)\s+(?:always|usually|often|say)\b",
+    r"\b(?:you\s+guys|people|everyone)\s+(?:always|usually|often|say)\b|"
+    r"(?:大家|你们|别人).{0,12}(?:总是|经常|通常|会说)",
     re.IGNORECASE,
 )
 
@@ -143,10 +248,27 @@ def _load_plugin_config() -> dict[str, Any]:
 
 
 def _clip(text: str, limit: int = 500) -> str:
-    text = " ".join((text or "").split())
+    text = _MEMORY_CONTEXT_RE.sub(" ", text or "")
+    text = " ".join(text.split())
     if len(text) <= limit:
         return text
     return text[: limit - 1].rstrip() + "..."
+
+
+def _message_content_text(content: Any, *, limit: int = 1000) -> str:
+    if content is None:
+        return ""
+    if isinstance(content, list):
+        parts: list[str] = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+            elif isinstance(item, dict) and isinstance(item.get("text"), str):
+                parts.append(item["text"])
+        return _clip("\n".join(parts), limit)
+    if isinstance(content, str):
+        return _clip(content, limit)
+    return _clip(str(content), limit)
 
 
 class EvolutionMemoryProvider(MemoryProvider):
@@ -178,12 +300,12 @@ class EvolutionMemoryProvider(MemoryProvider):
 
             hermes_home = get_hermes_home()
 
-        db_path = self._config.get("db_path") or str(
+        per_user_path = _per_user_db_path(self._config, hermes_home, kwargs)
+        db_path = per_user_path or self._config.get("db_path") or str(
             hermes_home / "evolution_memory" / "memory.db"
         )
         if isinstance(db_path, str):
-            db_path = db_path.replace("$HERMES_HOME", str(hermes_home))
-            db_path = db_path.replace("${HERMES_HOME}", str(hermes_home))
+            db_path = _expand_home(db_path, hermes_home)
 
         self._store = EvolutionMemoryStore(db_path)
         self._session_id = session_id or ""
@@ -218,6 +340,21 @@ class EvolutionMemoryProvider(MemoryProvider):
                 "key": "db_path",
                 "description": "SQLite database path",
                 "default": f"{display_hermes_home()}/evolution_memory/memory.db",
+            },
+            {
+                "key": "per_user_db",
+                "description": "Store gateway users in separate SQLite databases keyed by a stable hashed user identity",
+                "default": "false",
+            },
+            {
+                "key": "per_user_db_platforms",
+                "description": "Optional platform allowlist for per-user DB isolation, comma-separated or list syntax",
+                "default": "",
+            },
+            {
+                "key": "per_user_db_path_template",
+                "description": "Template for per-user SQLite paths; supports {platform}, {user_hash}, and $HERMES_HOME",
+                "default": _DEFAULT_PER_USER_DB_TEMPLATE,
             },
             {
                 "key": "max_prefetch",
@@ -400,25 +537,35 @@ class EvolutionMemoryProvider(MemoryProvider):
         if not self._store or not messages:
             return ""
         captured = 0
+        captured_lines: list[str] = []
         for message in messages:
-            if message.get("role") != "user":
+            role = message.get("role")
+            if role not in {"user", "assistant", "tool"}:
                 continue
-            content = message.get("content", "")
-            if not isinstance(content, str):
+            content = _message_content_text(message.get("content"), limit=900)
+            if not content:
                 continue
-            for memory in self._extract_memories(content, source_prefix="pre_compress"):
+            if role == "assistant" and not _ASSISTANT_DURABLE_RE.search(content):
+                continue
+            if role == "tool" and not _TOOL_DURABLE_RE.search(content):
+                continue
+            source_prefix = f"pre_compress:{role}"
+            for memory in self._extract_memories(content, source_prefix=source_prefix):
                 try:
                     self._store.upsert_memory(
                         session_id=self._session_id,
-                        metadata=self._metadata,
+                        metadata={**self._metadata, "source_role": role, "flush": True},
                         **memory,
                     )
                     captured += 1
+                    if len(captured_lines) < 5:
+                        captured_lines.append(f"- [{memory['kind']}] {memory['content']}")
                 except Exception:
                     pass
         if not captured:
             return ""
-        return f"Evolution Memory captured {captured} durable item(s) before compression."
+        detail = "\n" + "\n".join(captured_lines) if captured_lines else ""
+        return f"Evolution Memory captured {captured} durable item(s) before compression.{detail}"
 
     def on_memory_write(
         self,

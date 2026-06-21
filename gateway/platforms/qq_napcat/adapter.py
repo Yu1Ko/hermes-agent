@@ -545,6 +545,10 @@ class NapCatQQAdapter(BasePlatformAdapter):
                     await asyncio.sleep(3)
 
     async def _handle_onebot_event(self, event: dict, origin: str = "ws") -> None:
+        if event.get("post_type") == "request" and event.get("request_type") == "friend":
+            await self._handle_friend_request(event)
+            return
+
         normalized = self._normalize_event(event)
         if normalized is None or self._is_self_message(normalized):
             return
@@ -619,6 +623,25 @@ class NapCatQQAdapter(BasePlatformAdapter):
             await self.handle_message(event_obj)
             return
         self._enqueue_batched_event(event_obj)
+
+    async def _handle_friend_request(self, event: dict) -> None:
+        user_id = str(event.get("user_id") or "")
+        flag = str(event.get("flag") or "")
+        if not user_id or not flag:
+            logger.warning("[QQ] Ignoring friend request without user_id/flag")
+            return
+        if not _entry_matches(self._allow_from, user_id):
+            logger.info("[QQ] Ignoring friend request from non-allowlisted user")
+            return
+        try:
+            await asyncio.to_thread(
+                self._client.call,
+                "set_friend_add_request",
+                {"flag": flag, "approve": True, "remark": ""},
+            )
+            logger.info("[QQ] Accepted friend request from allowlisted user")
+        except Exception as exc:
+            logger.warning("[QQ] Failed to accept friend request from allowlisted user: %s", exc)
 
     # ── Group judge poller ───────────────────────────────────────────────
 

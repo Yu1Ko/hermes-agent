@@ -9,11 +9,12 @@ confirm the prologue produces the right ``TurnContext`` and applies the
 from __future__ import annotations
 
 import types
+from typing import Any
 from unittest.mock import patch
 
 import pytest
 
-from agent.turn_context import TurnContext, build_turn_context
+from agent.turn_context import TurnContext, _build_memory_prefetch_query, build_turn_context
 
 
 class _FakeTodoStore:
@@ -30,6 +31,18 @@ class _FakeGuardrails:
 
     def reset_for_turn(self):
         self.reset_called = True
+
+
+class _FakeMemoryManager:
+    def __init__(self):
+        self.prefetch_queries = []
+
+    def on_turn_start(self, *_a, **_k):
+        pass
+
+    def prefetch_all(self, query, *, session_id=""):
+        self.prefetch_queries.append(query)
+        return "remembered context"
 
 
 class _FakeAgent:
@@ -56,7 +69,7 @@ class _FakeAgent:
         )
         self._cached_system_prompt = "SYSTEM"
         self._memory_store = None
-        self._memory_manager = None
+        self._memory_manager: Any = None
         self._memory_nudge_interval = 0
         self._turns_since_memory = 0
         self._user_turn_count = 0
@@ -259,3 +272,48 @@ def test_between_turns_refresh_no_churn_when_unchanged():
 
     assert agent.tools is same  # not replaced → no churn
 
+def test_memory_prefetch_query_includes_recent_context_and_strips_internal_block():
+    messages = [
+        {"role": "system", "content": "SYSTEM"},
+        {"role": "user", "content": "之前在聊压缩前保存"},
+        {"role": "assistant", "content": "建议把 flush 放到 turns_to_summarize 后面"},
+        {"role": "tool", "content": "tool noise should not enter recall query"},
+        {"role": "user", "content": "当前问题 <memory-context>secret old recall</memory-context> 怎么做"},
+    ]
+
+    query = _build_memory_prefetch_query(
+        messages[-1]["content"],
+        messages,
+        len(messages) - 1,
+        platform="qq",
+    )
+
+    assert "Platform: qq" in query
+    assert "当前问题" in query
+    assert "压缩前保存" in query
+    assert "turns_to_summarize" in query
+    assert "tool noise" not in query
+    assert "secret old recall" not in query
+
+
+def test_build_turn_context_prefetches_with_expanded_query():
+    agent = _FakeAgent()
+    agent.platform = "qq"
+    memory = _FakeMemoryManager()
+    agent._memory_manager = memory
+
+    ctx = _build(
+        agent,
+        user_message="这两点怎么做",
+        conversation_history=[
+            {"role": "user", "content": "想做回复前主动回忆"},
+            {"role": "assistant", "content": "还要压缩前自动保存"},
+        ],
+    )
+
+    assert ctx.ext_prefetch_cache == "remembered context"
+    assert len(memory.prefetch_queries) == 1
+    query = memory.prefetch_queries[0]
+    assert "这两点怎么做" in query
+    assert "回复前主动回忆" in query
+    assert "压缩前自动保存" in query

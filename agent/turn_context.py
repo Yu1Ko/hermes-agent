@@ -23,6 +23,7 @@ move-and-name refactor with no semantic change.
 from __future__ import annotations
 
 import logging
+import re
 import threading
 import uuid
 from dataclasses import dataclass
@@ -32,6 +33,80 @@ from agent.iteration_budget import IterationBudget
 from agent.model_metadata import estimate_request_tokens_rough
 
 logger = logging.getLogger(__name__)
+
+_MEMORY_CONTEXT_RE = re.compile(
+    r"<\s*memory-context\s*>[\s\S]*?</\s*memory-context\s*>",
+    re.IGNORECASE,
+)
+
+
+def _text_for_memory_query(content: Any, *, limit: int = 500) -> str:
+    """Render user/assistant content into a compact, recall-safe text snippet."""
+    if content is None:
+        return ""
+    if isinstance(content, list):
+        parts: list[str] = []
+        for item in content:
+            if isinstance(item, str):
+                parts.append(item)
+            elif isinstance(item, dict) and isinstance(item.get("text"), str):
+                parts.append(item["text"])
+        text = "\n".join(parts)
+    elif isinstance(content, str):
+        text = content
+    else:
+        text = str(content)
+
+    text = _MEMORY_CONTEXT_RE.sub(" ", text)
+    text = " ".join(text.split())
+    if len(text) > limit:
+        return text[: limit - 1].rstrip() + "…"
+    return text
+
+
+def _build_memory_prefetch_query(
+    current_user_message: Any,
+    messages: List[Dict[str, Any]],
+    current_turn_user_idx: int,
+    *,
+    platform: str = "",
+    max_recent_messages: int = 4,
+    max_chars: int = 1600,
+) -> str:
+    """Build a richer recall query from the current turn plus recent context.
+
+    The query is only used for memory retrieval.  It is not persisted and should
+    not include internal ``<memory-context>`` blocks that were injected by a
+    previous recall step.
+    """
+    current = _text_for_memory_query(current_user_message, limit=700)
+    if not current:
+        return ""
+
+    parts: list[str] = []
+    if platform:
+        parts.append(f"Platform: {platform}")
+    parts.append(f"Current user message: {current}")
+
+    recent: list[str] = []
+    for msg in reversed(messages[:current_turn_user_idx]):
+        role = msg.get("role", "")
+        if role not in {"user", "assistant"}:
+            continue
+        text = _text_for_memory_query(msg.get("content"), limit=350)
+        if not text:
+            continue
+        label = "User" if role == "user" else "Assistant"
+        recent.append(f"{label}: {text}")
+        if len(recent) >= max_recent_messages:
+            break
+    if recent:
+        parts.append("Recent conversation context:\n" + "\n".join(reversed(recent)))
+
+    query = "\n\n".join(parts)
+    if len(query) > max_chars:
+        return query[: max_chars - 1].rstrip() + "…"
+    return query
 
 
 @dataclass
@@ -388,7 +463,12 @@ def build_turn_context(
     ext_prefetch_cache = ""
     if agent._memory_manager:
         try:
-            _query = original_user_message if isinstance(original_user_message, str) else ""
+            _query = _build_memory_prefetch_query(
+                original_user_message,
+                messages,
+                current_turn_user_idx,
+                platform=getattr(agent, "platform", None) or "",
+            )
             ext_prefetch_cache = agent._memory_manager.prefetch_all(_query) or ""
         except Exception:
             pass

@@ -12,6 +12,7 @@ import hashlib
 import logging
 import os
 import json
+import re
 import threading
 import uuid
 from pathlib import Path
@@ -52,6 +53,18 @@ def _hash_chat_id(value: str) -> str:
         prefix = value[:colon]
         return f"{prefix}:{_hash_id(value[colon + 1:])}"
     return _hash_id(value)
+
+
+_IDENTIFIER_LIKE_RE = re.compile(
+    r"(?:group:|private:)?\d{5,}"
+    r"|\d+@(?:s\.whatsapp\.net|g\.us|lid)"
+    r"|[A-Za-z0-9_-]{16,}"
+)
+
+
+def _looks_like_identifier(value: str) -> bool:
+    """Return True when a display label looks like a raw platform ID."""
+    return bool(_IDENTIFIER_LIKE_RE.fullmatch(str(value or "").strip()))
 
 
 from .config import (
@@ -206,6 +219,8 @@ _PII_SAFE_PLATFORMS = frozenset({
     Platform.SIGNAL,
     Platform.TELEGRAM,
     Platform.BLUEBUBBLES,
+    Platform.QQ,
+    Platform.QQBOT,
 })
 """Platforms where user IDs can be safely redacted (no in-message mention system
 that requires raw IDs).  Discord is excluded because mentions use ``<@user_id>``
@@ -282,10 +297,18 @@ def build_session_context_prompt(
         src = context.source
         if redact_pii:
             # Build a safe description without raw IDs
-            _uname = src.user_name or (
-                _hash_sender_id(src.user_id) if src.user_id else "user"
+            _hashed_user = _hash_sender_id(src.user_id) if src.user_id else "user"
+            _uname = (
+                src.user_name
+                if src.user_name and not _looks_like_identifier(src.user_name)
+                else _hashed_user
             )
-            _cname = src.chat_name or _hash_chat_id(src.chat_id)
+            _hashed_chat = _hash_chat_id(src.chat_id) if src.chat_id else "chat"
+            _cname = (
+                src.chat_name
+                if src.chat_name and not _looks_like_identifier(src.chat_name)
+                else _hashed_chat
+            )
             if src.chat_type == "dm":
                 desc = f"DM with {_uname}"
             elif src.chat_type == "group":
@@ -332,7 +355,10 @@ def build_session_context_prompt(
             "with [sender name]. Multiple users may participate."
         )
     elif context.source.user_name:
-        lines.append(f"**User:** {context.source.user_name}")
+        user_name = context.source.user_name
+        if redact_pii and _looks_like_identifier(user_name):
+            user_name = _hash_sender_id(context.source.user_id or user_name)
+        lines.append(f"**User:** {user_name}")
     elif context.source.user_id:
         uid = context.source.user_id
         if redact_pii:
@@ -426,8 +452,16 @@ def build_session_context_prompt(
     if context.source.platform == Platform.LOCAL:
         lines.append("- `\"origin\"` → Local output (saved to files)")
     else:
-        _origin_label = context.source.chat_name or (
-            _hash_chat_id(context.source.chat_id) if redact_pii else context.source.chat_id
+        _origin_fallback = (
+            _hash_chat_id(context.source.chat_id)
+            if redact_pii and context.source.chat_id
+            else context.source.chat_id
+        ) or "chat"
+        _origin_label = (
+            context.source.chat_name
+            if context.source.chat_name
+            and not (redact_pii and _looks_like_identifier(context.source.chat_name))
+            else _origin_fallback
         )
         lines.append(f"- `\"origin\"` → Back to this chat ({_origin_label})")
 

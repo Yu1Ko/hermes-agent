@@ -344,6 +344,49 @@ class TestBuildSessionContextPrompt:
 
         assert "WhatsApp" in prompt or "whatsapp" in prompt.lower()
 
+    def test_qq_prompt_redacts_numeric_ids_when_pii_redaction_enabled(self):
+        config = GatewayConfig(
+            platforms={
+                Platform.QQ: PlatformConfig(enabled=True),
+            },
+        )
+        source = SessionSource(
+            platform=Platform.QQ,
+            chat_id="group:1097807333",
+            chat_name="1097807333",
+            chat_type="group",
+            user_id="1752429910",
+            user_name="1752429910",
+        )
+        ctx = build_session_context(source, config)
+        prompt = build_session_context_prompt(ctx, redact_pii=True)
+
+        assert "1097807333" not in prompt
+        assert "1752429910" not in prompt
+        assert "group:" in prompt
+        assert "user_" in prompt
+
+    def test_qqbot_prompt_redacts_numeric_ids_when_pii_redaction_enabled(self):
+        config = GatewayConfig(
+            platforms={
+                Platform.QQBOT: PlatformConfig(enabled=True),
+            },
+        )
+        source = SessionSource(
+            platform=Platform.QQBOT,
+            chat_id="1234567890",
+            chat_name="1234567890",
+            chat_type="dm",
+            user_id="9876543210",
+            user_name="9876543210",
+        )
+        ctx = build_session_context(source, config)
+        prompt = build_session_context_prompt(ctx, redact_pii=True)
+
+        assert "1234567890" not in prompt
+        assert "9876543210" not in prompt
+        assert "user_" in prompt
+
     def test_multi_user_thread_prompt(self):
         """Shared thread sessions show multi-user note instead of single user."""
         config = GatewayConfig(

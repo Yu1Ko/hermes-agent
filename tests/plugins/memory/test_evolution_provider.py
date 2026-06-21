@@ -102,6 +102,115 @@ def test_provider_sync_turn_extracts_lightweight_memory(tmp_path):
     assert "prefer short answers" in context
 
 
+def test_provider_on_pre_compress_captures_chinese_user_and_durable_assistant_items(tmp_path):
+    provider = EvolutionMemoryProvider()
+    provider.initialize(session_id="session-1", hermes_home=str(tmp_path), platform="qq")
+
+    report = provider.on_pre_compress([
+        {
+            "role": "user",
+            "content": "以后回复别用编号列表，保持口语化短句。<memory-context>hidden recall</memory-context>",
+        },
+        {
+            "role": "assistant",
+            "content": "已验证：压缩前保存 hook 必须放在 turns_to_summarize 之后调用",
+        },
+        {"role": "tool", "content": "pytest: 12 passed in 0.42s"},
+        {"role": "tool", "content": "tool output should not be stored directly"},
+    ])
+
+    assert "captured" in report
+    assert provider._store is not None
+    memories = provider._store.recent(limit=10)
+    contents = "\n".join(item["content"] for item in memories)
+    sources = {item["source"] for item in memories}
+    assert "编号列表" in contents
+    assert "turns_to_summarize" in contents
+    assert "12 passed" in contents
+    assert "hidden recall" not in contents
+    assert "tool output should not be stored directly" not in contents
+    assert any(source.startswith("pre_compress:user") for source in sources)
+    assert any(source.startswith("pre_compress:assistant") for source in sources)
+    assert any(source.startswith("pre_compress:tool") for source in sources)
+
+
+def test_provider_per_user_db_isolates_gateway_users(tmp_path):
+    config = {"per_user_db": True}
+
+    alice = EvolutionMemoryProvider(config)
+    alice.initialize(
+        session_id="session-alice",
+        hermes_home=str(tmp_path),
+        platform="qq",
+        user_id="alice-qq",
+    )
+    bob = EvolutionMemoryProvider(config)
+    bob.initialize(
+        session_id="session-bob",
+        hermes_home=str(tmp_path),
+        platform="qq",
+        user_id="bob-qq",
+    )
+
+    assert alice._store is not None
+    assert bob._store is not None
+    assert alice._store.db_path != bob._store.db_path
+    assert alice._store.db_path.name == "memory.db"
+    assert bob._store.db_path.name == "memory.db"
+
+    alice._store.upsert_memory(
+        kind="semantic",
+        content="Alice likes yakisoba bread references.",
+        source="test",
+        scope="user",
+        confidence=0.9,
+    )
+    bob._store.upsert_memory(
+        kind="semantic",
+        content="Bob likes factory games.",
+        source="test",
+        scope="user",
+        confidence=0.9,
+    )
+
+    assert alice._store.search("yakisoba bread")
+    assert bob._store.search("yakisoba bread") == []
+    assert bob._store.search("factory games")
+    assert alice._store.search("factory games") == []
+
+
+def test_provider_per_user_db_respects_platform_filter(tmp_path):
+    config = {"per_user_db": True, "per_user_db_platforms": ["qq"]}
+
+    qq = EvolutionMemoryProvider(config)
+    qq.initialize(
+        session_id="session-qq",
+        hermes_home=str(tmp_path),
+        platform="qq",
+        user_id="qq-user",
+    )
+    telegram = EvolutionMemoryProvider(config)
+    telegram.initialize(
+        session_id="session-tg",
+        hermes_home=str(tmp_path),
+        platform="telegram",
+        user_id="tg-user",
+    )
+
+    assert qq._store is not None
+    assert telegram._store is not None
+    assert qq._store.db_path != tmp_path / "evolution_memory" / "memory.db"
+    assert telegram._store.db_path == tmp_path / "evolution_memory" / "memory.db"
+
+
+def test_provider_per_user_db_falls_back_without_user_identity(tmp_path):
+    provider = EvolutionMemoryProvider({"per_user_db": True})
+    provider.initialize(session_id="session-cli", hermes_home=str(tmp_path), platform="cli")
+
+    assert provider._store is not None
+    assert provider._store.db_path == tmp_path / "evolution_memory" / "memory.db"
+
+
 def test_provider_initialize_without_hermes_home_uses_active_profile_home(tmp_path, monkeypatch):
     hermes_home = tmp_path / "hermes-home"
     monkeypatch.setenv("HERMES_HOME", str(hermes_home))

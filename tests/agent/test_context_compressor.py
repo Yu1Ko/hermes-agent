@@ -112,6 +112,80 @@ class TestCompress:
         assert compressor._last_compress_aborted is False
         assert compressor._last_summary_fallback_used is True
 
+    def test_pre_compress_callback_receives_only_summarized_window(self):
+        with patch("agent.context_compressor.get_model_context_length", return_value=100000):
+            c = ContextCompressor(
+                model="test/model",
+                protect_first_n=0,
+                protect_last_n=2,
+                quiet_mode=True,
+            )
+        msgs = [
+            {"role": "system", "content": "system"},
+            {"role": "user", "content": "old user preference"},
+            {"role": "assistant", "content": "old assistant verified detail"},
+            {"role": "user", "content": "middle user"},
+            {"role": "assistant", "content": "middle assistant"},
+            {"role": "user", "content": "tail user must stay live"},
+            {"role": "assistant", "content": "tail assistant must stay live"},
+        ]
+        captured = []
+
+        def callback(turns):
+            captured.extend(turns)
+            return "captured before compression"
+
+        with (
+            patch.object(c, "_find_tail_cut_by_tokens", return_value=5),
+            patch("agent.context_compressor.call_llm", side_effect=RuntimeError("provider down")),
+        ):
+            c.compress(msgs, pre_compress_callback=callback)
+
+        assert [m["content"] for m in captured] == [
+            "old user preference",
+            "old assistant verified detail",
+            "middle user",
+            "middle assistant",
+        ]
+
+    def test_pre_compress_callback_context_is_added_to_summary_prompt(self):
+        with patch("agent.context_compressor.get_model_context_length", return_value=100000):
+            c = ContextCompressor(
+                model="test/model",
+                protect_first_n=0,
+                protect_last_n=2,
+                quiet_mode=True,
+            )
+        msgs = [
+            {"role": "system", "content": "system"},
+            {"role": "user", "content": "old user preference"},
+            {"role": "assistant", "content": "old assistant verified detail"},
+            {"role": "user", "content": "middle user"},
+            {"role": "assistant", "content": "middle assistant"},
+            {"role": "user", "content": "tail user"},
+            {"role": "assistant", "content": "tail assistant"},
+        ]
+        mock_response = MagicMock()
+        mock_response.choices = [MagicMock()]
+        mock_response.choices[0].message.content = "checkpoint summary"
+        captured_prompt = {}
+
+        def fake_call_llm(**kwargs):
+            captured_prompt["text"] = kwargs["messages"][0]["content"]
+            return mock_response
+
+        with (
+            patch.object(c, "_find_tail_cut_by_tokens", return_value=5),
+            patch("agent.context_compressor.call_llm", side_effect=fake_call_llm),
+        ):
+            c.compress(
+                msgs,
+                pre_compress_callback=lambda _turns: "Durable: user prefers short Chinese replies",
+            )
+
+        assert "MEMORY FLUSH CONTEXT" in captured_prompt["text"]
+        assert "Durable: user prefers short Chinese replies" in captured_prompt["text"]
+
     def test_summary_failure_uses_deterministic_fallback_with_recovered_context(self):
         """Regression: failed LLM summaries should not emit a content-free marker.
 

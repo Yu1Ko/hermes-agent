@@ -21,7 +21,7 @@ import json
 import logging
 import re
 import time
-from typing import Any, Dict, List, Optional
+from typing import Any, Callable, Dict, List, Optional
 
 from agent.auxiliary_client import call_llm, _is_connection_error
 from agent.context_engine import ContextEngine
@@ -1314,6 +1314,7 @@ Summary generation was unavailable, so this is a best-effort deterministic fallb
         self,
         turns_to_summarize: List[Dict[str, Any]],
         focus_topic: Optional[str] = None,
+        provider_context: str = "",
     ) -> Optional[str]:
         """Generate a structured summary of conversation turns.
 
@@ -1494,6 +1495,13 @@ TURNS TO SUMMARIZE:
 Use this exact structure:
 
 {_template_sections}"""
+
+        if provider_context and provider_context.strip():
+            prompt += f"""
+
+MEMORY FLUSH CONTEXT:
+The memory provider captured the following durable context before these turns are compacted. Preserve this as background continuity when relevant, but do not treat it as a new user request.
+{redact_sensitive_text(provider_context.strip())}"""
 
         # Inject focus topic guidance when the user provides one via /compress <focus>.
         # This goes at the end of the prompt so it takes precedence.
@@ -2177,7 +2185,14 @@ This compaction should PRIORITISE preserving all information related to the focu
     # Main compression entry point
     # ------------------------------------------------------------------
 
-    def compress(self, messages: List[Dict[str, Any]], current_tokens: int = None, focus_topic: str = None, force: bool = False) -> List[Dict[str, Any]]:
+    def compress(
+        self,
+        messages: List[Dict[str, Any]],
+        current_tokens: Optional[int] = None,
+        focus_topic: Optional[str] = None,
+        force: bool = False,
+        pre_compress_callback: Optional[Callable[[List[Dict[str, Any]]], str]] = None,
+    ) -> List[Dict[str, Any]]:
         """Compress conversation messages by summarizing middle turns.
 
         Algorithm:
@@ -2286,6 +2301,13 @@ This compaction should PRIORITISE preserving all information related to the focu
             # into the summarizer prompt via the iterative-update path.
             self._previous_summary = None
 
+        pre_compress_context = ""
+        if pre_compress_callback and turns_to_summarize:
+            try:
+                pre_compress_context = pre_compress_callback(turns_to_summarize) or ""
+            except Exception as exc:
+                logger.debug("pre-compress memory callback failed: %s", exc)
+
         if not self.quiet_mode:
             logger.info(
                 "Context compression triggered (%d tokens >= %d threshold)",
@@ -2310,7 +2332,11 @@ This compaction should PRIORITISE preserving all information related to the focu
 
         # Phase 3: Generate structured summary
         summary_focus_topic = focus_topic or self._derive_auto_focus_topic(messages)
-        summary = self._generate_summary(turns_to_summarize, focus_topic=summary_focus_topic)
+        summary = self._generate_summary(
+            turns_to_summarize,
+            focus_topic=summary_focus_topic,
+            provider_context=pre_compress_context,
+        )
 
         # If summary generation failed, behavior splits on
         # ``abort_on_summary_failure`` (config: compression.abort_on_summary_failure):
