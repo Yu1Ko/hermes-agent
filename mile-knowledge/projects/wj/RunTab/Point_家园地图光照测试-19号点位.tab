@@ -1,0 +1,21 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(_mapid_,_mapIndex_, _X_, _Y_, _Z_)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd SearchPanel.SetCustomOptions("同屏玩家数",0)	5	设置同屏玩家数
+/gm player.SwitchMap(455,25389,10215, 29254, 1097984)	30	切换地图
+/gm player.SetRepresentID(5, 1544);player.SetRepresentID(6, 0)	5	切换衣服
+/gm player.SetRepresentID(11, 1544);player.SetRepresentID(12, 0);	5	切换衣服
+/gm player.SetRepresentID(8, 1544);player.SetRepresentID(9, 0);	5	切换衣服
+/gm player.SetRepresentID(14, 1544);player.SetRepresentID(15, 0);	5	切换衣服
+/cmd GetClientPlayer().HideHat(true)	5	切换头发
+/gm player.SetRepresentID(1,1717)	5	切换头发
+/gm player.SetPosition(24559, 5935, 1059136)	5	设置坐标
+/cmd TurnTo(110)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 1.9880397319794, -0.099483765661716);	35	调整面向
+/cmd CreateEmptyFile("perfeye_start")	850	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Stop()	2	玩家停止
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,9 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(582,69552, 66776, 1047296)	30	设置坐标
+/cmd local O = KG3DEngine.Get3DEngineOption();O.fCameraAngle = 1.000;KG3DEngine.Set3DEngineOption(O)	1	调整广角48
+/cmd TurnTo(241);SetCameraStatus(2000, 1, 13.322, -0.202);	10	调整面向
+/cmd CreateEmptyFile("perfeye_start")	20000	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Stop()	2	玩家停止
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

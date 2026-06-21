@@ -1,0 +1,1508 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	标记：开始跑
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	5	切换原本画质
+/gm player.SwitchMap(_mapid_, 0, 0, 0)	30	传送
+/cmd CreateEmptyFile("HotPoint_Start")	5	信号：开始
+/gm player.SetPosition(1607,7975,1068096)	1	1607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,9975,1075776)	1	1607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,11975,1085440)	1	1607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,13975,1080000)	1	1607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,15975,1076736)	1	1607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,17975,1075328)	1	1607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,19975,1077824)	1	1607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,21975,1081408)	1	1607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,23975,1083648)	1	1607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,25975,1083456)	1	1607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,27975,1081600)	1	1607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,29975,1076544)	1	1607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,31975,1085248)	1	1607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,33975,1091200)	1	1607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(1607,35975,1096832)	1	1607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,7975,1067456)	1	3607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,9975,1073920)	1	3607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,11975,1082176)	1	3607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,13975,1075200)	1	3607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,15975,1057856)	1	3607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,17975,1061120)	1	3607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,19975,1072192)	1	3607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,21975,1069504)	1	3607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,23975,1071424)	1	3607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,25975,1068672)	1	3607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,27975,1068672)	1	3607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,29975,1068736)	1	3607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,31975,1068800)	1	3607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,33975,1083392)	1	3607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(3607,35975,1078272)	1	3607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,7975,1047552)	1	5607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,9975,1048704)	1	5607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,11975,1062080)	1	5607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,13975,1065600)	1	5607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,15975,1065536)	1	5607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,17975,1063296)	1	5607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,19975,1062976)	1	5607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,21975,1060992)	1	5607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,23975,1064576)	1	5607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,25975,1068032)	1	5607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,27975,1059712)	1	5607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,29975,1063936)	1	5607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,31975,1081664)	1	5607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,33975,1087936)	1	5607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(5607,35975,1077632)	1	5607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,7975,1046528)	1	7607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,9975,1046336)	1	7607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,11975,1062400)	1	7607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,13975,1062976)	1	7607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,15975,1062784)	1	7607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,17975,1060544)	1	7607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,19975,1060736)	1	7607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,21975,1060544)	1	7607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,23975,1058560)	1	7607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,25975,1057152)	1	7607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,27975,1056512)	1	7607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,29975,1071232)	1	7607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,31975,1073920)	1	7607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,33975,1074880)	1	7607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(7607,35975,1078016)	1	7607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,7975,1048192)	1	9607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,9975,1046528)	1	9607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,11975,1039360)	1	9607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,13975,1061248)	1	9607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,15975,1061568)	1	9607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,17975,1061120)	1	9607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,19975,1060992)	1	9607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,21975,1059968)	1	9607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,23975,1056448)	1	9607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,25975,1056256)	1	9607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,27975,1059264)	1	9607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,29975,1068096)	1	9607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,31975,1070464)	1	9607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,33975,1073856)	1	9607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(9607,35975,1077376)	1	9607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,7975,1054016)	1	11607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,9975,1046336)	1	11607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,11975,1044992)	1	11607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,13975,1048640)	1	11607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,15975,1051072)	1	11607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,17975,1056704)	1	11607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,19975,1060608)	1	11607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,21975,1059840)	1	11607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,23975,1061504)	1	11607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,25975,1060608)	1	11607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,27975,1058496)	1	11607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,29975,1066368)	1	11607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,31975,1069824)	1	11607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,33975,1073856)	1	11607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(11607,35975,1076608)	1	11607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,7975,1053824)	1	13607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,9975,1048320)	1	13607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,11975,1043264)	1	13607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,13975,1045568)	1	13607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,15975,1045952)	1	13607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,17975,1048512)	1	13607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,19975,1047552)	1	13607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,21975,1057216)	1	13607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,23975,1059712)	1	13607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,25975,1055488)	1	13607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,27975,1056576)	1	13607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,29975,1059200)	1	13607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,31975,1064448)	1	13607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,33975,1075200)	1	13607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(13607,35975,1071424)	1	13607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,7975,1053824)	1	15607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,9975,1045888)	1	15607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,11975,1046848)	1	15607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,13975,1049216)	1	15607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,15975,1046528)	1	15607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,17975,1045120)	1	15607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,19975,1046272)	1	15607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,21975,1056896)	1	15607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,23975,1053504)	1	15607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,25975,1055296)	1	15607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,27975,1054848)	1	15607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,29975,1059008)	1	15607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,31975,1060352)	1	15607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,33975,1062016)	1	15607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(15607,35975,1061120)	1	15607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,7975,1045056)	1	17607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,9975,1045824)	1	17607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,11975,1044352)	1	17607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,13975,1048256)	1	17607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,15975,1045056)	1	17607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,17975,1048256)	1	17607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,19975,1046720)	1	17607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,21975,1049536)	1	17607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,23975,1053952)	1	17607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,25975,1053888)	1	17607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,27975,1055040)	1	17607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,29975,1054912)	1	17607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,31975,1059328)	1	17607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,33975,1057024)	1	17607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(17607,35975,1058496)	1	17607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,7975,1055424)	1	19607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,9975,1050304)	1	19607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,11975,1046208)	1	19607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,13975,1045888)	1	19607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,15975,1048768)	1	19607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,17975,1048512)	1	19607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,19975,1048064)	1	19607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,21975,1046528)	1	19607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,23975,1052544)	1	19607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,25975,1051584)	1	19607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,27975,1051648)	1	19607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,29975,1049984)	1	19607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,31975,1049600)	1	19607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,33975,1055104)	1	19607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(19607,35975,1055488)	1	19607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,7975,1055616)	1	21607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,9975,1049664)	1	21607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,11975,1046720)	1	21607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,13975,1046464)	1	21607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,15975,1049984)	1	21607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,17975,1048960)	1	21607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,19975,1048960)	1	21607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,21975,1046464)	1	21607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,23975,1048704)	1	21607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,25975,1051392)	1	21607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,27975,1049088)	1	21607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,29975,1048896)	1	21607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,31975,1048960)	1	21607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,33975,1048832)	1	21607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(21607,35975,1054336)	1	21607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,7975,1054720)	1	23607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,9975,1051712)	1	23607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,11975,1046464)	1	23607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,13975,1047552)	1	23607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,15975,1047744)	1	23607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,17975,1047744)	1	23607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,19975,1047936)	1	23607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,21975,1047424)	1	23607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,23975,1046528)	1	23607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,25975,1046272)	1	23607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,27975,1047232)	1	23607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,29975,1048384)	1	23607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,31975,1046336)	1	23607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,33975,1046592)	1	23607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(23607,35975,1047488)	1	23607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,7975,1052352)	1	25607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,9975,1048064)	1	25607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,11975,1048960)	1	25607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,15975,1047808)	1	25607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,15975,1048448)	1	25607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,17975,1049472)	1	25607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,19975,1051008)	1	25607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,21975,1047232)	1	25607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,23975,1048064)	1	25607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,25975,1054592)	1	25607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,27975,1055360)	1	25607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,29975,1062848)	1	25607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,31975,1049472)	1	25607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,33975,1060096)	1	25607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(25607,35975,1057728)	1	25607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,7975,1047936)	1	27607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,9975,1047424)	1	27607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,11975,1048000)	1	27607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,13975,1048832)	1	27607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,15975,1051136)	1	27607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,17975,1048576)	1	27607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,19975,1048576)	1	27607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,21975,1047488)	1	27607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,23975,1048000)	1	27607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,25975,1053184)	1	27607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,27975,1055808)	1	27607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,29975,1052288)	1	27607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,31975,1052032)	1	27607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,33975,1053312)	1	27607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(27607,35975,1057344)	1	27607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,7975,1049472)	1	29607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,9975,1049472)	1	29607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,11975,1050112)	1	29607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,13975,1050176)	1	29607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,15975,1053760)	1	29607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,17975,1049920)	1	29607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,19975,1049408)	1	29607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,21975,1048960)	1	29607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,23975,1045952)	1	29607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,25975,1048064)	1	29607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,27975,1051264)	1	29607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,29975,1056064)	1	29607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,31975,1056064)	1	29607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,33975,1059008)	1	29607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(29607,35975,1059392)	1	29607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,7975,1051904)	1	31607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,9975,1061568)	1	31607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,11975,1057536)	1	31607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,13975,1051648)	1	31607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,15975,1049600)	1	31607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,17975,1049344)	1	31607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,19975,1049216)	1	31607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,21975,1047360)	1	31607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,23975,1045952)	1	31607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,25975,1050496)	1	31607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,27975,1055744)	1	31607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,29975,1057728)	1	31607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,31975,1058176)	1	31607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,33975,1059712)	1	31607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(31607,35975,1061696)	1	31607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,7975,1055424)	1	33607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,9975,1059200)	1	33607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,11975,1066176)	1	33607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,13975,1066048)	1	33607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,15975,1055296)	1	33607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,17975,1050752)	1	33607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,19975,1048064)	1	33607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,21975,1047232)	1	33607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,23975,1046144)	1	33607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,25975,1050240)	1	33607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,27975,1056896)	1	33607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,29975,1057024)	1	33607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,31975,1058880)	1	33607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,33975,1060224)	1	33607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(33607,35975,1062528)	1	33607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,7975,1055616)	1	35607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,9975,1055616)	1	35607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,11975,1064256)	1	35607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,13975,1063552)	1	35607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,15975,1064896)	1	35607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,17975,1049024)	1	35607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,19975,1047296)	1	35607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,21975,1046016)	1	35607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,23975,1045248)	1	35607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,25975,1057600)	1	35607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,27975,1057088)	1	35607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,29975,1060224)	1	35607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,31975,1060480)	1	35607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,33975,1062848)	1	35607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(35607,35975,1063168)	1	35607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,7975,1055936)	1	37607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,9975,1059392)	1	37607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,11975,1064896)	1	37607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,13975,1064128)	1	37607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,15975,1066112)	1	37607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,17975,1055744)	1	37607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,19975,1048064)	1	37607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,21975,1048896)	1	37607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,23975,1049280)	1	37607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,25975,1065792)	1	37607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,27975,1059264)	1	37607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,29975,1062080)	1	37607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,31975,1062592)	1	37607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,33975,1062528)	1	37607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(37607,35975,1063680)	1	37607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,7975,1055168)	1	39607,7975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,9975,1059712)	1	39607,9975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,11975,1065664)	1	39607,11975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,13975,1066240)	1	39607,13975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,15975,1059136)	1	39607,15975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,17975,1051328)	1	39607,17975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,19975,1041856)	1	39607,19975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,21975,1047872)	1	39607,21975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,23975,1049024)	1	39607,23975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,25975,1068672)	1	39607,25975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,27975,1060608)	1	39607,27975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,29975,1062464)	1	39607,29975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,31975,1065472)	1	39607,31975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,33975,1065472)	1	39607,33975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/gm player.SetPosition(39607,35975,1074240)	1	39607,35975
+/cmd SetCameraStatus(2000, 1, 1.570, -0.217)	0.2	调整面向东
+/cmd SetCameraStatus(2000, 1, 3.140, -0.217)	0.2	调整面向南
+/cmd SetCameraStatus(2000, 1, 4.710, -0.217)	0.2	调整面向西
+/cmd SetCameraStatus(2000, 1, 6.280, -0.217)	0.2	调整面向北
+/cmd CreateEmptyFile("HotPoint_End")	20	信号：结束
+/cmd CreateEmptyFile("ExitGame")	2	关闭游戏

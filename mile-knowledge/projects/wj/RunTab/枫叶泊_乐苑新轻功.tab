@@ -1,0 +1,27 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(471,331,18473,9224,1058432)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.AddBuff(0,99,8665,1,7200)	10	无限气力值
+/gm player.SetPosition(7546,23211,1056832)	10	位置到位置
+/cmd TurnTo(70);	1	调整转项
+/cmd TurnToFaceDirection();	5	调整面向
+/cmd CreateEmptyFile("perfeye_start")	20	开始采集
+/cmd CreateEmptyFile("LightSkill_Start")	2	开启跑图
+x	y	z	stay	mapid	action
+7546	23211	1070000	0	471	0
+4910	28605	1070000	0	471	0
+14797	30846	1070000	0	471	0
+30367	17109	1070000	0	471	0
+30080	3108	1070000	0	471	0
+24240	11451	1070000	0	471	0
+20729	1668	1070000	0	471	0
+17863	9119	1070000	0	471	0
+12601	3713	1070000	0	471	0
+5877	9447	1070000	0	471	0
+14565	19793	1070000	0	471	0
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Die()	2	死亡
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,20 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UINodeControl.BtnTrigger("BtnChangeMini","WidgetContentChat")	5	关闭下方聊天栏
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RobotControl.CMD("Start")	60	初始化副本操作
+/gm player.SwitchMap(708,34645,4322,1269056)	20	传送前置条件
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd DungeonApi.SetPlayerBuff(3)	10	设置副本难度
+/cmd DungeonApi.SetAutoFightDieTimeAdd(1)	2	设置强杀间隔
+/cmd DungeonApi.SetAutoFightAttackTimer(1)	1	释放技能时间
+/cmd TurnTo(69);	2	调整转项
+/cmd TurnToFaceDirection();	5	调整面向
+/cmd CreateEmptyFile("perfeye_start")	10	采集数据
+/cmd CreateEmptyFile("Dungeons")	10	启动副本
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RobotControl.CMD("TeleportRobot")	20	召唤机器人操作
+/cmd RobotControl.CMD("RequestLeaveTeam")	20	解除组队
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

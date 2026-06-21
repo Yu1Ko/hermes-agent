@@ -1,0 +1,34 @@
+---
+title: 副本系统
+description: 剑网3无界自动化测试 - 副本进入、Boss战、副本流程自动化模块
+---
+
+# 副本系统
+
+副本进入、Boss战、副本流程自动化模块
+
+## Dungeons
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/Dungeons/Dungeons.lua`
+- **总行数**: 486
+
+### API 函数 (6个)
+
+- `DungeonApi.SetRobotCustomSwitch(nSwitch)` — 机器人跑动开关接口 (例: `local nRobotCustomCount = tonumber(nSwitch) if nRobotCustomCount == 1 then RobotCustom.bSwitch = false...`)
+- `DungeonApi.SetMapName(szMapName)` — 设置副本名称 (例: `DungeonApi.szMapName = szMapName...`)
+- `DungeonApi.SetAutoFightCount(nAutoFightCount)` — 设置boss (例: `AutoFightCount = tonumber(nAutoFightCount)...`)
+- `DungeonApi.Specifyboss(nBossStart,nBossEnd)` — 指定boss的接口 (例: `nTaskLine = nBossStart nFlowEnd = nBossEnd...`)
+- `Dungeons.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `Dungeons.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+### DungeonApi (API table)
+
+## UIDungeonPanel
+
+- **类型**: entity
+- **源文件**: `N/A`
+- **总行数**: 0
+
+---
+*2 个模块, 6 个导出 API*

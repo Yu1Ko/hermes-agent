@@ -1,0 +1,16 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UIMgr.Open(4001)	5	打开主界面菜单拍照栏
+/cmd UIMgr.Close(VIEW_ID.PanelCamera)	5	--关闭所有面板
+/gm player.SwitchMap(705,1,2027,1923,1048640)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换成蓝光画质
+/cmd ExteriorList.SetLine(2)	10	指定服装数	
+/cmd SearchExterior.InitTools()	10	初始化外装
+/cmd SearchHair.InitTools()	10	初始化发型
+/cmd CreateEmptyFile("perfeye_start")	20	采集数据
+/cmd CreateEmptyFile("StudioTraversal")	2	开启跑图
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Die()	2	死亡
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

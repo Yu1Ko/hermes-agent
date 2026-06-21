@@ -1,0 +1,4 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginSwitchMap")	20	开始跑图
+/cmd CreateEmptyFile("LoginCreateRole_start")	10	开始
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

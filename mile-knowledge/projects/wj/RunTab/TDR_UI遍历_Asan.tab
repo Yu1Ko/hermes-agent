@@ -1,0 +1,41 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginSwitchMap")	20	开始跑图
+/gm player.SetCamp(1)	2	加入阵营(1浩气2恶人)
+/gm player.AddMoney(10000,1000,1000)	10	获取金钱
+/gm ApplyCreateTong(player.dwID,player.szName)	2	根据角色名字创建帮会
+/gm player.AddItem(5 ,5284)	2	九天逍遥装备获取
+/cmd UIMgr.Open(24)	2	打开菜单
+/cmd UIMgr.Open(117)	2	打开半屏背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 2).dwID)	2	选中九天逍遥
+/cmd ItemData.UseItem(1, 2)	2	使用九天逍遥
+/cmd PlotMgr.GetDialogueData(PLOT_TYPE.OLD).tbData.tbItemDataList[12].callback()	2	获得马匹背包
+/cmd UIMgr.Open(VIEW_ID.PanelBagUp2)	2	打开背包扩容
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelBagUp2):ExchangPackage();UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation).funcConfirm(false);UIMgr.Close(UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation)._nViewID);	2	装备扩容背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelBagUp2):ExchangPackage();UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation).funcConfirm(false);UIMgr.Close(UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation)._nViewID);	2	装备扩容背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelBagUp2):ExchangPackage();UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation).funcConfirm(false);UIMgr.Close(UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation)._nViewID);	2	装备扩容背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelBagUp2):ExchangPackage();UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation).funcConfirm(false);UIMgr.Close(UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation)._nViewID);	2	装备扩容背包
+/cmd UIMgr.Close(VIEW_ID.PanelBagUp2)	2	关闭背包扩容
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 2).dwID)	2	选中九天逍遥
+/cmd ItemData.UseItem(1, 2)	2	使用九天逍遥
+/cmd PlotMgr.GetDialogueData(PLOT_TYPE.OLD).tbData.tbItemDataList[5].callback()	30	升级到120级并获得PVE装备
+/cmd UIMgr.Close(1705)	2	关闭升级弹窗
+/cmd UIMgr.Close(1701)	10	关闭升级弹窗
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 7).dwID)	2	选中马匹
+/cmd ItemData.EquipHorseOrHorseEquip(1, 7)	2	装备马匹
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 8).dwID)	2	选中马匹
+/cmd ItemData.EquipHorseOrHorseEquip(1, 8)	2	装备马匹
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 9).dwID)	2	选中马匹
+/cmd ItemData.EquipHorseOrHorseEquip(1, 9)	2	装备马匹
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 10).dwID)	2	选中马匹
+/cmd ItemData.EquipHorseOrHorseEquip(1, 10)	2	装备特殊马匹
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation).funcConfirm(false);UIMgr.Close(UIMgr.GetViewScript(VIEW_ID.PanelNormalConfirmation)._nViewID);	2	确认装备马匹并关闭面板
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1, 2).dwID)	2	选中九天逍遥
+/cmd ItemData.UseItem(1, 2)	2	使用九天逍遥
+/cmd PlotMgr.GetDialogueData(PLOT_TYPE.OLD).tbData.tbItemDataList[21].callback()	2	开启所有奇穴
+/cmd UIMgr.Close(117)	2	关闭半屏背包
+/cmd UIMgr.Close(24)	2	关闭菜单
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	2	加隐身
+/gm player.SwitchMap(653,45085,94584,1116800)	30	传送
+/cmd CreateEmptyFile("UIErgodic")	10	开始
+/cmd DisbandSelfTong()	20	解散帮会
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

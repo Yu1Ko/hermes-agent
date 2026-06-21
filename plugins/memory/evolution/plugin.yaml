@@ -1,0 +1,10 @@
+name: evolution
+version: 0.2.0
+description: "Local SQLite memory evolution provider with expression learning, person profiles, feedback, and deletion governance."
+hooks:
+  - sync_turn
+  - prefetch
+  - on_session_end
+  - on_pre_compress
+  - on_memory_write
+  - on_delegation

@@ -1,0 +1,34 @@
+[
+  {
+    "quality": "次世代(超高)",
+    "TP90": "25",
+    "PSS": "3500",
+    "Smoothness": "90",
+    "device_model": "Redmi K60",
+    "device_name": "红米K60"
+  },
+  {
+    "quality": "电影(高)",
+    "TP90": "25",
+    "PSS": "3000",
+    "Smoothness": "90",
+    "device_model": "Mi10",
+    "device_name": "小米10"
+  },
+  {
+    "quality": "优质(中)",
+    "TP90": "18",
+    "PSS": "2000",
+    "Smoothness": "85",
+    "device_model": "荣耀70",
+    "device_name": "荣耀70"
+  },
+  {
+    "quality": "省电(低)",
+    "TP90": "18",
+    "PSS": "2000",
+    "Smoothness": "85",
+    "device_model": "IQOOZ3",
+    "device_name": "IQOOZ3"
+  }
+]

@@ -162,9 +162,11 @@ class Platform(Enum):
     WECOM_CALLBACK = "wecom_callback"
     WEIXIN = "weixin"
     BLUEBUBBLES = "bluebubbles"
+    QQ = "qq"
     QQBOT = "qqbot"
     YUANBAO = "yuanbao"
     RELAY = "relay"  # generic relay adapter fronted by the connector (EXPERIMENTAL)
+    AGENTSPACE = "agentspace"
     @classmethod
     def _missing_(cls, value):
         """Accept unknown platform names only for known plugin adapters.

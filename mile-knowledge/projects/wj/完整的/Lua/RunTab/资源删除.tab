@@ -1,0 +1,4 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd PakDownloadMgr.DeletePack(800008)	1	开始下载
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,7 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SetTarget(TARGET.PLAYER, player.dwID)	1	选中自己
+/cmd TurnTo(85);SetCameraStatus(2000, 1, 5.766,-0.395);	1	调整面向
+/gm player.AddMoney(10000,0,0)	1	加钱
+/gm ApplyCreateTong(player.dwID,player.szName)	3	创建帮会
+/cmd CreateEmptyFile("switchmap_start")	10	切图

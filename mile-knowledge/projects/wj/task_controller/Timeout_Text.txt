@@ -1,0 +1,60 @@
+2021-11-11 17:53:07,825 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:34053
+2021-11-11 17:53:07,830 - DEBUG - Incremented Retry for (url='/version'): Retry(total=2, connect=3, read=None, redirect=None, status=None)
+2021-11-11 17:53:07,830 - WARNING - Retrying (Retry(total=2, connect=3, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))': /version
+2021-11-11 17:53:07,830 - DEBUG - Starting new HTTP connection (2): 127.0.0.1:34053
+2021-11-11 17:53:07,840 - DEBUG - Incremented Retry for (url='/version'): Retry(total=1, connect=3, read=None, redirect=None, status=None)
+2021-11-11 17:53:08,841 - WARNING - Retrying (Retry(total=1, connect=3, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))': /version
+2021-11-11 17:53:08,841 - DEBUG - Starting new HTTP connection (3): 127.0.0.1:34053
+2021-11-11 17:53:08,909 - DEBUG - Incremented Retry for (url='/version'): Retry(total=0, connect=3, read=None, redirect=None, status=None)
+2021-11-11 17:53:10,911 - WARNING - Retrying (Retry(total=0, connect=3, read=None, redirect=None, status=None)) after connection broken by 'ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',))': /version
+2021-11-11 17:53:10,912 - DEBUG - Starting new HTTP connection (4): 127.0.0.1:34053
+2021-11-11 17:53:11,268 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:34053
+2021-11-11 17:53:11,278 - WARNING - ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response',)), retrying in 0.5 seconds...
+2021-11-11 17:53:11,781 - DEBUG - Starting new HTTP connection (1): 127.0.0.1:34053
+2021-11-11 17:53:11,889 - DEBUG - http://127.0.0.1:34053 "GET /version HTTP/1.1" 200 5
+2021-11-11 17:53:11,891 - DEBUG - Starting new HTTP connection (5): 127.0.0.1:34053
+2021-11-11 17:53:11,918 - DEBUG - http://127.0.0.1:34053 "GET /version HTTP/1.1" 200 5
+2021-11-11 17:53:12,180 - DEBUG - http://127.0.0.1:34053 "POST /shell HTTP/1.1" 200 243
+2021-11-11 17:53:12,355 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 548
+2021-11-11 17:53:12,409 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 567
+2021-11-11 17:53:12,458 - DEBUG - http://127.0.0.1:34053 "POST /shell HTTP/1.1" 200 47
+2021-11-11 17:53:12,473 - DEBUG - http://127.0.0.1:34053 "DELETE /services/uiautomator HTTP/1.1" 200 48
+2021-11-11 17:53:12,806 - DEBUG - http://127.0.0.1:34053 "POST /shell HTTP/1.1" 200 507928
+2021-11-11 17:53:12,928 - DEBUG - http://127.0.0.1:34053 "POST /services/uiautomator HTTP/1.1" 200 53
+2021-11-11 17:53:13,526 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:13,532 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 502 0
+2021-11-11 17:53:14,563 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:14,586 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 502 0
+2021-11-11 17:53:15,624 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:15,641 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 502 0
+2021-11-11 17:53:16,687 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:16,694 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 502 0
+2021-11-11 17:53:17,815 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:17,823 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 502 0
+2021-11-11 17:53:18,940 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:18,951 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 502 0
+2021-11-11 17:53:19,964 - DEBUG - http://127.0.0.1:34053 "GET /services/uiautomator HTTP/1.1" 200 31
+2021-11-11 17:53:20,004 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 200
+2021-11-11 17:53:20,062 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 455
+2021-11-11 17:53:20,691 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:21,305 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 450
+2021-11-11 17:53:21,918 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:22,537 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:23,149 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 454
+2021-11-11 17:53:23,765 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:24,289 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:24,892 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 455
+2021-11-11 17:53:25,434 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:26,023 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 455
+2021-11-11 17:53:26,631 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 452
+2021-11-11 17:53:27,244 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:27,858 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 454
+2021-11-11 17:53:28,383 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:28,985 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:29,601 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:30,213 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 454
+2021-11-11 17:53:30,827 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 453
+2021-11-11 17:53:31,345 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 454
+2021-11-11 17:53:41,617 - DEBUG - http://127.0.0.1:34053 "POST /jsonrpc/0 HTTP/1.1" 200 89
+2021-11-11 17:54:44,312 - DEBUG - Starting new HTTP connection (1): 10.11.10.147:3001
+2021-11-11 17:54:44,323 - DEBUG - http://10.11.10.147:3001 "GET /tag/ HTTP/1.1" 200 2160

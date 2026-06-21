@@ -1,0 +1,17 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd TeachEvent.UnInit()	5	关闭所有教程
+/cmd PlayerLevelUpToNew(110)	60	升级110
+/cmd TurnTo(234)	10	调整面向
+/cmd TurnToFaceDirection()	10	调整面向
+/gm player.SwitchMap(655,16383,16383,1056640)	40	传送个人家园指定地点
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("Test")	60	采集数据
+/gm player.SwitchMap(666,15587,75353,1128896)	30	切换地图
+/cmd CreateEmptyFile("SectTask")	20	门派任务
+/cmd TurnTo(234)	10	调整面向
+/cmd TurnToFaceDirection()	10	调整面向
+/gm player.SwitchMap(655,16383,16383,1056640)	40	传送个人家园指定地点
+/cmd CreateEmptyFile("Test")	60	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	5	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

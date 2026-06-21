@@ -1,0 +1,77 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	21	开始跑图
+/cmd UIMgr.Close(VIEW_ID.PanelHotSpotBanner)	5	首次下载游戏会出现这个弹窗
+/cmd UIMgr.Close(VIEW_ID.PanelHintSelectMode)	2	操作模式
+/cmd PlayerLevelUpToNew(130)	40	升级
+/cmd UIMgr.Close(1705)	2	关闭升级弹窗
+/cmd UIMgr.Close(1701)	2	关闭升级弹窗
+/cmd UIMgr.Close(VIEW_ID.Panel130NightPop)	2	关闭升级弹窗
+/cmd SetCameraStatus(1083,1,2.2,-0.1369)	1	初始化视角
+/cmd TeachEvent.UnInit()	5	关闭所有教程
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd CreateEmptyFile("Test1")	1	伊利川主线任务准备
+/gm player.AddItem(8,38726)	3	武器马匹
+/cmd UIMgr.Open(24)	3	打开菜单
+/cmd UIMgr.Open(117)	3	打开半屏背包
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1,2).dwID)	3	选中礼盒
+/cmd UINodeControl.BtnTrigger("BtnTipOperation")	6	使用道具
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1,2).dwID)	3	选中马匹
+/cmd UINodeControl.BtnTrigger("BtnTipOperation")	6	使用道具
+/cmd UINodeControl.BtnTrigger("BtnContent_1")	6	使用道具
+/cmd UIMgr.GetViewScript(VIEW_ID.PanelHalfBag):DoUpdateSelect(ItemData.GetItemByPos(1,2).dwID)	3	选中马匹
+/cmd UINodeControl.BtnTrigger("BtnTipOperation")	6	使用道具
+/cmd UIMgr.Close(117)	3	关闭半屏背包
+/cmd UIMgr.Close(24)	3	关闭菜单
+/gm player.EquipHorse(30,66)	3	装备马匹
+/cmd RideHorse()	5	上马
+/cmd CustomRunMap.SetRunMapCount(1)	2	设置跑图次数
+/cmd SearchPanel.JumpSwitchStart()	2	设置跳跃
+/gm player.SwitchMap(108,_mapIndex_,60467,66682,1072384)	30	切换地图
+/cmd CreateEmptyFile("perfeye_start")	20	开始采集
+/cmd CreateEmptyFile("CustomRunMap_start")	2	开启跑图
+x	y	z	stay	mapid	action
+60467	66682	1072384	20	108	1
+60467	66895	1072384	20	108	1
+60467	67115	1072384	20	108	1
+60467	67335	1072384	20	108	1
+60467	67555	1072384	20	108	1
+60560	67374	1072384	20	108	1
+60553	67165	1072384	20	108	1
+60553	66956	1072384	20	108	1
+60553	66747	1072384	20	108	1
+60664	66914	1072384	20	108	1
+60660	67123	1072384	20	108	1
+60660	67617	1072384	20	108	1
+60760	67425	1072384	20	108	1
+60760	67216	1072384	20	108	1
+60760	67007	1072384	20	108	1
+60760	66798	1072384	20	108	1
+60870	66967	1072384	20	108	1
+60870	67187	1072384	20	108	1
+60870	67407	1072384	20	108	1
+60870	67627	1072384	20	108	1
+60983	67448	1072384	20	108	1
+60983	67239	1072384	20	108	1
+60983	67030	1072384	20	108	1
+60983	66820	1072384	20	108	1
+61098	66987	1072384	20	108	1
+61098	67196	1072384	20	108	1
+61098	67405	1072384	20	108	1
+61098	67614	1072384	20	108	1
+61203	67443	1072384	20	108	1
+61203	67234	1072384	20	108	1
+61203	67025	1072384	20	108	1
+61203	66816	1072384	20	108	1
+61301	67006	1072384	20	108	1
+61301	67215	1072384	20	108	1
+61301	67424	1072384	20	108	1
+61301	67633	1072384	20	108	1
+61414	67467	1072384	20	108	1
+61403	67258	1072384	20	108	1
+61392	67049	1072384	20	108	1
+61388	66840	1072384	20	108	1
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Die()	2	死亡
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,142 @@
+---
+title: 战斗系统
+description: 剑网3无界自动化测试 - PvP竞技、技能释放、挂机战斗、世界Boss相关模块
+---
+
+# 战斗系统
+
+PvP竞技、技能释放、挂机战斗、世界Boss相关模块
+
+## ArenaPvP
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/ArenaPvP/ArenaPvP.lua`
+- **总行数**: 313
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` (例: `SearchPanel.RunCommand("/gm player.nLifeReplenishExt=100000000;player.nManaReplenishExt=100000") local GM = "for i=1,50 ...`)
+- `ArenaPvP.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `ArenaPvP.Start()` — 开启名剑大会 (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(PlayerMove)...`)
+
+## CloakSociety
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/CloakSociety/CloakSociety.lua`
+- **总行数**: 119
+
+### API 函数 (2个)
+
+- `CloakSociety.FrameUpdate()` (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `CloakSociety.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddInitState(Init)...`)
+
+## FlySkill
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/FlySkill/FlySkill.lua`
+- **总行数**: 337
+
+### API 函数 (3个)
+
+- `FlySkill.FrameUpdate()` — 切图切画质帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `FlySkill.Start()` (例: `if not FlySkill.bSwitch then return...`)
+- `Role.Revive()` — 人物可能掉落死亡（当前每段轻功都会执行完待定） (例: `local player=GetClientPlayer() if not player then return...`)
+
+## HangUpFight
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/HangUpFight/HangUpFight.lua`
+- **总行数**: 205
+
+**配置项**: `HangUpFight.bSwitch` = `true`
+
+### API 函数 (5个)
+
+- `HangUpFight.AddNPCID(nNpcId)` — 添加Npc到队列参数 (例: `local nNpcID = tonumber(nNpcId) table.insert(HangUpFight.tbNpcList,nNpcID)...`)
+- `HangUpFight.SetNpcParameter(nCount,nNumber)` — 设置召唤的Npc参数 (例: `HangUpFight.nNpcNumber = nCount HangUpFight.nNpcCount = nNumber...`)
+- `HangUpFight.SetCallNpc()` — 创建npc (例: `local player = GetClientPlayer() local nFaceDirection = player.nFaceDirection if HangUpFight.nNpcLine == #HangUpFight.tb...`)
+- `HangUpFight.FrameUpdate()` — 切图切画质帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `HangUpFight.Start()` — 开始 (例: `fsm = FsmMachine:New() fsm:AddState(Sleep) fsm:AddState(AutoFight)...`)
+
+## LightSkill
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/LightSkill/LightSkill.lua`
+- **总行数**: 257
+
+### API 函数 (7个)
+
+- `LightSkill.SetCount(nSetCount)` — 设置轻功跑图圈数 (例: `LightSkill.nSkillCount = tonumber(nSetCount)...`)
+- `LightSkillData.TurnTo(nTurnto)` — 调整坐标 (例: `SearchPanel.MyExecuteScriptCommand("TurnTo("..tostring(nTurnto)..")")...`)
+- `FlyJump.FrameUpdate(Pos_x,Pos_Y,Pos_z)` (例: `if nJumpCount ~= 5 then UIMgr.GetViewScript(VIEW_ID.PanelMainCity).scriptFuncSlot:OnSlotButtonEvent(5, nil, true) nJumpC...`)
+- `LightSkillData.StartFly(Pos_x,Pos_Y,Pos_z)` — 启动轻功 (例: `Timer.AddCycle(FlyJump,1,function () FlyJump.FrameUpdate(Pos_x,Pos_Y,Pos_z)...`)
+- `LightSkillData.CheckTargetPoint(nTargetX,nTargetY)` — 检测是否到目标点 x和y坐标 (例: `local player = GetClientPlayer() local nVectorX=nTargetX-player.nX local nVectorY=nTargetY-player.nY...`)
+- `LightSkillData.AdjustDirection(nTargetX,nTargetY)` (例: `local player = GetClientPlayer() local nVectorX=nTargetX-player.nX local nVectorY=nTargetY-player.nY...`)
+- `LightSkill.Start()` (例: `if not LightSkill.bSwitch then return...`)
+
+## PlayerAuto
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/PlayerAuto/PlayerAuto.lua`
+- **总行数**: 456
+
+### API 函数 (21个)
+
+- `PlayerAuto.PlayerSetRun(nPlayerFightStatus)` (例: `PlayerAuto.nPlayerFightStatus=nPlayerFightStatus...`)
+- `PlayerAuto.IsAuto()` — 是否在战斗 (例: `return PlayerAuto.bFlag...`)
+- `PlayerAuto.SetNpcIdDie(bDie)` — 是否开启召唤物强杀 (例: `PlayerAuto.bNpcIdDie = bDie...`)
+- `PlayerAuto.SetAttackTimeCount(nAttackTimeCount)` — 设置血量 (例: `PlayerAuto.nAttackTimeCount = tonumber(nAttackTimeCount) PlayerAuto.nBossLifeLine = 1/(PlayerAuto.nAttackTimeCount * 60/...`)
+- `PlayerAutoBufforGM.SetBossBuff(szMapName,nBoss)` — 根据对应的地图名称和boss选择对应buff (例: `if not szMapName then return...`)
+- `PlayerAutoBufforGM.Set(szCmd)` — 加入对应的buff (例: `table.insert(PlayerAutoBufforGM.tbList,szCmd)...`)
+- `PlayerAuto.SetNextTarget()` — 是否每次释放技能都切换下个目标 (例: `PlayerAuto.bNextTarget = true...`)
+- `PlayerAuto.TrySelectOneTarget()` — 锁定对应的敌人 还是有问题等待修复 (例: `local nSkillID = UIBattleSkillSlot.GetShowUI_Ver2(1); local TrySelectOneTarge  = TargetMgr.TrySelectOneTarget(nSkillID) ...`)
+- `PlayerAuto.Attention()` — 注视当前选中的目标 锁死目标 自动锁死调用镜头 (例: `TargetMgr.Attention(true)...`)
+- `PlayerAuto.SearchNextTarget()` — 选择选中下一个目标 (例: `TargetMgr.SearchNextTarget()...`)
+- `PlayerAuto.SetNpcId()` — 记录锁定npc的id (例: `local NpcID,_ = TargetMgr.GetSelect(); PlayerAuto.NpcId = NpcID...`)
+- `PlayerAuto.SetBossLifeCount(BossLifeCount)` — 设置扣除boss血量点数 (例: `PlayerAuto.nBossLifeLine = BossLifeCount...`)
+- `PlayerAuto.SetBossLife()` — 血量计算方式 满血为1 1/5 (例: `print("PlayerAuto.SetBossLife") local gm = "n=player.GetSelectCharacter();n.".._G.CurLife.."=n.".._G.MaxLife.."*"..tostr...`)
+- `PlayerAuto.GetBossLife()` — 锁定目标NPC血量和名称 (例: `local NpcID,_ = TargetMgr.GetSelect(); local NpcLife = NpcData.GetNpc(NpcID).fCurrentLife64 local NpcName = NpcData.GetN...`)
+- `PlayerRun.FrameUpdate()` (例: `if PlayerRun.bState then local nBossNextX, nBossNextY = GetNpc(PlayerAuto.NpcId).nX, GetNpc(PlayerAuto.NpcId).nY   -- bo...`)
+- `PlayerRun.Start()` (例: `PlayerRun.bStartOne = true nBossX,nBossY=GetNpc(PlayerAuto.NpcId).nX, GetNpc(PlayerAuto.NpcId).nY Timer.AddCycle(PlayerR...`)
+- `PlayerAuto.SetbCoordinate(nX,nY,nZ)` — 记录人物坐标点 (例: `if nX~=nil then PlayerAuto.playerX = nX PlayerAuto.playerY = nY...`)
+- `PlayerAuto.AddBuff()` — 人物初始化操作加各种buff (例: `SearchPanel.RunCommand("/gm player.AddBuff(0,99,377,1,7200)") SearchPanel.RunCommand("/gm player.nLifeReplenishExt=10000...`)
+- `PlayerAutoInit.InitFrameUpdate()` — 初始化 (例: `if PlayerAutoInit.Line ~= #PlayerAutoInit.tbList+1 then local szCmd = PlayerAutoInit.tbList[PlayerAutoInit.Line] local C...`)
+- `PlayerAuto.StopOperate()` — 结束操作 重置所有部分 (例: `Displacement.Stop() -- 停止跑动 PlayerAuto.bCoordinate = false -- 记录人物坐标点 PlayerAuto.nAttackLine = 1 --人物技能...`)
+- `PlayerAuto.StartAutoFight()` — 启动脚本 (例: `Timer.AddCycle(PlayerAutoInit,8,function () PlayerAutoInit.InitFrameUpdate()...`)
+
+## PvP
+
+- **类型**: entity
+- **源文件**: `N/A`
+- **总行数**: 0
+
+## SkillRelease
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/SkillRelease/SkillRelease.lua`
+- **总行数**: 154
+
+### API 函数 (7个)
+
+- `SkillRelease.SetSkillID(nSkillID)` — 设置主技能 (例: `SkillRelease.skillID = tonumber(nSkillID) SendGMCommand("player.AddTrain(500000)") Timer.Add(SkillRelease,2,function ()...`)
+- `SkillRelease.SetPreSkillID(...)` — 设置前置技能 (例: `local args = {...}          -- 把可变参数打包进表 nIndex=1 for i, v in ipairs(args) do -- 遍历每个参数...`)
+- `SkillRelease.EquipQiqueSkill(nSkillID)` — 学习奇穴技能 (例: `local tList = SkillData.GetQixueList(true) for n,tQixue in ipairs(tList) do local tSkillArray = tQixue.SkillArray...`)
+- `SkillRelease.FrameUpdate()` — 自身释放技能 (例: `if GetTickCount()-SkillRelease.nStartTime >= SkillRelease.nNextTime*1000  then TargetMgr.TrySelectOneTarget() TargetMgr....`)
+- `SkillRelease.Start()` (例: `Timer.AddFrameCycle(SkillRelease,1,function () SkillRelease.FrameUpdate()...`)
+- `SkillRelease.SetSkillType(nIndex)` — 设置类型  dx或者vk 1:vk 2:dx (例: `if nIndex==1 then return --默认vk技能...`)
+- `SkillRelease.SetSkillXinFa(nIndex)` — 设置心法类型 1、2、3 (例: `if nIndex==1 then return --默认心法...`)
+
+## WorldBoss
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/WorldBoss/WorldBoss.lua`
+- **总行数**: 187
+
+### API 函数 (3个)
+
+- `WorldBoss.FrameUpdate()` (例: `if not WorldBoss.bSwitch then return...`)
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,player.nLevel,203,1,3600)") SearchPanel.RunCommand("/gm for i=1,2...`)
+- `WorldBoss.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddInitState(Init)...`)
+
+---
+*9 个模块, 51 个导出 API*

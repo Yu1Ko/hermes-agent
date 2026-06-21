@@ -1,0 +1,22 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("LoginCreateRole")	10	启动主线用例
+/cmd CreateEmptyFile("LoginChangeFace")	10	启动主线用例
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd TeachEvent.UnInit()	5	关闭所有教程
+/cmd PlayerLevelUpToNew(130)	30	升级120
+/cmd RobotControl.CMD("SetRobot")	20	初始化机器人操作
+/gm player.SwitchMap(642,119224, 80348, 928256)	60	传送前置条件
+/cmd RobotControl.StabilityStart(24)	240	调整并初始化副本操作
+/cmd UINodeControl.BtnTrigger("BtnChangeMini","WidgetContentChat")	5	关闭下方聊天栏
+/gm player.SwitchMap(688,51379,56239,1095040)	60	传送前置条件
+/cmd CreateEmptyFile("Dungeons5Task")	2	副本一之窟
+/gm player.SwitchMap(642,1,119224, 80348, 928256)	60	传送到万灵
+/cmd RobotControl.CMD("TeleportRobot")	20	召唤机器人操作
+/cmd RobotControl.CMD("RequestLeaveTeam")	20	解除组队
+/gm player.SwitchMap(655,16383,16383,1056640)	30	传送个人家园指定地点
+/cmd CreateEmptyFile("Test")	240	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

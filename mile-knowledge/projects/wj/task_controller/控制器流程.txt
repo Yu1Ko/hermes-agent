@@ -1,0 +1,156 @@
+控制器流程
+  事件：由一个事件函数函数、参数列表、事件ID组成
+  主进程：用于处理事件循环   asyncio.get_event_loop().run_until_complete(self.start_event_loop())    
+  	1、asyncio.get_event_loop().create_task(self.show_current_process_loop())    循环打印、处理僵尸进程
+	2、主循环从 self._event_queue 获取事件，并调用asyncio.get_event_loop().create_task(self.handle_event(event)) 处理事件
+
+
+
+  心跳进程：用于同步本地哪些设备是否在线（device_check_loop）、 并启动一条thread用来处理事件的返回值
+	1、 asyncio.get_event_loop().create_task(self.device_check_loop())	用于检测本地哪些设备是否在线
+	2、主循环 await self.tasks_sync()： 同步任务状态, 从服务端获取新任务      await self.phone_network_check()：检查设备网络
+		同步任务状态用： self.call_event("get_running_tasks") 阻塞函数，需要等待函数返回值
+		从服务端获取任务，获取成功后，调用 self.send_event("task_start", data)  非阻塞函数 
+
+  当从服务端获取任务，获取成功后，调用 self.send_event("task_start", data) 将任务加到self._event_queue  队列，有主循环来处理事件即可
+  
+
+  to_thread()：是一个await asyncio.get_event_loop().run_in_executor( func_call )  用于将阻塞函数或耗时的同步任务移至线程池或进程池中执行的便捷方法。
+
+
+  task_start事件： 
+	1、检测事件所使用的设备是否正在被占用：self.check_device_in_used(device_id)
+	2、调用TaskRunProcess.init_param()来初始化TaskRunProcess的数据, 由于有一堆阻塞操作, 因此用线程执行  await to_thread(task_process.init_param, self._project_lock, self._ue4_lock, self)
+	3、启动一个新进程 self.new_worker_process(TaskRunProcess, task_data)   该接口会启动一条thread用来处理事件的返回值
+
+
+
+  TaskRunProcess进程：
+	1、注册退出执行的self.clean_up()函数
+	2、初始化当前主线程写入日志文件流  self.fzhu = FakeOut(log_lock)
+	3、初始化飞书发送消息模块  self.bot = pyfeishu.FeiShutalkChatbot(self.feishu_token)
+	4、初始化设备控制模块  self.Android_IOS = AdIo(self.device_s, self.platform, self.package_url,self.package_info,self.project_file_lock,self.port)
+	5、初始化设备系统日志处理模块 self.LogMan=Logmanage(self.server_url,self.device_s,self.device_id,self.task_running_id,self.Android_IOS,self.device_ip, self.bug_log_ios_pid)
+	6、从服务端获取任务相关信息，通过self.task_running_id，这里只用于获取任务名称
+	7、更新项目脚本 self.update_project_script()
+	8、尝试安装最新的包  根据服务端安装包版本号和本地安装包版本号    self.try_to_install_new_package()
+	9、关闭设备弹窗 self.Android_IOS.Pop_ups(5)
+	10、通过飞书  发消息  Throw_Advice().set_data
+	11、循环从服务端获取用例信息  通过self.task_running_id和self.device_id  
+	12、调用 self.run_one_case(case) 开始执行用例
+	13、该设备用例全部完成，则调用self.send_event("task_process_report_finish", self.task_running_id, self._uuid)事件
+	14、异常处理：设备系统日志采集关闭、设备锁屏、self.clean_up()
+	
+	调用 self.run_one_case(case) 开始执行用例
+		1、验证wda_u2是否正常 和 解除设备锁屏
+		2、初始化当前案例运行所需参数 self.init_parameters(case)  返回的字典会被用于用例线程 dic_args
+		3、self.prepare_app() 用于清理app相关数据
+		4、导入自动化用例脚本等模块 self.import_module(case)  
+		5、调用 self.start_case(case, u3driver,before_runs,case_run,self.fzhu) 开始执行用例
+			
+		调用self.start_case 执行用例
+			1、设置用例超时事件和执行次数
+			2、验证wda_u2是否正常、捕获设备日志self.LogMan.each_case_log_start()
+			3、初始化案例状态 CaseStatus()  该类用于和服务端任务的状态同步（比如取消）
+  			4、启动游戏客户端、关闭弹窗
+			5、初始化u3driver  如果是多人案例 则启动用例异步同步  self.case_status.start_check_sync() 如果异常通过断开 udriver 来使自动化脚本报错
+  			6、开启采集功能 capture.start_capture(udriver,self.Android_IOS.package)
+			7、
+			8、案例前准备 for before_run in before_runs: 导入
+			9、开始采集性能数据 capture.all_run_capture() 
+			10、启动用例执行线程  case_excute_thread = CaseRunThread(target=case_run.AutoRun, args=(self.Android_IOS, perfeye, self.LogMan.add_custom_log_file, self.parameters), daemon=True)
+			11、开启案例状态检测 self.case_status.start_check() 用于检测超时和服务端用例状态为  异常或者取消
+			12、线程阻塞结束（用例结束），
+			13、案例成功，保存采集数据 capture.stop_capture(self.case_status)
+
+
+
+
+start_case 修改后流程：
+	1、设置用例超时事件和执行次数
+	2、验证wda_u2是否正常、捕获设备日志self.LogMan.each_case_log_start()
+	3、初始化案例状态 CaseStatus()  该类用于和服务端任务的状态同步（比如取消）
+	4、开启采集功能 capture.start_capture(udriver,self.Android_IOS.package)
+	5、开始采集性能数据 capture.all_run_capture() 
+	6、动用例执行线程  case_excute_thread = CaseRunThread(target=case_run.AutoRun, args=(self.Android_IOS, perfeye, self.LogMan.add_custom_log_file, self.parameters), daemon=True)
+	7、线程阻塞结束（用例结束），
+	8、案例成功，保存采集数据 capture.stop_capture(self.case_status)
+
+
+
+
+
+文件拷贝：
+
+cp -rf  /mnt/windows-share/liuzhu/new_auto_test/task_controller/* ~/task_controller/
+cp -rf  /mnt/windows-share/liuzhu/new_auto_test/jx3wujie/* ~/task_controller/projects/jw3qptqjb/
+
+cp -rf  /mnt/windows-share/liuzhu/new_auto_test/perfeye/* ~/perfeye/
+cp -rf  /mnt/windows-share/liuzhu/new_auto_test/test/* ~/task_controller/projects/jw3qptqjb/
+
+
+python3 ~/task_controller/projects/jw3qptqjb/test1.py
+
+ssh root@10.11.177.230    XSJgame+369.0
+https://ngitlab.testplus.cn/tcdev/automationgroup/jw3wujie.git
+
+
+submodule.UAutoProfilerTool.path UAutoProfilerTool
+
+git config -f .git/config --remove-section submodule.UAutoProfilerTool   git rm --cached submodule.UAutoProfilerTool.path
+
+git commit -m "Remove submodule  UAutoProfilerTool"
+
+rm -rf .git/modules/submodule.UAutoProfilerTool.path
+
+git submodule add https://ngitlab.testplus.cn/tcdev/automationgroup/jw3qptqjb.git  projects/jw3qptqjb
+git submodule update --remote projects/jw3qptqjb
+
+
+git submodule add https://ngitlab.testplus.cn/tcdev/automationgroup/JX3.git  projects/JX3
+git submodule update --remote projects/JX3
+
+
+git config --file .gitmodules --get-regexp path
+
+//10.11.85.148   /FileShare cifs  defaults,username=anaymous,password=,dir_mode=0777,file_mode=0777     0 0
+//10.11.85.148/FileShare    /FileShare cifs  defaults,username=anaymous,password=,dir_mode=0777,file_mode=0777     0 0
+
+sudo apt install cifs-utils
+sudo mkdir /mnt/BaseShare/FileShare-85-148
+sudo mkdir /mnt/BaseShare/FileShare-181-242
+sudo umount /mnt/windows_share   解除挂载
+sudo mount -t cifs //10.11.85.148/FileShare /mnt/BaseShare/FileShare-85-148 -o username=anaymous,password=
+//10.11.85.148/FileShare /mnt/BaseShare/FileShare-85-148 cifs credentials=/etc/samba/creds,iocharset=utf8,sec=ntlm 0 0
+sudo mount -t cifs //10.11.85.148/FileShare-181-242 /mnt/BaseShare/FileShare-181-242 -o username=anaymous,password=
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PC控制器流程：
+	gameautomator.exe接收平台任务->从服务器（10.11.10.129:9000）拉取python脚本的压缩包（ 包含TGameTaskRun.py ）->解压python包 运行TGameTaskRun.py 并将参数通过命令行传递
+	
+	TGameTaskRun.py  
+	1、解析参数、初始化协作、初始化TaskRunProcess()
+	TaskRunProcess() 构造函数：
+		1、auto_rebot.Message(eval(feishu_token) 协作机器人
+		2、 self.PC_Control=PC_Control 用于控制游戏客户端的启动等
+		3、self.heartbeat_thread = CaseRunThread(target=self.heartbeat, daemon=True)启动心跳线程确保任务在线
+	TaskRun.run()
+		
+	
+	
+

@@ -1,0 +1,10 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(27,39080,10178,1050944)	30	传送到目标坐标
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd RobotControl.IniRobot(500,5,"留白")	10	初始化5个机器人 起始索引500 名前缀留白
+/cmd RobotControl.CMD("TeleportRobot")	5	召唤机器人到玩家位置
+/cmd RobotControl.CMD("ReviveMySelf")	8	复活所有机器人
+/cmd RobotControl.SetErenCamp()	5	设置恶人阵营
+/cmd RobotControl.StartCamp()	5	开启阵营模式
+/cmd RobotDeathLoop.Start()	3	启动死亡循环 每10秒复活→自杀 共360轮

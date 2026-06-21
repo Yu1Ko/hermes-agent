@@ -1,0 +1,30 @@
+name: agentspace-platform
+label: AgentSpace (WPS 数字员工)
+kind: platform
+version: 1.0.0
+description: >
+  WPS AgentSpace WebSocket 平台适配器 - 连接 WPS 数字员工平台，
+  通过 WebSocket 收发消息。需要 aiohttp 和有效的 wps_sid。
+author: MiLe
+requires_env:
+  - name: WPS_SID
+    description: "WPS AgentSpace 登录凭证（从浏览器 Cookie 获取）"
+    prompt: "WPS SID"
+    password: true
+  - name: AGENTSPACE_APP_ID
+    description: "WPS 应用 ID（可选，默认使用 openClaw）"
+    prompt: "应用 ID"
+    password: false
+optional_env:
+  - name: AGENTSPACE_ALLOW_ALL_USERS
+    description: "允许所有 WPS 用户触发 bot（开发阶段建议开启）"
+    prompt: "允许所有用户？(true/false)"
+    password: false
+  - name: AGENTSPACE_ALLOWED_USERS
+    description: "逗号分隔的允许用户 account_id 列表"
+    prompt: "允许的用户（逗号分隔）"
+    password: false
+  - name: AGENTSPACE_HOME_CHANNEL
+    description: "默认投递目标（cron/通知用）"
+    prompt: "Home channel ID"
+    password: false

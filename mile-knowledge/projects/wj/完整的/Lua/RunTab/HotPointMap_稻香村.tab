@@ -1,0 +1,11 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SwitchMap(_mapid_,_mapIndex_, 4857,14693,1065664)	30	传送
+/cmd HotPointRunMapMax(35000,35000,1070000)	2	设置热力图的地图最大距离
+/cmd HotPointRunMapMin(2000,8000,1065000)	2	设置热力图的地图最小距离
+/gm player.Revive()	5	复活
+/gm player.Stop()	5	停止
+/cmd CreateEmptyFile("HotPoint_Start")	20	信号：开始
+/cmd CreateEmptyFile("ExitGame")	2	关闭游戏

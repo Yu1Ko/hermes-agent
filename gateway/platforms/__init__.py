@@ -26,6 +26,7 @@ __all__ = [
     "BasePlatformAdapter",
     "MessageEvent",
     "SendResult",
+    "NapCatQQAdapter",
     "QQAdapter",
     "YuanbaoAdapter",
 ]

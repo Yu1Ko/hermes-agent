@@ -1,0 +1,7 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UIMgr.Open(VIEW_ID.PanelExteriorMain)	10	打开商城
+/cmd CreateEmptyFile("RandomShop")	10	启动商城ui遍历
+/cmd UIMgr.Close(VIEW_ID.PanelExteriorMain)	2	关闭商城
+/cmd CreateEmptyFile("perfeye_stop")	10	采集数据
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,168 @@
+---
+title: 任务系统
+description: 剑网3无界自动化测试 - 主线任务、门派任务、日常任务、稳定性跑任务模块
+---
+
+# 任务系统
+
+主线任务、门派任务、日常任务、稳定性跑任务模块
+
+## DSSectTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/DSSectTask/DSSectTask.lua`
+- **总行数**: 552
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `SectTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `SectTask.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+## DaoxiangchunTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/DaoxiangchunTask/DaoxiangchunTask.lua`
+- **总行数**: 599
+
+### API 函数 (3个)
+
+- `CharacterMovement.SetPointsFile()` (例: `GetOnePoint_Coordinate()                                                             -- 重新获取第一个点坐标 OutputMessage("MSG_SY...`)
+- `CharacterMovement.reset()` (例: `if bisRunning then                                                            -- 如果 正在跑动 MoveForWard_Stop()             ...`)
+- `CharacterMovement.FrameUpdate()` (例: `if not CharacterMovement.bSwitch then return...`)
+
+## MainTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/MainTask/MainTask.lua`
+- **总行数**: 569
+
+### API 函数 (5个)
+
+- `TaskRead.SplitState(nLine)` — 通用分割流程 (例: `TaskRead.tbTaskState = {} TaskRead.tbCustom = {} TaskRead.nTaskMove = false...`)
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `MainTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `MainTask.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `RepeatButton.Stop()` (例: `Timer.DelAllTimer(RepeatButton)...`)
+
+## NewDaoxiangchunTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/NewDaoxiangchunTask/NewDaoxiangchunTask.lua`
+- **总行数**: 532
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `NewDaoxiangchunTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `NewDaoxiangchunTask.FrameUpdate()` — 帧更新函数 (例: `if not IsFromLoadingEnterGame2() then return...`)
+
+## NewDaoxiangchunTaskTest
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/NewDaoxiangchunTaskTest/NewDaoxiangchunTaskTest.lua`
+- **总行数**: 532
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `NewDaoxiangchunTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `NewDaoxiangchunTask.FrameUpdate()` — 帧更新函数 (例: `if not IsFromLoadingEnterGame2() then return...`)
+
+## SectTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/SectTask/SectTask.lua`
+- **总行数**: 519
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `SectTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `SectTask.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+## StabilityJourneyTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/StabilityJourneyTask/StabilityJourneyTask.lua`
+- **总行数**: 108
+
+### API 函数 (2个)
+
+- `StabilityController.SetDungeons(nDungeonMap)` — 设置脚本 (例: `DungeonsRunMapTask(StabilityController.szInterfacePath.."Dungeons/DungeonsTask/"..tostring(nDungeonMap)..".tab")...`)
+- `StabilityController.FrameUpdate()` — 主控RunMap.文件 (例: `if StabilityController.bFlag and GetTickCount()-nCurrentTime>nNextTime*1000 then if nCurrentStep==#list_RunMapCMD then S...`)
+
+## StabilityTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/StabilityTask/StabilityTask.lua`
+- **总行数**: 93
+
+### API 函数 (2个)
+
+- `StabilityController.SetDungeons(nDungeonMap)` — 设置副本脚本 (例: `DungeonsRunMapTask(SearchPanel.szCurrentInterfacePath.."Dungeons/DungeonsTask/"..tostring(nDungeonMap)..".tab")...`)
+- `StabilityController.FrameUpdate()` — 主控RunMap.文件 (例: `if StabilityController.bFlag and GetTickCount()-nCurrentTime>nNextTime*1000 then if not SearchPanel.IsFromLoadingEnterGa...`)
+
+## TaskRead
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/TaskRead/TaskRead.lua`
+- **总行数**: 104
+
+### API 函数 (3个)
+
+- `TaskRead.GetTaskID(nQuestID)` — 读取任务ID对应的文件 (例: `TaskRead.tbTask = {} local path = SearchPanel.szCurrentInterfacePath .."/TaskProcess/".. tostring(nQuestID) .. ".tab" fo...`)
+- `TaskRead.SplitState(nLine)` — 通用分割流程 (例: `TaskRead.tbTaskState = {} TaskRead.tbCustom = {} TaskRead.nTaskMove = false...`)
+- `TaskRead.Reset()` — 重载任务 (例: `TaskRead.tbTask = {} TaskRead.tbTargetPointTable = {} TaskRead.tbCustom = {}...`)
+
+## TotalTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/TotalTask/TotalTask.lua`
+- **总行数**: 375
+
+### API 函数 (4个)
+
+- `TotalTask.GetQuestID(nQuestIndex)` — 获取当前任务id (例: `return g_pClientPlayer.GetQuestID(nQuestIndex)...`)
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `TotalTask.FrameUpdate()` — 通过读取任务流程来进行测试 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `TotalTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+
+## WuXiangLouMainTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/WuXiangLouMainTask/WuXiangLouMainTask.lua`
+- **总行数**: 518
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `SectTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `SectTask.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+## WuXiangLouMainTaskTemp
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/WuXiangLouMainTaskTemp/WuXiangLouMainTaskTemp.lua`
+- **总行数**: 518
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `SectTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `SectTask.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+## YiLiChunMainTask
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/YiLiChunMainTask/YiLiChunMainTask.lua`
+- **总行数**: 518
+
+### API 函数 (3个)
+
+- `PlayerRole.AddBuff()` — 人物添加的Buff (例: `SearchPanel.RunCommand("/gm player.nPhysicsReflection=10000000") SearchPanel.RunCommand("/gm player.AddBuff(player.dwID,...`)
+- `SectTask.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddState(Dialogue)...`)
+- `SectTask.FrameUpdate()` — 帧更新函数 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+---
+*13 个模块, 40 个导出 API*

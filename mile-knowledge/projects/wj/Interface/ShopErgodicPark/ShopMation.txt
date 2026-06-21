@@ -1,0 +1,6 @@
+[ShopMation]
+ShopErgodicTitleTime=1 -- 商城目录遍历时间
+ShopGoodTime=3	-- 商城商品遍历时间
+GoodsCameraTime=1 -- 商城摄像机遍历时间
+GoodsHomeTime=3	-- 限时抢购商品遍历时间
+CameraSwitch=0	--商城摄像机是否启用1为启用 0为关闭

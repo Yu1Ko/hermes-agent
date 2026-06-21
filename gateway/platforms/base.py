@@ -4145,6 +4145,116 @@ class BasePlatformAdapter(ABC):
             max_ms = 2500
         return random.uniform(min_ms / 1000.0, max_ms / 1000.0)
 
+    @staticmethod
+    def _qq_final_text_chunks(text: str) -> list[str]:
+        """Split QQ/QQBot final text into chat-sized natural messages.
+
+        QQ-style chats read better when a final assistant reply is delivered as
+        several short bubbles instead of one document-like block.  Keep code
+        fences intact, prefer existing blank-line boundaries, then split normal
+        prose on sentence endings.  The caller sends these chunks instead of the
+        original full text, so the unsplit body is never duplicated.
+        """
+        if not text:
+            return []
+
+        chunks: list[str] = []
+        current: list[str] = []
+        in_code_block = False
+
+        def _flush_current() -> None:
+            if current:
+                chunk = "\n".join(current).strip()
+                if chunk:
+                    chunks.append(chunk)
+                current.clear()
+
+        for line in text.splitlines():
+            if line.strip().startswith("```"):
+                in_code_block = not in_code_block
+                current.append(line)
+                if not in_code_block:
+                    _flush_current()
+                continue
+
+            if in_code_block:
+                current.append(line)
+                continue
+
+            if not line.strip():
+                _flush_current()
+                continue
+
+            current.append(line)
+        _flush_current()
+
+        split_chunks: list[str] = []
+        sentence_re = re.compile(r"(?<=[。！？!?；;])\s+")
+        for chunk in chunks:
+            # Leave fenced code blocks and already-short chunks alone.
+            if "```" in chunk or len(chunk) <= 120:
+                split_chunks.append(chunk)
+                continue
+
+            parts = [p.strip() for p in sentence_re.split(chunk) if p.strip()]
+            if len(parts) <= 1:
+                split_chunks.append(chunk)
+                continue
+
+            buf = ""
+            for part in parts:
+                candidate = f"{buf} {part}".strip() if buf else part
+                if buf and len(candidate) > 180:
+                    split_chunks.append(buf)
+                    buf = part
+                else:
+                    buf = candidate
+            if buf:
+                split_chunks.append(buf)
+
+        return split_chunks or [text.strip()]
+
+    def _final_text_delivery_chunks(self, text: str) -> list[str]:
+        """Return platform-specific chunks for final text delivery."""
+        if self.platform in {Platform.QQ, Platform.QQBOT}:
+            return self._qq_final_text_chunks(text)
+        return [text] if text else []
+
+    async def _send_final_text_response_results(
+        self,
+        *,
+        chat_id: str,
+        text_content: str,
+        reply_to: str | None,
+        metadata: dict | None,
+        ephemeral_ttl: int,
+    ) -> list[SendResult]:
+        """Send final text and return delivery results."""
+        results: list[SendResult] = []
+        chunks = self._final_text_delivery_chunks(text_content)
+        for idx, chunk in enumerate(chunks):
+            if idx > 0 and self.platform in {Platform.QQ, Platform.QQBOT}:
+                await asyncio.sleep(0.25)
+            result = await self._send_with_retry(
+                chat_id=chat_id,
+                content=chunk,
+                reply_to=reply_to if idx == 0 else None,
+                metadata=metadata,
+            )
+            results.append(result)
+            if (
+                ephemeral_ttl
+                and ephemeral_ttl > 0
+                and result.success
+                and result.message_id
+            ):
+                self._schedule_ephemeral_delete(
+                    chat_id=chat_id,
+                    message_id=result.message_id,
+                    ttl_seconds=ephemeral_ttl,
+                )
+        return results
+
     async def _process_message_background(self, event: MessageEvent, session_key: str) -> None:
         """Background task that actually processes the message."""
         # Track delivery outcomes for the processing-complete hook
@@ -4338,28 +4448,15 @@ class BasePlatformAdapter(ABC):
                 if text_content and not _tts_caption_delivered:
                     logger.info("[%s] Sending response (%d chars) to %s", self.name, len(text_content), event.source.chat_id)
                     _reply_anchor = _reply_anchor_for_event(event)
-                    result = await self._send_with_retry(
+                    results = await self._send_final_text_response_results(
                         chat_id=event.source.chat_id,
-                        content=text_content,
+                        text_content=text_content,
                         reply_to=_reply_anchor,
                         metadata=_final_thread_metadata,
+                        ephemeral_ttl=_ephemeral_ttl,
                     )
-                    _record_delivery(result)
-
-                    # Schedule auto-deletion of system-notice replies.
-                    # Detached so the handler returns immediately; errors
-                    # (permission denied, message too old) are swallowed.
-                    if (
-                        _ephemeral_ttl
-                        and _ephemeral_ttl > 0
-                        and result.success
-                        and result.message_id
-                    ):
-                        self._schedule_ephemeral_delete(
-                            chat_id=event.source.chat_id,
-                            message_id=result.message_id,
-                            ttl_seconds=_ephemeral_ttl,
-                        )
+                    for result in results:
+                        _record_delivery(result)
 
                 # Human-like pacing delay between text and media
                 human_delay = self._get_human_delay()

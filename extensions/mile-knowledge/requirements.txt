@@ -1,0 +1,6 @@
+networkx>=3.3
+openai>=1.30.0
+python-louvain>=0.16
+# sentence-transformers removed — switched to embedding API (mnapi.com)
+requests>=2.31.0
+numpy>=1.26.0

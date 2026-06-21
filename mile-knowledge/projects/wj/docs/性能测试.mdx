@@ -1,0 +1,70 @@
+---
+title: 性能测试
+description: 剑网3无界自动化测试 - 性能数据采集、Perfeye、物理测试、内存Dump模块
+---
+
+# 性能测试
+
+性能数据采集、Perfeye、物理测试、内存Dump模块
+
+## GetPerfData
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/GetPerfData/GetPerfData.lua`
+- **总行数**: 176
+
+### API 函数 (4个)
+
+- `GetPerfData.PerfeyeSetTimeNode()` (例: `tbPerfData={["datalist"]={}}...`)
+- `GetPerfData.PerfeyeStop()` (例: `GetPerfData.bSaveData=true...`)
+- `GetPerfData.GetData()` — end (例: `local tbDataValue={} local info=GetHotPointReader().GetFrameDataInfo() if info.FPS==0 and info.FaceCnt==0 and info.DrawC...`)
+- `GetPerfData.FrameUpdate()` (例: `if not GetPerfData.bSwitch then return...`)
+
+## Perfeye
+
+- **类型**: entity
+- **源文件**: `N/A`
+- **总行数**: 0
+
+## RagDollTest
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/RagDollTest/RagDollTest.lua`
+- **总行数**: 238
+
+### API 函数 (9个)
+
+- `RagDollTest.Switch(_select_)` (例: `_select_ = tonumber(_select_) if _select_ == 0 then RagDollTest.bSwitch = false...`)
+- `RagDollTest.SetCycleCnt(nCnt)` — 执行 (例: `RagDollTest.nCycleCnt=nCnt...`)
+- `RagDollTest.SetCycleTime(nCnt)` (例: `RagDollTest.nCycleTime=nCnt Log(string.format("RagDollTest.nCycleTime=%d",nCnt))...`)
+- `RagDollTest.SetNpcCnt(nCnt)` (例: `RagDollTest.nNpcCnt=nCnt Log(string.format("RagDollTest.nNpcCnt=%d",nCnt))...`)
+- `RagDollTest.CreateNpc(nIndex)` (例: `local direction=points[nIndex] local strInfo=string.format("player.GetScene().CreateNpc(136502, player.nX+%d, player.nY+...`)
+- `RagDollTest.KillNpc()` (例: `SendGMCommand('for i = 1, 300 do local npc1 = player.GetScene().GetNpcByNickName("buwawa" .. i) if npc1 then npc1.Die() ...`)
+- `RagDollTest.OnFrameBreathe()` (例: `if not RagDollTest.bSwitch then return...`)
+- `RagDollTest.Start()` (例: `Timer.AddFrameCycle(RagDollTest,1,function () RagDollTest.OnFrameBreathe()...`)
+- `RunMap.FrameUpdate()` — 切图的前后置操作 这部分实现模块化后直接去除 (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+
+## RecurrentDump
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/RecurrentDump/RecurrentDump.lua`
+- **总行数**: 80
+
+### API 函数 (2个)
+
+- `RecurrentDump.FrameUpdate()` (例: `if RecurrentDump.bStatus == 1 then UINodeControl.BtnTriggerByPath("BtnShop","WidgetRightTopAnchor/WidgetMainCityRightTop...`)
+- `RecurrentDump.Start()` (例: `if not RecurrentDump.bSwitch  then return...`)
+
+## Test
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/Test/Test.lua`
+- **总行数**: 68
+
+### API 函数 (2个)
+
+- `Test.FrameUpdate()` — 帧函数内容 (例: `if not bFlag then SkillMgr.AutoRun(true) bFlag = true...`)
+- `Test.Start()` (例: `Timer.AddCycle(Test,1,function () Test.FrameUpdate()...`)
+
+---
+*5 个模块, 17 个导出 API*

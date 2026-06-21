@@ -1,0 +1,1926 @@
+﻿Target =
+{
+	className = "Target",
+	bShowActionBar = true,
+	bShowStateValue = true,
+	bShowSimpleBlood = false,
+	bShowPlayerSimpleBlood = false,
+	bShowSelfDebuff	= true,
+
+	bStandard = false,
+	DefaultAnchor = nil,
+	Anchor = nil,
+    nVersion = 0,
+    nCurrentVersion = 2,
+	bIsEnemy = false,
+	nDispelCount = 0,
+}
+--
+--RegisterCustomData("Target.bShowActionBar")
+--RegisterCustomData("Target.bShowStateValue")
+--RegisterCustomData("Target.bShowSimpleBlood")
+--RegisterCustomData("Target.bShowSelfDebuff")
+--RegisterCustomData("Target.bStandard")
+--RegisterCustomData("Target.bShowPlayerSimpleBlood")
+--RegisterCustomData("Target.Anchor")
+--RegisterCustomData("Target.nVersion")
+--
+--ACTION_STATE =
+--{
+--	NONE = 1,
+--	PREPARE = 2,
+--	DONE = 3,
+--	BREAK = 4,
+--	FADE = 5,
+--}
+--
+--PROGRESS_BAR_TYPE =
+--{
+--	NORMAL = 7,
+--	UNBREAKABLE = 6,
+--}
+--KUNGFU_TYPE =
+--{
+--	TIAN_CE     = 1,      -- 天策内功
+--	WAN_HUA     = 2,      -- 万花内功
+--	CHUN_YANG   = 3,      -- 纯阳内功
+--	QI_XIU      = 4,      -- 七秀内功
+--	SHAO_LIN    = 5,      -- 少林内功
+--	CANG_JIAN   = 6,      -- 藏剑内功
+--	GAI_BANG    = 7,      -- 丐帮内功
+--	MING_JIAO   = 8,      -- 明教内功
+--	WU_DU       = 9,      -- 五毒内功
+--	TANG_MEN    = 10,     -- 唐门内功
+--	CANG_YUN    = 18,     -- 苍云内功
+--	CHANG_GE    = 19,     -- 长歌内功
+--	BA_DAO      = 20,     -- 霸刀内功
+--	PENG_LAI    = 21,     -- 蓬莱内功
+--	LING_XUE    = 22,     -- 凌雪内功
+--	YAN_TIAN    = 23,     -- 衍天内功
+--	YAO_ZONG    = 24,     -- 药宗内功
+--	DAO_ZONG    = 26,     -- 刀宗内功
+--}
+--
+--local INI_FILE
+--local COMMON_INI_FILE = IsMobileStreamingEnable() and "ui/traits/mobilestreaming/config/default/TargetCommon.ini" or "ui/config/default/TargetCommon.ini"
+--local HP_RECOVER_SPEED = 2500
+--local hP_RECOVER_MAX_TIME = 5 * 1000
+--local _hTotal
+--local _hBuff
+--local _hBuffText
+--local _hDebuff
+--local _hDebuffText
+--local m_bSendHelp
+--local m_bUseBuy = false
+--local m_nTAccumulateStyle = 0
+--local m_aHandles =
+--{
+--	[KUNGFU_TYPE.TANG_MEN] 	= "Handle_TM",
+--	[KUNGFU_TYPE.MING_JIAO]	= "Handle_MJ",
+--	[KUNGFU_TYPE.CANG_JIAN]	= "Handle_CJ",
+--	[KUNGFU_TYPE.CANG_YUN] 	= "Handle_CangYun",
+--	[KUNGFU_TYPE.CHANG_GE] 	= "Handle_CG",
+--	[KUNGFU_TYPE.SHAO_LIN] 	= "Handle_SL",
+--	[KUNGFU_TYPE.CHUN_YANG] = "Handle_CY",
+--	[KUNGFU_TYPE.BA_DAO] 	= "Handle_BaDao",
+--	[KUNGFU_TYPE.TIAN_CE]	= "Handle_TC",
+--	[KUNGFU_TYPE.YAN_TIAN]  = "Handle_YT",
+--	[KUNGFU_TYPE.YAO_ZONG]  = "Handle_YZ",
+--	[KUNGFU_TYPE.DAO_ZONG]  = "Handle_DZ",
+--	[KUNGFU_TYPE.WAN_HUA]   = "Handle_WH",
+--}
+--local m_bVisibleWhenHideUI
+--local m_frame
+--local MAX_H_MARK_COUNT = 3
+--local CURE_SHIELD_IMAGE_FRAME = {[0] = 27, [1] = 45}
+--local OB_OFFSET = 65
+--
+
+--
+--function Target.BuffMonitor(info, dwID, nLevel, bCanCancel, bDelete)
+--	if bDelete or not m_frame  then
+--		return
+--	end
+--
+--	local bCheckCGState = (m_frame.dwMountType == KUNGFU_TYPE.CHANG_GE)
+--	if bCheckCGState then
+--		Target.CheckCGState(dwID, m_frame)
+--	end
+--end
+--
+--function Target.BuffHandleSeclector(dwID, nLevel, bCanCancel, dwSkillSrcID)
+--	if bCanCancel then
+--		if dwSkillSrcID == UI_GetClientPlayerID() or CanDispelBuff(bCanCancel, dwID, nLevel) then
+--			return 0
+--		else
+--			return 1
+--		end
+--	else
+--		if CanDispelBuff(bCanCancel, dwID, nLevel) then
+--			return 0
+--		else
+--			return 1
+--		end
+--	end
+--end
+--
+--function Target.IsFliterBuff(dwBuffSrcID, dwBuffID, dwBuffLevel, bCanCancel)
+--	if not bCanCancel and Target.bShowSelfDebuff and dwBuffSrcID ~= 0 and IsPlayer(dwBuffSrcID) and Target.dwFullyType == TARGET.NPC and
+--		dwBuffSrcID ~= UI_GetClientPlayerID() then
+--		return true
+--	end
+--	return false
+--end
+--
+--function CanDispelBuff(bCanCancel, dwID, nLevel)
+--	if ((bCanCancel and Target.bIsEnemy) or (not bCanCancel and not Target.bIsEnemy)) and
+--		Buffer_IsDispel(dwID, nLevel) then
+--		return true
+--	end
+--
+--	return false
+--end
+--
+--local function Target_VersionChange()
+--    if Target.nVersion ~= Target.nCurrentVersion then
+--		if Target.Anchor and Target.DefaultAnchor and
+--		Target.Anchor.s == Target.DefaultAnchor.s and Target.Anchor.r == Target.DefaultAnchor.r and Target.Anchor.y < Target.DefaultAnchor.y then
+--        	Target.Anchor.y = Target.DefaultAnchor.y
+--        end
+--
+--        FireUIEvent("TARGET_ANCHOR_CHANGED")
+--    end
+--    Target.nVersion = Target.nCurrentVersion
+--
+--    Target_VersionChange = nil
+--end
+--
+--function Target.OnFrameCreate()
+--	--this:RegisterEvent("NPC_STATE_UPDATE")
+--	--this:RegisterEvent("NPC_LEAVE_SCENE")
+--	--
+--	--this:RegisterEvent("PLAYER_STATE_UPDATE")
+--	--this:RegisterEvent("PLAYER_ENTER_SCENE")
+--	--this:RegisterEvent("PLAYER_LEAVE_SCENE")
+--	--
+--	--this:RegisterEvent("UPDATE_RELATION")
+--	--this:RegisterEvent("UPDATE_ALL_RELATION")
+--	--
+--	--this:RegisterEvent("PLAYER_LEVEL_UP")
+--	--
+--	--this:RegisterEvent("OT_ACTION_PROGRESS_BREAK")
+--	--this:RegisterEvent("PARTY_UPDATE_BASE_INFO")
+--	--this:RegisterEvent("UPDATE_PLAYER_SCHOOL_ID")
+--	--this:RegisterEvent("SET_SHOW_VALUE_BY_PERCENTAGE")
+--	--this:RegisterEvent("SET_SHOW_VALUE_TWO_FORMAT")
+--	--this:RegisterEvent("SET_TARGET_SHOW_STATE_VALUE")
+--	--
+--	--this:RegisterEvent("PARTY_SET_MARK")
+--	--this:RegisterEvent("SET_SHOW_STANDARD_TARGET")
+--	--this:RegisterEvent("SET_SHOW_VALUE_SIMPLE_BLOOD")
+--	--
+--	--this:RegisterEvent("UI_SCALED")
+--	--this:RegisterEvent("ON_ENTER_CUSTOM_UI_MODE")
+--	--this:RegisterEvent("ON_LEAVE_CUSTOM_UI_MODE")
+--	--this:RegisterEvent("TARGET_ANCHOR_CHANGED")
+--	--
+--	--this:RegisterEvent("NPC_DROP_TARGET_UPDATE")
+--	--this:RegisterEvent("CUSTOM_DATA_LOADED")
+--	--this:RegisterEvent("CHANGE_CAMP")
+--	--this:RegisterEvent("UI_ON_DAMAGE_EVENT")
+--	--this:RegisterEvent("CHANGE_CAMP_FLAG")
+--	--
+--	--this:RegisterEvent("TARGET_MINI_AVATAR_MISC")
+--	--this:RegisterEvent("SET_MINI_AVATAR")
+--	--this:RegisterEvent("SKILL_MOUNT_KUNG_FU")
+--	--this:RegisterEvent("SKILL_UNMOUNT_KUNG_FU")
+--	--this:RegisterEvent("ON_NEW_PROXY_SKILL_LIST_NOTIFY")
+--	--this:RegisterEvent("ON_CLEAR_PROXY_SKILL_LIST_NOTIFY")
+--	--this:RegisterEvent("ON_NPC_LEAVE_FIGHT")
+--	--this:RegisterEvent("BUFF_UPDATE")
+--
+--	Target.DefaultAnchor = this:GetDefaultAnchor()
+--	Target.Init(this)
+--	Target.UpdateAnchor(this)
+--	Target.UpdateKungfu(this)
+--	UpdateCustomModeWindow(this, g_tStrings.TARGET)
+--	if Target_VersionChange then
+--		Target_VersionChange()
+--	end
+--	this.nX, this.nY = this:GetAbsPos()
+--end
+--
+--local m_Param = nil
+--function Target.UpdateBuffParam(frame)
+--	local hBuff		= frame:Lookup("", "Handle_Buff")
+--	local hDebuff	= frame:Lookup("", "Handle_Debuff")
+--
+--	if not m_Param then
+--		m_Param =
+--		{
+--			boxtexts =
+--			{
+--				"<box>w=30 h=30 postype=7 eventid=262912</box>",
+--				"<box>w=25 h=25 postype=7 eventid=262912</box>",
+--			},
+--
+--			func_fliter		= IsFliterBuff,
+--			func_monitor 	= BuffMonitor,
+--			func_selector	= BuffHandleSeclector,
+--			showtime 		= true,
+--			show_pausecd	= true,
+--		}
+--	end
+--	local bReinit			= (frame.dwBuffMgrID and m_Param.owner and (m_Param.owner ~= Target.dwID))
+--	m_Param.hbuff			= hBuff
+--	m_Param.hdebuff			= hDebuff
+--	m_Param.owner			= Target.dwID
+--	m_Param.owner_type		= Target.dwType
+--	m_Param.buff_light		= Target.bIsEnemy
+--	m_Param.debuff_light	= (not Target.bIsEnemy)
+--
+--	if not frame.dwBuffMgrID then
+--		frame.dwBuffMgrID = BuffMgr.Register(m_Param)
+--	else
+--		BuffMgr.Modify(frame.dwBuffMgrID, m_Param, true)
+--	end
+--	BuffMgr.RefreshBuffs(frame.dwBuffMgrID, bReinit)
+--end
+--
+--function Target.Init(frame)
+--	frame:Lookup("", "Image_NPCMark"):Hide()
+--
+--end
+--
+--function Target.OnFrameDragEnd()
+--	this:CorrectPos()
+--	Target.Anchor = GetFrameAnchor(this, "TOPLEFT", "TOPLEFT")
+--    FireEvent("TARGET_ANCHOR_CHANGED")
+--end
+--
+--function Target.UpdateAnchor(frame)
+--	local anchor = Target.Anchor or Target.DefaultAnchor
+--	frame:SetPoint(anchor.s, 0, 0, anchor.r, anchor.x, anchor.y)
+--	frame:CorrectPos()
+--	Target.UpdateOB()
+--end
+--
+--function Target.OnFrameBreathe()
+--	if this.nUpdateStatus and Target.dwFullyType == TARGET.PLAYER then
+--		local KTarget = GetTargetHandle(this.dwType, this.dwID)
+--		if KTarget then
+--			Target.UpdateEnergy(this, KTarget)
+--		end
+--	end
+--	Target.UpdateAction(this)
+--end
+--
+--function Target.UpdateMountType(frame)
+--	if frame.dwType ~= TARGET.PLAYER then
+--		return
+--	end
+--
+--	local hTarget = GetPlayer(frame.dwID)
+--	if hTarget then
+--		local kungfu = hTarget.GetActualKungfuMount()
+--		if kungfu and frame.dwMountType ~= kungfu.dwMountType then
+--			frame.dwMountType = kungfu.dwMountType
+--			Target.UpdateKungfuInfo(frame, hTarget)
+--			frame.bHaveMana = (not IsPlayerManaHide(frame.dwMountType))
+--		end
+--	else
+--		frame.dwMountType = nil
+--	end
+--end
+--
+--function Target.UpdateState(frame)
+--	Target.UpdateLM(frame)
+--	Target.UpdateName(frame)
+--	Target.UpdateLevel(frame)
+--
+--	Target.UpdateAction(frame)
+--	Target.UpdateHead(frame)
+--	Target.UpdateKungfu(frame)
+--	Target.UpdateTargetMark(frame)
+--	Target.UpdateCamp(frame)
+--end
+--
+--function Target.UpdateTargetMark(hFrame)
+--	local hPlayer = GetClientPlayer()
+--	local hImageMark = hFrame:Lookup("", "Image_NPCMark")
+--	local nIconFrame = nil
+--	if hPlayer.IsInParty() then
+--		local nMarkID = GetClientTeam().GetMarkIndex(hFrame.dwID)
+--		if nMarkID then
+--			nIconFrame = PARTY_MARK_ICON_FRAME_LIST[nMarkID]
+--		end
+--	end
+--
+--	if nIconFrame then
+--		hImageMark:FromUITex(PARTY_MARK_ICON_PATH, nIconFrame)
+--		hImageMark:Show()
+--	else
+--		hImageMark:Hide()
+--	end
+--end
+--
+--local function OnUpdateProgress(hProgress)
+--	local hHighlight = hProgress:GetParent():Lookup("Image_Flash")
+--	local fCurPercent = hProgress:GetPercentage()
+--    if fCurPercent < 1 then
+--    	local nStartPosX, _ = hProgress:GetAbsPos()
+--    	local nFullWidth, _ = hProgress:GetSize()
+--    	local nHighlightWidth, _ = hHighlight:GetSize()
+--    	local _, nPosY = hHighlight:GetAbsPos()
+--    	hHighlight:SetAbsPos(nStartPosX + nFullWidth * fCurPercent - nHighlightWidth, nPosY)
+--    	hHighlight:Show()
+--    else
+--    	hHighlight:Hide()
+--    end
+--end
+--
+--function Target.UpdateEnergy(frame, player)
+--	if frame.szShow and frame.szShow ~= "" then
+--		local hList = frame:Lookup("", "Handle_Energy/"..frame.szShow)
+--		frame.nUpdateStatus = PlayerEnergyUI_ChangeStyle(frame.szShowSub, hList, player, m_nTAccumulateStyle, true)
+--	end
+--end
+--
+--local function AdjustBuffListPos(frame, offset)
+--end
+--
+--function Target.UpdateKungfuInfo(frame, player)
+--	if not frame.dwMountType then
+--		return
+--	end
+--
+--	if  not frame.bInitEnergy then
+--		local hList = frame:Lookup("", "Handle_Energy")
+--		for _, szHandle in pairs(m_aHandles) do
+--			 hList:AppendItemFromIni(COMMON_INI_FILE, szHandle, nil, true)
+--			 hList:FormatAllItemPos()
+--		end
+--		frame.bInitEnergy = true
+--	end
+--
+--	local szShow, szShowSub = "", ""
+--	if m_aHandles[frame.dwMountType] then
+--		szShow = m_aHandles[frame.dwMountType]
+--		szShowSub = string.sub(szShow, string.len("Handle_") + 1)
+--	end
+--
+--	local hEnergy
+--	local bAdjust = false
+--	for _, v in pairs(m_aHandles) do
+--		hEnergy = frame:Lookup("", "Handle_Energy/"..v)
+--		hEnergy:SetVisible(szShow == v)
+--		if szShow == v then
+--			AdjustBuffListPos(frame, hEnergy:GetRelY() + hEnergy:GetH() - 4)
+--			bAdjust = true
+--		end
+--	end
+--
+--	if not bAdjust then
+--		-- AdjustBuffListPos(frame, _hBuff.nRelPosY)
+--	end
+--
+--	frame.szShow = szShow
+--	frame.szShowSub = szShowSub
+--	Target.UpdateEnergy(frame, player)
+--end
+----策划的特殊需求，当特殊boss挑战回血的时候，收到脱战的时间，开始慢慢做慢慢回血的动画
+--function Target.StartRecoverHP(hFrame, dwNpcID, nCurrentLife, nCurrentLifeCount)
+--	if Target.dwFullyType ~= TARGET.NPC then
+--		return
+--	end
+--
+--	if hFrame.dwID ~= dwNpcID then
+--		return
+--	end
+--	KTarget = GetNpc(hFrame.dwID)
+--	if not KTarget then
+--		return
+--	end
+--	local tRecoverHP = {}
+--	tRecoverHP.nCurrentLife = nCurrentLife + KTarget.nMaxLife * nCurrentLifeCount
+--	tRecoverHP.nStartRecoverTime = GetTickCount()
+--
+--	local fMaxLife = GetTargetMaxLife(hFrame.dwType, hFrame.dwID)
+--	local nHPSpeed = math.floor((fMaxLife - tRecoverHP.nCurrentLife) / hP_RECOVER_MAX_TIME + 0.5)
+--	nHPSpeed = math.max(nHPSpeed, HP_RECOVER_SPEED)
+--	tRecoverHP.nHPSpeed = nHPSpeed
+--	local fRecoverHP = Table_GetNpcRecoverHP(KTarget.dwTemplateID)
+--	tRecoverHP.nRecoverLife = BossMaxLifeCalculate(KTarget, fRecoverHP, nCurrentLife) or fMaxLife
+--	hFrame.tRecoverHP = tRecoverHP
+--	hFrame:RegisterEvent("RENDER_FRAME_UPDATE")
+--end
+--
+----策划的特殊需求，当特殊boss挑战回血的时候，UI做一个慢慢回血的动画，所以当前血量是UI自己计算出来的
+--function Target.GetCurrentLife(hFrame, KTarget)
+--	if  not hFrame.tRecoverHP then
+--		return KTarget.fCurrentLife64
+--	end
+--	local tRecoverHP = hFrame.tRecoverHP
+--	local nTime = GetTickCount() - tRecoverHP.nStartRecoverTime
+--	local nLife = tRecoverHP.nCurrentLife + nTime * tRecoverHP.nHPSpeed
+--	if nLife >= tRecoverHP.nRecoverLife then
+--		hFrame.tRecoverHP = nil
+--		hFrame:UnRegisterEvent("RENDER_FRAME_UPDATE")
+--		local fnAction = function()
+--			if hFrame:IsValid() then
+--				hFrame.bClearSub = true
+--				Target.UpdateLM(hFrame)
+--				hFrame.bClearSub = false
+--			end
+--		end
+--		DelayCall(10, fnAction)
+--		return KTarget.fCurrentLife64
+--	end
+--	return nLife
+--end
+--
+--function Target.UpdateLM(hFrame)
+--	local hTotal = hFrame:Lookup("", "")
+--	if not hTotal then
+--		return
+--	end
+--	local KTarget
+--	local bHideBar = false
+--
+--	if Target.dwFullyType == TARGET.PLAYER then
+--		KTarget = GetTargetHandle(hFrame.dwType, hFrame.dwID)
+--	elseif Target.dwFullyType == TARGET.NPC then
+--		KTarget = GetNpc(hFrame.dwID)
+--		--原来的KTarget.CanSeeLifeBar() 表示血条和血量两个的显示与否
+--		--现在做了拆分，bCanSeeLifeNum表示界面上血量显示与否
+--		bHideBar = (KTarget and not GetNpcTemplate(KTarget.dwTemplateID).bCanSeeLifeNum)
+--	end
+--
+--	local szHealth, szMana = "", ""
+--	local fHealth, fMana, fNextHealth = 0, 0, 0
+--	local fMaxLife, nNextHealth, fCurrentLife = 0, 0, 0
+--	local fRecoverHP = 0
+--
+--	local fDamageAbsorbShield = 0
+--	local nDamageAbsorbValue = KTarget.nDamageAbsorbValue or 0
+--	local hDamageAbsorbShield = hTotal:Lookup("Image_DefenseShield")
+--	local hDamageAbsorbShieldLight = hTotal:Lookup("Handle_DefenseShieldLight")
+--
+--	local nCureShield = KTarget.nTherapyAbsorbValue or 0
+--	local hCureShield = hTotal:Lookup("Handle_CureShield")
+--
+--	if KTarget then
+--		local KPlayer = GetClientPlayer()
+--		local bDanger = KTarget.nLevel - KPlayer.nLevel > SHOW_TARGET_LEVEL_LIMITS and not KPlayer.IsPlayerInMyParty(hFrame.dwID)
+--		fMaxLife = GetTargetMaxLife(hFrame.dwType, hFrame.dwID)
+--		local nOriginMaxLife = fMaxLife
+--		fCurrentLife = Target.GetCurrentLife(hFrame, KTarget)
+--		local fRecoverLife = KTarget.fCurrentLife64
+--		if hFrame.tRecoverHP then
+--			fRecoverLife = hFrame.tRecoverHP.nCurrentLife
+--		end
+--
+--		if Target.dwFullyType == TARGET.NPC then
+--			fRecoverHP = Table_GetNpcRecoverHP(KTarget.dwTemplateID)
+--			nNextHealth = BossMaxLifeCalculate(KTarget, fRecoverHP, fRecoverLife) or fMaxLife
+--		end
+--
+--		if fMaxLife > 0 then
+--			szHealth = GetStateString(fCurrentLife, nOriginMaxLife, bDanger)
+--
+--			hDamageAbsorbShield:Show(nDamageAbsorbValue > 0)
+--			hDamageAbsorbShieldLight:Show(nDamageAbsorbValue > 0)
+--			if nDamageAbsorbValue > 0 and nDamageAbsorbValue + fCurrentLife > fMaxLife then
+--				fMaxLife = fCurrentLife + nDamageAbsorbValue
+--			end
+--			fDamageAbsorbShield = (fCurrentLife + nDamageAbsorbValue) / fMaxLife
+--			hDamageAbsorbShield:SetPercentage(fDamageAbsorbShield)
+--
+--			local nW = hDamageAbsorbShield:GetW()
+--			hDamageAbsorbShieldLight:SetAbsX(hDamageAbsorbShield:GetAbsX() - nW * (1 - fDamageAbsorbShield))
+--
+--			fHealth = fCurrentLife / fMaxLife
+--			fNextHealth = nNextHealth / fMaxLife
+--		end
+--
+--		hCureShield:Show(nCureShield > 0)
+--		if nCureShield > 0 then
+--			local fCureShieldFactor = nCureShield / nOriginMaxLife
+--			local nCureShieldCount	= math.floor(fCureShieldFactor)
+--			local fCureShield = fCureShieldFactor - nCureShieldCount
+--
+--			local hImgCureSheldBottom = hCureShield:Lookup("Image_CureShield")
+--			hImgCureSheldBottom:Show(nCureShieldCount > 0)
+--			if nCureShieldCount > 1 then
+--				hImgCureSheldBottom:SetPercentage(1)
+--				hImgCureSheldBottom:SetFrame(CURE_SHIELD_IMAGE_FRAME[nCureShieldCount % 2])
+--			end
+--
+--			local hImgCureSheldOver = hCureShield:Lookup("Image_CureShield_Over")
+--			hImgCureSheldOver:SetPercentage(fCureShield)
+--			hImgCureSheldOver:SetFrame(CURE_SHIELD_IMAGE_FRAME[(nCureShieldCount + 1) % 2])
+--
+--			local hCureShieldLight = hCureShield:Lookup("Image_CureShieldLight")
+--			local nLightW = hCureShieldLight:GetW()
+--			local nX = hImgCureSheldOver:GetAbsX()
+--			local nShieldW =  hImgCureSheldOver:GetW()
+--			hCureShieldLight:SetAbsX(nX - nLightW + nShieldW * fCureShield)
+--		end
+--
+--		if KTarget.nMaxMana > 0 and KTarget.nMaxMana ~= 1 then
+--			fMana = KTarget.nCurrentMana / KTarget.nMaxMana
+--			szMana = GetStateString(KTarget.nCurrentMana, KTarget.nMaxMana, bDanger)
+--		end
+--
+--		local hTextHealthShield = hTotal:Lookup("Text_HealthShield")
+--		if hTextHealthShield then
+--			local hHandleName = hTotal:Lookup("Handle_Name")
+--			local hTextTarget = hHandleName:Lookup("Text_Target")
+--			local hImageHealthShield = hTotal:Lookup("Image_HealthShield")
+--			local bShield = KTarget.nMaxRechargeableAbsorbShieldValue > 0
+--			if bShield then
+--				hImageHealthShield:SetPercentage(KTarget.nRechargeableAbsorbShieldValue / KTarget.nMaxRechargeableAbsorbShieldValue)
+--				hTextHealthShield:SetText(GetSelfStateString(KTarget.nRechargeableAbsorbShieldValue, KTarget.nMaxRechargeableAbsorbShieldValue))
+--			end
+--			hTextTarget:SetHAlign(bShield and 0 or 1)
+--			hTextTarget:FormatTextForDraw()
+--			hTextHealthShield:SetVisible(bShield)
+--			hImageHealthShield:SetVisible(bShield)
+--			hTotal:Lookup("Image_HealthShieldBg"):SetVisible(bShield)
+--
+--			local hImgStreamingFlag = hHandleName:Lookup("Image_Cloud")
+--			if hImgStreamingFlag then
+--				hImgStreamingFlag:Show(IsTargetUICloudFlagShow(hFrame.dwID))
+--			end
+--			hHandleName:FormatAllItemPos()
+--		end
+--	end
+--
+--	local tImgHealth = {}
+--	local tImgSubHealth = {}
+--
+--	local hHealth1 = hTotal:Lookup("Image_Health")
+--	local hSubHealth1 = hTotal:Lookup("Image_SubHealth")
+--	local hHealth2 = hTotal:Lookup("Image_Health02")
+--	local hSubHealth2 = hTotal:Lookup("Image_SubHealth02")
+--	local hHealth3 = hTotal:Lookup("Image_Health03")
+--	local hSubHealth3 = hTotal:Lookup("Image_SubHealth03")
+--
+--
+--	table.insert(tImgHealth, hHealth1)
+--	table.insert(tImgSubHealth, hSubHealth1)
+--	if hFrame.nIntensity and hFrame.nIntensity > 1 and hHealth2 then
+--		table.insert(tImgHealth, hHealth2)
+--		table.insert(tImgSubHealth, hSubHealth2)
+--	end
+--	if hFrame.nIntensity and hFrame.nIntensity > 3 and hHealth3 then
+--		table.insert(tImgHealth, hHealth3)
+--		table.insert(tImgSubHealth, hSubHealth3)
+--	end
+--
+--	local nCount = #tImgHealth
+--	local nNextCount = math.floor(fNextHealth * nCount)
+--	for i = 1, MAX_H_MARK_COUNT do
+--		local hMark = hTotal:Lookup("Image_HPmark0" .. i)
+--		local hSFXMark = hTotal:Lookup("SFX_HPmark0" .. i)
+--		if hMark then
+--			hMark:Show(i == (nNextCount + 1) and fRecoverHP > 0 and nNextHealth <= KTarget.fMaxLife64)
+--			hSFXMark:Show(i == (nNextCount + 1) and hFrame.tRecoverHP ~= nil)
+--		end
+--	end
+--
+--	local hHPMark = hTotal:Lookup("Image_HPmark0" .. nNextCount + 1)
+--	if hHPMark then
+--		local fP = (nNextHealth -  fMaxLife / nCount * nNextCount) / (fMaxLife / nCount)
+--		local fW = hHealth1:GetW()
+--		local fX =  hHealth1:GetRelX()
+--		local fWHP = hHPMark:GetW()
+--		hHPMark:SetRelX(fX + fW * fP - fWHP / 2)
+--		hTotal:FormatAllItemPos()
+--	end
+--
+--	local hSFXMark = hTotal:Lookup("SFX_HPmark0" .. nNextCount + 1)
+--	for i = 1, nCount do
+--		if fHealth >= i / nCount then
+--			tImgSubHealth[i]:SetPercentage(1)
+--			tImgSubHealth[i]:Show()
+--			tImgHealth[i]:SetPercentage(1)
+--			tImgHealth[i]:Show()
+--		elseif fHealth > (i - 1) / nCount then
+--			local fCurPercent = fHealth * nCount - i + 1
+--
+--			local fSubPercent = 0
+--			if KTarget.nMoveState == MOVE_STATE.ON_DEATH or
+--			 hFrame.dwLastTarget ~= hFrame.dwID or
+--			 hFrame.bClearSub or nDamageAbsorbValue > 0
+--			then
+--				fSubPercent = fCurPercent
+--			else
+--				fSubPercent = tImgHealth[i]:GetPercentage()
+--			end
+--			tImgSubHealth[i]:SetPercentage(fSubPercent)
+--			tImgSubHealth[i]:Show()
+--
+--			tImgHealth[i]:SetPercentage(fCurPercent)
+--			tImgHealth[i]:Show()
+--
+--			if hSFXMark then
+--				local fW = tImgHealth[i]:GetW()
+--				local fX =  tImgHealth[i]:GetRelX()
+--				local fWSFX = hSFXMark:GetW()
+--				hSFXMark:SetRelX(fX + fW * fCurPercent - fWSFX / 2)
+--			end
+--		else
+--			tImgSubHealth[i]:Hide()
+--			tImgHealth[i]:Hide()
+--		end
+--	end
+--	hFrame.dwLastTarget = hFrame.dwID
+--
+--	hTotal:Lookup("Image_Mana"):SetPercentage(fMana)
+--	hTotal.szHealth, hTotal.szMana = szHealth, szMana
+--
+--	local hTextHealth = hTotal:Lookup("Text_Health")
+--	local hTextMana = hTotal:Lookup("Text_Mana")
+--	if not IsTargetShowStateValue() or bHideBar then
+--		hTextHealth:Hide()
+--		hTextMana:Hide()
+--	else
+--		hTextHealth:SetText(szHealth)
+--		hTextHealth:Show()
+--		hTextMana:SetText(szMana)
+--		hTextMana:Show()
+--	end
+--
+--	if Target.dwFullyType == TARGET.PLAYER and hFrame.dwMountType then
+--		Target.UpdateHeaderVisible(hFrame, hFrame.bHaveMana, m_bUseBuy)
+--	end
+--
+--	if Target.dwFullyType == TARGET.PLAYER then
+--		Target.UpdateEnergy(hFrame, KTarget)
+--	end
+--end
+--
+---- 帮会联赛OB界面下的调整
+--function Target.UpdateOB(hFrame)
+--	hFrame = hFrame or m_frame
+--
+--	if not hFrame then
+--		return
+--	end
+--
+--	local bShow = GuildLeagueShowPanel.IsOpened()
+--
+--	-- 位置下移
+--	if bShow then
+--		hFrame:SetAbsPos(hFrame.nX, hFrame.nY + OB_OFFSET)
+--		hFrame.bLower = true
+--	elseif hFrame.bLower then
+--		hFrame:SetAbsPos(hFrame.nX, hFrame.nY)
+--		hFrame.bLower = false
+--	end
+--end
+--
+--function Target.UpdateHeaderVisible(frame, bHaveMana, bUseBuy)
+--	local clist = frame:Lookup("", "Handle_BuyBg")
+--	if Target.dwFullyType == TARGET.PLAYER and clist then
+--		clist:SetVisible( bUseBuy )
+--	end
+--
+--	frame:Lookup("", "Handle_TarBg"):SetVisible( (bHaveMana and not bUseBuy) )
+--	frame:Lookup("", "Handle_FBg"):SetVisible( ( not bHaveMana and not bUseBuy) )
+--	frame:Lookup("", "Image_Mana"):SetVisible( bHaveMana )
+--	frame:Lookup("", "Text_Mana"):SetVisible( bHaveMana )
+--end
+--
+--function Target.UpdateName(frame)
+--	local player = GetClientPlayer()
+--	local tar = GetTargetHandle(frame.dwType, frame.dwID)
+--
+--	local hHandleName = frame:Lookup("", "Handle_Name")
+--	local text = hHandleName:Lookup("Text_Target")
+--	--[[
+--	if frame.dwType == TARGET.NPC and not tar.CanSeeName() then
+--		text:SetText("")
+--		return
+--	end
+--	]]
+--
+--	-- text:SetFontColor(GetForceFontColor(frame.dwID, player.dwID))
+--	-- local szTargetUIName = GetTargetUIName(frame.dwType, frame.dwID)
+--	-- if tar then
+--	-- 	text:SetText(szTargetUIName)
+--	-- 	FireUIEvent("ADDON_UPDATE_TARGET_NAME", szTargetUIName)
+--	-- else
+--	-- 	text:SetText("")
+--	-- 	FireUIEvent("ADDON_UPDATE_TARGET_NAME", "")
+--	-- end
+--
+--	local hImgStreamingFlag = hHandleName:Lookup("Image_Cloud")
+--	if hImgStreamingFlag then
+--		hImgStreamingFlag:Show(IsTargetUICloudFlagShow(frame.dwID))
+--	end
+--	hHandleName:FormatAllItemPos()
+--end
+--
+--function Target.UpdateCamp(hFrame)
+--	local nFrame = nil
+--	if Target.dwFullyType == TARGET.PLAYER then
+--		local hTarget = GetTargetHandle(hFrame.dwType, hFrame.dwID)
+--		nFrame = GetCampImageFrame(hTarget.nCamp, hTarget.bCampFlag)
+--	end
+--
+--	local hImageCamp = hFrame:Lookup("", "Image_Camp")
+--	SetImage(hImageCamp, nFrame)
+--end
+--
+--function Target.UpdateKungfu(frame)
+--	if Target.dwFullyType ~= TARGET.PLAYER then
+--		return
+--	end
+--
+--	local player = GetTargetHandle(frame.dwType, frame.dwID)
+--	if not player then
+--		return
+--	end
+--
+--	local img = frame:Lookup("", "Image_Target")
+--	local skill = player.GetActualKungfuMount()
+--	if skill then
+--		local nIconID = Table_GetSkillIconID(skill.dwSkillID, skill.dwLevel)
+--		img:FromIconID(nIconID)
+--	else
+--		local szPath, nFrame = GetForceImage(player.dwForceID)
+--		img:FromUITex(szPath, nFrame)
+--	end
+--
+--	local hTextOther = frame:Lookup("", "Text_Others")
+--	if hTextOther then
+--		hTextOther:Hide()
+--	end
+--
+--	local target = GetPlayer(frame.dwID)
+--	if target and target.dwFakeFellowPetTemplateID ~= 0 then
+--		img:Hide()
+--		frame:Lookup("", "Text_Others"):SetText("")
+--	end
+--end
+--
+--function UpdateHeadImg(hTarget, dwID, handleAvatar, img, ani)
+--	local img = handleAvatar:Lookup("Image_Avatar")
+--	local ani = handleAvatar:Lookup("Animate_Avatar")
+--	if not img.relX then
+--		img.relX, img.relY = img:GetRelPos()
+--	end
+--
+--	if not img.w then
+--		img.w, img.h = img:GetSize()
+--	end
+--
+--	local target = GetPlayer(dwID)
+--	if target and target.dwFakeFellowPetTemplateID ~= 0 then
+--		local szPath, nFrame = "ui/Image/TargetPanel/Target.UITex", 65
+--		img:FromUITex(szPath, nFrame)
+--		img:Show()
+--		ani:Hide()
+--
+--		img:AutoSize()
+--
+--		img:SetRelPos( handleAvatar:GetW() - img:GetW(),  handleAvatar:GetH() - img:GetH())
+--		handleAvatar:FormatAllItemPos()
+--	else
+--		img:SetRelPos(img.relX, img.relY)
+--		img:SetSize(img.w, img.h)
+--		handleAvatar:FormatAllItemPos()
+--		RoleChange_UpdateAvatar(handleAvatar, hTarget, false, true, false, nil, false, true)
+--	end
+--end
+--
+--local tBuffIDtoGuaXiang =
+--{
+--	[17588] = "Water",
+--	[17801] = "Mountain",
+--	[17802] = "Fire",
+--}
+--local nPreBuff = nil
+--function Target.UpdateGuaXiang(frame, nPlayerID)
+--	if Target.dwFullyType ~= TARGET.PLAYER then
+--		return
+--	end
+--
+--	local pTarget = GetTargetHandle(frame.dwType, frame.dwID)
+--	if not pTarget then
+--		return
+--	end
+--
+--	local nKungfu = frame.dwMountType
+--	if nKungfu ~= KUNGFU_TYPE.YAN_TIAN then
+--		return
+--	end
+--
+--	local nMaxXingYun = pTarget.nMaxRage
+--	if not nMaxXingYun then return end
+--
+--	local szGuaXiang = nil
+--	local nBuffID = nil
+--	if not nPreBuff or not pTarget.IsHaveBuff(nPreBuff, 1) then
+--		for k, v in pairs(tBuffIDtoGuaXiang) do
+--			if pTarget.IsHaveBuff(k, 1) then
+--				nBuffID = k
+--				szGuaXiang = v
+--			end
+--		end
+--	else
+--		nBuffID = nPreBuff
+--		szGuaXiang = tBuffIDtoGuaXiang[nBuffID]
+--	end
+--
+--	local hTY = frame:Lookup("", "Handle_Energy/" .. m_aHandles[nKungfu])
+--	local hList = hTY:Lookup(FormatString("Handle_<D0>", nMaxXingYun))
+--	if not hList then return end--刚加载会没取到或nMaxXingYun不为预期值
+--
+--	local hSymbol = hList:Lookup(FormatString("Handle_Symbol_<D0>", nMaxXingYun))
+--
+--	local nCount = hSymbol:GetItemCount()
+--	for i = 0, nCount - 1 do
+--		hSymbol:Lookup(i):Hide()
+--	end
+--
+--	if szGuaXiang then
+--		hSymbol:Show()
+--		local hGuaXiang =
+--		hSymbol:Lookup(FormatString("Handle_<D0>_<D1>", szGuaXiang, nMaxXingYun))
+--		hGuaXiang:Show()
+--		if nBuffID ~= nPreBuff then
+--			hGuaXiang:Lookup(FormatString("SFX_<D0>_<D1>", szGuaXiang, nMaxXingYun)):Play()
+--		end
+--	else
+--		hSymbol:Hide()
+--	end
+--	nPreBuff = nBuffID
+--end
+--
+--local tLeveltoDivition =
+--{
+--	[1] = "DFire",
+--	[2] = "DWater",
+--	[3] = "DMountain",
+--}
+--local YT_DIVITION_BUFF_ID = 21027
+--local nPreLevel = nil
+--function Target.UpdateDivition(frame)
+--	if Target.dwFullyType ~= TARGET.PLAYER then
+--		return
+--	end
+--
+--	local pTarget = GetTargetHandle(frame.dwType, frame.dwID)
+--	if not pTarget then
+--		return
+--	end
+--
+--	local nKungfu = frame.dwMountType
+--	if nKungfu ~= KUNGFU_TYPE.YAN_TIAN then
+--		return
+--	end
+--
+--	local nMaxXingYun = pTarget.nMaxRage
+--	if not nMaxXingYun then return end
+--
+--	local szDivition = nil
+--	local nLevel = nil
+--	if not nPreLevel or not pTarget.IsHaveBuff(YT_DIVITION_BUFF_ID, nPreLevel) then
+--		for k, v in pairs(tLeveltoDivition) do
+--			if pTarget.IsHaveBuff(YT_DIVITION_BUFF_ID, k) then
+--				nLevel = k
+--				szDivition = v
+--			end
+--		end
+--	else
+--		nLevel = nPreLevel
+--		szDivition = tLeveltoDivition[nLevel]
+--	end
+--
+--	local hTY = frame:Lookup("", "Handle_Energy/" .. m_aHandles[nKungfu])
+--	local hList = hTY:Lookup(FormatString("Handle_<D0>", nMaxXingYun))
+--	if not hList then return end--刚加载会没取到或nMaxXingYun不为预期值
+--
+--	local hDivition = hList:Lookup(FormatString("Handle_Divination_<D0>", nMaxXingYun))
+--
+--	local nCount = hDivition:GetItemCount()
+--	for i = 0, nCount - 1 do
+--		hDivition:Lookup(i):Hide()
+--	end
+--
+--	if szDivition then
+--		hDivition:Show()
+--		local hGuaXiang = hDivition:Lookup(FormatString("Handle_<D0>_<D1>", szDivition, nMaxXingYun))
+--		hGuaXiang:Show()
+--
+--		local hSFX1 = hGuaXiang:Lookup(FormatString("SFX_<D0>_<D1>", szDivition, nMaxXingYun))
+--		hSFX1:Show()
+--		if nLevel ~= nPreLevel then
+--			hSFX1:Play()
+--		end
+--		local hSFX2 = hGuaXiang:Lookup(FormatString("SFX_<D0>_<D1>_0", szDivition, nMaxXingYun))
+--		if string.sub(szDivition, 2) == tBuffIDtoGuaXiang[nPreBuff] then
+--			hSFX2:Show()
+--			hSFX2:Play()
+--		else
+--			hSFX2:Hide()
+--		end
+--	else
+--		hDivition:Hide()
+--	end
+--	nPreLevel = nLevel
+--end
+--
+--function Target.UpdateHead(frame)
+--	local hImageTarget
+--	local szPath, nFrame = "", 0
+--	m_bUseBuy = false
+--	if Target.dwFullyType == TARGET.PLAYER then
+--		hImageTarget 	= frame:Lookup("", "Handle_Avatar")
+--
+--		local hTarget 	= GetTargetHandle(frame.dwType, frame.dwID)
+--		if not hTarget then
+--			return
+--		end
+--
+--		UpdateHeadImg(hTarget, frame.dwID, hImageTarget)
+--
+--		local clist = frame:Lookup("", "Handle_BuyBg")
+--		if clist then
+--			m_bUseBuy = RoleChange_UpdateHUDBG(clist, hTarget.dwMiniAvatarID, frame.bHaveMana, true, hTarget)
+--		end
+--		Target.UpdateHeaderVisible(frame, frame.bHaveMana, m_bUseBuy)
+--
+--	elseif Target.dwFullyType == TARGET.NPC then
+--		local player = GetClientPlayer()
+--		local npc = GetNpc(frame.dwID)
+--		if not npc then
+--			return
+--		end
+--		local dwModelID = npc.dwModelID
+--		local imgTarget = frame:Lookup("", "Image_Target")
+--		local imgNewTarget = frame:Lookup("", "Image_NewTarget")
+--
+--		local szProtraitPath = NPC_GetProtrait(dwModelID)
+--		local szHeadImageFilePath = NPC_GetHeadImageFile(dwModelID)
+--		if szProtraitPath and IsImageFileExist(szProtraitPath) then
+--			szPath = szProtraitPath
+--		else
+--			szPath = szHeadImageFilePath
+--		end
+--
+--		if IsImageFileExist(szPath) then
+--			imgTarget:Hide()
+--			imgNewTarget:Show()
+--			imgNewTarget:FromTextureFile(szPath, true)
+--			hImageTarget = imgNewTarget
+--		else
+--			imgTarget:Show()
+--			imgNewTarget:Hide()
+--			szPath, nFrame = GetNpcHeadImage(frame.dwID)
+--			imgTarget:FromUITex(szPath, nFrame)
+--			hImageTarget = imgTarget
+--		end
+--
+--        local bNotMine = npc.dwDropTargetPlayerID ~= 0 and npc.dwDropTargetPlayerID ~= player.dwID and not player.IsPlayerInMyParty(npc.dwDropTargetPlayerID)
+--        local bShare = npc.bCanShareLootListByQuestEvent
+--        local imgOthersExp = frame:Lookup("", "Image_OthersExp")
+--        local hImageShare = frame:Lookup("", "Image_Share100")
+--        if bShare then
+--            hImageShare:Show()
+--            imgOthersExp:Hide()
+--        else
+--            if hImageShare then
+--                hImageShare:Hide()
+--            end
+--            if bNotMine then
+--                imgOthersExp:Show()
+--            else
+--                imgOthersExp:Hide()
+--            end
+--        end
+--	end
+--
+--	if hImageTarget and not m_bSendHelp then
+--		m_bSendHelp = true
+--		FireHelpEvent("OnSelectTarget", Target.dwFullyType, frame.dwID, hImageTarget)
+--	end
+--end
+--
+--function Target.UpdateLevel(frame)
+--	local player = GetClientPlayer()
+--	local tar = GetTargetHandle(frame.dwType, frame.dwID)
+--	local text = frame:Lookup("", "Text_Level")
+--	local img = frame:Lookup("", "Image_Danger")
+--
+--	if tar and tar.nLevel > 0 then
+--		local nDiff = tar.nLevel - player.nLevel
+--		if GetControlPlayerID() == frame.dwID then
+--			nDiff = 0
+--		end
+--		local szColor = GetTargetLevelFontColor(nDiff)
+--		if player.IsPlayerInMyParty(frame.dwID) or nDiff <= SHOW_TARGET_LEVEL_LIMITS then
+--			text:Show()
+--			img:Hide()
+--		else
+--			text:Hide()
+--			img:Show()
+--		end
+--		text:SetFontColor(szColor)
+--		text:SetText(tar.nLevel)
+--	else
+--		text:Hide()
+--		img:Hide()
+--	end
+--end
+--
+--function Target.CheckCGState(bufferId, frame)
+--	local nCGState
+--	if bufferId == "no_state" then
+--		nCGState = 0
+--	else
+--		nCGState = g_tUIConfig.CGStateBuff[bufferId]
+--	end
+--
+--	if not nCGState then
+--		return
+--	end
+--
+--	if nCGState ~= m_nTAccumulateStyle then
+--		m_nTAccumulateStyle = nCGState
+--		local hList = frame:Lookup("", "Handle_Energy/"..frame.szShow)
+--		frame.nUpdateStatus = PlayerEnergyUI_ChangeStyle(frame.szShowSub, hList, GetPlayer(frame.dwID), m_nTAccumulateStyle)
+--	end
+--	return true
+--end
+--
+--function Target.UpdateAction(frame)
+--	local tar = GetTargetHandle(frame.dwType, frame.dwID)
+--	if not tar then
+--		return
+--	end
+--
+--	local hImageFight = frame:Lookup("", "Image_Fight")
+--	if hImageFight then
+--		hImageFight:SetVisible(tar.bFightState)
+--	end
+--
+--	local handle = frame:Lookup("", "Handle_Bar")
+--	if not Target.bShowActionBar or not tar then
+--		handle:Hide()
+--		return
+--	end
+--
+--	local bPrePare, dwID, dwLevel, fP, nType = GetSkillOTActionState(tar)
+--	local bIsNpc = TypeIsNpc(GetClientPlayer().GetTarget())
+--	local hProgress
+--	if bIsNpc then
+--		hProgress = handle:Lookup("Image_BarProgress")
+--	else
+--		hProgress = handle:Lookup("Image_Progress")
+--	end
+--    local hImageInterrupt = handle:Lookup("Image_BarShieldBg")
+--
+--	if bPrePare and handle.nActionState ~= ACTION_STATE.PREPARE then
+--		handle:SetAlpha(255)
+--		handle:Show()
+--		hProgress:Show()
+--		handle:Lookup("Image_FlashS"):Hide()
+--		handle:Lookup("Image_FlashF"):Hide()
+--		handle:Lookup("Text_Name"):Show()
+--		handle:Lookup("Text_Name"):SetText(Table_GetSkillName(dwID, dwLevel))
+--		handle.nActionState = ACTION_STATE.PREPARE
+--		--handle.nType = nType
+--
+--		if bIsNpc then
+--			hProgress:SetFrame(PROGRESS_BAR_TYPE.NORMAL)
+--			hImageInterrupt:Hide()
+--		end
+--	elseif not bPrePare and handle.nActionState == ACTION_STATE.PREPARE then
+--		handle.nActionState = ACTION_STATE.DONE
+--	end
+--
+--	if bIsNpc and dwID and tonumber(dwID) ~= 0 then
+--		local tSkill = GetSkill(dwID, dwLevel)
+--		if tSkill then
+--			local nBrokenRate = tSkill.nBrokenRate
+--			if nBrokenRate and nBrokenRate == 0 then
+--                hImageInterrupt:SetFrame(Table_GetSkill(dwID, dwLevel).nInterruptIcon)
+--				hImageInterrupt:Show()
+--				hProgress:SetFrame(PROGRESS_BAR_TYPE.UNBREAKABLE)
+--			end
+--		end
+--	end
+--
+--	if handle.nActionState == ACTION_STATE.PREPARE then
+--		hProgress:SetPercentage(fP)
+--	elseif handle.nActionState == ACTION_STATE.DONE then
+--		handle:Lookup("Image_FlashS"):Show()
+--		handle.nActionState = ACTION_STATE.FADE
+--	elseif handle.nActionState == ACTION_STATE.BREAK then
+--		handle:Lookup("Image_FlashF"):Show()
+--		handle.nActionState = ACTION_STATE.FADE
+--	elseif handle.nActionState == ACTION_STATE.FADE then
+--		local nAlpha = handle:GetAlpha()
+--		nAlpha = nAlpha - 10
+--		if nAlpha > 0 then
+--			handle:SetAlpha(nAlpha)
+--		else
+--			handle.nActionState = ACTION_STATE.NONE
+--		end
+--	else
+--		handle:Hide()
+--	end
+--end
+--
+--function Target.OnActionBreak(frame)
+--	local handle = frame:Lookup("", "Handle_Bar")
+--	handle.nActionState = ACTION_STATE.BREAK
+--end
+--
+--function Target.OnEvent(event)
+--	if event == "UI_SCALED" or
+--	   event == "TARGET_ANCHOR_CHANGED" or
+--	   event == "CUSTOM_DATA_LOADED" then
+--		Target.UpdateAnchor(this)
+--		return
+--	elseif event == "ON_ENTER_CUSTOM_UI_MODE" or event == "ON_LEAVE_CUSTOM_UI_MODE" then
+--		UpdateCustomModeWindow(this)
+--		return
+--	end
+--
+--	if not this:IsVisible() then
+--		return
+--	end
+--
+--	if event == "PLAYER_STATE_UPDATE" then
+--		if this.dwType == TARGET.PLAYER and this.dwID == arg0 then
+--			Target.UpdateMountType(this)
+--			Target.UpdateLM(this)
+--		end
+--	elseif event == "NPC_STATE_UPDATE" then
+--		if this.dwType == TARGET.NPC and this.dwID == arg0 then
+--			Target.UpdateLM(this)
+--		end
+--	elseif event == "PLAYER_LEAVE_SCENE" then
+--		local player = GetClientPlayer()
+--		if this.dwType == TARGET.PLAYER and (this.dwID == arg0 or not player or player.dwID == arg0)then
+--			SelectTarget(TARGET.NO_TARGET, 0)
+--		end
+--	elseif event == "NPC_LEAVE_SCENE" then
+--		if this.dwType == TARGET.NPC and this.dwID == arg0 then
+--			SelectTarget(TARGET.NO_TARGET, 0)
+--		end
+--	elseif event == "PLAYER_ENTER_SCENE" then
+--		if GetClientPlayer().dwID == arg0 then
+--			CloseTargetPanel()
+--			SelectTarget(TARGET.NO_TARGET, 0)
+--		end
+--	elseif event == "UPDATE_RELATION" then
+--		if this.dwID == arg0 then
+--			Target.FoceUpdateCurrentTarget()
+--		end
+--	elseif event == "UPDATE_ALL_RELATION" then
+--		Target.FoceUpdateCurrentTarget()
+--	elseif event == "PLAYER_LEVEL_UP" then
+--		if this.dwType == TARGET.PLAYER and this.dwID == arg0 then
+--			Target.UpdateLevel(this)
+--		end
+--	elseif event == "OT_ACTION_PROGRESS_BREAK" then
+--		if arg0 == this.dwID then
+--			Target.OnActionBreak(this)
+--		end
+--	elseif event == "PARTY_UPDATE_BASE_INFO" then
+--		Target.FoceUpdateCurrentTarget()
+--	elseif event == "UPDATE_PLAYER_SCHOOL_ID" then
+--		if arg0 == this.dwID then
+--			Target.UpdateHead(this)
+--			Target.UpdateKungfu(this)
+--		end
+--	elseif event == "SET_SHOW_VALUE_BY_PERCENTAGE" then
+--		Target.UpdateLM(this)
+--	elseif event == "SET_SHOW_VALUE_TWO_FORMAT" then
+--		Target.UpdateLM(this)
+--	elseif event == "SET_TARGET_SHOW_STATE_VALUE" then
+--		Target.UpdateLM(this)
+--	elseif event == "SET_SHOW_VALUE_SIMPLE_BLOOD" then
+--		Target.UpdateLM(this)
+--	elseif event == "PARTY_SET_MARK" then
+--		Target.UpdateTargetMark(this)
+--	elseif event == "SET_SHOW_STANDARD_TARGET" then
+--		Target.FoceUpdateCurrentTarget()
+--	elseif event == "NPC_DROP_TARGET_UPDATE" then
+--		if arg0 == this.dwID then
+--			Target.UpdateHead(this)
+--		end
+--
+--	elseif event == "CHANGE_CAMP" or event == "CHANGE_CAMP_FLAG" then
+--		if arg0 == this.dwID then
+--			Target.UpdateCamp(this)
+--		end
+--	elseif event == "UI_ON_DAMAGE_EVENT" then
+--		if arg0 == this.dwID then
+--			Target.OnDamageEvent(this, arg1, arg2)
+--		end
+--	elseif event == "TARGET_MINI_AVATAR_MISC" then
+--		if arg0 == this.dwID then
+--			Target.UpdateHead(this)
+--			Target.UpdateKungfu(this)
+--			Target.UpdateHeaderVisible(this, this.bHaveMana, m_bUseBuy)
+--		end
+--	elseif event == "SET_MINI_AVATAR" then
+--		Target.UpdateHead(this)
+--	elseif event == "SKILL_MOUNT_KUNG_FU" then
+--		Target.UpdateKungfu(this)
+--	elseif event == "SKILL_UNMOUNT_KUNG_FU" then
+--		Target.UpdateKungfu(this)
+--	elseif event == "ON_NEW_PROXY_SKILL_LIST_NOTIFY" then
+--		Target.UpdateLevel(this)
+--		Target.UpdateName(this)
+--	elseif event == "ON_CLEAR_PROXY_SKILL_LIST_NOTIFY" then
+--		DelayCall(
+--			200,
+--			function(frame)
+--				if frame and frame:IsValid() then
+--					Target.UpdateLevel(frame)
+--					Target.UpdateName(frame)
+--				end
+--			end,
+--			this
+--		)
+--	elseif event == "ON_NPC_LEAVE_FIGHT" then
+--		Target.StartRecoverHP(this, arg0, arg1, arg2)
+--	elseif event == "RENDER_FRAME_UPDATE" then
+--		Target.UpdateLM(this)
+--	elseif event == "BUFF_UPDATE" then
+--		Target.UpdateHead(this)
+--		Target.UpdateGuaXiang(this, arg0)
+--		Target.UpdateDivition(this)
+--	end
+--end
+--
+--function Target.OnDamageEvent(hFrame, nDamage, bCriticalStrike)
+--	local nBarCount = 1
+--	if hFrame.nIntensity == 2 or hFrame.nIntensity == 3 then
+--		nBarCount = 2
+--	elseif hFrame.nIntensity == 4 then
+--		nBarCount = 3
+--	end
+--
+--	local hCurHealth = nil
+--	local hCurSubHealth = nil
+--
+--	local hHealth3 = hFrame:Lookup("", "Image_Health03")
+--	local hHealth2 = hFrame:Lookup("", "Image_Health02")
+--	local hHealth1 = hFrame:Lookup("", "Image_Health")
+--	if hHealth3 and hHealth3:IsVisible() then
+--		hCurHealth = hHealth3
+--		hCurSubHealth = hFrame:Lookup("", "Image_SubHealth03")
+--	elseif hHealth2 and hHealth2:IsVisible() then
+--		hCurHealth = hHealth2
+--		hCurSubHealth = hFrame:Lookup("", "Image_SubHealth02")
+--	else
+--		hCurHealth = hHealth1
+--		hCurSubHealth = hFrame:Lookup("", "Image_SubHealth")
+--	end
+--
+--	local hTarget = nil
+--	if hFrame.dwType == TARGET.PLAYER or hFrame.dwType == TARGET.NPC then
+--		hTarget = GetTargetHandle(hFrame.dwType, hFrame.dwID)
+--	end
+--	local nMaxLife = GetTargetMaxLife(hFrame.dwType, hFrame.dwID)
+--	local fMainPercent = hCurHealth:GetPercentage()
+--	if not hTarget or nMaxLife == 0 then
+--		hCurSubHealth:SetPercentage(fMainPercent)
+--		return
+--	end
+--
+--	local fCurPercent = hCurSubHealth:GetPercentage()
+--	local fPercent = (nDamage / nMaxLife) % (1 / nBarCount)
+--
+--	if fMainPercent > fCurPercent - fPercent then
+--		fCurPercent = fMainPercent
+--	else
+--		fCurPercent = fCurPercent - fPercent
+--	end
+--
+--	hCurSubHealth:SetPercentage(fCurPercent)
+--end
+--
+--function Target.FoceUpdateCurrentTarget()
+--	local me = GetClientPlayer()
+--	if me then
+--		FireEvent("UPDATE_SELECT_TARGET")
+--	end
+--end
+--
+--function Target.OnItemLButtonDown()
+--	local frame = this:GetRoot()
+--	if UserSelect_DoSelectCharacter(Target.dwFullyType, frame.dwID) then
+--		return
+--	end
+--
+--	if IsCtrlKeyDown() then
+--		if Target.dwFullyType == TARGET.PLAYER then
+--			if IsGMPanelReceivePlayer() then
+--				GMPanel_LinkPlayerID(Target.dwFullyID)
+--			else
+--				EditBox_AppendLinkPlayer(GetPlayer(Target.dwFullyID).szName)
+--			end
+--		else
+--			if IsGMPanelReceiveNpc() then
+--				GMPanel_LinkNpcID(frame.dwID)
+--			end
+--		end
+--	end
+--	if IsShiftKeyDown() then
+--		FireUIEvent("ADDON_TARGET_LBUTTONDOWN", frame.dwID)
+--	end
+--end;
+--
+--function Target.OnLButtonClick()
+--	local szName = this:GetName()
+--	local nBtnX, nBtnY = this:GetAbsPos()
+--	if szName == "Btn_RightButton" then
+--		Target.OnItemRButtonDown(this:GetRoot(), nBtnX, nBtnY)
+--	end
+--end
+--
+--function Target.OnItemRButtonDown(frame, nMenuX, nMenuY)
+--	local menu = {}
+--
+--	if IsMobileStreamingEnable() then
+--		menu.x = nMenuX
+--		menu.y = nMenuY
+--	end
+--
+--	if m_bVisibleWhenHideUI then
+--		menu.bVisibleWhenHideUI = true
+--		PVPShowPanel.InsertPVPShowTargetMenu(menu)
+--		PopupMenu(menu)
+--		return
+--	end
+--
+--	if IsInControlOtherState() and Target.dwID == GetControlPlayerID() then
+--		table.insert(menu, {
+--				szOption = g_tStrings.BUG_SUBMIT,
+--				fnAction = function()
+--					local dwID = UI_GetClientPlayerID()
+--					if IsPlayer(dwID) then
+--						GMPanel_BugReportPlayerID(dwID)
+--					else
+--						GMPanel_BugReportNpcID(dwID)
+--					end
+--				end,
+--			})
+--		PopupMenu(menu)
+--		return
+--	end
+--
+--	InsertTargetMenu(menu)
+--
+--	Target_InsertAddonMenu(menu)
+--
+--	local menuPluginSingle = PluginSingle.GetTargetMenu()
+--	if menuPluginSingle then
+--		for _, m in ipairs(menuPluginSingle) do
+--			table.insert(menu, m)
+--		end
+--	end
+--
+--	local tRights = tCommanderRights.GetRights(CommandBase.GetRoleLevel()) or {}
+--	if CommandBase.IsCommanderMeetCondition() or tRights["KickOut"] == true then
+--		table.insert(menu,{szOption = g_tStrings.STR_COMMAND_KICKMAN, fnAction = function () RemoteCallToServer("On_Camp_GFKickOut", nil, Target.dwID) end})
+--	end
+--
+--	if menu and #menu > 0 then
+--		PopupMenu(menu)
+--	end
+--end
+--
+--function Target.OnItemMouseHover()
+--	Target.OnItemMouseEnter()
+--end
+--
+--function Target.OnItemMouseEnter()
+--	local frame = this:GetRoot()
+--	if UserSelect.IsSelectCharacter() then
+--		UserSelect.SatisfySelectCharacter(Target.dwFullyType, frame.dwID)
+--	end
+--
+--	local szName = this:GetName()
+--	if not IsTargetShowStateValue() then
+--		if szName == "Image_Health" then
+--			local handle = this:GetParent()
+--			handle:Lookup("Text_Health"):SetText(handle.szHealth)
+--			return
+--		elseif szName == "Image_Mana" then
+--			local handle = this:GetParent()
+--			handle:Lookup("Text_Mana"):SetText(handle.szMana)
+--			return
+--		end
+--	end
+--
+--	if szName == "Image_Camp" then
+--		if Target.dwFullyType == TARGET.PLAYER then
+--			local hPlayer = GetTargetHandle(frame.dwType, frame.dwID)
+--			local nX, nY = this:GetAbsPos()
+--			local nWidth, nHeight = this:GetSize()
+--			local szTip = GetFormatText(g_tStrings.STR_CAMP_TITLE[hPlayer.nCamp], 163)
+--			if hPlayer.bCampFlag then
+--				local szText = FormatString(g_tStrings.STR_SYS_MSG_OPEN_CAMP_FALG, "")
+--				szTip = szTip .. GetFormatText("\n" .. szText, 162)
+--			end
+--			OutputTip(szTip, 200, {nX, nY, nWidth, nHeight})
+--		end
+--	elseif szName == "Image_Target" then
+--		if Target.dwFullyType == TARGET.PLAYER then
+--			local hPlayer = GetTargetHandle(frame.dwType, frame.dwID)
+--			local nX, nY = this:GetAbsPos()
+--			local nWidth, nHeight = this:GetSize()
+--			local szTip = GetPlayerKungfuTip(hPlayer)
+--			OutputTip(szTip, 400, {nX, nY, nWidth, nHeight})
+--		end
+--	end
+--end
+--
+--function Target.OnItemMouseLeave(szSelfName)
+--	HideTip()
+--	if not IsTargetShowStateValue() then
+--		local szName = this:GetName()
+--		if szName == "Image_Health" then
+--			this:GetParent():Lookup("Text_Health"):SetText("")
+--		elseif szName == "Image_Mana" then
+--			this:GetParent():Lookup("Text_Mana"):SetText("")
+--		end
+--	end
+--	if UserSelect.IsSelectCharacter() then
+--		UserSelect.SatisfySelectCharacter(TARGET.NO_TARGET, 0, true)
+--	end
+--end
+--
+--function GetNpcIntensity(npc)
+--	if not npc then
+--		return 1
+--	end
+--	local n = npc.nIntensity
+--	if n == 2 or n == 6 then --领袖
+--		return 4
+--	elseif n == 5 then --头目
+--		return 3
+--	elseif n == 4 then --高手
+--		return 2
+--	end
+--    return 1 --普通
+--end
+--
+--local function SetEnemyFlag(hTarget)
+--	local dwPeerID = hTarget.dwID
+--	local dwSelfID = UI_GetClientPlayerID()
+--
+--	local src = dwPeerID
+--	local dest = dwSelfID
+--
+--	if IsPlayer(dwPeerID) and IsPlayer(dwSelfID) then
+--	    src = dwSelfID
+--	    dest = dwPeerID
+--	end
+--
+--	if IsEnemy(src, dest) then
+--		Target.bIsEnemy = true
+--	else
+--		Target.bIsEnemy = false
+--	end
+--
+--	if IsNeutrality(src, dest) then
+--		Target.bIsNeutrality = true
+--	else
+--		Target.bIsNeutrality = false
+--	end
+--end
+--
+--local g_bIngoreOpen = false
+--function TargetPanel_SetOpenState(bIngore)
+--	g_bIngoreOpen = bIngore
+--end
+--
+--function TargetPanel_GetOpenState()
+--	return g_bIngoreOpen
+--end
+--
+--function Target.SetVisibleWhenHideUI(bVisibleWhenHideUI)
+--    m_bVisibleWhenHideUI = bVisibleWhenHideUI
+--    local hFrame = IsTargetPanelOpened()
+--    if hFrame then
+-- 		if m_bVisibleWhenHideUI then
+-- 			hFrame:ShowWhenUIHide()
+-- 		else
+-- 			hFrame:HideWhenUIHide()
+-- 		end
+--   end
+--end
+--
+--function OpenTargetPanel(dwType, dwID)
+--	if g_bIngoreOpen then
+--		return
+--	end
+--
+--	local player = GetClientPlayer()
+--	local szName = nil
+--	local nIntensity = nil
+--	local hTarget = nil
+--	local dwFullyType = dwType
+--	local dwFullyID = dwID
+--	local dwMountType
+--
+--    INI_FILE = "ui/config/default/"
+--	if TypeIsPlayer(dwType, dwID) then
+--		dwFullyType = TARGET.PLAYER
+--		hTarget, dwFullyID = GetTargetHandle(dwType, dwID)
+--		if not hTarget then
+--			return
+--		end
+--		local kungfu = hTarget.GetActualKungfuMount()
+--		if kungfu then
+--			dwMountType =  kungfu.dwMountType
+--		end
+--
+--		if IsEnemy(dwID, player.dwID) then
+--			szName = "TargetPlayer11"
+--		else
+--			szName = "TargetPlayer10"
+--		end
+--	elseif TypeIsNpc(dwType, dwID) then
+--		hTarget = GetNpc(dwID)
+--		if not hTarget then
+--			return
+--		end
+--		nIntensity = GetNpcIntensity(hTarget)
+--		szName = "Target"..nIntensity
+--		if IsEnemy(dwID, player.dwID) then
+--			szName = szName.."2"
+--		elseif IsNeutrality(dwID, player.dwID) then
+--			szName = szName.."1"
+--		else
+--			szName = szName.."0"
+--		end
+--	elseif dwType == TARGET.NO_TARGET then
+--		CloseTargetPanel()
+--        SpiritEndurancePanel.Close("TARGET")
+--		return
+--	end
+--	if not szName then
+--		return
+--	end
+--
+--	if Target.bStandard then
+--		szName = szName.."S"
+--	end
+--
+--	INI_FILE = INI_FILE..szName..".ini"
+--	local bUpdate = false
+--	local frame  = Station.Lookup("Normal/Target")
+--	if frame then
+--		if frame.szName ~= szName then
+--			if frame.dwBuffMgrID then
+--				BuffMgr.Unregister(frame.dwBuffMgrID)
+--				frame.dwBuffMgrID = nil
+--			end
+--
+--			Wnd.CloseWindow("Target")
+--			frame = Wnd.OpenWindow(szName, "Target")
+--			frame.szName  = szName
+--			bUpdate       = true;
+--		end
+--	else
+--		frame = Wnd.OpenWindow(szName, "Target")
+--		frame.szName = szName
+--	end
+--	m_frame = frame
+--	if not frame.dwMountType and dwMountType then
+--		bUpdate = true
+--	end
+--
+--	frame.dwType = dwType
+--	frame.dwID = dwID
+--	frame.nIntensity = nIntensity
+--	frame.dwMountType = dwMountType
+--	frame.szShow = ""
+--	frame.szShowSub = ""
+--	if frame.dwMountType and hTarget then
+--		Target.UpdateKungfuInfo(frame, hTarget)
+--		frame.bHaveMana = (not IsPlayerManaHide(frame.dwMountType))
+--	else
+--		frame.bHaveMana = false
+--	end
+--
+--	SetEnemyFlag(hTarget)
+--
+--	frame:Show()
+--	if Target.dwType ~= dwType or Target.dwID ~= dwID then
+--		local dwOrgType, dwOrgID  = Target.dwType, Target.dwID
+--        Target.dwType = dwType
+--		Target.dwID = dwID
+--		Target.dwFullyType = dwFullyType
+--		Target.dwFullyID = dwFullyID
+--		m_bSendHelp = nil
+--		m_nTAccumulateStyle = 0
+--		FireUIEvent("TARGET_CHANGE", dwOrgID, dwOrgType, Target.dwID, Target.dwType)
+--		bUpdate = true
+--	end
+--
+--	if bUpdate then
+--		Target.UpdateState(frame)
+--		Target.UpdateAnchor(frame)
+--	else
+--		Target.UpdateName(frame)
+--	end
+--	-- Target.UpdateBuffParam(frame)
+--    local dwMapID = player.GetMapID()
+--    if GDAPI_SpiritEndurance_IsSEMap(dwMapID) then
+--        SpiritEndurancePanel.Open("TARGET", dwType, dwID)
+--    end
+--
+--	if m_bVisibleWhenHideUI then
+--		frame:ShowWhenUIHide()
+--	else
+-- 		frame:HideWhenUIHide()
+--	end
+--	UpdateTargetTarget()
+--
+--	frame:Lookup("", "Handle_Bar").nActionState = nil
+--	if dwFullyType == TARGET.PLAYER then
+--		local hBtn = frame:Lookup("Btn_RightButton")
+--		FireHelpEvent("OnCommontToSomeWhere", "Targrt_Btn", hBtn)
+--	end
+--end
+--
+--function GetPlayerTargetBtn()
+--	local frame = IsTargetPanelOpened()
+--	if frame and Target.dwFullyType == TARGET.PLAYER then
+--		local hBtn = frame:Lookup("Btn_RightButton")
+--		return hBtn
+--	end
+--end
+--
+--function IsTargetPanelOpened()
+--	local frame = Station.Lookup("Normal/Target")
+--	if frame and frame:IsVisible() then
+--		return frame
+--	end
+--	return
+--end
+--
+--function CloseTargetPanel()
+--	local frame = m_frame
+--	if frame then
+--		if frame.dwBuffMgrID then
+--			BuffMgr.Unregister(frame.dwBuffMgrID)
+--			frame.dwBuffMgrID = nil
+--		end
+--		if frame:IsValid() then
+--			frame:Hide()
+--		end
+--		frame.bLower = nil
+--	end
+--
+--	SelectTarget(TARGET.NO_TARGET, 0)
+--
+--    local dwOrgID, dwOrgType = Target.dwID, Target.dwType
+--
+--	Target.dwType = nil
+--	Target.dwID = nil
+--	Target.dwFullyType = nil
+--	Target.dwFullyID = nil
+--	FireUIEvent("TARGET_CHANGE", dwOrgID, dwOrgType)
+--	UpdateTargetTarget()
+--end
+--
+--function IsTargetShowStateValue()
+--	if Target.bShowStateValue then
+--		return true
+--	end
+--	return false
+--end
+--
+--function SetTargetShowStateValue(bShow)
+--	if Target.bShowStateValue == bShow then
+--		return
+--	end
+--	Target.bShowStateValue = bShow
+--
+--	FireEvent("SET_TARGET_SHOW_STATE_VALUE")
+--end
+--
+--function IsTargetShowActionBar()
+--	if Target.bShowActionBar then
+--		return true
+--	end
+--	return false
+--end
+--
+--function SetTargetShowActionBar(bShow)
+--	Target.bShowActionBar = bShow
+--end
+--
+--function IsShowPlayerSimpleBlood()
+--	if Target.bShowPlayerSimpleBlood then
+--		return true
+--	end
+--	return false
+--end
+--
+--function IsShowSimpleBlood()
+--	if Target.bShowSimpleBlood then
+--		return true
+--	end
+--	return false
+--end
+--
+--function SetShowPlayerSimpleBlood(bShow)
+--	Target.bShowPlayerSimpleBlood = bShow
+--	FireEvent("SET_SHOW_PLAYER_VALUE_SIMPLE_BLOOD")
+--end
+--
+--function SetShowSimpleBlood(bShow)
+--	Target.bShowSimpleBlood = bShow
+--	FireEvent("SET_SHOW_VALUE_SIMPLE_BLOOD")
+--end
+--
+--function SetShowStandardTarget(bStandard)
+--	Target.bStandard = bStandard
+--	FireEvent("SET_SHOW_STANDARD_TARGET")
+--end
+--
+--function IsShowStandardTarget()
+--	return Target.bStandard
+--end
+--
+
+Event.Reg(Target, "NPC_LEAVE_SCENE", function(event)
+	local player = GetClientPlayer()
+	if not player then
+		return
+	end
+
+	local dwType, dwID = player.GetTarget()
+	if dwType == TARGET.NPC and dwID == arg0 then
+		SelectTarget(TARGET.NO_TARGET, 0)
+		LOG.INFO("NPC_LEAVE_SCENE Reset target")
+	end
+end)
+
+function CanSelectTarget(dwType, dwID)
+	local bSel = false
+
+	if dwType == TARGET.PLAYER then
+		bSel = CanSelectPlayer(dwID)
+	elseif dwType == TARGET.NPC then
+		bSel = CanSelectNpc(dwID)
+	elseif dwType == TARGET.DOODAD then
+	elseif dwType == TARGET.FURNITURE then
+		bSel = true
+	elseif dwType == TARGET.NO_TARGET then
+		bSel = true
+	end
+
+	return bSel
+end
+
+function SelectTarget(dwType, dwID)
+	local player = GetClientPlayer();
+	if not player then
+		return
+	end
+
+	if not CanSelectTarget(dwType, dwID) then
+		dwType = TARGET.NO_TARGET
+		dwID = 0
+	end
+
+	local as0, as1 = arg0, arg1
+	SetTarget(dwType, dwID)
+	arg0, arg1 = as0, as1
+	return dwID ~= 0
+end
+
+function SelectSelf()
+	local player = GetControlPlayer()
+	if not player then
+		return
+	end
+	SetTarget(TARGET.PLAYER, player.dwID)
+end
+--
+--
+--function Target_SetAnchorDefault()
+--	Target.Anchor = clone(Target.DefaultAnchor)
+--	FireEvent("TARGET_ANCHOR_CHANGED")
+--end
+--
+----RegisterEvent("CUSTOM_UI_MODE_SET_DEFAULT", Target_SetAnchorDefault)
+
+function Target_GetTargetID()
+    if g_pClientPlayer then
+        local player = g_pClientPlayer
+        local dwTargetType, dwTargetID = player.GetTarget()
+        return dwTargetID
+    end
+
+    return 0
+end
+
+function Target_IsEnemy()
+    if g_pClientPlayer then
+        local player = g_pClientPlayer
+        local dwTargetType, dwTargetID = player.GetTarget()
+        return IsEnemy(player.dwID, dwTargetID)
+    end
+
+    return false
+end
+--
+--function Target_IsNeutrality()
+--	return Target.bIsNeutrality
+--end
+--
+function Target_GetTargetData()
+    if g_pClientPlayer then
+        local player = g_pClientPlayer
+        local dwTargetType, dwTargetID = player.GetTarget()
+        return dwTargetType, dwTargetID
+    end
+
+    return 0, 0
+end
+--
+--function Target_GetFullyTargetData()
+--	return Target.dwFullyType, Target.dwFullyID
+--end
+--
+--function Target_IsShowSelfDebuff()
+--	return Target.bShowSelfDebuff
+--end
+--
+--function Target_SetShowSelfDebuff(bShow)
+--	Target.bShowSelfDebuff = bShow
+--	local frame = m_frame
+--	if frame and m_frame:IsVisible() then
+--		BuffMgr.RefreshBuffs(frame.dwBuffMgrID)
+--	end
+--end
+--
+function IsSimplePlayer(dwNpcID)
+	local hNpc = GetNpc(dwNpcID)
+	if not hNpc or not hNpc.dwEmployer then
+		return
+	end
+
+	return Table_IsSimplePlayer(hNpc.dwTemplateID)
+end
+
+function TypeIsPlayer(dwType, dwID)
+	if dwType == TARGET.PLAYER or (dwType == TARGET.NPC and IsSimplePlayer(dwID)) then
+		return true
+	end
+	return false
+end
+
+function TypeIsNpc(dwType, dwID)
+	if dwType == TARGET.NPC and not IsSimplePlayer(dwID) then
+		return true
+	end
+	return false
+end
+
+--local function GetAnchorInPVPShow()
+--	return {s = "TOPLEFT", r = "TOPLEFT", x = 480, y = 40}
+--end
+--
+--local function InitTargetInPVPShow()
+--	local hFrame = IsTargetPanelOpened()
+--	if hFrame then
+--		Target.DateAnchor = GetFrameAnchor(hFrame, "TOPLEFT", "TOPLEFT")
+--		Target.Anchor = GetAnchorInPVPShow()
+--		Target.UpdateAnchor(hFrame)
+--	else
+--		Target.DateAnchor = Target.Anchor
+--		Target.Anchor = GetAnchorInPVPShow()
+--	end
+--end
+--
+--local function RestoreTarget()
+--	if Target.DateAnchor then
+--		Target.Anchor = Target.DateAnchor
+--		local hFrame = IsTargetPanelOpened()
+--		if hFrame then
+--			Target.UpdateAnchor(hFrame)
+--		end
+--	end
+--end
+--
+----RegisterEvent("PVP_SHOW_ON_OPEN", InitTargetInPVPShow)
+----RegisterEvent("PVP_SHOW_ON_CLOSE", RestoreTarget)
