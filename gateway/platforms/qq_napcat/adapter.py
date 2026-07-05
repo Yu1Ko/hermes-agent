@@ -261,7 +261,7 @@ class NapCatQQAdapter(BasePlatformAdapter):
     def name(self) -> str:
         return "QQ"
 
-    async def connect(self) -> bool:
+    async def connect(self, *, is_reconnect: bool = False) -> bool:
         try:
             login = await asyncio.to_thread(self._client.get_login_info)
             self.bot_user_id = str(login.get("user_id") or "")

@@ -103,7 +103,7 @@ class AgentSpaceAdapter(BasePlatformAdapter):
 
     # ── connect / disconnect ─────────────────────────────────────────────
 
-    async def connect(self) -> bool:
+    async def connect(self, *, is_reconnect: bool = False) -> bool:
         """Connect to WPS AgentSpace WebSocket."""
         if not AIOHTTP_AVAILABLE:
             logger.error("%s: aiohttp not available", self._log_tag)
