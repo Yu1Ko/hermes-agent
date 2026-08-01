@@ -1,0 +1,12 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(488,58999,19245,1050048)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.SetPosition(109189,47196,1112512)	15	设置坐标
+/gm player.Die()	2	自杀
+/cmd TurnTo(85);SetCameraStatus(2000,1,1.170, -0.217);	240	调整面向
+/gm player.Stop()	2	玩家停止
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏
+

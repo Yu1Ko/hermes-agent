@@ -1,0 +1,17 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(7,30000,30000,1160192)	30	传送
+/cmd PlayerLevelUpToNew(130)	30	升级
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	2	加隐身
+/gm player.AddItem(6 ,36925)	30	获得装备
+/gm for i=1,1 do player.AddItem(5 ,71133) end	10	获得材料
+/gm for i=1,5 do player.AddItem(5 ,71190) end	10	获得材料
+/gm for i=1,50 do player.AddItem(5 ,71133) end	10	获得材料
+/cmd UIMgr.Open(VIEW_ID.PanelPowerUp)	10	打开菜单
+/cmd CreateEmptyFile("replace")	10	点击装备附魔栏目
+/cmd SearchPanel.RunCommand(UINodeControl.TogTriggerByIndex('ToggleGroupLeft',1))	10	填入装备
+/cmd CreateEmptyFile("perfeye_start")	20	采集数据
+/cmd CreateEmptyFile("Enchant_start")	10	采集数据
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd UIMgr.Close(VIEW_ID.PanelPowerUp)	10	关闭附魔界面
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

@@ -1,0 +1,113 @@
+---
+title: 经济制造
+description: 剑网3无界自动化测试 - 采集、制造、交易、附魔、挖矿等经济系统模块
+---
+
+# 经济制造
+
+采集、制造、交易、附魔、挖矿等经济系统模块
+
+## AwardGatherView
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/AwardGatherView/AwardGatherView.lua`
+- **总行数**: 153
+
+### API 函数 (6个)
+
+- `AwardGatherView.SetGoods(nGoodsId)` — 选中物品格子 GoodId为格子 规律为2 5 8 11 依次加3 (例: `UINodeControl.TogTriggerByIndex("ScrollViewGoods",nGoodsId)...`)
+- `AwardGatherView.SetBtnRight()` — 翻页函数 (例: `UINodeControl.BtnTrigger("BtnRight","WidgetPaginate")...`)
+- `AwardGatherView.SetCameraTime(nCameraTime)` — 摄像机旋转秒数 几秒旋转完 (例: `CameraRotate.nCameraTime = nCameraTime...`)
+- `CameraRotate.FrameUpdate()` — 摄像机旋转 (例: `if UITouchHelper._model ~=nil then if nCameraX >=6.3 then nCameraX = 0...`)
+- `CMDinfo.CMDFrameUpdate()` — 帧函数 (例: `if nCMDLine  ~= 4 then if nCMDLine == 1 then SearchPanel.MyExecuteScriptCommand('UIMgr.Open(VIEW_ID.PanelAwardGather,Pla...`)
+- `AwardGatherView.Start()` — 帧函数 (例: `Timer.AddCycle(CMDinfo,5,function () CMDinfo.CMDFrameUpdate() end)...`)
+
+## BakingModel
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/BakingModel/BakingModel.lua`
+- **总行数**: 134
+
+### API 函数 (3个)
+
+- `BakingModel.GetStartEnd(szMapName)` — 处理数据 (例: `for index, value in ipairs(tbBakeMapData[2]) do if not BakeMap.bFlag then if tostring(value) == szMapName then...`)
+- `BakingModel.INFO(szLogInfo)` (例: `BakeMap.file = io.open(BakeMap.szLogPath,'a+') BakeMap.file:write(szLogInfo) BakeMap.file:flush()...`)
+- `BakingModel.FrameUpdate()` (例: `if GetTickCount() - BakingModel.nStartTime >= BakingModel.nNextTime*1000 then --间隔10秒 if not BakingModel.CircleStart the...`)
+
+## BaseTrade
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/BaseTrade/BaseTrade.lua`
+- **总行数**: 154
+
+### API 函数 (2个)
+
+- `BaseTrade.FrameUpdate()` (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `BaseTrade.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoWay) fsm:AddState(Dialogue)...`)
+
+## EquipmentEnchant
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/EquipmentEnchant/EquipmentEnchant.lua`
+- **总行数**: 132
+
+### API 函数 (3个)
+
+- `EquipmentEnchant.GetEnchantItemdwID(nEnchantItemLine,dwItemIndex)` (例: `local nItemCount = DataModel.GetItemList(dwItemIndex)[nEnchantItemLine].nStackNum local nItemdwID = DataModel.GetItemLis...`)
+- `EquipmentEnchant.FrameUpdate()` — 操作函数 (例: `if EquipmentEnchant.nTimeCount > 7200 then bFlag = true...`)
+- `EquipmentEnchant.Start()` (例: `Timer.AddFrameCycle(EquipmentEnchant,1,function () EquipmentEnchant.FrameUpdate()...`)
+
+## Fabric
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/Fabric/Fabric.lua`
+- **总行数**: 196
+
+### API 函数 (5个)
+
+- `Fabric.StartVideo()` — 开启布料接口 (例: `QualityMgr.ModifyCurQuality("bEnableApexClothing_new",true,false);Event.Dispatch(EventType.OnQualitySettingChange);rlcmd...`)
+- `Fabric.SetSleepTime(nSleepCount)` — 设置时间 (例: `nSleepCurrentTime=tonumber(nSleepCount)...`)
+- `Fabric.SetMapCount(nCount)` — 重复遍历的次数 (例: `SwitchMapCount = tonumber(nCount)...`)
+- `Fabric.FrameUpdate()` (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `Fabric.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(Sleep) fsm:AddState(Player)...`)
+
+## ManualCollectData
+
+- **类型**: entity
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/ManualCollectData/ManualCollectData.lua`
+- **总行数**: 148
+
+## MapFarming
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/MapFarming/MapFarming.lua`
+- **总行数**: 224
+
+### API 函数 (12个)
+
+- `MapFarming.GetMapMax(a,b)` — 获取地图 (例: `max_x,max_y,_ = a,b cell_width = max_x / grid_count cell_height = max_y / grid_count...`)
+- `MapFarming.get_grid_rect(row, col)` — 获取某行某列的格子的范围（左上和右下） (例: `local x0 = (col - 1) * cell_width local y0 = (row - 1) * cell_height local x1 = col * cell_width...`)
+- `MapFarming.point_to_grid(x, y)` — 判断一个点(x, y)属于哪一行哪一列,第几个格子 (例: `print(cell_width,cell_height) local col = math.floor(x / cell_width) + 1 local row = math.floor(y / cell_height) + 1...`)
+- `MapFarming.get_grid_center(row, col)` — 获取指定行、列格子的中心点坐标 (例: `local x = math.floor((col - 0.5) * cell_width) local y = math.floor((row - 0.5) * cell_height) return x, y...`)
+- `MapFarming.Process()` — 数据检测分析处理 (例: `local player = GetClientPlayer() local nRecordX = player.nX local nRecordY = player.nY...`)
+- `MapFarming.RecordData()` — 获取当前数据 (例: `local player=GetClientPlayer() local szKeyGM=string.format("(%d,%d,%d)",player.nX,player.nY,player.nZ) local szKeyGM3dPo...`)
+- `MapFarming.JudgeArrive(nPlayerX,nPlayerY,nTargetX,nTargetY)` (例: `local nVectorX=nTargetX-nPlayerX local nVectorY=nTargetY-nPlayerY if nVectorX*nVectorX+nVectorY*nVectorY >=1000 then...`)
+- `MapFarming.InitData()` (例: `local player = GetClientPlayer() local nX = player.nX local nY = player.nY...`)
+- `MapFarming.FrameUpdate()` — 每一秒 检测距离每过1000 更新下数据表 (例: `local player = GetClientPlayer() local nX = player.nX local nY = player.nY...`)
+- `MapFarming.SetNullData(nX,nY)` (例: `local szKey=string.format("(%d,%d,%d)",nX,1000000,nY) if not MapFarming.Data.performanceData[szKey] then MapFarming.Data...`)
+- `MapFarming.Start()` — 插件开始 (例: `MapFarming.nStepSize = 10000 MapFarming.IsRun = false MapFarming.nMaxX = 0	--设置地图最大X...`)
+- `MapFarming.GenerateData()` — 数据生成 (例: `local szRet=JsonEncode(MapFarming.Data) local file=io.open(SearchPanel.szCurrentInterfacePath.."Data.json","w") file:wri...`)
+
+## Mining
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/Mining/Mining.lua`
+- **总行数**: 140
+
+### API 函数 (2个)
+
+- `Mining.FrameUpdate()` (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `Mining.Start()` (例: `fsm = FsmMachine:New() fsm:AddState(AutoFight) fsm:AddInitState(Init)...`)
+
+---
+*8 个模块, 33 个导出 API*

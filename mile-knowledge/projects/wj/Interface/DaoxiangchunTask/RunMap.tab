@@ -1,0 +1,11 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(1,6539,36610,1076928)	20	传送前置条件
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.AddBuff(0,99,377,1,7200)	2	开启无敌
+/gm player.AddBuff(0,99,8665,1,7200)	1	启动无限气力值
+/gm rowneed=1;lineneed=1;ID=23;local s=player.GetScene();local x,y,z,a,b=18858, 26490, 1051840,0,0;for i=1,rowneed do for j=1,lineneed do local x=x+i*64*2;local y=y+j*64*2;local t=s.GetNpcByNickName('npc'..i..'_'..j);if not t then s.CreateNpc(ID,x,y,z,0,-1,'npc'..i..'_'..j);a=a+1 else b=b+1 end end end;player.SendSystemMessage('Add npc:'..a..'  has npc:'..b)	2	npc召唤
+/cmd CreateEmptyFile("DaoxiangchunTask")	20	启动主线
+/gm rowneed=5;lineneed=5;local s=player.GetScene();for i=1,rowneed do for j=1,lineneed do local t=s.GetNpcByNickName('npc'..i..'_'..j);t.SetDisappearFrames(1,0) end end	2	npc清除
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

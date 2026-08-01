@@ -1,0 +1,4 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	15	开始跑图
+/cmd TryReconnect()	2000	重连
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

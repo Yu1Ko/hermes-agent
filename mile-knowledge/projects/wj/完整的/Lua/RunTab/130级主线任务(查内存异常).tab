@@ -1,0 +1,13 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd UIMgr.Close(VIEW_ID.PanelHotSpotBanner)	5	首次下载游戏会出现这个弹窗
+/cmd PlayerLevelUpToNew(120)	20	升级
+/gm player.SwitchMap(673,258918,69237,1321344)	30	切换地图
+/gm player.AcceptQuest(1,1,27251,1)	5	添加任务
+/gm player.SetPosition(251319,66386,1316544)	15	设置坐标
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("Test")	300	测试
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

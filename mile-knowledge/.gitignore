@@ -1,0 +1,13 @@
+projects/wj/task_controller/Perfeye-*/
+projects/wj/task_controller/logs/
+projects/wj/task_controller/log_file/
+projects/wj/task_controller/Android-*/
+projects/wj/task_controller/gnirehtet-rust-linux64/
+projects/wj/task_controller/gnirehtet.apk
+projects/wj/task_controller/WebDriverAgent.ipa
+projects/wj/task_controller/uiautomator2/
+projects/wj/task_controller/*.xlsx
+__pycache__/
+*.pyc
+data/cache/
+graphrag/.cache/

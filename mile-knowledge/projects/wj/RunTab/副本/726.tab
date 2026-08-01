@@ -1,0 +1,26 @@
+[一号boss:石固勇]
+x	y	z	stay	mapid	action
+9871	12321	1048896	0	726	0
+10231	12451	1048832	0	726	0
+10591	12581	1048896	0	726	0
+Sleep=30
+Fight=1
+Sleep=80
+[二号boss:汪佑]
+x	y	z	stay	mapid	action
+19391	17387	1060352	0	726	0
+19761	17507	1060480	0	726	0
+20094	17615	1060480	0	726	0
+FlowGM=player.GetScene().SetProgress(1,true)
+Sleep=10
+Fight=1
+Sleep=20
+[三号boss:瓦赫拉]
+x	y	z	stay	mapid	action
+26673	27217	1048768	0	726	0
+27003	27397	1048768	0	726	0
+27234	27523	1048768	0	726	0
+FlowGM=player.GetScene().SetProgress(1,true);player.GetScene().SetProgress(2,true);
+Sleep=60
+Fight=1
+[结束副本]

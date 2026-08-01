@@ -1,0 +1,83 @@
+---
+title: UI遍历
+description: 剑网3无界自动化测试 - UI界面遍历、聊天遍历、工作室遍历、UI测试模块
+---
+
+# UI遍历
+
+UI界面遍历、聊天遍历、工作室遍历、UI测试模块
+
+## AllUITraversal
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/AllUITraversal/AllUITraversal.lua`
+- **总行数**: 143
+
+### API 函数 (5个)
+
+- `AllUITraversal.GetVIEW_IDList()` — 处理外装面板的List (例: `for key, value in pairs(VIEW_ID) do if tonumber(value) < 10000 then table.insert(AllUITraversal.List, {value,key})...`)
+- `AllUITraversal.CheckErrorUI(nUIid)` (例: `for _, v in ipairs(error) do if v == tonumber(nUIid)  then return true...`)
+- `AllUI.SetUICount(nUICount2)` — 调整遍历次数接口 (例: `NumberCycles = tonumber(nUICount2)...`)
+- `AllUI.SetUI(nUILine1,nUICount)` — 调整遍历人数接口 (例: `nUILine = tonumber(nUILine1) nUIViewCount = tonumber(nUICount)...`)
+- `AllUITraversal.FrameUpdate()` (例: `if not AllUITraversal.bSwitch then return...`)
+
+## ChatTraversal
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/ChatTraversal/ChatTraversal.lua`
+- **总行数**: 63
+
+### API 函数 (1个)
+
+- `ChatTraversal.FrameUpdate()` (例: `RobotControl.CMD("ReviveMySelf") RobotControl.CMD("CampfightBuff")...`)
+
+## StudioTraversal
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/StudioTraversal/StudioTraversal.lua`
+- **总行数**: 297
+
+### API 函数 (7个)
+
+- `ExteriorList.GetExterior()` (例: `for i=1,ExteriorList.nCount do table.insert(ExteriorList,tbExteriorData[1][i])...`)
+- `ExteriorList.SetLine(nCount)` (例: `ExteriorList.nCount = tonumber(nCount)...`)
+- `StudioTraversal.SetScene(nIndexScene)` — 切换场景 3 (例: `if nIndexScene==1 then SendGMCommand("player.SetPosition(2027,1923,1048640)") elseif nIndexScene==2 then...`)
+- `StudioTraversal.SetWeather(nIndex)` — 切换天气 0-2 (例: `SelfieData.ChangeDynamicWeather(nIndex, true)...`)
+- `StudioTraversal.Setbackground(nIndexBackground)` — 切换背景 6 (例: `local szBackground = "set env preset "..tostring(nIndexBackground) rlcmd(szBackground)...`)
+- `StudioTraversal.FrameUpdate()` (例: `if not SearchPanel.IsFromLoadingEnterGame() then return...`)
+- `StudioTraversal.Start()` (例: `ExteriorList.GetExterior() fsm = FsmMachine:New() fsm:AddState(Scene)...`)
+
+## UITest
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/UITest/UITest.lua`
+- **总行数**: 80
+
+### API 函数 (1个)
+
+- `UITest.FrameUpdate()` (例: `if UITest.nTimeCount == 3600 then Timer.DelAllTimer(UITest) bFlag=true...`)
+
+## UITraversal
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/UITraversal/UITraversal.lua`
+- **总行数**: 115
+
+### API 函数 (2个)
+
+- `UITraversal.SetUICount(nUICount)` — 调整遍历次数接口 (例: `NumberCycles = tonumber(nUICount)...`)
+- `UITraversal.FrameUpdate()` (例: `if not UITraversal.bSwitch then return...`)
+
+## UITrl
+
+- **类型**: technology
+- **源文件**: `/root/.hermes/mile-knowledge/projects/wj/Interface/UITrl/UITrl.lua`
+- **总行数**: 114
+
+### API 函数 (2个)
+
+- `UITrl.SetUICount(nUICount2)` — 调整遍历次数接口 (例: `nUIViewCount = tonumber(nUICount2)...`)
+- `UITrl.FrameUpdate()` (例: `if not UITrl.bSwitch then return...`)
+
+---
+*6 个模块, 18 个导出 API*

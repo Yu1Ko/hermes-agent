@@ -1,0 +1,57 @@
+[一号boss:笑妆娘]
+x	y	z	stay	mapid	action
+32946	15671	1127296	0	794	0
+32946	17031	1127296	0	794	0
+33065	18477	1127360	0	794	0
+32518	18907	1127360	0	794	0
+Sleep=20
+FlowGM=player.AddBuff(player.dwID, player.nLevel, 18694, 1)
+Fight=1
+[剧情会被boss踢开]
+x	y	z	stay	mapid	action
+38193	39219	1573376	0	794	0
+38642	39763	1573376	0	794	0
+39045	40197	1573312	0	794	0
+39201	40365	1573312	0	794	0
+Sleep=20
+[二号boss:唐醉]
+x	y	z	stay	mapid	action
+38193	39219	1573376	0	794	0
+38642	39763	1573376	0	794	0
+39045	40197	1573312	0	794	0
+39201	40365	1573312	0	794	0
+FlowGM=player.GetScene().SetProgress(1,true)
+Sleep=20
+FlowGM=player.AddBuff(player.dwID, player.nLevel, 18694, 1)
+Fight=1
+[三号boss:柳公子]
+x	y	z	stay	mapid	action
+25064	28328	1573760	0	794	0
+25035	27701	1573632	0	794	0
+25027	27095	1573632	0	794	0
+25027	26772	1573632	0	794	0
+FlowGM=player.GetScene().SetProgress(1,true);player.GetScene().SetProgress(2,true);
+Sleep=20
+FlowGM=player.AddBuff(player.dwID, player.nLevel, 18694, 1)
+Fight=1
+[四号boss:阿史那承庆]
+x	y	z	stay	mapid	action
+38415	33617	1542912	0	794	0
+37826	33608	1542848	0	794	0
+37408	33608	1542848	0	794	0
+FlowGM=player.GetScene().SetProgress(1,true);player.GetScene().SetProgress(2,true);player.GetScene().SetProgress(3,true);
+Sleep=30
+FlowGM=player.AddBuff(player.dwID, player.nLevel, 18694, 1)
+Fight=1
+[五号boss:唐怀仁]
+x	y	z	stay	mapid	action
+35731	33710	1640192	0	794	0
+35028	33710	1640576	0	794	0
+34103	33710	1640704	0	794	0
+33381	33710	1640640	0	794	0
+32526	33710	1640704	0	794	0
+FlowGM=player.GetScene().SetProgress(1,true);player.GetScene().SetProgress(2,true);player.GetScene().SetProgress(3,true);player.GetScene().SetProgress(4,true);
+Sleep=30
+FlowGM=player.AddBuff(player.dwID, player.nLevel, 18694, 1)
+Fight=1
+[结束副本]

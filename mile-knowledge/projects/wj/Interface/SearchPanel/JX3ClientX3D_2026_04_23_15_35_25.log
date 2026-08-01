@@ -1,0 +1,1588 @@
+20260423-153525,711<INFO :06323>: Build at 00:21:38 Apr 23 2026
+20260423-153525,723<INFO :06323>: [jni] wait for jni load cost time:0ms ret:true
+20260423-153525,723<DEBUG:06323>: [InitState] Enter N2mb12PreInitStateE
+20260423-153525,724<DEBUG:06323>: XGSDK init
+20260423-153525,724<INFO :06323>: [KJX3XGListener] [XGSDK] Start init[Init]
+20260423-153525,725<INFO :06323>: [XGSDK] Receive JNI callback: onInitSuccess
+20260423-153525,725<DEBUG:06323>: [KJX3XGListener] OnInitSuccess
+20260423-153525,725<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153525,726<INFO :06323>: [KJX3XGListener] [XGSDK] Start call HasPackedChannel
+20260423-153525,726<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153529,816<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153529,822<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.jx3log.module.init.load
+20260423-153529,823<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.httpfile.module.init.begin
+20260423-153529,824<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.httpfile.module.init.begin
+20260423-153529,824<INFO :06323>: [KGPakV5_System] PakV5ToorPath:/storage/emulated/0/Android/data/com.seasun.jx3bvt/files
+20260423-153529,826<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.httpfile.module.init.end
+20260423-153529,826<INFO :06323>: KX3PakV5Module, update net interface, mode:1 interface:wlan0
+20260423-153529,827<DEBUG:06323>: [InitState] Leave N2mb12PreInitStateE
+20260423-153529,827<DEBUG:06323>: [InitState] Enter N2mb12CDNInitStateE
+20260423-153529,828<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.httpfile.init.begin
+20260423-153529,828<DEBUG:06323>: [NetAdapter] StartTask N2mb12CDNInitStateE
+20260423-153529,828<INFO :06323>: [KGPakV5_PakVersion][InitRepoVersion] local repoVersion:1833809
+20260423-153529,895<DEBUG:06422>: [DownloadSync] succ, url:http://10.11.39.60/v5/android_bvt/_big_last_version?t=177692972917146369151957747793 rangeBegin:0          size:7        cost:67ms	ip:10.11.39.60 net:if!wlan0
+20260423-153529,895<INFO :06422>: [KGPakV5_PakVersion] sGetRemoteLastVersion http://10.11.39.60/v5/android_bvt/_big_last_version?t=177692972917146369151957747793 1833809
+20260423-153529,896<INFO :06323>: [KGPakV5_PakVersion][InitRepoVersion] remote repoVersion:1833809
+20260423-153529,896<DEBUG:06323>: [KLogTimeStat] TryLoadNetWork, cost:68ms
+20260423-153529,921<ERROR:06323>: [DownloadSync] url:http://10.11.39.60/v5/android_bvt/configHttpFile.ini?t=1776929729424238335719885386, curlPerformRetCode:0, err:No error, lResponseCode:404
+20260423-153529,921<DEBUG:06323>: [DownloadSync] fail, url:http://10.11.39.60/v5/android_bvt/configHttpFile.ini?t=1776929729424238335719885386 rangeBegin:0          size:3650     cost:25ms	ip:10.11.39.60 net:if!wlan0
+20260423-153529,921<WARN :06323>: [KGPakV5_PakDownloader][DownloadCompressFileDirect] failed, url:http://10.11.39.60/v5/android_bvt/configHttpFile.ini?t=1776929729424238335719885386, statusCode:17
+20260423-153529,921<WARN :06323>: [KGPakV5_PakDownloader][DownloadCompressFileNoCache] configHttpFile.ini, resource not exist
+20260423-153529,921<DEBUG:06323>: [KLogTimeStat] TryUpdateConfigIniFile, cost:25ms
+20260423-153529,921<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.httpfile.downloader.init
+20260423-153530,425<DEBUG:06323>: [InitState] Leave N2mb12CDNInitStateE
+20260423-153530,425<DEBUG:06323>: [InitState] Enter N2mb19ResourceRepairStateE
+20260423-153530,427<DEBUG:06323>: [InitState] Leave N2mb19ResourceRepairStateE
+20260423-153530,427<DEBUG:06323>: [InitState] Enter N2mb16ZsCacheInitStateE
+20260423-153530,428<INFO :06323>: [KJX3XGListener] [XGSDK] Start call ManageBackgroundMode
+20260423-153530,430<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,431<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,634<DEBUG:06419>: [KGPakV5_PakVersion][GenCatalog] repoVersion:1833809, filenameCount:2720536, contentCount:2126119
+20260423-153530,634<DEBUG:06419>: [KLogTimeStat] GenCatalog.ReadCatalogFile, cost:205ms
+20260423-153530,635<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,652<DEBUG:06419>: [KLogTimeStat] GenCatalog.genContentInfoList, cost:18ms
+20260423-153530,655<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,676<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,695<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,716<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,736<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,756<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,776<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,796<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,816<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,836<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,856<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,876<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,896<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,916<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,936<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,956<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,976<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153530,996<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,016<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,036<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,056<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,077<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,096<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,116<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,136<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,156<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,176<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,196<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,216<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,236<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,256<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,267<DEBUG:06419>: [KLogTimeStat] GenCatalog.genNameInfoList, cost:615ms
+20260423-153531,270<DEBUG:06419>: [KLogTimeStat] GenCatalog.preGenFilelistInfoList, cost:3ms
+20260423-153531,276<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,297<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,318<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,338<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,358<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,378<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,398<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,418<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,438<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,458<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,478<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,498<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,518<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,539<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,558<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,579<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,599<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,619<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,639<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,659<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,679<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,699<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,719<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,739<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,760<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,780<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,801<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,820<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,841<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,861<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,869<DEBUG:06419>: [KGPakV5_PakVersion][GenCatalog] filelistCount:148325, filelistNameCount:9766457
+20260423-153531,869<DEBUG:06419>: [KLogTimeStat] GenCatalog.genFilelistInfoList, cost:599ms
+20260423-153531,869<DEBUG:06419>: [KGPakV5_PakVersion][GenCatalog] dlcCount:639 dlcFilelistCount:666
+20260423-153531,881<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,901<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,921<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,941<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,961<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153531,981<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,001<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,021<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,024<DEBUG:06419>: [KLogTimeStat] GenCatalog.genAllDlcTotalsize, cost:155ms
+20260423-153532,035<DEBUG:06419>: [KLogTimeStat] GenCatalog, cost:1606ms
+20260423-153532,041<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,061<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,081<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,081<DEBUG:06419>: [KLogTimeStat] GenCatalogFull.getAllAssetsDatIdxInfo, cost:46ms
+20260423-153532,101<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,121<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,141<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,161<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,181<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,202<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,222<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,242<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,255<DEBUG:06419>: [KLogTimeStat] GenCatalogFull.getAllDatIdxInfo, cost:174ms
+20260423-153532,258<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEventSync:game.notallowdevice
+20260423-153532,258<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,259<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,259<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,260<INFO :06323>: [InitServiceOperator], KJX3_SERVICE_OPERATOR_KINGSOFT
+20260423-153532,261<WARN :06323>: KGLOG_CHECK_ERROR(nRetCode && "Disk") at line 273 in int InitMachineConfig(KJX3MachineConfig &, LPCSTR)
+20260423-153532,261<DEBUG:06323>: Client Type: High Quality
+20260423-153532,261<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,262<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,262<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,262<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,263<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,263<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,263<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,264<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,264<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,265<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,265<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,265<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,266<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153532,266<INFO :06323>: [KJX3XGListener] [XGSDK] Start call UpdateBackgroundNotification
+20260423-153532,268<ERROR:06323>: KGLOG_PROCESS_ERROR(bResult) at line 96 in int NSX3DEngine::KAndroidView::UpdateScreenSize(int, int)
+20260423-153532,268<DEBUG:06323>: KJX3AndroidApplicationModule::ProcessInitWindow
+20260423-153532,769<INFO :06323>: [KJX3XGListener] [XGSDK] Start call ManageBackgroundMode
+20260423-153532,770<DEBUG:06323>: [InitState] Leave N2mb16ZsCacheInitStateE
+20260423-153532,770<DEBUG:06323>: [InitState] Enter N2mb16CheckUpdateStateE
+20260423-153532,849<ERROR:06419>: [DownloadSync] url:http://10.11.39.60/v5/android_bvt/big/1833809/_last_update_version, curlPerformRetCode:0, err:No error, lResponseCode:404
+20260423-153532,849<DEBUG:06419>: [DownloadSync] fail, url:http://10.11.39.60/v5/android_bvt/big/1833809/_last_update_version rangeBegin:0          size:3650     cost:44ms	ip:10.11.39.60 net:if!wlan0
+20260423-153532,849<WARN :06419>: [KGPakV5_PakDownloader][DownloadCompressFileDirect] failed, url:http://10.11.39.60/v5/android_bvt/big/1833809/_last_update_version, statusCode:17
+20260423-153532,849<WARN :06419>: [KGPakV5_PakDownloader][DownloadCompressFileNoCache] big/1833809/_last_update_version, resource not exist
+20260423-153532,849<DEBUG:06419>: [KGPakV5_PakManager][GetLocalUpdateInfo] need update total, files:0, bytes:0
+20260423-153533,351<DEBUG:06323>: [InitState] Leave N2mb16CheckUpdateStateE
+20260423-153533,351<DEBUG:06323>: [InitState] Enter N2mb15ClearSpaceStateE
+20260423-153533,352<DEBUG:06323>: ClearSpaceState::Enter
+20260423-153533,353<DEBUG:06323>: ClearSpaceState::Leave
+20260423-153533,354<DEBUG:06323>: [InitState] Leave N2mb15ClearSpaceStateE
+20260423-153533,354<DEBUG:06323>: [InitState] Enter N2mb15ModuleInitStateE
+20260423-153533,358<ERROR:06323>: KGLOG_PROCESS_ERROR(pVersionFile) at line 74 in int ReadLocalVersion(const char *, int *, int *)
+20260423-153533,359<ERROR:06323>: KGLOG_PROCESS_ERROR(nRetCode) at line 135 in BOOL KGPakV5_AndroidApplyPatch(bool &)
+20260423-153533,359<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,359<INFO :06323>: [JX3 Client] Run path:
+20260423-153533,360<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,360<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,361<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,627<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/ƒ£–Õ/p008030.mdl]==>[data/source/npc_source/p080/ƒ£–Õ/p080430_hd.mdl]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080430b_hd.mdl](@[data\path\Model_P080.tab])
+20260423-153533,656<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/∂Ø◊˜/p001_at03a_»≠Ã◊_01.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p001_at03a_»≠Ã◊_01.tani]
+	Ignored:[data/source/npc_source/p001/∂Ø◊˜/p001_at03a_»≠Ã◊_01_hd.tani](@[data\path\npc.tab])
+20260423-153533,656<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/∂Ø◊˜/p001_at03b_»≠Ã◊_01.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p001_at03b_»≠Ã◊_01.tani]
+	Ignored:[data/source/npc_source/p001/∂Ø◊˜/p001_at03b_»≠Ã◊_01_hd.tani](@[data\path\npc.tab])
+20260423-153533,656<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/∂Ø◊˜/p001_at17c_Ã∆æ¸µ•±¯.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p001_at17c_Ã∆æ¸µ•±¯.tani]
+	Ignored:[data/source/npc_source/p001/∂Ø◊˜/p001_at17c_Ã∆æ¸µ•±¯_hd.tani](@[data\path\npc.tab])
+20260423-153533,656<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/∂Ø◊˜/p001_at20c_≥§±¯.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p001_at20c_≥§±¯.tani]
+	Ignored:[data/source/npc_source/p001/∂Ø◊˜/p001_at20c_≥§±¯_hd.tani](@[data\path\npc.tab])
+20260423-153533,657<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/∂Ø◊˜/p008_at04_¬ﬁ“Ì–˝∑Á.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p008_at04_¬ﬁ“Ì–˝∑Á.tani]
+	Ignored:[data/source/npc_source/p008/∂Ø◊˜/p008_at04_¬ﬁ“Ì–˝∑Á_hd.tani](@[data\path\npc.tab])
+20260423-153533,657<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/∂Ø◊˜/p008_at07_ ®◊”¡¨◊¶.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p008_at07_ ®◊”¡¨◊¶.tani]
+	Ignored:[data/source/npc_source/p008/∂Ø◊˜/p008_at07_ ®◊”¡¨◊¶_hd.tani](@[data\path\npc.tab])
+20260423-153533,657<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/∂Ø◊˜/p008_ban05d_≤‘Ò∑’∂_À´–˝µ∂Ω …±øÒ.tani]==>[data/source/npc_source/p080/∂Ø◊˜/p080_p008_ban05d_≤‘Ò∑’∂_À´–˝µ∂Ω …±øÒ.tani]
+	Ignored:[data/source/npc_source/p008/∂Ø◊˜/p008_ban05d_≤‘Ò∑’∂_À´–˝µ∂Ω …±øÒ_hd.tani](@[data\path\npc.tab])
+20260423-153533,659<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p012/ƒ£–Õ/p012076.mdl]==>[data/source/npc_source/p080/ƒ£–Õ/p080135_hd.mdl]
+	Ignored:[data/source/npc_source/p012/ƒ£–Õ/p012076_hd.mdl](@[data\path\npc.tab])
+20260423-153533,659<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p012/ƒ£–Õ/p012105.mdl]==>[data/source/npc_source/p080/ƒ£–Õ/p080641_hd.mdl]
+	Ignored:[data/source/npc_source/p012/ƒ£–Õ/p012105_hd.mdl](@[data\path\npc.tab])
+20260423-153533,659<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p021/ƒ£–Õ/p021.mdl]==>[data/source/npc_source/p080/ƒ£–Õ/p080647_hd.mdl]
+	Ignored:[data/source/npc_source/p021/ƒ£–Õ/p021_hd.mdl](@[data\path\npc.tab])
+20260423-153533,685<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p004/∂Ø◊˜/p004_xl01b_ÕÚΩ£πÈ◊⁄“˜≥™.tani]==>[data/source/npc_source/p004/∂Ø◊˜/p004_xl01b_ÕÚΩ£πÈ◊⁄“˜≥™_hd.tani]
+	Ignored:[data/source/npc_source/p081/∂Ø◊˜/p081_p004_xl01b_ÕÚΩ£πÈ◊⁄“˜≥™.tani](@[data\path\Action_P081.tab])
+20260423-153533,685<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p004/∂Ø◊˜/p004_xlsf01b_ÕÚΩ£πÈ◊⁄.tani]==>[data/source/npc_source/p004/∂Ø◊˜/p004_xlsf01b_ÕÚΩ£πÈ◊⁄_hd.tani]
+	Ignored:[data/source/npc_source/p081/∂Ø◊˜/p081_p004_xlsf01b_ÕÚΩ£πÈ◊⁄.tani](@[data\path\Action_P081.tab])
+20260423-153533,686<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p005/∂Ø◊˜/p005_ban02_ªŸÃÏ√µÿ.tani]==>[data/source/npc_source/p005/∂Ø◊˜/p005_ban02_ªŸÃÏ√µÿ_hd.tani]
+	Ignored:[data/source/npc_source/p081/∂Ø◊˜/p081_p005_ban02_ªŸÃÏ√µÿ.tani](@[data\path\Action_P081.tab])
+20260423-153533,687<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p005/∂Ø◊˜/p005_xl06b_»Àµ∂∫œ“ª.tani]==>[data/source/npc_source/p005/∂Ø◊˜/p005_xl06b_»Àµ∂∫œ“ª_hd.tani]
+	Ignored:[data/source/npc_source/p081/∂Ø◊˜/p081_p005_xl06b_»Àµ∂∫œ“ª.tani](@[data\path\Action_P081.tab])
+20260423-153533,688<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p081/∂Ø◊˜/p081_p004_at02.tani]==>[data/source/npc_source/p081/∂Ø◊˜/p081_p004_at02_hd.tani]
+	Ignored:[data/source/npc_source/p081/∂Ø◊˜/p081_p004_at02.tani](@[data\path\Action_P081.tab])
+20260423-153533,690<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy√µπÂ002_hd.mesh]==>[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy√µπÂ002_hd.mesh]
+	Ignored:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy√µπÂ002_hd.srt](@[data\path\doodad_srt.tab])
+20260423-153533,691<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy◊œª®‹Ÿﬁ£001.mesh]==>[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy◊œª®‹Ÿﬁ£001_hd.mesh]
+	Ignored:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy◊œª®‹Ÿﬁ£001_hd.srt](@[data\path\doodad_srt.tab])
+20260423-153533,691<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy–Â«Úª®002.mesh]==>[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy–Â«Úª®002_hd.mesh]
+	Ignored:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy–Â«Úª®002_hd.srt](@[data\path\doodad_srt.tab])
+20260423-153533,691<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy«æﬁ±002.mesh]==>[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy«æﬁ±002_hd.mesh]
+	Ignored:[data/source/doodad/Õ®”√/…Ò≈©/gm_bcy«æﬁ±002_hd.srt](@[data\path\doodad_srt.tab])
+20260423-153533,693<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/ƒ£–Õ/m3_30032b_face.mesh]==>[data/source/npc_source/p080/ƒ£–Õ/p080262_face_hd.mesh]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080262b_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,693<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/ƒ£–Õ/m3_30032b_face.mesh]==>[data/source/npc_source/p080/ƒ£–Õ/p080262_face_hd.mesh]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080161b_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,693<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p016/ƒ£–Õ/p016001a_face.mesh]==>[data/source/npc_source/p080/ƒ£–Õ/p080101_face_hd.mesh]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080101a_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,693<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/ƒ£–Õ/p001004c_face.mesh]==>[data/source/npc_source/p080/ƒ£–Õ/p080017c_face_hd.mesh]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080260k_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,693<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p008/ƒ£–Õ/p008009_face.mesh]==>[]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080419_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,694<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/ƒ£–Õ/p001019_face.mesh]==>[data/source/npc_source/p080/ƒ£–Õ/p080019c_face_hd.mesh]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080019b_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,694<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p001/ƒ£–Õ/p001019_face.mesh]==>[data/source/npc_source/p080/ƒ£–Õ/p080019c_face_hd.mesh]
+	Ignored:[data/source/npc_source/p080/ƒ£–Õ/p080019_face_hd.mesh](@[data\path\P080_Face.tab])
+20260423-153533,695<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/npc_source/p009/ƒ£–Õ/p009006_face.mesh]==>[data/source/npc_source/p009/ƒ£–Õ/p009006_face_hd.mesh]
+	Ignored:[data/source/npc_source/p009/ƒ£–Õ/p009006b_face_hd.mesh](@[data\path\P081_Face.tab])
+20260423-153533,696<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/player/f2/≤øº˛/f2_1003_face.mesh]==>[data/source/player/f2/≤øº˛/f2_1003_face_hd.mesh]
+	Ignored:[data/source/player/f2/≤øº˛/f2_»µ”_face_hd.mesh](@[data\path\P081_Face.tab])
+20260423-153533,696<WARN :06323>: [KG3DPathConvert::Load] conflicted path mapping:
+	Enabled:[data/source/player/f1/≤øº˛/f1_1002_face.mesh]==>[data/source/player/f1/≤øº˛/f1_1002_face_hd.mesh]
+	Ignored:[data/source/player/f1/≤øº˛/f1_¿Àÿ_face_hd.mesh](@[data\path\P081_Face.tab])
+20260423-153533,717<DEBUG:06323>: [time] game.startup.init[3].PK25KJX3ConvertResourceModule cost:  356.41ms
+20260423-153533,717<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,718<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,718<INFO :06323>: [KJX3XGListener] [XGSDK] Start call GetDeviceId
+20260423-153533,718<DEBUG:06323>: whaleId:5ff54bc4baa06987
+20260423-153533,719<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153533,720<INFO :06323>: SetLoadingProgress(0.050000)
+20260423-153533,720<INFO :06323>: [KG3DEngineManager::_InitSystemInfo] ret:1, mem:10.928013
+20260423-153533,721<INFO :06323>: [KG3DEngineManager] load resolution success
+20260423-153533,721<INFO :06323>: [CacheShader Update] CheckCacheShader VersionFile = CachedShaders_mb/shaderbin_android/../cacheshader.ver
+20260423-153533,721<INFO :06323>: [KEnginePub] Loading libvulkan.so...
+20260423-153533,727<INFO :06323>: valid layer: VK_LAYER_KHRONOS_validation
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_surface
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_surface_protected_capabilities
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_android_surface
+20260423-153533,727<INFO :06323>: support extensions: VK_EXT_swapchain_colorspace
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_get_surface_capabilities2
+20260423-153533,727<INFO :06323>: support extensions: VK_GOOGLE_surfaceless_query
+20260423-153533,727<INFO :06323>: support extensions: VK_EXT_surface_maintenance1
+20260423-153533,727<INFO :06323>: support extensions: VK_EXT_debug_report
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_get_physical_device_properties2
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_external_semaphore_capabilities
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_external_memory_capabilities
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_device_group_creation
+20260423-153533,727<INFO :06323>: support extensions: VK_EXT_debug_utils
+20260423-153533,727<INFO :06323>: support extensions: VK_KHR_external_fence_capabilities
+20260423-153533,727<INFO :06323>: enabled extensions:
+20260423-153533,727<INFO :06323>: 0: VK_KHR_surface
+20260423-153533,727<INFO :06323>: 1: VK_KHR_external_memory_capabilities
+20260423-153533,727<INFO :06323>: 2: VK_KHR_android_surface
+20260423-153533,727<INFO :06323>: 3: VK_KHR_external_memory_capabilities
+20260423-153533,727<INFO :06323>: 4: VK_KHR_get_physical_device_properties2
+20260423-153533,727<INFO :06323>: enabled layers:
+20260423-153533,731<ERROR:06323>: Get instance Proc:vkCreateDebugReportCallbackEXT Addr failed
+20260423-153533,731<ERROR:06323>: Get instance Proc:vkDebugReportMessageEXT Addr failed
+20260423-153533,731<ERROR:06323>: Get instance Proc:vkDestroyDebugReportCallbackEXT Addr failed
+20260423-153533,731<INFO :06323>: ÊòæÂ≠òÂ§ßÂ∞è:11.18
+20260423-153533,731<INFO :06323>: Device support VK_MEMORY_PROPERTY_HOST_COHERENT_BIT
+20260423-153533,731<INFO :06323>: Device support VK_MEMORY_PROPERTY_HOST_CACHED_BIT
+20260423-153533,731<INFO :06323>: Device Support VK_MEMORY_PROPERTY_HOST_COHERENT_BIT|VK_MEMORY_PROPERTY_HOST_CACHED_BIT
+20260423-153533,731<INFO :06323>: ÈùûÁã¨ÊòæÔºåÈ©±Âä®GPU:Adreno (TM) 740
+20260423-153533,731<INFO :06323>: Á≥ªÁªü:
+20260423-153533,731<INFO :06323>: [EngineSwitchOption] current gpu value: adreno (tm) 740
+20260423-153533,731<INFO :06323>: [EngineSwitchOption] current cpu value: qcom arm64-v8a
+20260423-153533,731<INFO :06323>: [EngineSwitchOption] current device value: xiaomi 2210132c
+20260423-153533,732<INFO :06323>: [EngineSwitchOption] match switch bEnableCommonSpotLightDepth, 0
+20260423-153533,732<INFO :06323>: [EngineSwitchOption] match switch bEnableTrimCommnadPool, 0
+20260423-153533,732<INFO :06323>: [EngineSwitchOption] match switch bEnableTressFX, 1
+20260423-153533,732<INFO :06323>: [EngineSwitchOption] match switch bEnableTressFXMainPlayerOnly, 1
+20260423-153533,732<INFO :06323>: [ThreadAffinity] type:0
+20260423-153533,732<INFO :06323>: gpu value: adreno (tm) 740
+20260423-153533,732<INFO :06323>: cpu value: qcom arm64-v8a
+20260423-153533,732<INFO :06323>: szModel value xiaomi 2210132c
+20260423-153533,732<INFO :06323>: platform value android16
+20260423-153533,732<INFO :06323>: affinity type 0
+20260423-153533,732<INFO :06323>: Type: DEVICE_TYPE_INTEGRATED_GPU
+20260423-153533,732<INFO :06323>: Vulkan API: 1.3.128
+20260423-153533,732<INFO :06323>: This Device Support Dynamic Uniform Buffer Objects:32, range:65536
+20260423-153533,732<INFO :06323>: Max mrt limits is: 8
+20260423-153533,732<INFO :06323>: Max WorkGroup limits is: 1024
+20260423-153533,732<WARN :06323>: This device not support R32_SFLOAT Linear sampler
+20260423-153533,732<INFO :06323>: support extensions:
+20260423-153533,732<INFO :06323>: 1:  VK_KHR_incremental_present
+20260423-153533,732<INFO :06323>: 2:  VK_EXT_hdr_metadata
+20260423-153533,732<INFO :06323>: 3:  VK_KHR_shared_presentable_image
+20260423-153533,732<INFO :06323>: 4:  VK_GOOGLE_display_timing
+20260423-153533,732<INFO :06323>: 5:  VK_EXT_swapchain_maintenance1
+20260423-153533,732<INFO :06323>: 6:  VK_KHR_swapchain_mutable_format
+20260423-153533,732<INFO :06323>: 7:  VK_EXT_subgroup_size_control
+20260423-153533,732<INFO :06323>: 8:  VK_KHR_external_memory
+20260423-153533,732<INFO :06323>: 9:  VK_EXT_pipeline_creation_feedback
+20260423-153533,732<INFO :06323>: 10:  VK_KHR_shader_float16_int8
+20260423-153533,732<INFO :06323>: 11:  VK_KHR_get_memory_requirements2
+20260423-153533,732<INFO :06323>: 12:  VK_KHR_copy_commands2
+20260423-153533,732<INFO :06323>: 13:  VK_KHR_deferred_host_operations
+20260423-153533,732<INFO :06323>: 14:  VK_KHR_spirv_1_4
+20260423-153533,732<INFO :06323>: 15:  VK_EXT_fragment_density_map
+20260423-153533,732<INFO :06323>: 16:  VK_KHR_external_semaphore_fd
+20260423-153533,732<INFO :06323>: 17:  VK_QCOM_render_pass_store_ops
+20260423-153533,732<INFO :06323>: 18:  VK_EXT_astc_decode_mode
+20260423-153533,732<INFO :06323>: 19:  VK_EXT_conservative_rasterization
+20260423-153533,732<INFO :06323>: 20:  VK_EXT_shader_stencil_export
+20260423-153533,732<INFO :06323>: 21:  VK_KHR_external_memory_fd
+20260423-153533,732<INFO :06323>: 22:  VK_QCOM_render_pass_shader_resolve
+20260423-153533,732<INFO :06323>: 23:  VK_KHR_maintenance1
+20260423-153533,732<INFO :06323>: 24:  VK_KHR_maintenance2
+20260423-153533,732<INFO :06323>: 25:  VK_KHR_maintenance3
+20260423-153533,732<INFO :06323>: 26:  VK_KHR_maintenance4
+20260423-153533,732<INFO :06323>: 27:  VK_KHR_separate_depth_stencil_layouts
+20260423-153533,732<INFO :06323>: separateDepthStencilLayouts enable
+20260423-153533,732<INFO :06323>: 28:  VK_EXT_image_robustness
+20260423-153533,732<INFO :06323>: 29:  VK_KHR_buffer_device_address
+20260423-153533,732<INFO :06323>: 30:  VK_EXT_extended_dynamic_state
+20260423-153533,732<INFO :06323>: 31:  VK_EXT_queue_family_foreign
+20260423-153533,732<INFO :06323>: 32:  VK_EXT_image_view_min_lod
+20260423-153533,732<INFO :06323>: 33:  VK_KHR_bind_memory2
+20260423-153533,732<INFO :06323>: 34:  VK_KHR_external_semaphore
+20260423-153533,732<INFO :06323>: 35:  VK_KHR_shader_terminate_invocation
+20260423-153533,732<INFO :06323>: 36:  VK_QCOM_fragment_density_map_offset
+20260423-153533,732<INFO :06323>: 37:  VK_EXT_scalar_block_layout
+20260423-153533,732<INFO :06323>: 38:  VK_EXT_load_store_op_none
+20260423-153533,732<INFO :06323>: 39:  VK_KHR_sampler_ycbcr_conversion
+20260423-153533,732<INFO :06323>: 40:  VK_EXT_vertex_attribute_divisor
+20260423-153533,732<INFO :06323>: 41:  VK_KHR_variable_pointers
+20260423-153533,732<INFO :06323>: 42:  VK_KHR_ray_query
+20260423-153533,732<INFO :06323>: 43:  VK_KHR_push_descriptor
+20260423-153533,732<INFO :06323>: 44:  VK_KHR_timeline_semaphore
+20260423-153533,732<INFO :06323>: 45:  VK_EXT_device_memory_report
+20260423-153533,732<INFO :06323>: 46:  VK_KHR_imageless_framebuffer
+20260423-153533,732<INFO :06323>: 47:  VK_KHR_device_group
+20260423-153533,732<INFO :06323>: 48:  VK_KHR_relaxed_block_layout
+20260423-153533,732<INFO :06323>: 49:  VK_KHR_external_fence
+20260423-153533,732<INFO :06323>: 50:  VK_KHR_shader_non_semantic_info
+20260423-153533,732<INFO :06323>: 51:  VK_EXT_shader_atomic_float
+20260423-153533,733<INFO :06323>: 52:  VK_EXT_custom_border_color
+20260423-153533,733<INFO :06323>: 53:  VK_EXT_host_query_reset
+20260423-153533,733<INFO :06323>: 54:  VK_EXT_index_type_uint8
+20260423-153533,733<INFO :06323>: 55:  VK_KHR_multiview
+20260423-153533,733<INFO :06323>: 56:  VK_KHR_storage_buffer_storage_class
+20260423-153533,733<INFO :06323>: 57:  VK_EXT_fragment_density_map2
+20260423-153533,733<INFO :06323>: 58:  VK_QCOM_rotated_copy_commands
+20260423-153533,733<INFO :06323>: 59:  VK_KHR_shader_subgroup_extended_types
+20260423-153533,733<INFO :06323>: 60:  VK_EXT_private_data
+20260423-153533,733<INFO :06323>: 61:  VK_EXT_pipeline_creation_cache_control
+20260423-153533,733<INFO :06323>: 62:  VK_EXT_robustness2
+20260423-153533,733<INFO :06323>: 63:  VK_EXT_global_priority_query
+20260423-153533,733<INFO :06323>: 64:  VK_EXT_separate_stencil_usage
+20260423-153533,733<INFO :06323>: 65:  VK_EXT_vertex_input_dynamic_state
+20260423-153533,733<INFO :06323>: 66:  VK_IMG_filter_cubic
+20260423-153533,733<INFO :06323>: 67:  VK_EXT_filter_cubic
+20260423-153533,733<INFO :06323>: 68:  VK_QCOM_tile_properties
+20260423-153533,733<INFO :06323>: 69:  VK_KHR_image_format_list
+20260423-153533,733<INFO :06323>: 70:  VK_EXT_sampler_filter_minmax
+20260423-153533,733<INFO :06323>: 71:  VK_KHR_16bit_storage
+20260423-153533,733<INFO :06323>: 72:  VK_KHR_pipeline_executable_properties
+20260423-153533,733<INFO :06323>: 73:  VK_EXT_shader_demote_to_helper_invocation
+20260423-153533,733<INFO :06323>: 74:  VK_EXT_color_write_enable
+20260423-153533,733<INFO :06323>: 75:  VK_QCOM_render_pass_transform
+20260423-153533,733<INFO :06323>: 76:  VK_KHR_create_renderpass2
+20260423-153533,733<INFO :06323>: 77:  VK_KHR_acceleration_structure
+20260423-153533,733<INFO :06323>: 78:  VK_EXT_depth_clip_control
+20260423-153533,733<INFO :06323>: 79:  VK_EXT_transform_feedback
+20260423-153533,733<INFO :06323>: 80:  VK_EXT_blend_operation_advanced
+20260423-153533,733<INFO :06323>: 81:  VK_EXT_provoking_vertex
+20260423-153533,733<INFO :06323>: 82:  VK_KHR_8bit_storage
+20260423-153533,733<INFO :06323>: 83:  VK_KHR_depth_stencil_resolve
+20260423-153533,733<INFO :06323>: 84:  VK_KHR_shader_float_controls
+20260423-153533,733<INFO :06323>: 85:  VK_EXT_texture_compression_astc_hdr
+20260423-153533,733<INFO :06323>: 86:  VK_EXT_global_priority
+20260423-153533,733<INFO :06323>: 87:  VK_EXT_4444_formats
+20260423-153533,733<INFO :06323>: 88:  VK_KHR_shader_draw_parameters
+20260423-153533,733<INFO :06323>: 89:  VK_KHR_vulkan_memory_model
+20260423-153533,733<INFO :06323>: 90:  VK_EXT_descriptor_indexing
+20260423-153533,733<INFO :06323>: 91:  VK_EXT_depth_clip_enable
+20260423-153533,733<INFO :06323>: 92:  VK_KHR_synchronization2
+20260423-153533,733<INFO :06323>: 93:  VK_KHR_shader_integer_dot_product
+20260423-153533,733<INFO :06323>: 94:  VK_EXT_line_rasterization
+20260423-153533,733<INFO :06323>: 95:  VK_QCOM_image_processing
+20260423-153533,733<INFO :06323>: 96:  VK_KHR_fragment_shading_rate
+20260423-153533,733<INFO :06323>: Device support FragmentShadingRate
+20260423-153533,733<INFO :06323>: 97:  VK_KHR_descriptor_update_template
+20260423-153533,733<INFO :06323>: 98:  VK_KHR_draw_indirect_count
+20260423-153533,733<INFO :06323>: 99:  VK_KHR_driver_properties
+20260423-153533,733<INFO :06323>: 100:  VK_KHR_dynamic_rendering
+20260423-153533,733<INFO :06323>: 101:  VK_KHR_zero_initialize_workgroup_memory
+20260423-153533,733<INFO :06323>: 102:  VK_KHR_uniform_buffer_standard_layout
+20260423-153533,733<INFO :06323>: 103:  VK_ANDROID_external_memory_android_hardware_buffer
+20260423-153533,733<INFO :06323>: 104:  VK_EXT_extended_dynamic_state2
+20260423-153533,733<INFO :06323>: 105:  VK_KHR_dedicated_allocation
+20260423-153533,733<INFO :06323>: 106:  VK_EXT_texel_buffer_alignment
+20260423-153533,733<INFO :06323>: 107:  VK_EXT_primitive_topology_list_restart
+20260423-153533,733<INFO :06323>: 108:  VK_KHR_shader_subgroup_uniform_control_flow
+20260423-153533,733<INFO :06323>: 109:  VK_EXT_tooling_info
+20260423-153533,733<INFO :06323>: 110:  VK_KHR_format_feature_flags2
+20260423-153533,733<INFO :06323>: 111:  VK_KHR_global_priority
+20260423-153533,733<INFO :06323>: 112:  VK_EXT_sample_locations
+20260423-153533,733<INFO :06323>: 113:  VK_KHR_swapchain
+20260423-153533,733<INFO :06323>: 114:  VK_KHR_sampler_mirror_clamp_to_edge
+20260423-153533,733<INFO :06323>: 115:  VK_KHR_external_fence_fd
+20260423-153533,733<INFO :06323>: enable device extensions:
+20260423-153533,733<INFO :06323>: VK_KHR_external_memory
+20260423-153533,733<INFO :06323>: VK_KHR_shader_float16_int8
+20260423-153533,733<INFO :06323>: VK_KHR_get_memory_requirements2
+20260423-153533,733<INFO :06323>: VK_QCOM_render_pass_store_ops
+20260423-153533,733<INFO :06323>: VK_KHR_maintenance1
+20260423-153533,733<INFO :06323>: VK_KHR_separate_depth_stencil_layouts
+20260423-153533,733<INFO :06323>: VK_KHR_create_renderpass2
+20260423-153533,733<INFO :06323>: VK_EXT_queue_family_foreign
+20260423-153533,733<INFO :06323>: VK_KHR_bind_memory2
+20260423-153533,733<INFO :06323>: VK_EXT_load_store_op_none
+20260423-153533,733<INFO :06323>: VK_KHR_sampler_ycbcr_conversion
+20260423-153533,733<INFO :06323>: VK_KHR_push_descriptor
+20260423-153533,733<INFO :06323>: VK_KHR_storage_buffer_storage_class
+20260423-153533,733<INFO :06323>: VK_KHR_shader_subgroup_extended_types
+20260423-153533,733<INFO :06323>: VK_KHR_16bit_storage
+20260423-153533,733<INFO :06323>: VK_KHR_fragment_shading_rate
+20260423-153533,733<INFO :06323>: VK_KHR_descriptor_update_template
+20260423-153533,733<INFO :06323>: VK_ANDROID_external_memory_android_hardware_buffer
+20260423-153533,733<INFO :06323>: VK_KHR_dedicated_allocation
+20260423-153533,733<INFO :06323>: VK_KHR_swapchain
+20260423-153533,733<INFO :06323>: Device support samplerYcbcrConversion 
+20260423-153533,733<INFO :06323>: Device not support storage InputOutPut16
+20260423-153533,733<INFO :06323>: Device not support uniformAndStorageBuffer16BitAccess
+20260423-153533,733<INFO :06323>: Device not support storagePushConstant16
+20260423-153533,733<INFO :06323>: Device support storageBuffer16BitAccess
+20260423-153533,733<INFO :06323>: Device support float16 features
+20260423-153533,733<INFO :06323>: Device support subgoup float16 features
+20260423-153533,733<INFO :06323>: Deviece FragmentShadingRateFeatures support pipelineFragmentShadingRate, maxFragmentSizeWidth:4, maxFragmentSizeHeight:4
+20260423-153533,733<INFO :06323>: Device subgoupSize is 64, quadOperationsInAllStages:0 support:bf
+20260423-153533,734<ERROR:06323>: Get device Proc:vkGetDeviceFaultInfoEXT Addr failed
+20260423-153533,735<INFO :06323>: Deviece Features support robustBufferAccess
+20260423-153533,735<INFO :06323>: Deviece Features support shaderStorageImageArrayDynamicIndexing
+20260423-153533,736<INFO :06323>: VMA preferredLargeHeapBlockSize is 8MB.
+20260423-153533,740<INFO :06323>: Enable Async Create File Texture Staging Buffer!
+20260423-153533,740<INFO :06323>: Enable Async Create File Texture VKImage!
+20260423-153533,741<INFO :06323>: init Physx 3.44 success...
+20260423-153533,741<INFO :06323>: PhysX Engine Inited Success..
+20260423-153533,744<INFO :06323>: Loading FontLib...........
+20260423-153533,746<INFO :06323>: Load FontLib Success...........
+20260423-153533,746<INFO :06323>: assistant comput thread create success
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one big core id 7
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one middle core id 3
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one middle core id 4
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one middle core id 5
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one middle core id 6
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one little core id 0
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one little core id 1
+20260423-153535,884<INFO :06323>: [ThreadAffinity] found one little core id 2
+20260423-153535,884<INFO :06323>: [ThreadAffinity] core count, sc:8, fc:8
+20260423-153535,884<INFO :06323>: [ThreadAffinity] core class count 3
+20260423-153535,884<INFO :06323>: [ThreadAffinity] exclusive core count 1
+20260423-153535,884<INFO :06323>: [ThreadAffinity] shared big group core count 0
+20260423-153535,884<INFO :06323>: [ThreadAffinity] shared middle group core count 4
+20260423-153535,884<INFO :06323>: [ThreadAffinity] shared little group core count 3
+20260423-153535,884<INFO :06323>: [ThreadAffinity] exclusive core id 7
+20260423-153535,890<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:, PushConstansOffset:0
+20260423-153535,892<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:, PushConstansOffset:0
+
+20260423-153535,894<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:, PushConstansOffset:0
+20260423-153535,894<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:, PushConstansOffset:0
+
+20260423-153535,896<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:, PushConstansOffset:0
+20260423-153535,897<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:, PushConstansOffset:0
+
+20260423-153535,899<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:, PushConstansOffset:0
+20260423-153535,900<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/fsr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:, PushConstansOffset:0
+
+20260423-153535,906<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass5, Macro:, PushConstansOffset:0
+20260423-153535,907<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass5, Macro:, PushConstansOffset:0
+
+20260423-153535,913<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:, PushConstansOffset:0
+20260423-153535,914<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:, PushConstansOffset:0
+
+20260423-153535,920<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:, PushConstansOffset:0
+20260423-153535,920<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:, PushConstansOffset:0
+
+20260423-153535,926<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:, PushConstansOffset:0
+20260423-153535,928<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:, PushConstansOffset:0
+
+20260423-153535,935<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:, PushConstansOffset:0
+20260423-153535,936<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:, PushConstansOffset:0
+
+20260423-153535,940<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:, PushConstansOffset:0
+20260423-153535,940<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:, PushConstansOffset:0
+
+20260423-153535,945<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153535,947<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153535,953<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=4;, PushConstansOffset:0
+20260423-153535,954<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=4;, PushConstansOffset:0
+
+20260423-153535,959<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:, PushConstansOffset:0
+20260423-153535,960<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:, PushConstansOffset:0
+
+20260423-153535,964<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass10, Macro:, PushConstansOffset:0
+20260423-153535,965<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass10, Macro:, PushConstansOffset:0
+
+20260423-153535,969<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=3;MRT_MASK=15;, PushConstansOffset:0
+20260423-153535,970<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=3;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153535,978<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:, PushConstansOffset:0
+20260423-153535,980<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:, PushConstansOffset:0
+
+20260423-153535,985<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153535,986<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153535,992<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass14, Macro:POSTEFFECT_MASK=40;, PushConstansOffset:0
+20260423-153535,994<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass14, Macro:POSTEFFECT_MASK=40;, PushConstansOffset:0
+
+20260423-153536,001<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass17, Macro:, PushConstansOffset:0
+20260423-153536,002<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass17, Macro:, PushConstansOffset:0
+
+20260423-153536,008<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass15, Macro:, PushConstansOffset:0
+20260423-153536,009<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass15, Macro:, PushConstansOffset:0
+
+20260423-153536,016<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass7, Macro:, PushConstansOffset:0
+20260423-153536,017<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass7, Macro:, PushConstansOffset:0
+
+20260423-153536,024<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass8, Macro:, PushConstansOffset:0
+20260423-153536,025<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass8, Macro:, PushConstansOffset:0
+
+20260423-153536,032<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass9, Macro:, PushConstansOffset:0
+20260423-153536,033<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass9, Macro:, PushConstansOffset:0
+
+20260423-153536,040<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass10, Macro:, PushConstansOffset:0
+20260423-153536,041<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass10, Macro:, PushConstansOffset:0
+
+20260423-153536,049<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=65;, PushConstansOffset:0
+20260423-153536,050<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=65;, PushConstansOffset:0
+
+20260423-153536,059<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass18, Macro:, PushConstansOffset:0
+20260423-153536,060<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass18, Macro:, PushConstansOffset:0
+
+20260423-153536,067<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,069<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,076<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,078<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,085<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,087<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,092<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=65;MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,093<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=65;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,100<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=73;, PushConstansOffset:0
+20260423-153536,102<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=73;, PushConstansOffset:0
+
+20260423-153536,108<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,111<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ssgi.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass2, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,116<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=4;VIEWPROBE_MASK=4;COMPRESS_SHADOWMAP=1;, PushConstansOffset:0
+20260423-153536,117<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=4;VIEWPROBE_MASK=4;COMPRESS_SHADOWMAP=1;, PushConstansOffset:0
+
+20260423-153536,121<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:, PushConstansOffset:0
+20260423-153536,122<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:, PushConstansOffset:0
+
+20260423-153536,126<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:, PushConstansOffset:0
+20260423-153536,126<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:, PushConstansOffset:0
+
+20260423-153536,130<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass8, Macro:, PushConstansOffset:0
+20260423-153536,131<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass8, Macro:, PushConstansOffset:0
+
+20260423-153536,137<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:POSTEFFECT_MASK=4;MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,139<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:POSTEFFECT_MASK=4;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,143<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=39;MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,144<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=39;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,152<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:POSTEFFECT_MASK=1;, PushConstansOffset:0
+20260423-153536,154<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:POSTEFFECT_MASK=1;, PushConstansOffset:0
+
+20260423-153536,160<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:OFFLINE_GI;, PushConstansOffset:0
+20260423-153536,161<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:OFFLINE_GI;, PushConstansOffset:0
+
+20260423-153536,167<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:OFFLINE_GI;, PushConstansOffset:0
+20260423-153536,169<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass4, Macro:OFFLINE_GI;, PushConstansOffset:0
+
+20260423-153536,174<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:OFFLINE_GI;, PushConstansOffset:0
+20260423-153536,176<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:OFFLINE_GI;, PushConstansOffset:0
+
+20260423-153536,182<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass5, Macro:OFFLINE_GI;, PushConstansOffset:0
+20260423-153536,183<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass5, Macro:OFFLINE_GI;, PushConstansOffset:0
+
+20260423-153536,189<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:OFFLINE_GI;, PushConstansOffset:0
+20260423-153536,190<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/raymarchfog.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:OFFLINE_GI;, PushConstansOffset:0
+
+20260423-153536,193<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ui_image.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:, PushConstansOffset:0
+20260423-153536,193<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ui_image.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:, PushConstansOffset:0
+
+20260423-153536,194<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ui_font.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:, PushConstansOffset:0
+20260423-153536,194<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ui_font.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:, PushConstansOffset:0
+
+20260423-153536,198<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=103;MRT_MASK=15;, PushConstansOffset:0
+20260423-153536,199<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=103;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153536,206<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:, PushConstansOffset:0
+20260423-153536,208<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:, PushConstansOffset:0
+
+20260423-153536,212<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass9, Macro:POSTEFFECT_MASK=1;, PushConstansOffset:0
+20260423-153536,213<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass9, Macro:POSTEFFECT_MASK=1;, PushConstansOffset:0
+
+20260423-153536,218<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=1;VIEWPROBE_MASK=4;, PushConstansOffset:0
+20260423-153536,220<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=1;VIEWPROBE_MASK=4;, PushConstansOffset:0
+
+20260423-153536,225<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:POSTEFFECT_MASK=4;MRT_MASK=13;, PushConstansOffset:0
+20260423-153536,228<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:POSTEFFECT_MASK=4;MRT_MASK=13;, PushConstansOffset:0
+
+20260423-153536,232<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=39;MRT_MASK=13;, PushConstansOffset:0
+20260423-153536,233<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=39;MRT_MASK=13;, PushConstansOffset:0
+
+20260423-153536,241<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:POSTEFFECT_MASK=9;, PushConstansOffset:0
+20260423-153536,243<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass11, Macro:POSTEFFECT_MASK=9;, PushConstansOffset:0
+
+20260423-153536,248<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:MRT_MASK=13;, PushConstansOffset:0
+20260423-153536,249<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:MRT_MASK=13;, PushConstansOffset:0
+
+20260423-153536,256<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=72;, PushConstansOffset:0
+20260423-153536,258<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=72;, PushConstansOffset:0
+
+20260423-153536,266<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass12, Macro:, PushConstansOffset:0
+20260423-153536,268<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass12, Macro:, PushConstansOffset:0
+
+20260423-153536,275<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass13, Macro:, PushConstansOffset:0
+20260423-153536,276<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass13, Macro:, PushConstansOffset:0
+
+20260423-153536,281<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:, PushConstansOffset:0
+20260423-153536,281<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:, PushConstansOffset:0
+
+20260423-153536,287<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:MRT_MASK=13;, PushConstansOffset:0
+20260423-153536,289<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/skybox_std.glvk, Include:data/material/shader_mb/empty.glsl, Def:Color, Macro:MRT_MASK=13;, PushConstansOffset:0
+
+20260423-153536,294<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=1;, PushConstansOffset:0
+20260423-153536,296<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:SHADOW_LEVEL=1;, PushConstansOffset:0
+
+20260423-153536,300<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=3;MRT_MASK=13;, PushConstansOffset:0
+20260423-153536,301<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:POSTEFFECT_MASK=3;MRT_MASK=13;, PushConstansOffset:0
+
+20260423-153536,308<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=64;, PushConstansOffset:0
+20260423-153536,310<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=64;, PushConstansOffset:0
+
+20260423-153536,310<INFO :06323>: Setup window width:2000, height:900
+20260423-153536,311<INFO :06323>: desired swapchain image count is:5
+20260423-153536,317<INFO :06323>: max swapchain image count is:5
+20260423-153536,320<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex0, image:0xb4000079d401d330, height:900
+20260423-153536,320<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex1, image:0xb4000079d401e8c0, height:900
+20260423-153536,320<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex2, image:0xb4000079d4023660, height:900
+20260423-153536,320<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex3, image:0xb4000079d4022970, height:900
+20260423-153536,320<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex4, image:0xb4000079d4022dc0, height:900
+20260423-153536,320<INFO :06323>: [X3D] KVulkanGraphicContext::_CreateCommandBuffers!!! Num:5
+20260423-153536,322<DEBUG:06323>: SwapChain Depth RenderTarget:SwapChainDepthStencilRT, image:0xb4000079d40206f0, height:900
+20260423-153536,323<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainColorRT, image:0xb4000079d401d780, height:900
+20260423-153536,323<INFO :06323>: OffScreen init width:2000, height:900
+20260423-153536,325<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraRT_0, image:0xb4000079d4023f00
+20260423-153536,326<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraColor_Copy_RT0, image:0xb4000079d4025490
+20260423-153536,327<DEBUG:06323>: Color RenderTarget:offScreen_MainCameraWaveRT_0, image:0xb4000079d4028ca0
+20260423-153536,327<DEBUG:06323>: Color RenderTarget:OffScreen_HBAOColor_RT0, image:0xb4000079d4024bf0
+20260423-153536,329<DEBUG:06323>: Color RenderTarget:OffScreen_HBAOBlur_RT0, image:0xb4000079d4025040
+20260423-153536,329<DEBUG:06323>: Color RenderTarget:SSGIRenderRT, image:0xb4000079d402af20
+20260423-153536,331<DEBUG:06323>: Color RenderTarget:SSGIBlurRT, image:0xb4000079d4026e70
+20260423-153536,331<DEBUG:06323>: Color RenderTarget:SSGIPreRT, image:0xb4000079d4026180
+20260423-153536,332<DEBUG:06323>: Depth RenderTarget:HalfHiz0, image:0xb4000079d4024350
+20260423-153536,333<DEBUG:06323>: Depth RenderTarget:OffScreen_MainCameraDepthStencil_RT0, image:0xb4000079d402de90
+20260423-153536,335<DEBUG:06323>: Depth RenderTarget:OffScreen_MainCameraDepthStencil_Copy_RT0, image:0xb4000079d402f420
+20260423-153536,336<DEBUG:06323>: Depth RenderTarget:OffScreen_PreOITDepthStencil_RT0, image:0xb4000079d402f870
+20260423-153536,338<DEBUG:06323>: Depth RenderTarget:HalfDepthStencil0, image:0xb4000079d40316a0
+20260423-153536,340<DEBUG:06323>: Color RenderTarget:pssr_relection_1, image:0xb4000079d4035300
+20260423-153536,340<DEBUG:06323>: Color RenderTarget:pssr_relection_1, image:0xb4000079d4037580
+20260423-153536,344<DEBUG:06323>: Color RenderTarget:OffsetScreen_OITColor0_RT_1, image:0xb4000079d4034eb0
+20260423-153536,347<DEBUG:06323>: Color RenderTarget:OffsetScreen_PreOITRT_1, image:0xb4000079d4036ce0
+20260423-153536,349<DEBUG:06323>: Color RenderTarget:OffsetScreen_OITColor1_RT_1, image:0xb4000079d4037130
+20260423-153536,350<DEBUG:06323>: Occlusion RenderTarget:occlusion_cull_rt_1, image:0xb4000079d403c320
+20260423-153536,351<DEBUG:06323>: Color RenderTarget:BloomDownSample_1_0, image:0xb4000079d40448d0
+20260423-153536,351<DEBUG:06323>: Color RenderTarget:BloomDownSample_1_1, image:0xb4000079d4048980
+20260423-153536,352<DEBUG:06323>: Color RenderTarget:BloomDownSample_1_2, image:0xb4000079d4044030
+20260423-153536,352<DEBUG:06323>: Color RenderTarget:BloomDownSample_1_3, image:0xb4000079d4047c90
+20260423-153536,353<DEBUG:06323>: Color RenderTarget:BloomDownSample_1_4, image:0xb4000079d4046fa0
+20260423-153536,353<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_1_0, image:0xb4000079d404b4a0
+20260423-153536,353<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_1_1, image:0xb4000079d404b050
+20260423-153536,354<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_1_2, image:0xb4000079d404db70
+20260423-153536,354<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_1_3, image:0xb4000079d4050240
+20260423-153536,356<DEBUG:06323>: Color RenderTarget:DOF_Focus_BlurRT_1, image:0xb4000079d404ac00
+20260423-153536,357<DEBUG:06323>: Color RenderTarget:Light_Shaft_Bloom_1, image:0xb4000079d40517d0
+20260423-153536,359<DEBUG:06323>: Color RenderTarget:Light_Shaft_Occlusion_1, image:0xb4000079d4054740
+20260423-153536,361<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_Mask, image:0xb4000079d405a620
+20260423-153536,361<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_MinMax, image:0xb4000079d405b310
+20260423-153536,362<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_TileIndex, image:0xb4000079d40611f0
+20260423-153536,365<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_Construct0, image:0xb4000079d405d140
+20260423-153536,365<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_Construct1, image:0xb4000079d405ccf0
+20260423-153536,366<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_RT_1, image:0xb4000079d4063020
+20260423-153536,366<DEBUG:06323>: Color RenderTarget:OffsetScreen_ShadowMaskStenci_RT_1, image:0xb4000079d405e280
+20260423-153536,369<DEBUG:06323>: Color RenderTarget:HistroyColorRT_1, image:0xb4000079d406b5d0
+20260423-153536,370<WARN :06323>: X3DEngine: createShader:vertex, Main:data/shader/glsl/ui.glvk, Include:, Def:ttfont_test, Macro:, PushConstansOffset:0
+20260423-153536,371<WARN :06323>: X3DEngine: createShader:fragment, Main:data/shader/glsl/ui.glvk, Include:, Def:ttfont_test, Macro:, PushConstansOffset:0
+
+20260423-153536,385<WARN :06323>: X3DEngine: createShader:vertex, Main:data/shader/glsl/graphictool.glvk, Include:, Def:screenrect, Macro:, PushConstansOffset:0
+20260423-153536,385<WARN :06323>: X3DEngine: createShader:fragment, Main:data/shader/glsl/graphictool.glvk, Include:, Def:screenrect, Macro:, PushConstansOffset:0
+
+20260423-153536,393<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/genmipmaps.glsl, Include:, Def:main, Macro:, PushConstansOffset:0
+20260423-153536,470<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/genmipmaps.glsl, Include:, Def:main, Macro:SHADER_FEATURES=1;, PushConstansOffset:0
+20260423-153536,475<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/sspr.glsl, Include:, Def:main, Macro:, PushConstansOffset:0
+20260423-153536,488<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/sspr.glsl, Include:, Def:clear, Macro:, PushConstansOffset:0
+20260423-153536,500<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/gencolorgradelut.glvk, Include:, Def:main, Macro:, PushConstansOffset:0
+20260423-153536,540<INFO :06323>: FSR Init material successful
+20260423-153536,541<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/fsr_pass.glsl, Include:, Def:FSRMain, Macro:SAMPLE_EASU=1;SAMPLE_SLOW_FALLBACK=1, PushConstansOffset:0
+20260423-153536,562<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/fsr_pass.glsl, Include:, Def:GSRMain, Macro:SAMPLE_EASU=1;SAMPLE_SLOW_FALLBACK=1;mode=0, PushConstansOffset:0
+20260423-153536,565<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/fsr_pass.glsl, Include:, Def:GSRMain, Macro:SAMPLE_EASU=1;SAMPLE_SLOW_FALLBACK=1;mode=1, PushConstansOffset:0
+20260423-153536,668<INFO :06323>: FSR Init successful
+20260423-153536,679<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/texturecompress.glsl, Include:, Def:CompressColor, Macro:, PushConstansOffset:0
+20260423-153536,698<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/texturecompress.glsl, Include:, Def:CompressNormal, Macro:, PushConstansOffset:0
+20260423-153536,714<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/texturecompress.glsl, Include:, Def:CompressRGB, Macro:, PushConstansOffset:0
+20260423-153536,729<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/texturecompress.glsl, Include:, Def:CompressAstc, Macro:, PushConstansOffset:0
+20260423-153536,853<INFO :06323>: [KG3D_Imgui] Loading libvulkan.so...
+20260423-153536,853<ERROR:06323>: Get instance Proc:vkCreateDebugReportCallbackEXT Addr failed
+20260423-153536,853<ERROR:06323>: Get instance Proc:vkDebugReportMessageEXT Addr failed
+20260423-153536,853<ERROR:06323>: Get instance Proc:vkDestroyDebugReportCallbackEXT Addr failed
+20260423-153536,862<DEBUG:06323>: Set Render Resolution width:1422, height:640
+20260423-153538,867<ERROR:06323>: KG3D_RegisterTaniDependHandler is not implemented.
+20260423-153538,867<INFO :06323>: SetLoadingProgress(0.300000)
+20260423-153538,867<ERROR:06323>: KGLOG_PROCESS_ERROR(nEnablePreload) at line 79 in IKG3DScene *PreloadScene(IX3DEngineManager *)
+20260423-153538,867<INFO :06323>: SetLoadingProgress(0.370000)
+20260423-153538,880<INFO :06323>: SetLoadingProgress(0.460000)
+20260423-153538,880<INFO :06323>: SetLoadingProgress(0.650000)
+20260423-153538,881<DEBUG:06323>: [time] game.startup.init[3].PK16KJX3RenderModule        cost: 5162.07ms
+20260423-153538,881<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153539,893<INFO :06453>: CPU in 1.00GHz
+20260423-153539,912<DEBUG:06453>: Append [Editor Strings] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [String Functions] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [PlayerHelper Functions] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [MathHelper Functions] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [NpcHelper Functions] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [Misc Functions] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [KOREA_VERSION] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [Custom Function] to global script environment ...
+20260423-153539,912<DEBUG:06453>: Append [ENTERSCENE_COMMON FUNC INFO] to global script environment ...
+20260423-153539,912<DEBUG:06453>: ReLoad Include.
+20260423-153539,983<DEBUG:06453>: [time] [npc] init                                       cost:    5.83ms
+20260423-153540,017<DEBUG:06453>: [time] [quest] init                                     cost:    8.30ms
+20260423-153540,081<DEBUG:06453>: [time] game.startup.init.logic.settings                 cost:  105.25ms
+20260423-153540,140<DEBUG:06453>: [time] [item] init                                      cost:   58.92ms
+20260423-153540,142<DEBUG:06453>: Can Not Include scripts/Map/◊∞±∏œ¥¡∑/include/œ¥¡∂_æ‡¿Î≈–∂œ¥¶¿Ì.lh
+20260423-153540,143<DEBUG:06453>: EquipMagicChange Init.
+20260423-153540,285<INFO :06453>: [RoadManager] New Track Use [2340.740KB] Memory.
+20260423-153540,304<DEBUG:06453>: [time] [buff] init                                      cost:   19.50ms
+20260423-153540,304<INFO :06453>: Skill loading ... ...
+20260423-153540,352<DEBUG:06453>: [Skill]Global Param Init Successful.
+20260423-153540,354<INFO :06453>: [HashMap] SkillManager Init cost 49247188 TickCount, 49 ms
+20260423-153540,354<INFO :06453>: 0 skill loaded !
+20260423-153540,354<DEBUG:06453>: [time] [skill] init                                     cost:   49.32ms
+20260423-153540,534<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/SubsetInfo.tab
+20260423-153540,534<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/DecalInfo.tab
+20260423-153540,535<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/BasemapInfo.tab
+20260423-153540,535<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/DetailInfo.tab
+20260423-153540,535<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/SfxInfo.tab
+20260423-153540,535<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/ColorLimitInfo.tab
+20260423-153540,535<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/DyeingExterior.tab
+20260423-153540,535<WARN :06453>: [KGPakV5_PakManager][OpenFile] not exist file: settings/Exterior/ExteriorCustomDyeing/CostItem.tab
+20260423-153540,557<INFO :06453>: HomeLandGlobalInit UserType:1
+20260423-153540,563<DEBUG:06453>: Can Not Include scripts/Map/ ¿ΩÁÕ®”√/include/∑¢” º˛∑‚◊∞.lua
+20260423-153540,566<DEBUG:06453>: Can Not Include scripts/Map/ ¿ΩÁ∆Ê”ˆ/Õ√Ω≠∫˛/include/Õ√Ω≠∫˛_data.lua
+20260423-153540,570<DEBUG:06453>: Can Not Include scripts/Map/º“‘∞œµÕ≥/include/º“‘∞÷÷÷≤≤Œ ˝±Ì.lh
+20260423-153540,570<DEBUG:06453>: Can Not Include scripts/Map/º“‘∞…Ì∑›/include/º“‘∞…Ì∑›◊‹±Ìdata.lua
+20260423-153540,571<DEBUG:06453>: Can Not Include scripts/player/include/πÿº¸µ»º∂Ω⁄µ„.lh
+20260423-153540,571<DEBUG:06453>: Can Not Include scripts/Map/ ¿ΩÁÕ®”√/include/»’øŒ√ø»’±ÿ◊ˆ.lua
+20260423-153540,571<DEBUG:06453>: Can Not Include scripts/player/AccountNewSignIn.lua
+20260423-153540,571<DEBUG:06453>: [LandCondition.lh] tOVERVIEWRemoteData is nil.
+20260423-153540,577<INFO :06453>: Load game settings ... ... [OK]
+20260423-153540,578<DEBUG:06323>: [time] game.startup.init[3].PK15KJX3LogicModule         cost: 1696.74ms
+20260423-153540,578<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153540,584<DEBUG:06486>: RLWorker ThreadID: 1918141440
+20260423-153540,585<DEBUG:06323>: [time] game.startup.init.rl.prepare                     cost:    5.35ms
+20260423-153540,618<DEBUG:06323>: [rl-bin-tab] data:0.77MB, text:0.00MB, file:Represent/player/equip/MeleeWeapon_m2.txt
+20260423-153540,670<DEBUG:06323>: [rl-bin-tab] data:0.77MB, text:0.00MB, file:Represent/player/equip/MeleeWeapon_f2.txt
+20260423-153540,717<DEBUG:06323>: [rl-bin-tab] data:0.62MB, text:0.00MB, file:Represent/player/equip/MeleeWeapon_m3.txt
+20260423-153540,731<DEBUG:06323>: [rl-bin-tab] data:0.62MB, text:0.00MB, file:Represent/player/equip/MeleeWeapon_f3.txt
+20260423-153540,748<DEBUG:06323>: [rl-bin-tab] data:0.77MB, text:0.00MB, file:Represent/player/equip/MeleeWeapon_m1.txt
+20260423-153540,797<DEBUG:06323>: [rl-bin-tab] data:0.77MB, text:0.00MB, file:Represent/player/equip/MeleeWeapon_f1.txt
+20260423-153540,899<DEBUG:06323>: [rl-bin-tab] data:1.33MB, text:0.00MB, file:Represent/player/player_animation_m2.txt
+20260423-153540,936<DEBUG:06323>: [rl-bin-tab] data:1.19MB, text:0.00MB, file:Represent/player/player_animation_f2.txt
+20260423-153540,979<DEBUG:06323>: [rl-bin-tab] data:0.85MB, text:0.00MB, file:Represent/player/player_animation_m1.txt
+20260423-153541,020<DEBUG:06323>: [rl-bin-tab] data:1.28MB, text:0.00MB, file:Represent/player/player_animation_f1.txt
+20260423-153541,025<DEBUG:06323>: [rl-bin-tab] data:0.26MB, text:0.00MB, file:Represent/player/player_animation_adjust_rides_type_m2.txt
+20260423-153541,029<DEBUG:06323>: [rl-bin-tab] data:0.28MB, text:0.00MB, file:Represent/player/player_animation_adjust_rides_type_f2.txt
+20260423-153541,033<DEBUG:06323>: [rl-bin-tab] data:0.28MB, text:0.00MB, file:Represent/player/player_animation_adjust_rides_type_m1.txt
+20260423-153541,037<DEBUG:06323>: [rl-bin-tab] data:0.28MB, text:0.00MB, file:Represent/player/player_animation_adjust_rides_type_f1.txt
+20260423-153541,045<DEBUG:06323>: [rl-bin-tab] data:0.42MB, text:0.36MB, file:represent\common\uneven_terrain_IK_blacklist.txt
+20260423-153541,047<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: represent/npc/npc_uniform_player_model_m2.txt
+20260423-153541,051<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: represent/npc/npc_uniform_player_model_f2.txt
+20260423-153541,053<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: represent/npc/npc_uniform_player_model_m1.txt
+20260423-153541,054<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: represent/npc/npc_uniform_player_model_f1.txt
+20260423-153541,074<DEBUG:06455>: [rl-bin-tab] data:0.64MB, text:0.00MB, file:Represent/common/character_sfx.txt
+20260423-153541,077<DEBUG:06457>: [time] [rl] load cache                                  cost:   18.72ms
+20260423-153541,087<DEBUG:06455>: [rl-bin-tab] data:0.55MB, text:0.00MB, file:Represent/skill/skill_buff.txt
+20260423-153541,087<INFO :06455>: Table:Represent/skill/skill_buff.txt at Line: 930 PlayType value(4) is invalid
+20260423-153541,087<INFO :06455>: Table:Represent/skill/skill_buff.txt at Line: 1016 PlayType value(4) is invalid
+20260423-153541,087<INFO :06455>: Table:Represent/skill/skill_buff.txt at Line: 1832 PlayType value(2) is invalid
+20260423-153541,087<INFO :06455>: Table:Represent/skill/skill_buff.txt at Line: 1833 PlayType value(3) is invalid
+20260423-153541,087<INFO :06455>: Table:Represent/skill/skill_buff.txt at Line: 3401 PlayType value(4) is invalid
+20260423-153541,087<INFO :06455>: Table:Represent/skill/skill_buff.txt at Line: 3402 PlayType value(4) is invalid
+20260423-153541,133<DEBUG:06455>: [rl-bin-tab] data:1.16MB, text:0.00MB, file:Represent/player/player_weapon_animation.txt
+20260423-153541,149<DEBUG:06455>: [rl-bin-tab] data:0.31MB, text:0.00MB, file:Represent/player/player_rush_jump_count_param.txt
+20260423-153541,168<DEBUG:06455>: [rl-bin-tab] data:0.27MB, text:0.00MB, file:Represent/rides/ride_link.txt
+20260423-153541,243<DEBUG:06455>: [rl-bin-tab] data:0.57MB, text:0.00MB, file:represent/player/footprint/player_footprint.txt
+20260423-153541,253<DEBUG:06455>: [rl-bin-tab] data:2.65MB, text:0.00MB, file:represent/player/equip/Hair_Subset_Hide.txt
+20260423-153541,261<DEBUG:06455>: [rl-bin-tab] data:0.52MB, text:0.00MB, file:represent/player/player_mystery_hair.txt
+20260423-153541,273<DEBUG:06323>: [time] game.startup.init.rl.table                       cost:  685.33ms
+20260423-153541,280<DEBUG:06323>: PB init
+20260423-153541,281<DEBUG:06323>: 
+table: 0xb400007ab4b439c0 {
+  [.SyncDummyState] => "SyncDummyState"
+  [.App_ThePassFight_Result] => "App_ThePassFight_Result"
+  [.NZDS_FireworksCreate] => "NZDS_FireworksCreate"
+  [.Astrology_Create] => "Astrology_Create"
+  [.ui.Confirm] => "Confirm"
+  [.FRZ_CreateSingleFox] => "FRZ_CreateSingleFox"
+  [.ui.CommandTest2] => "CommandTest2"
+  [.Tip_BrightMark] => "Tip_BrightMark"
+  [.FRZ_StartGame] => "FRZ_StartGame"
+  [.FRZ_ChangeHookState] => "FRZ_ChangeHookState"
+  [.Balloon_Destroy] => "Balloon_Destroy"
+  [.TestEmpty] => "TestEmpty"
+  [.ui.Command] => "Command"
+  [.FRZ_DestroySingleFox] => "FRZ_DestroySingleFox"
+  [.TV_ManuChangeChannel] => "TV_ManuChangeChannel"
+  [.pbmessage_SlideSprintState_Sync] => "pbmessage_SlideSprintState_Sync"
+  [.CreateDummy] => "CreateDummy"
+  [.App_Homeland_Flower] => "App_Homeland_Flower"
+  [.NZDS_FireworksDestroy] => "NZDS_FireworksDestroy"
+  [.App_Meirentu_SendIndex] => "App_Meirentu_SendIndex"
+  [.App_Tongwar_Result] => "App_Tongwar_Result"
+  [.Halter_Create] => "Halter_Create"
+  [.Balloon_Create] => "Balloon_Create"
+  [.ui.ButtonClick] => "ButtonClick"
+  [.Halter_Destroy] => "Halter_Destroy"
+  [.Test.TabEntry] => "TabEntry"
+  [.ui.CommandTimer] => "CommandTimer"
+  [.Test] => "Test"
+  [.TV_AutoChangeChannel] => "TV_AutoChangeChannel"
+  [.FRZ_IsMobileClient] => "FRZ_IsMobileClient"
+  [.FRZ_ForceEndGame] => "FRZ_ForceEndGame"
+  [.LXH_JumpTrap] => "LXH_JumpTrap"
+  [.Halter_DestroyByNickName] => "Halter_DestroyByNickName"
+}
+20260423-153541,434<DEBUG:06323>: [time] game.startup.init.rl.other                       cost:  160.55ms
+20260423-153541,434<DEBUG:06323>: [time] game.startup.init[3].PK19KJX3RepresentModule     cost:  856.06ms
+20260423-153541,434<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,437<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,439<INFO :06323>: [COCOS] [KMUI] Loading libvulkan.so...
+20260423-153541,439<INFO :06323>: [COCOS] Get instance Proc:vkCreateDebugReportCallbackEXT Addr failed
+20260423-153541,439<INFO :06323>: [COCOS] Get instance Proc:vkDebugReportMessageEXT Addr failed
+20260423-153541,439<INFO :06323>: [COCOS] Get instance Proc:vkDestroyDebugReportCallbackEXT Addr failed
+20260423-153541,439<INFO :06323>: [COCOS] [KVulkanDevice] load KMUI pipeline cache success
+20260423-153541,439<INFO :06323>: [COCOS] 
+{
+	max_texture_units: 65536
+	renderer: -2144714751
+	max_samples_allowed: 1
+	vendor: Adreno (TM) 740
+	supports_ASTC: true
+	cocos2d.x.compiled_with_profiler: false
+	cocos2d.x.compiled_with_gl_state_cache: true
+	cocos2d.x.build_type: RELEASE
+	supports_ETC2: true
+	version: 4206720
+	max_vertex_attributes: 32
+	supports_NPOT: true
+	supports_ETC1: true
+	supports_vertex_array_object: true
+	max_texture_size: 16384
+	supports_S3TC: true
+	supports_discard_framebuffer: true
+	supports_ATITC: true
+	cocos2d.x.version: cocos2d-x-4.0
+	supports_OES_packed_depth_stencil: true
+	supports_OES_depth24: true
+	supports_BGRA8888: true
+	supports_OES_map_buffer: true
+	supports_PVRTC: true
+}
+
+20260423-153541,439<WARN :06323>: [COCOS] setProjection : cocos2d: warning, Director::setProjection() failed because size is 0
+20260423-153541,542<INFO :06323>: SetLoadingProgress(0.905000)
+20260423-153541,542<DEBUG:06323>: [time] game.startup.init[3].PK17KJX3UIShellModule       cost:  104.51ms
+20260423-153541,545<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,545<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,545<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,546<INFO :06323>: SetLoadingProgress(0.924500)
+20260423-153541,546<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,546<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-153541,558<DEBUG:06323>: LuaXGSDKGetAdChannelId
+20260423-153541,558<INFO :06323>: [KJX3XGListener] [XGSDK] Start call GetAdChannelId
+20260423-153541,631<ERROR:06323>: [COCOS] cocos2d: fullPathForDirectory: No directory found at DebugFiles. Possible missing directory.
+20260423-153541,633<ERROR:06323>: [COCOS] cocos2d: fullPathForDirectory: No directory found at DebugFiles. Possible missing directory.
+20260423-153541,787<ERROR:06323>: [luna] get class metatable failed, class:KHomelandMgr
+20260423-153541,788<ERROR:06323>: [luna] get class metatable failed, class:KHomelandMgr
+20260423-153541,905<DEBUG:06323>: [tab] load ui-bintab time:  0.27(ms), memory: 0.01(mb), text: 0.00(mb), file:UI\Scheme\Case\sound.txt
+20260423-153541,920<DEBUG:06323>: [tab] load ui-bintab time:  0.26(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\MsgChannelDefaultFont.tab
+20260423-153541,925<ERROR:06323>: [luna] get class metatable failed, class:KHomelandMgr
+20260423-153541,928<ERROR:06323>: [luna] get class metatable failed, class:KHomelandMgr
+20260423-153541,935<DEBUG:06323>: [tab] load ui-bintab time:  0.08(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\Reputation\ReputationLevel.tab
+20260423-153542,013<ERROR:06323>: [luna] get class metatable failed, class:KMiniGameMgr
+20260423-153542,029<DEBUG:06323>: [tab] load ui-bintab time:  0.15(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\SFXInfo.txt
+20260423-153542,053<INFO :06323>: [KMUI] ---- Game.Init() -- Start!!! ----
+20260423-153542,057<DEBUG:06323>: [tab] load ui-bintab time:  0.24(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\QuestGuide\shieldquest.txt
+20260423-153543,040<DEBUG:06323>: [tab] clear cache count: 22914, memory: 0.18(mb), file:UI\Scheme\Case\QuestGuide\quest.txt
+20260423-153543,043<DEBUG:06323>: [tab] clear cache count: 22634, memory: 0.21(mb), file:ui\scheme\case\Quests.tab
+20260423-153543,043<INFO :06323>: [KMUI] [tab] load startup table cost time:989.0(ms)
+20260423-153543,043<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: temp/video_info.data
+20260423-153543,043<ERROR:06323>: KGLOG_PROCESS_ERROR(contentIdx != -1) at line 692 in BOOL KGPakV5_PakManager::GetFileContentHash(const char *, uint64_t *)
+20260423-153543,043<ERROR:06323>: KGLOG_PROCESS_ERROR(bRetCode) at line 1358 in BOOL KGPakV5_System::GetFileContentHash(const char *, uint64_t *)
+20260423-153543,043<ERROR:06323>: KGLOG_BREAK(bRetCode) at line 2315 in int cocos2d::LuaGetFileContentHash(lua_State *)
+20260423-153543,043<ERROR:06323>: KGLOG_PROCESS_ERROR(contentIdx != -1) at line 692 in BOOL KGPakV5_PakManager::GetFileContentHash(const char *, uint64_t *)
+20260423-153543,043<ERROR:06323>: KGLOG_PROCESS_ERROR(bRetCode) at line 1358 in BOOL KGPakV5_System::GetFileContentHash(const char *, uint64_t *)
+20260423-153543,043<ERROR:06323>: KGLOG_BREAK(bRetCode) at line 2315 in int cocos2d::LuaGetFileContentHash(lua_State *)
+20260423-153543,052<INFO :06323>: [KMUI] GamepadData.Init
+20260423-153543,052<INFO :06323>: [KUI] KFontManager  destory success!
+20260423-153543,122<INFO :06323>: [KMUI] UIMgr.Open, nViewID = 307, szName = PanelTouchMask
+20260423-153543,205<INFO :06323>: [Particle] Pss: data/source/other/hdÁâπÊïà/ui_m/pss/login/ui_ÈÄâËßíÊçèËÑ∏ÁïåÈù¢ËΩ¨Âú∫in02.pss
+20260423-153543,208<DEBUG:06323>: [tab] load ui-bintab time:  0.60(ms), memory: 0.03(mb), text: 0.02(mb), file:ui\scheme\case\pathlist.txt
+20260423-153543,208<DEBUG:06323>: [tab] load ui-bintab time:  0.18(ms), memory: 0.01(mb), text: 0.00(mb), file:ui\scheme\Case_Mobile\pathlist.txt
+20260423-153543,212<INFO :06323>: [KMUI] [LoginMgr] All Login Modules are Loaded Successfully.
+20260423-153543,213<DEBUG:06323>: [tab] load ui-bintab time:  0.98(ms), memory: 0.07(mb), text: 0.04(mb), file:ui\scheme\case\MapList.tab
+20260423-153543,215<DEBUG:06323>: [tab] load ui-bintab time:  0.08(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\scheme\case\QuestType.tab
+20260423-153543,220<DEBUG:06323>: [tab] load ui-bintab time:  4.26(ms), memory: 0.29(mb), text: 0.05(mb), file:UI\Scheme\Case\RecipeBelong.txt
+20260423-153543,254<DEBUG:06323>: [tab] load ui-bintab time:  0.19(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\DesertWeaponSkill.tab
+20260423-153543,257<ERROR:06323>: KGLOG_PROCESS_ERROR(nPlayerIndex >= 0 && nPlayerIndex < (int)m_PlayerInfo.size()) at line 525 in MiniGamePlayerInfo *KMiniGame::GetPlayerInfo(int)
+20260423-153543,257<ERROR:06323>: KGLOG_PROCESS_ERROR(pPlayerInfo) at line 990 in int KMiniGameMgr::LuaGetPlayerID(lua_State *)
+20260423-153543,259<INFO :06323>: [KMUI] [Teach] Init
+20260423-153543,280<DEBUG:06323>: [tab] load ui-bintab time: 12.61(ms), memory: 3.55(mb), text: 0.05(mb), file:UI\Scheme\Case\ItemSourceList_5.txt
+20260423-153543,281<DEBUG:06323>: [tab] load ui-bintab time:  0.11(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\scheme\case\UICraft.txt
+20260423-153543,282<DEBUG:06323>: [tab] load ui-bintab time:  0.29(ms), memory: 0.01(mb), text: 0.00(mb), file:ui/Scheme/Case/recipe/founding.tab
+20260423-153543,282<DEBUG:06323>: [tab] load ui-bintab time:  0.15(ms), memory: 0.00(mb), text: 0.00(mb), file:ui/Scheme/Case/recipe/cooking.tab
+20260423-153543,283<DEBUG:06323>: [tab] load ui-bintab time:  0.27(ms), memory: 0.01(mb), text: 0.00(mb), file:ui/Scheme/Case/recipe/tailoring.tab
+20260423-153543,292<DEBUG:06323>: [tab] load ui-bintab time:  0.12(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftDoodad.tab
+20260423-153543,299<DEBUG:06323>: [tab] load ui-bintab time:  0.17(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftNpc.tab
+20260423-153543,303<DEBUG:06323>: [tab] load ui-bintab time:  0.14(ms), memory: 0.00(mb), text: 0.00(mb), file:ui/Scheme/Case/recipe/medicine.tab
+20260423-153543,308<DEBUG:06323>: [tab] load ui-bintab time:  0.48(ms), memory: 0.01(mb), text: 0.01(mb), file:ui/Scheme/Case/recipe/furniture.tab
+20260423-153543,352<DEBUG:06323>: [tab] load ui-bintab time:  1.18(ms), memory: 0.12(mb), text: 0.01(mb), file:UI\Scheme\Case\ItemSourceList_10.txt
+20260423-153543,370<DEBUG:06323>: [tab] load ui-bintab time:  8.15(ms), memory: 1.48(mb), text: 0.07(mb), file:UI\Scheme\Case\ItemSourceList_8.txt
+20260423-153543,390<DEBUG:06323>: [tab] load ui-bintab time:  0.09(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_2.tab
+20260423-153543,391<DEBUG:06323>: [tab] load ui-bintab time:  0.05(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_5.tab
+20260423-153543,391<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_6.tab
+20260423-153543,391<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_7.tab
+20260423-153543,391<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_8.tab
+20260423-153543,391<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_9.tab
+20260423-153543,391<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_10.tab
+20260423-153543,392<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_11.tab
+20260423-153543,392<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_12.tab
+20260423-153543,392<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_13.tab
+20260423-153543,392<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_14.tab
+20260423-153543,392<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_15.tab
+20260423-153543,392<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_16.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_17.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_18.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_19.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_20.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_21.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_22.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_23.tab
+20260423-153543,393<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_25.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_26.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_27.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_30.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_35.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_36.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_37.tab
+20260423-153543,394<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_40.tab
+20260423-153543,395<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_41.tab
+20260423-153543,395<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_43.tab
+20260423-153543,395<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_45.tab
+20260423-153543,395<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_49.tab
+20260423-153543,395<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_51.tab
+20260423-153543,396<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_100.tab
+20260423-153543,396<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_101.tab
+20260423-153543,396<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_102.tab
+20260423-153543,396<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_103.tab
+20260423-153543,396<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_104.tab
+20260423-153543,396<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_105.tab
+20260423-153543,397<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_108.tab
+20260423-153543,397<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_122.tab
+20260423-153543,397<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_139.tab
+20260423-153543,398<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_150.tab
+20260423-153543,398<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_151.tab
+20260423-153543,398<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_153.tab
+20260423-153543,398<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_156.tab
+20260423-153543,398<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_158.tab
+20260423-153543,398<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_159.tab
+20260423-153543,399<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_193.tab
+20260423-153543,399<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_194.tab
+20260423-153543,400<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_213.tab
+20260423-153543,400<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_214.tab
+20260423-153543,400<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_215.tab
+20260423-153543,400<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_216.tab
+20260423-153543,400<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_217.tab
+20260423-153543,401<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_239.tab
+20260423-153543,401<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_243.tab
+20260423-153543,401<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_283.tab
+20260423-153543,402<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_286.tab
+20260423-153543,402<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_325.tab
+20260423-153543,402<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_330.tab
+20260423-153543,402<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_332.tab
+20260423-153543,403<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_333.tab
+20260423-153543,403<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_334.tab
+20260423-153543,403<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_411.tab
+20260423-153543,403<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_419.tab
+20260423-153543,404<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_444.tab
+20260423-153543,404<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_455.tab
+20260423-153543,404<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_462.tab
+20260423-153543,405<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_464.tab
+20260423-153543,405<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_471.tab
+20260423-153543,405<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_473.tab
+20260423-153543,405<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_474.tab
+20260423-153543,405<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_475.tab
+20260423-153543,405<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_486.tab
+20260423-153543,406<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_488.tab
+20260423-153543,406<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_525.tab
+20260423-153543,406<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_526.tab
+20260423-153543,407<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_578.tab
+20260423-153543,407<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_579.tab
+20260423-153543,407<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_580.tab
+20260423-153543,408<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_581.tab
+20260423-153543,408<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_582.tab
+20260423-153543,408<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_642.tab
+20260423-153543,409<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_647.tab
+20260423-153543,409<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_666.tab
+20260423-153543,409<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_673.tab
+20260423-153543,409<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_674.tab
+20260423-153543,410<DEBUG:06323>: [tab] load ui-bintab time:  0.04(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_713.tab
+20260423-153543,410<DEBUG:06323>: [tab] load ui-bintab time:  0.03(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\CraftGuide\CraftMapGuide_718.tab
+20260423-153543,411<DEBUG:06323>: [tab] load ui-bintab time:  0.26(ms), memory: 0.01(mb), text: 0.00(mb), file:ui\Scheme\Case\cyclopaedia\ActivityBattlePassQuest.txt
+20260423-153543,412<DEBUG:06323>: [tab] load ui-bintab time:  0.14(ms), memory: 0.01(mb), text: 0.00(mb), file:ui\Scheme\Case\cyclopaedia\ActivityBattlePassReward.txt
+20260423-153543,412<DEBUG:06323>: [tab] load ui-bintab time:  0.16(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\CurrencyInfo.txt
+20260423-153543,417<DEBUG:06323>: [tab] load ui-bintab time:  4.12(ms), memory: 0.24(mb), text: 0.21(mb), file:UI\Scheme\Case\OperationActivity\OperatAct.txt
+20260423-153543,418<DEBUG:06323>: [tab] load ui-bintab time:  0.07(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\OperationActivity\OperationCategory.txt
+20260423-153543,420<DEBUG:06323>: [tab] load ui-bintab time:  0.19(ms), memory: 0.01(mb), text: 0.00(mb), file:UI\Scheme\Case\DLCInfo.txt
+20260423-153543,422<DEBUG:06323>: [tab] load ui-bintab time:  2.32(ms), memory: 0.20(mb), text: 0.06(mb), file:UI\Scheme\Case\NewPQ.tab
+20260423-153543,423<DEBUG:06323>: [tab] load ui-bintab time:  0.09(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\VoiceType.txt
+20260423-153543,460<DEBUG:06323>: [tab] load ui-bintab time:  0.39(ms), memory: 0.01(mb), text: 0.00(mb), file:PakV5Filelist\PackTree.tab
+20260423-153543,526<INFO :06323>: [KMUI] MonsterBookData.Init Start...
+20260423-153543,527<DEBUG:06323>: [tab] load ui-bintab time:  0.31(ms), memory: 0.01(mb), text: 0.00(mb), file:UI\Scheme\Case\MonsterSkill.tab
+20260423-153543,528<INFO :06323>: [KMUI] MonsterBookData.Init End...
+20260423-153543,530<DEBUG:06323>: [tab] load ui-bintab time:  1.66(ms), memory: 0.09(mb), text: 0.06(mb), file:UI\Scheme\Case\EmotionActionAdd.txt
+20260423-153543,532<DEBUG:06323>: [tab] load ui-bintab time:  0.51(ms), memory: 0.03(mb), text: 0.01(mb), file:UI\Scheme\Case\EmotionAction.txt
+20260423-153543,532<DEBUG:06323>: [tab] load ui-bintab time:  0.06(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\FaceMotion.txt
+20260423-153543,540<DEBUG:06323>: [tab] load ui-bintab time:  0.10(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\KillSound.txt
+20260423-153543,541<ERROR:06323>: KGLOG_PROCESS_ERROR(pRLScene) at line 88 in int UpdateRLResource()
+20260423-153543,542<ERROR:06323>: KGLOG_PROCESS_ERROR(pRLScene) at line 126 in int ReloadAllCharacter(BOOL)
+20260423-153543,542<ERROR:06323>: KGLOG_PROCESS_ERROR(pRLScene) at line 2373 in void OnPlaydynamicWeather_RainSnow(c_str)
+20260423-153543,542<ERROR:06323>: KGLOG_PROCESS_ERROR(pScene) at line 2266 in virtual HRESULT KG3DEngineManager::SetPostRenderDofGatherBlurSize(const float &)
+20260423-153543,542<ERROR:06323>: KGLOG_PROCESS_ERROR(pScene) at line 3757 in virtual HRESULT KG3DEngineManager::SetCASCoeff(FLOAT)
+20260423-153543,542<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(30)
+20260423-153543,551<INFO :06323>: [KMUI] [PakDownloadMgr] UpdateDynTimeStamp(‰∏çÊ∏ÖÁêÜ): nil
+20260423-153543,551<INFO :06323>: [KMUI] [PakDownloadMgr] UpdateMapTimeStamp(‰∏çÊ∏ÖÁêÜ): nil
+20260423-153543,553<DEBUG:06323>: [tab] load ui-bintab time:  0.77(ms), memory: 0.03(mb), text: 0.00(mb), file:UI\Scheme\Case\cyclopaedia\DungeonNpc.txt
+20260423-153543,555<DEBUG:06323>: [tab] load ui-bintab time:  0.08(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\DesignationGainWayList.txt
+20260423-153543,555<DEBUG:06323>: [tab] load ui-bintab time:  0.09(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\DesignationVersionInfo.txt
+20260423-153543,556<DEBUG:06323>: [tab] load ui-bintab time:  0.15(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\MainStorySeason.txt
+20260423-153543,562<DEBUG:06323>: [tab] load ui-bintab time:  6.54(ms), memory: 0.40(mb), text: 0.39(mb), file:UI\Scheme\Case\MainStorySection.txt
+20260423-153543,563<DEBUG:06323>: [tab] load ui-bintab time:  0.36(ms), memory: 0.01(mb), text: 0.00(mb), file:UI\Scheme\Case\MainStoryChapter.txt
+20260423-153543,572<DEBUG:06323>: [tab] load ui-bintab time:  0.44(ms), memory: 0.01(mb), text: 0.01(mb), file:ui\Scheme\Case\GameGuide.txt
+20260423-153543,572<DEBUG:06323>: [tab] load ui-bintab time:  0.07(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\achivementgeneral.txt
+20260423-153543,572<DEBUG:06323>: [tab] load ui-bintab time:  0.17(ms), memory: 0.00(mb), text: 0.00(mb), file:ui\Scheme\Case\achivementsub.txt
+20260423-153543,573<DEBUG:06323>: [tab] load ui-bintab time:  0.85(ms), memory: 0.05(mb), text: 0.04(mb), file:ui\Scheme\Case\achivementsdetail.txt
+20260423-153543,613<DEBUG:06323>: [tab] load ui-bintab time:  0.18(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\RegionMap.tab
+20260423-153543,614<DEBUG:06323>: [tab] load ui-bintab time:  0.31(ms), memory: 0.01(mb), text: 0.01(mb), file:UI\Scheme\Case\WebURL.tab
+20260423-153543,614<DEBUG:06323>: [KMUI] ReviveMgr Â∞ÜÂèÇÊï∞Ê†áËÆ∞‰∏∫Â§±ÊïàÔºåÂéüÂõ†‰∏∫ÔºöÊ®°ÂùóÂàùÂßãÂåñ (bValid false=>false)
+20260423-153543,615<DEBUG:06323>: [tab] load ui-bintab time:  0.08(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\MapAppointmentInfo.txt
+20260423-153543,615<INFO :06323>: [KMUI]  ---- Game.Init() -- Success!!! ----
+20260423-153543,615<DEBUG:06323>: [time] game.startup.start.mui                           cost: 2069.25ms
+20260423-153543,615<DEBUG:06323>: [time] game.startup.start                               cost: 2069.30ms
+20260423-153543,617<INFO :06323>: SetLoadingProgress(1.000000)
+20260423-153543,617<INFO :06323>: [KJX3XGListener] [XGSDK] Start call HasPackedChannel
+20260423-153543,617<INFO :06323>: [KMUI] [LoginMgr] SwitchStep: -> [LoginLogo]
+20260423-153543,617<INFO :06323>: [KMUI] [LoginMgr] SwitchStep: [LoginLogo] -> [LoginScene]
+20260423-153543,617<INFO :06323>: [KMUI] --------------------Scene_New--------------------
+20260423-153543,646<INFO :06323>: Open Scene data/source/maps/mbÁôªÈôÜÁïåÈù¢_2023_001/mbÁôªÈôÜÁïåÈù¢_2023_001.jsonmap
+20260423-153543,651<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_hiz_reduce.glvk, Include:, Def:reduceHizDepth, Macro:, PushConstansOffset:0
+20260423-153543,658<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:resetDrawBatch, Macro:, PushConstansOffset:0
+20260423-153543,664<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:cullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,691<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:specialContainerCullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,718<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:calcDrawBatchInstance, Macro:, PushConstansOffset:0
+20260423-153543,723<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:fillGPUInstance, Macro:, PushConstansOffset:0
+20260423-153543,730<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:sparseUploadSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,738<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:sparseUploadSceneObjectGraphics, Macro:, PushConstansOffset:0
+20260423-153543,743<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:sparseUploadMeshData, Macro:, PushConstansOffset:0
+20260423-153543,750<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:sparseUploadDrawBatch, Macro:, PushConstansOffset:0
+20260423-153543,775<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:shadowCullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,794<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:specialContainerShadowcullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,841<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_instance_scene_cull.glvk, Include:, Def:topCullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,858<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_dynamic_scene_cull.glvk, Include:, Def:cullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,877<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_dynamic_scene_cull.glvk, Include:, Def:resetDrawBatch, Macro:, PushConstansOffset:0
+20260423-153543,881<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_dynamic_scene_cull.glvk, Include:, Def:sparseUploadSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,890<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_dynamic_scene_cull.glvk, Include:, Def:cullSceneTopObject, Macro:, PushConstansOffset:0
+20260423-153543,902<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:cullSceneObject, Macro:, PushConstansOffset:0
+20260423-153543,919<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:resetDrawBatch, Macro:, PushConstansOffset:0
+20260423-153543,923<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:specialContainerSceneObjectOld, Macro:, PushConstansOffset:0
+20260423-153543,952<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:cullSceneTopObject, Macro:, PushConstansOffset:0
+20260423-153543,963<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:resetDrawBatchNew, Macro:, PushConstansOffset:0
+20260423-153543,968<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:cullSceneObjectNew, Macro:, PushConstansOffset:0
+20260423-153543,985<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:specialContainerSceneObject, Macro:, PushConstansOffset:0
+20260423-153544,005<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:calcDrawBatchInstance, Macro:, PushConstansOffset:0
+20260423-153544,010<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:fillGPUInstance, Macro:, PushConstansOffset:0
+20260423-153544,037<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:cullSceneTopObjectNew, Macro:, PushConstansOffset:0
+20260423-153544,053<WARN :06323>: X3DEngine: createShader:compute, Main:data/shader/glsl/gd_sceneblock_scene_cull.glvk, Include:, Def:specialContainerSceneObjectTop, Macro:, PushConstansOffset:0
+20260423-153544,066<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: data/source/maps/mbµ«¬ΩΩÁ√Ê_2023_001/water/fluxwater/fluxwaterbakedatainfo.json
+20260423-153544,066<ERROR:06323>: open file failed: data/source/maps/mbÁôªÈôÜÁïåÈù¢_2023_001/water/fluxwater/fluxwaterbakedatainfo.json
+20260423-153544,073<ERROR:06323>: KGLOG_PROCESS_ERROR(pRetHandle) at line 416 in virtual HRESULT KG3DModelTable::LoadResourceFromFile(const char *, unsigned int, unsigned int, HANDLE *)
+20260423-153544,073<ERROR:06323>: KGLOG_PROCESS_ERROR(pRetHandle) at line 416 in virtual HRESULT KG3DModelTable::LoadResourceFromFile(const char *, unsigned int, unsigned int, HANDLE *)
+20260423-153544,073<ERROR:06323>: KGLOG_PROCESS_ERROR(pRetHandle) at line 416 in virtual HRESULT KG3DModelTable::LoadResourceFromFile(const char *, unsigned int, unsigned int, HANDLE *)
+20260423-153544,073<ERROR:06323>: KGLOG_PROCESS_ERROR(false && "not impl") at line 1856 in virtual void KG3DScene::SwitchPlayerEnvironment(UINT)
+20260423-153544,073<ERROR:06323>: KGLOG_PROCESS_ERROR(false && "not impl") at line 2174 in virtual HRESULT KG3DScene::SetShowCaption(BOOL)
+20260423-153544,075<ERROR:06323>: KGLOG_PROCESS_ERROR(false && "not impl") at line 2035 in virtual HRESULT KG3DScene::GetGizmoTool(IKG3DGizmoTool **, BOOL)
+20260423-153544,076<ERROR:06323>: KGLOG_PROCESS_ERROR(false && "not impl") at line 1778 in virtual BOOL KG3DScene::SetGrassMoveRadius(float)
+20260423-153544,076<ERROR:06323>: KGLOG_PROCESS_ERROR(false && "Core not impl") at line 1807 in virtual HRESULT KG3DEngineManager::SetRenderSpecialMode(UINT)
+20260423-153544,076<WARN :06323>: Ansel:InitError
+20260423-153544,076<INFO :06323>: [KMUI] UIMgr.New3DScene, nFlag = 0 nSceneID = 1000000
+20260423-153544,076<INFO :06323>: [COCOS] [KVulkanDevice] save KMUI pipeline cache success
+20260423-153544,077<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(30)
+20260423-153544,077<ERROR:06323>: KGLOG_PROCESS_ERROR(pScene) at line 3757 in virtual HRESULT KG3DEngineManager::SetCASCoeff(FLOAT)
+20260423-153544,079<INFO :06323>: [KMUI] --------------------Scene_End--------------------
+20260423-153544,079<DEBUG:06323>: uiatLockBgMusic bLock:0 value
+20260423-153544,079<INFO :06323>: [KMUI] SoundMgr.PlayBgMusic szName:BGM_State_YiLiChuan_TongYongYeWai_RiChang
+20260423-153544,079<INFO :06323>: [KMUI] [LoginMgr] SwitchStep: [LoginScene] -> [LoginGateway]
+20260423-153544,079<INFO :06323>: [KMUI] UIMgr.Open, nViewID = 1, szName = PanelLogin
+20260423-153544,090<INFO :06323>: [COCOS] Warning! You can't change Android Hint fontName and fontSize
+20260423-153544,090<INFO :06323>: [COCOS] Warning! You can't change Android Hint fontName and fontSize
+20260423-153544,090<INFO :06323>: [COCOS] Warning! You can't change Android Hint fontName and fontSize
+20260423-153544,090<INFO :06323>: [COCOS] Warning! You can't change Android Hint fontName and fontSize
+20260423-153544,090<INFO :06323>: [COCOS] Warning! You can't change Android Hint fontName and fontSize
+20260423-153544,090<INFO :06323>: [COCOS] Warning! You can't change Android Hint fontName and fontSize
+20260423-153544,091<INFO :06323>: [Particle] Pss: data/source/other/hdÁâπÊïà/ui_m/pss/login/ui_ÁôªÂΩï_ÊåâÈíÆ.pss
+20260423-153544,095<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: mui/Fonts/FZKTK.TTF
+20260423-153544,095<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: mui/Fonts/FZKTK.TTF
+20260423-153544,099<INFO :06323>: [KMUI] [PakDownloadMgr] InitStorageTaskList	1(WIFI)
+20260423-153544,100<DEBUG:06323>: [tab] load ui-bintab time:  0.18(ms), memory: 0.00(mb), text: 0.00(mb), file:UI\Scheme\Case\BGMState.tab
+20260423-153544,100<INFO :06323>: [KMUI] [GM] [GMHelper] is not Publish Version.
+20260423-153544,101<INFO :06323>: [KMUI] [GM] [GMHelper] Time	ResVersion	GMVersion
+2026Âπ¥4Êúà23Êó•15:02	1833809	1702471
+2026Âπ¥4Êúà23Êó•15:04	1833809	1702471
+2026Âπ¥4Êúà23Êó•15:09	1833809	1702471
+2026Âπ¥4Êúà23Êó•15:15	1833809	1702471
+2026Âπ¥4Êúà23Êó•15:35	1833809.
+20260423-153544,101<INFO :06323>: [KMUI] [GM] [GMHelper] BEHAVIOR_FILE path is  mui/Lua/Debug/GM/
+20260423-153544,101<INFO :06323>: [KMUI] [GM] [GMHelper] BEHAVIOR_FILE path is already exist: mui/Lua/Debug/GM/
+20260423-153544,101<INFO :06323>: [KMUI] [GM] [GMHelper] BEHAVIOR_FILE writeStringToFile: /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/Behavior.txt
+20260423-153544,101<ERROR:06323>: KGLOG_PROCESS_ERROR(bRetCode) at line 1258 in int g_OpenFileInPlatform(const char *, IFile **)
+20260423-153544,101<INFO :06323>: [KMUI] [GM] [GMHelper] CURL_HttpRqst http://gm.j3.work:19090.
+20260423-153544,101<INFO :06323>: [KMUI] UIMgr.Open, nViewID = 9090001, szName = PanelGMBall
+20260423-153544,103<DEBUG:06323>: [time] game.startup.loaded                              cost:  486.41ms
+20260423-153544,103<DEBUG:06323>: [time] game.startup                                     cost:10743.71ms
+20260423-153544,103<DEBUG:06323>: [InitState] Leave N2mb15ModuleInitStateE
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] RefreshBasicPackState
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] TryRefreshPackState (QuerySize)	800653
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] GetMultiDlcRealSize, 1, 800653
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] TryRefreshPackState (QuerySize)	800332
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] GetMultiDlcRealSize, 2, 800332
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] TryRefreshPackState (QuerySize)	800579
+20260423-153544,110<INFO :06323>: [KMUI] [PakDownloadMgr] GetMultiDlcRealSize, 3, 800579
+20260423-153544,114<INFO :06323>: [ThreadAffinity] begin to refresh thread affinity
+20260423-153544,114<INFO :06323>: [ThreadAffinity] main_thread_id:6323, exclusive core id:7, count:1
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:EngineFrameFastThread, thread_id:6477, middlecore count:4, priority:1100
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KResourceLoader, thread_id:6461, middlecore count:4, priority:1000
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KEngineSceneLoadThread, thread_id:6463, middlecore count:4, priority:1000
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KMaterialLoadThread, thread_id:6464, middlecore count:4, priority:1000
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KCpuComputeThread, thread_id:6465, middlecore count:4, priority:1000
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:MovieTexture_InitThread, thread_id:6472, middlecore count:4, priority:1000
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:NSKAsyncTask, thread_id:6460, middlecore count:4, priority:500
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:EngineFrameSlowThread, thread_id:6478, middlecore count:4, priority:500
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KEngineSceneLoadThread, thread_id:6479, littlecore count:3, priority:500
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KCaption2DPrepareThread, thread_id:6482, littlecore count:3, priority:500
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KGStateThread, thread_id:6473, littlecore count:3, priority:100
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KGStateThread, thread_id:6475, littlecore count:3, priority:100
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:KGStateThread, thread_id:6476, littlecore count:3, priority:100
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:JX3ClientMB, thread_id:6324, littlecore count:3, priority:0
+20260423-153544,114<INFO :06323>: [ThreadAffinity] mainthread wait thread size:1
+20260423-153544,114<INFO :06323>: [ThreadAffinity] name:RLMiscTask, thread_id:6484, middlecore count:4
+20260423-153544,114<INFO :06323>: [ThreadAffinity] finished refresh thread affinity
+20260423-153544,137<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: data/source/maps/mbµ«¬ΩΩÁ√Ê_2023_001/mb/raymarchfog/raymarchfoginfo.json
+20260423-153544,137<ERROR:06323>: open file failed: data/source/maps/mbÁôªÈôÜÁïåÈù¢_2023_001/mb/raymarchfog/raymarchfoginfo.json
+20260423-153544,149<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: mui/Fonts/FZKTK.TTF
+20260423-153544,153<INFO :06323>: [Particle] Pss: data/source/other/hdÁâπÊïà/ui_m/pss/huaelou/ui_ÈóÆÂç∑ÊèêÁ§∫.pss
+20260423-153544,156<INFO :06323>: [KMUI] UIMgr.Open, nViewID = 10, szName = PanelLoginLineUp
+20260423-153544,158<INFO :06323>: [KMUI] [LoginServerList] RequestServerList, bUseRemoteServerList = false, szURL = 
+20260423-153544,160<DEBUG:06323>: LuaXGSDKCallXGMethodSync
+20260423-153544,160<INFO :06323>: [KJX3XGListener] [XGSDK] Start call CallXGMethodSync
+20260423-153544,160<INFO :06323>: [KMUI] Channel, IsDouyinCloud = 
+20260423-153544,160<INFO :06323>: [KMUI] UIMgr.Open, nViewID = 6, szName = PanelLogoVideo
+20260423-153544,163<INFO :06323>: [KMUI] UIHelper.PlayVideo fpsLimit:25
+20260423-153544,163<INFO :06323>: [COCOS] BinkVideoPlayer::initializeAudio: success
+20260423-153544,163<INFO :06323>: [COCOS] BinkVideoPlayer Render rate :25
+20260423-153544,164<INFO :06323>: [COCOS] cocos2d: QuadCommand: resizing index size from [-1] to [2560]
+20260423-153544,167<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraNormalRT_2, image:0xb4000079d4623ff0
+20260423-153544,171<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraAlbedoRT_2, image:0xb4000079d46284f0
+20260423-153544,175<DEBUG:06323>: Color RenderTarget:MainCameraVelocitylRT_2, image:0xb4000079d462abc0
+20260423-153544,178<DEBUG:06323>: Color RenderTarget:MainCameraSunRT_2, image:0xb4000079d4625130
+20260423-153544,186<INFO :06323>: desired swapchain image count is:5
+20260423-153544,194<INFO :06323>: max swapchain image count is:5
+20260423-153544,216<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex0, image:0xb4000079d4022970, height:900
+20260423-153544,216<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex1, image:0xb4000079d4022dc0, height:900
+20260423-153544,216<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex2, image:0xb4000079d4023660, height:900
+20260423-153544,216<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex3, image:0xb4000079d401e8c0, height:900
+20260423-153544,216<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainRenderTex4, image:0xb4000079d401d330, height:900
+20260423-153544,224<DEBUG:06323>: SwapChain Depth RenderTarget:SwapChainDepthStencilRT, image:0xb4000079d4631340, height:900
+20260423-153544,236<DEBUG:06323>: SwapChain Color RenderTarget:SwapChainColorRT, image:0xb4000079d462c5a0, height:900
+20260423-153544,236<INFO :06323>: OffScreen init width:1600, height:720
+20260423-153544,248<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraRT_2, image:0xb4000079d462f0c0
+20260423-153544,252<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraColor_Copy_RT2, image:0xb4000079d4638360
+20260423-153544,256<DEBUG:06323>: Color RenderTarget:offScreen_MainCameraWaveRT_2, image:0xb4000079d4634b50
+20260423-153544,257<DEBUG:06323>: Color RenderTarget:OffScreen_HBAOColor_RT2, image:0xb4000079d46387b0
+20260423-153544,268<DEBUG:06323>: Color RenderTarget:OffScreen_HBAOBlur_RT2, image:0xb4000079d4633a10
+20260423-153544,272<DEBUG:06323>: Color RenderTarget:SSGIRenderRT, image:0xb4000079d4636530
+20260423-153544,276<DEBUG:06323>: Color RenderTarget:SSGIBlurRT, image:0xb4000079d46335c0
+20260423-153544,280<DEBUG:06323>: Color RenderTarget:SSGIPreRT, image:0xb4000079d4637670
+20260423-153544,292<DEBUG:06323>: Depth RenderTarget:HalfHiz2, image:0xb4000079d46342b0
+20260423-153544,298<DEBUG:06323>: Depth RenderTarget:OffScreen_MainCameraDepthStencil_RT2, image:0xb4000079d46404c0
+20260423-153544,304<DEBUG:06323>: Depth RenderTarget:OffScreen_MainCameraDepthStencil_Copy_RT2, image:0xb4000079d463c410
+20260423-153544,312<DEBUG:06323>: Depth RenderTarget:OffScreen_PreOITDepthStencil_RT2, image:0xb4000079d463d100
+20260423-153544,316<DEBUG:06323>: Depth RenderTarget:HalfDepthStencil2, image:0xb4000079d463ef30
+20260423-153544,320<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraNormalRT_3, image:0xb4000079d4641a50
+20260423-153544,322<INFO :06532>: [COCOS] Bink_CustomFileOpen mui/Video/MOBILE/load_video.bk2
+20260423-153544,322<DEBUG:06323>: Color RenderTarget:OffScreen_MainCameraAlbedoRT_3, image:0xb4000079d463e690
+20260423-153544,323<DEBUG:06323>: Color RenderTarget:MainCameraVelocitylRT_3, image:0xb4000079d463eae0
+20260423-153544,325<DEBUG:06323>: Color RenderTarget:MainCameraSunRT_3, image:0xb4000079d463c860
+20260423-153544,329<DEBUG:06323>: Color RenderTarget:pssr_relection_3, image:0xb4000079d46467f0
+20260423-153544,330<DEBUG:06323>: Color RenderTarget:pssr_relection_3, image:0xb4000079d4646c40
+20260423-153544,337<DEBUG:06323>: Color RenderTarget:OffsetScreen_OITColor0_RT_3, image:0xb4000079d464cb20
+20260423-153544,344<DEBUG:06323>: Color RenderTarget:OffsetScreen_PreOITRT_3, image:0xb4000079d464a000
+20260423-153544,345<DEBUG:06323>: Color RenderTarget:OffsetScreen_OITColor1_RT_3, image:0xb4000079d4650780
+20260423-153544,346<DEBUG:06323>: Occlusion RenderTarget:occlusion_cull_rt_3, image:0xb4000079d464e950
+20260423-153544,349<DEBUG:06323>: Color RenderTarget:BloomDownSample_3_0, image:0xb4000079d4656ab0
+20260423-153544,349<DEBUG:06323>: Color RenderTarget:BloomDownSample_3_1, image:0xb4000079d465ab60
+20260423-153544,350<DEBUG:06323>: Color RenderTarget:BloomDownSample_3_2, image:0xb4000079d46588e0
+20260423-153544,350<DEBUG:06323>: Color RenderTarget:BloomDownSample_3_3, image:0xb4000079d4659180
+20260423-153544,351<DEBUG:06323>: Color RenderTarget:BloomDownSample_3_4, image:0xb4000079d4656660
+20260423-153544,351<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_3_0, image:0xb4000079d4660a40
+20260423-153544,351<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_3_1, image:0xb4000079d465e7c0
+20260423-153544,352<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_3_2, image:0xb4000079d465fd50
+20260423-153544,352<DEBUG:06323>: Color RenderTarget:BloomUpSampleRT_3_3, image:0xb4000079d46639b0
+20260423-153544,354<DEBUG:06323>: Color RenderTarget:DOF_Focus_BlurRT_3, image:0xb4000079d4663110
+20260423-153544,354<DEBUG:06323>: Color RenderTarget:Light_Shaft_Bloom_3, image:0xb4000079d4661b80
+20260423-153544,355<DEBUG:06323>: Color RenderTarget:Light_Shaft_Occlusion_3, image:0xb4000079d4669440
+20260423-153544,357<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_Mask, image:0xb4000079d46719f0
+20260423-153544,358<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_MinMax, image:0xb4000079d466fbc0
+20260423-153544,358<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_TileIndex, image:0xb4000079d466bb10
+20260423-153544,360<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_Construct0, image:0xb4000079d466bf60
+20260423-153544,361<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_Construct1, image:0xb4000079d466f320
+20260423-153544,361<DEBUG:06323>: Color RenderTarget:OffsetScreen_RayMarchFog_RT_3, image:0xb4000079d4678e60
+20260423-153544,362<DEBUG:06323>: Color RenderTarget:OffsetScreen_ShadowMaskStenci_RT_3, image:0xb4000079d4676790
+20260423-153544,363<DEBUG:06323>: Color RenderTarget:HistroyColorRT_3, image:0xb4000079d4678a10
+20260423-153544,364<DEBUG:06323>: Create Color RenderTarget:pssr_history, image:0xb4000079d4677480
+20260423-153544,366<INFO :06323>: [KMUI] [PakDownloadMgr] PakDownload_OnGetMultiDlcRealSize, 1, true, 621929412, 621929412
+20260423-153544,367<INFO :06323>: [KMUI] [PakDownloadMgr] PakDownload_OnGetMultiDlcRealSize, 2, true, 973243854, 973243854
+20260423-153544,367<INFO :06323>: [KMUI] [PakDownloadMgr] PakDownload_OnGetMultiDlcRealSize, 3, true, 1073859080, 1073859080
+20260423-153544,376<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa005_hd.pss
+20260423-153544,377<INFO :06323>: FocusStatus: use EnvPreset FocusStatus (data/source/maps/mbµ«¬ΩΩÁ√Ê_2023_001/mb/focus_face_env_params.json).
+20260423-153544,377<INFO :06323>: [KMUI] [GM] [GMHelper] http request gm url successed.
+20260423-153544,378<INFO :06323>: [KMUI] [GM] [GMHelper] Preparing to download http://gm.j3.work:19090/trunk/versionlist.txt to /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/versionlist.txt.download
+20260423-153544,379<INFO :06323>: [COCOS] VideoPlayer sessionCallback 0,Bink Playing
+20260423-153544,379<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa006_hd.pss
+20260423-153544,381<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa002_hd.pss
+20260423-153544,381<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa005_hd.pss
+20260423-153544,382<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa003_hd.pss
+20260423-153544,382<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa003_hd.pss
+20260423-153544,382<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa003_hd.pss
+20260423-153544,382<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa001_hd.pss
+20260423-153544,387<WARN :06323>: [KGPakV5_PakManager][OpenFile] not exist file: imgui.ini
+20260423-153544,392<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:SHADER_QUALITY=2;MRT_MASK=15;, PushConstansOffset:0
+20260423-153544,392<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/ÈÄâÊã©ÁâπÊïàa001_hd.pss
+20260423-153544,392<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass3, Macro:SHADER_QUALITY=2;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153544,393<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢Âêë_30¬∞.pss
+20260423-153544,396<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢Âêë.pss
+20260423-153544,398<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢Âêë_90¬∞.pss
+20260423-153544,400<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢Âêë_135¬∞.pss
+20260423-153544,403<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢Âêë_180¬∞.pss
+20260423-153544,406<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢ÂêëÁ©∫_30.pss
+20260423-153544,406<INFO :06323>: [KMUI] [LoginServerList] OnParseLocalServerListSuccess
+20260423-153544,406<INFO :06323>: [KMUI] [LoginServerList] OnServerListRequestSuccess
+20260423-153544,407<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢ÂêëÁ©∫_60.pss
+20260423-153544,409<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢ÂêëÁ©∫_90.pss
+20260423-153544,411<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢ÂêëÁ©∫_135.pss
+20260423-153544,412<INFO :06475>: [Particle] Pss: data/source/other/hdÁâπÊïà/ÂÖ∂‰ªñ/pss/j_ËßíËâ≤ÁÆ≠Â§¥Èù¢ÂêëÁ©∫_180.pss
+20260423-153544,433<ERROR:06323>: open data/source/maps/mbÁôªÈôÜÁïåÈù¢_2023_001/config.json failed
+20260423-153544,467<INFO :06323>: [KMUI] [GMHelper] OnVersionListDownloaded successed.
+20260423-153544,468<INFO :06323>: [KMUI] [GM] [GMHelper] LocalVersion is: 1702471
+20260423-153544,468<INFO :06323>: [KMUI] [GM] [GMHelper] szMatchVersion is: 1702471
+20260423-153544,468<INFO :06323>: [KMUI] [GM] [GMHelper] LocalVersion is: false
+20260423-153544,468<INFO :06323>: [KMUI] [GM] [GMHelper] to load file: /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua begin
+20260423-153544,468<INFO :06323>: [KMUI] [GM] [GMHelper] load file: /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua end SUCCESS
+20260423-153544,472<INFO :06323>: [KMUI] [GM] [GMHelper] File integrity check true, not need redownload.
+20260423-153544,472<INFO :06323>: [KMUI] [GM] [GMHelper] Preparing to download http://gm.j3.work:19090/trunk/1702471/filelist.lua to /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua.download
+20260423-153544,537<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileListDownloaded successed.
+20260423-153544,537<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileListDownloaded, /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua.download to /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua
+20260423-153544,537<INFO :06323>: [KMUI] [GM] [GMHelper] to load file: /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua begin
+20260423-153544,538<INFO :06323>: [KMUI] [GM] [GMHelper] load file: /storage/emulated/0/Android/data/com.seasun.jx3bvt/files/mui/Lua/Debug/GM/filelist.lua end SUCCESS
+20260423-153544,538<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIRobotPanel.lua, file is exist, no need download.
+20260423-153544,538<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMView.lua, file is exist, no need download.
+20260423-153544,538<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMTaskInformation.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMRightExpansionView.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMRightCell.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMMiddleCell.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMLeftCell.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMConfigureKungFu.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMConfigureCamp.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMConfigureAccount.lua, file is exist, no need download.
+20260423-153544,539<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UIGMBuffDebugView.lua, file is exist, no need download.
+20260423-153544,540<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UICMDEditorView.lua, file is exist, no need download.
+20260423-153544,540<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/UICameraEditorView.lua, file is exist, no need download.
+20260423-153544,540<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/UIRobotThirdPanelSubView.lua, file is exist, no need download.
+20260423-153544,540<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/UIRobotThirdPanelCell.lua, file is exist, no need download.
+20260423-153544,540<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/UIRobotThirdPanel.lua, file is exist, no need download.
+20260423-153544,540<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/UIRobotSecondPanelCell.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/UIRobotSecondPanel.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/ServerRobotTeamManager.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/ServerRobotGangManager.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/ServerRobotFightSettings.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/ServerRobotCampInfo.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/ServerRobotBuffSetting.lua, file is exist, no need download.
+20260423-153544,541<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ServerRobotControl/ServerRobotArena.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchSkill.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchRobot.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchQuest.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchPanel/UISpeedCall.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchPanel/UISearchPanelCell.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchPanel/UISearchPanel.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchPanel/SearchPanel.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchPanel/IniFile.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchNPC.lua, file is exist, no need download.
+20260423-153544,542<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchMap.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchItemWeapon.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchItemTrinket.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchItemArmor.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchItem.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchHomelandItem.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchHair.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchExterior.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchDoodad.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchCraft.lua, file is exist, no need download.
+20260423-153544,543<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchBuff.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchBook.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/SearchActivity.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/GMReloadWhiteList.txt, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/GMCMD.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/GetPoints.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/EquipItemConfig.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/EquipItem.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ConfigureAccount.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/CollectMapEnv.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/ChineseDictionary.lua, file is exist, no need download.
+20260423-153544,544<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/BuffDebugFrame.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/AutoTest/SkillDamageStatistics/UIPanelSkillRecord.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/AutoTest/SkillDamageStatistics/SkillsRecording.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/AutoTest/RobotCase/UIRobotParamOptional.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/AutoTest/RobotCase/UIRobotParamCell.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/AutoTest/RobotCase/UIRobotCaseView.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/AutoTest/AutoTestEnv.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GM] [GMHelper] OnFileDownloaded mui/Lua/Debug/GM/GMMgr.lua, file is exist, no need download.
+20260423-153544,545<INFO :06323>: [KMUI] [GMHelper] OnAllFileDownloaded.
+20260423-153544,571<WARN :06323>: X3DEngine: createShader:vertex, Main:data/shader/glsl/graphictool.glvk, Include:, Def:colorvert, Macro:, PushConstansOffset:0
+20260423-153544,572<WARN :06323>: X3DEngine: createShader:fragment, Main:data/shader/glsl/graphictool.glvk, Include:, Def:colorvert, Macro:, PushConstansOffset:0
+
+20260423-153544,585<WARN :06323>: X3DEngine: createShader:vertex, Main:data/shader/glsl/graphictool.glvk, Include:, Def:colorgeom, Macro:, PushConstansOffset:0
+20260423-153544,585<WARN :06323>: X3DEngine: createShader:fragment, Main:data/shader/glsl/graphictool.glvk, Include:, Def:colorgeom, Macro:, PushConstansOffset:0
+
+20260423-153544,593<WARN :06323>: X3DEngine: createShader:vertex, Main:data/shader/glsl/graphictool.glvk, Include:, Def:screen_color_rect, Macro:, PushConstansOffset:0
+20260423-153544,593<WARN :06323>: X3DEngine: createShader:fragment, Main:data/shader/glsl/graphictool.glvk, Include:, Def:screen_color_rect, Macro:, PushConstansOffset:0
+
+20260423-153544,611<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass29, Macro:, PushConstansOffset:0
+20260423-153544,612<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/postprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass29, Macro:, PushConstansOffset:0
+
+20260423-153544,652<DEBUG:06323>: Shadow RenderTarget:Shadowmap_BigDepthStencil_RT, image:0xb4000079d46cbea0
+20260423-153544,652<DEBUG:06323>: Shadow RenderTarget:Shadowmap_BigDepthStencil_RT, image:0xb4000079d46f0920
+20260423-153544,656<DEBUG:06323>: Shadow RenderTarget:Shadowmap_BigDepthStencil_RT, image:0xb4000079d46eae90
+20260423-153544,657<DEBUG:06323>: Shadow RenderTarget:Shadowmap_BigDepthStencil_RT, image:0xb4000079d46dfdc0
+20260423-153544,657<DEBUG:06323>: Shadow RenderTarget:Shadowmap_BigDepthStencil_RT, image:0xb4000079d46bb790
+20260423-153544,660<DEBUG:06323>: Shadow RenderTarget:Shadowmap_BigDepthStencil_RT, image:0xb4000079d46cad60
+20260423-153544,663<DEBUG:06323>: SpotLightOpaqueDepth:SpotLightOpaqueDepthRT, image:0xb4000079d46c38f0
+20260423-153544,664<DEBUG:06323>: SpotLightOpaqueColor:SpotLightOpaqueColorRT, image:0xb4000079d46ede00
+20260423-153544,665<DEBUG:06323>: SpotLightOITDepth:SpotLightOITDepthRT, image:0xb4000079d46d3bb0
+20260423-153544,667<DEBUG:06323>: SpotLightOITColor:SpotLightOITColorRT, image:0xb4000079d46d6280
+20260423-153544,670<DEBUG:06323>: SpotLightOpaqueDepth:SpotLightOpaqueDepthRT, image:0xb4000079d46eccc0
+20260423-153544,670<DEBUG:06323>: SpotLightOpaqueColor:SpotLightOpaqueColorRT, image:0xb4000079d46c9380
+20260423-153544,671<DEBUG:06323>: SpotLightOITDepth:SpotLightOITDepthRT, image:0xb4000079d46ccfe0
+20260423-153544,673<DEBUG:06323>: SpotLightOITColor:SpotLightOITColorRT, image:0xb4000079d46c2c00
+20260423-153544,680<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:, Def:SpeedTreeStenci, Macro:, PushConstansOffset:0
+20260423-153544,680<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:, Def:SpeedTreeStenci, Macro:, PushConstansOffset:0
+
+20260423-153544,681<DEBUG:06323>: ShadowMask RenderTarget:ShadowMaskRT, image:0xb4000079d46e7230
+20260423-153544,682<DEBUG:06323>: ShadowMask RenderTarget:ShadowMaskRT, image:0xb4000079d46e9060
+20260423-153544,682<DEBUG:06323>: ShadowMask RenderTarget:ShadowMaskRT, image:0xb4000079d46f11c0
+20260423-153544,682<DEBUG:06323>: ShadowMask RenderTarget:ShadowMaskRT, image:0xb4000079d46ca4c0
+20260423-153544,691<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:, PushConstansOffset:0
+20260423-153544,693<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/shadowmask.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:, PushConstansOffset:0
+
+20260423-153544,728<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/genmipmaps.glsl, Include:, Def:copyDepth, Macro:, PushConstansOffset:0
+20260423-153544,733<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/genmipmaps.glsl, Include:, Def:depthMips, Macro:NOT_WORKGROUP_MATCH;, PushConstansOffset:0
+20260423-153544,745<WARN :06464>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ambientocclusion.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153544,749<WARN :06464>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ambientocclusion.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153544,753<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:SHADER_QUALITY=2;POSTEFFECT_MASK=3;MRT_MASK=15;, PushConstansOffset:0
+20260423-153544,754<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/preprocess.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass6, Macro:SHADER_QUALITY=2;POSTEFFECT_MASK=3;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153544,762<WARN :06464>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/ambientocclusion.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:MRT_MASK=15;, PushConstansOffset:0
+20260423-153544,766<WARN :06464>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/ambientocclusion.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass1, Macro:MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153544,784<WARN :06323>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/sspr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=16;, PushConstansOffset:0
+20260423-153544,786<WARN :06323>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/sspr.glvk, Include:data/material/shader_mb/empty.glsl, Def:Pass0, Macro:POSTEFFECT_MASK=16;, PushConstansOffset:0
+
+20260423-153544,799<WARN :06323>: X3DEngine: createShader:compute, Main:data/material/shader_mb/genmipmaps.glsl, Include:, Def:main, Macro:NOT_WORKGROUP_MATCH;, PushConstansOffset:0
+20260423-153544,866<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153544,878<INFO :06323>: [KMUI] UIMgr.Close, nViewID = 10, szName = PanelLoginLineUp
+20260423-153544,976<INFO :06323>: [Particle] Pss: data/source/other/hdÁâπÊïà/Âú∫ÊôØ/pss/ÁôªÂΩïÁïåÈù¢_Ê∞¥Ê≥¢01.pss
+20260423-153544,994<WARN :06464>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/classicwater_hd.glvk, Include:data/material/material_mb/mtl_water/mtl_water_panelref.glsl, Def:Pass3, Macro:NORMALMAP;RENDERING_PATH=1;POSTEFFECT_MASK=2;, PushConstansOffset:0
+20260423-153544,999<WARN :06464>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/classicwater_hd.glvk, Include:data/material/material_mb/mtl_water/mtl_water_panelref.glsl, Def:Pass3, Macro:NORMALMAP;RENDERING_PATH=1;POSTEFFECT_MASK=2;, PushConstansOffset:0
+
+20260423-153545,047<INFO :06323>: [IGD] SceneObjectComputeBuffer: Whole Update, count=1, size=48
+20260423-153545,048<INFO :06323>: [IGD] SceneObjectGraphicsBuffer: Whole Update, count=1, size=48
+20260423-153545,048<INFO :06323>: [IGD] MeshBuffer: Whole Update, count=1, size=64
+20260423-153545,048<INFO :06323>: [IGD] InstanceNormal DrawBuffer Whole Update, count=1, size=36
+20260423-153545,069<WARN :06464>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/meshshader.glvk, Include:data/material/material_mb/mtl_std_texarray_normr.glsl, Def:Pass6, Macro:NORMALMAP;RENDERING_PATH=1;VARYINGS_MASK=4;MRT_MASK=15;, PushConstansOffset:0
+20260423-153545,075<WARN :06464>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/meshshader.glvk, Include:data/material/material_mb/mtl_std_texarray_normr.glsl, Def:Pass6, Macro:NORMALMAP;RENDERING_PATH=1;VARYINGS_MASK=4;MRT_MASK=15;, PushConstansOffset:0
+
+20260423-153545,132<WARN :06464>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/instanceshader.glvk, Include:data/source/other/hdÁâπÊïà/ÊùêË¥®_mb/Ê†áÂáÜÂèåÂ±Ç.glsl, Def:Color, Macro:NORMALMAP;RENDERING_PATH=1;SHOCKWAVE=1;, PushConstansOffset:0
+20260423-153545,138<WARN :06464>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/instanceshader.glvk, Include:data/source/other/hdÁâπÊïà/ÊùêË¥®_mb/Ê†áÂáÜÂèåÂ±Ç.glsl, Def:Color, Macro:NORMALMAP;RENDERING_PATH=1;SHOCKWAVE=1;, PushConstansOffset:0
+
+20260423-153545,175<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153545,725<WARN :06464>: X3DEngine: createShader:vertex, Main:data/material/shader_mb/particlesystemshader.glvk, Include:data/source/other/hdÁâπÊïà/ÊùêË¥®_mb/Áã¨Á´ãÊùêË¥®/Ê∂àÊï£_alpha_Ê∏êÂèò.glsl, Def:Color, Macro:NORMALMAP;RENDERING_PATH=1;SHOCKWAVE=1;, PushConstansOffset:0
+20260423-153545,726<WARN :06464>: [KGPakV5_PakManager][OpenFile] not exist file: CachedShaders_mb/shaderbin_android/b1/particlesystemshader[1121057699]962326163__android@Color.vert
+20260423-153545,731<WARN :06464>: X3DEngine: createShader:fragment, Main:data/material/shader_mb/particlesystemshader.glvk, Include:data/source/other/hdÁâπÊïà/ÊùêË¥®_mb/Áã¨Á´ãÊùêË¥®/Ê∂àÊï£_alpha_Ê∏êÂèò.glsl, Def:Color, Macro:NORMALMAP;RENDERING_PATH=1;SHOCKWAVE=1;, PushConstansOffset:0
+
+20260423-153545,731<WARN :06464>: [KGPakV5_PakManager][OpenFile] not exist file: CachedShaders_mb/shaderbin_android/f5/particlesystemshader[1121057699]2480864847__android@Color.frag
+20260423-153549,168<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(29)
+20260423-153550,153<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(28)
+20260423-153550,154<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153551,167<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(27)
+20260423-153552,164<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(26)
+20260423-153553,151<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(25)
+20260423-153554,149<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(24)
+20260423-153554,159<ERROR:06522>: [slot=MLogProcessError, attr=ProcessError, condition=Res == CURLE_OK, line=315] func=static void SO3UI::KCURLThread::ThreadFunc(void *) | Res=28, pClient->m_szKey=WebCareerEvent.txt
+20260423-153554,603<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153555,173<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(23)
+20260423-153555,174<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153556,161<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(22)
+20260423-153557,149<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(21)
+20260423-153558,181<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(20)
+20260423-153600,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153604,632<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153604,780<INFO :06323>: [KMUI] [LuaGC] lua stack memory: 53.523 M, GC: -54807.773 KB, Round: 102
+20260423-153605,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153610,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153614,682<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153615,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153620,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153624,736<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153625,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153630,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153634,783<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153635,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153640,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153644,835<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153645,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153650,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153654,887<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153655,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153700,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153704,937<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153705,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153709,778<INFO :06323>: [KMUI] [LuaGC] lua stack memory: 53.487 M, GC: 37.275 KB, Round: 99
+20260423-153710,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153714,982<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153715,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153720,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153725,036<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153725,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153730,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153735,037<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153735,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153740,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153745,086<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153745,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153750,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153755,083<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153755,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153800,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153805,136<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153805,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153810,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153814,379<INFO :06323>: [KMUI] [LuaGC] lua stack memory: 53.454 M, GC: 33.223 KB, Round: 99
+20260423-153815,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153815,183<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153820,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153825,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153825,237<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153830,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153835,179<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153835,282<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153840,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153845,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153845,287<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153850,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153855,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153855,336<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153900,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153905,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153905,388<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153910,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153915,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153915,438<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153920,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153924,580<INFO :06323>: [KMUI] [LuaGC] lua stack memory: 53.458 M, GC: -3.576 KB, Round: 99
+20260423-153925,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153925,483<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153930,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153935,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153935,531<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153940,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153945,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153945,585<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-153950,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153955,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-153955,637<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-154000,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154005,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154005,682<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-154010,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154015,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154015,737<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-154020,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154025,178<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154025,786<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-154028,778<INFO :06323>: [KMUI] [LuaGC] lua stack memory: 53.457 M, GC: 0.727 KB, Round: 99
+20260423-154030,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154035,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154035,837<INFO :06323>: Render Scene Heart, mbµ«¬ΩΩÁ√Ê_2023_001
+20260423-154040,177<INFO :06323>: [KMUI] UIMgr -- client heartbeat --
+20260423-154042,177<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(21)
+20260423-154043,167<INFO :06323>: [KMUI] FrameMgr.SetFrameLimit(22)
+20260423-154043,663<INFO :06323>: [KMUI] OnApplicationDidEnterBackground
+20260423-154043,663<INFO :06323>: [KMUI] GVoiceMgr.Pause()
+20260423-154043,663<ERROR:06323>: KGLOG_PROCESS_ERROR(m_pTmgContext) at line 28 in BOOL KGGMEVoiceCore::Pause()
+20260423-154043,664<INFO :06323>: [KJX3XGListener] [XGSDK] Start call TrackEvent
+20260423-154043,665<DEBUG:06323>: KJX3AndroidApplicationModule::ProcessTermWindow

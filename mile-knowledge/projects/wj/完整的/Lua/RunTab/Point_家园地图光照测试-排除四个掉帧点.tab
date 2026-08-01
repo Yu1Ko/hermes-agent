@@ -1,0 +1,66 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(_mapid_,_mapIndex_, _X_, _Y_, _Z_)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd SearchPanel.SetCustomOptions("同屏玩家数",0)	5	设置同屏玩家数
+/gm player.SwitchMap(455,25389,10215, 29254, 1097984)	30	切换地图
+/gm player.SetRepresentID(5, 1544);player.SetRepresentID(6, 0)	5	切换衣服
+/gm player.SetRepresentID(11, 1544);player.SetRepresentID(12, 0);	5	切换衣服
+/gm player.SetRepresentID(8, 1544);player.SetRepresentID(9, 0);	5	切换衣服
+/gm player.SetRepresentID(14, 1544);player.SetRepresentID(15, 0);	5	切换衣服
+/cmd GetClientPlayer().HideHat(true)	5	切换头发
+/gm player.SetRepresentID(1,1717)	5	切换头发
+/gm player.SetPosition(10215, 29254, 1097984)	5	设置坐标
+/cmd TurnTo(10)	2	调整面向
+/cmd SetCameraStatus(2000, 0.089993841946125, 4.5405826568604, -0.11688485741615);	20	调整面向
+/cmd CreateEmptyFile("perfeye_start")	35	采集数据
+/gm player.SetPosition(6873, 30847, 1098048)	5	设置坐标
+/cmd TurnTo(40)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 3.8042726516724, -0.099483765661716);	46	调整面向
+/gm player.SetPosition(7951, 30814, 1098432)	5	设置坐标
+/cmd TurnTo(5)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060497462749481, 4.7222099304199, -0.11773559451103);	46	调整面向
+/gm player.SetPosition(8919, 31110, 1098560)	5	设置坐标
+/cmd TurnTo(65)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 3.271675825119, 0.0054641189053655);	46	调整面向
+/gm player.SetPosition(5214, 25641, 1093312)	5	设置坐标
+/cmd TurnTo(85)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 2.6801724433899, 0.062980160117149);	46	调整面向
+/gm player.SetPosition(10199, 21555, 1092928)	5	设置坐标
+/cmd TurnTo(195)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060503050684929, 6.2148761749268, -0.090357840061188);	46	调整面向
+/gm player.SetPosition(9663, 19216, 1087488)	5	设置坐标
+/cmd TurnTo(-40)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060500457882881, 5.7935266494751, -0.014167501591146);	46	调整面向
+/gm player.SetPosition(3422, 21798, 1086720)	5	设置坐标
+/cmd TurnTo(60)	2	调整面向
+/cmd SetCameraStatus(2000, 0.099996909499168, 3.4312081336975, -0.003661778755486);	46	调整面向
+/gm player.SetPosition(16671, 26316, 1075776)	5	设置坐标
+/cmd TurnTo(10)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060504201799631, 3.9785339832306, -0.081231959164143);	46	调整面向
+/gm player.SetPosition(21294, 30127, 1070208)	5	设置坐标
+/cmd TurnTo(100)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060505613684654, 2.2285690307617, 0.41156700253487);	46	调整面向
+/gm player.SetPosition(25003, 30121, 1061312)	5	设置坐标
+/cmd TurnTo(125)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 1.6886072158813, 0.35224848985672);	46	调整面向
+/gm player.SetPosition(27635, 17936, 1060544)	5	设置坐标
+/cmd TurnTo(125)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 1.6198841333389, 0.060219489037991);	46	调整面向
+/gm player.SetPosition(20561, 15266, 1059136)	5	设置坐标
+/cmd TurnTo(90)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060501836240292, 2.5672709941864, -0.035602450370789);	46	调整面向
+/gm player.SetPosition(14705, 10378, 1061504)	5	设置坐标
+/cmd TurnTo(210)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060507565736771, 5.8855781555176, -0.20899461209774);	46	调整面向
+/gm player.SetPosition(20151, 4759, 1059200)	5	设置坐标
+/cmd TurnTo(85)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 2.7979810237885, -0.099483765661716);	46	调整面向
+/gm player.SetPosition(26799, 12053, 1050560)	5	设置坐标
+/cmd TurnTo(18)	2	调整面向
+/cmd SetCameraStatus(2000, 0.060499999672174, 4.2460594177246, -0.099483765661716);	46	调整面向
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.Stop()	2	玩家停止
+/gm player.Revive()	2	复活
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

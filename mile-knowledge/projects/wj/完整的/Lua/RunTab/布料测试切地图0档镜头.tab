@@ -1,0 +1,16 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	15	开始跑图
+/cmd PlayerLevelUpToNew(130)	30	升级130
+/gm player.AddBuff(0,99,108,1,7200)	10	隐身
+/gm layer.AddBuff(0,99,377,1,7200);	5	无敌
+/cmd SearchExterior.InitTools()	5	初始化外装
+/cmd SearchExterior.Apply(3748,false)	5	更换外装2411
+/cmd Fabric.StartVideo()	10	开启布料接口
+/cmd QualityMgr.ModifyCurQuality("bEnableApexClothing_new", true)	3	开启布料
+/cmd rlcmd("enable apex clothing 1")	3	触发重新加载主角模型,开启布料必须加上他才生效
+/cmd Fabric.SetMapCount(20)	3	设置遍历次数
+/cmd Fabric.SetSleepTime(20)	15	设置0档停留时间
+/cmd CreateEmptyFile("perfeye_start")	5	采集数据
+/cmd CreateEmptyFile("Fabric_start")	5	开始遍历
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

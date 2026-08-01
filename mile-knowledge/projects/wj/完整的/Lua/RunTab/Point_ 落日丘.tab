@@ -1,0 +1,15 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/gm player.SwitchMap(652,42246,101959,1131328)	30	切换地图
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	5	加隐身
+/gm player.SetPosition(17339,22760,1080640)	15	移动坐标
+/gm player.Revive()	2	复活
+/cmd TurnTo(120)	2	转动视角
+/cmd TurnToFaceDirection()	2	调整摄像机角度正对人物
+/cmd SetCameraStatus(1083,1.5,-1.5,-0.4)	3	调整摄像机角度正对人物
+/cmd CreateEmptyFile("perfeye_start")	2	采集数据
+/cmd CreateEmptyFile("Test")	120	开始
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

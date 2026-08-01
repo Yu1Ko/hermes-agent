@@ -762,7 +762,7 @@ explicitly (it's idempotent).
 
 Separate discovery system for pluggable memory backends. Current built-in
 providers include **honcho, mem0, supermemory, byterover, hindsight,
-holographic, openviking, retaindb**.
+holographic, evolution, openviking, retaindb**.
 
 Each provider implements the `MemoryProvider` ABC (see `agent/memory_provider.py`)
 and is orchestrated by `agent/memory_manager.py`. Lifecycle hooks include
@@ -1433,3 +1433,18 @@ test('windowsHide defaults to true on Windows, is left alone elsewhere', () => {
 If the logic lives inline in a god-file (`main.ts`, `cli.py`,
 `gateway/run.py`) and extracting it feels disruptive: that's the actual
 signal to do the extraction, not to regex around it.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues (`NousResearch/hermes-agent`), managed via `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+Default label vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context: one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+

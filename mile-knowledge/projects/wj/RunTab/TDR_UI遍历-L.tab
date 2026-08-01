@@ -1,0 +1,12 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginSwitchMap")	20	开始跑图
+/gm player.SetCamp(1)	2	加入阵营(1浩气2恶人)
+/gm player.AddMoney(10000,1000,1000)	10	获取金钱
+/gm ApplyCreateTong(player.dwID,player.szName)	2	根据角色名字创建帮会
+/cmd PlayerLevelUpToNew(120)	30	升级120
+/gm player.AddBuff(player.dwID,player.nLevel,3994,1,3600)	5	加隐身
+/gm player.SetPosition(45085,94584,1116800)	30	传送
+/cmd TurnTo(70)	2	转动视角
+/cmd TurnToFaceDirection()	2	调整摄像机角度正对人物
+/cmd CreateEmptyFile("UIErgodic")	10	开始
+/cmd DisbandSelfTong()	20	解散帮会

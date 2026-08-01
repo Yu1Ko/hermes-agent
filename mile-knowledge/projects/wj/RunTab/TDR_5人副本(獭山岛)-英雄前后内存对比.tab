@@ -1,0 +1,35 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UINodeControl.BtnTrigger("BtnChangeMini","WidgetContentChat")	5	关闭下方聊天栏
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RemoteCallToServer('OnResetMapRequest', 726)	2	重置副本进度
+/cmd RobotControl.CMD("Start")	60	初始化副本操作
+/cmd QualityMgr.SetQualityByType(GameQualityType._video_)	5	设置画质
+/cmd QualityMgr.SetQualityByType(GameQualityType._video1_)	10	切换原本画质
+/cmd DungeonApi.SetMapName("獭山岛")	5	设置对应的副本
+/cmd PlayerAuto.SetAttackTimeCount(5)	5	设置打斗时间
+/cmd CreateEmptyFile("perfeye_start")	10	采集数据
+/gm player.SwitchMap(15,30707,30154,1067264)	30	传送长安指定地点
+/cmd TurnTo(244)	10	转动视角
+/cmd TurnToFaceDirection()	10	调整摄像机角度正对人物
+/cmd SetCameraStatus(1083,1,3,-0.1369)	10	右
+/cmd SetCameraStatus(1083,1,4.4,-0.1369)	10	下
+/cmd SetCameraStatus(1083,1,6.6,-0.1369)	10	左
+/cmd SetCameraStatus(1083,1,8.0,-0.1369)	10	上
+/cmd CreateEmptyFile("Test")	60	等待1分钟
+/gm player.SwitchMap(726,9871,12321,1048896)	30	传送前置条件
+/gm player.SetPosition(9871,12321,1048896)	10	传送剧情
+/cmd CreateEmptyFile("Dungeons")	10	启动副本
+/gm player.SwitchMap(15,30707,30154,1067264)	30	传送长安指定地点
+/cmd TurnTo(244)	10	转动视角
+/cmd TurnToFaceDirection()	10	调整摄像机角度正对人物
+/cmd SetCameraStatus(1083,1,3,-0.1369)	10	右
+/cmd SetCameraStatus(1083,1,4.4,-0.1369)	10	下
+/cmd SetCameraStatus(1083,1,6.6,-0.1369)	10	左
+/cmd SetCameraStatus(1083,1,8.0,-0.1369)	10	上
+/cmd CreateEmptyFile("Test")	60	等待1分钟
+/cmd CreateEmptyFile("perfeye_stop")	20	结束采集
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RobotControl.CMD("TeleportRobot")	20	召唤机器人操作
+/cmd RobotControl.CMD("RequestLeaveTeam")	20	解除组队
+/cmd CreateEmptyFile("ExitGame")	2	结束游戏

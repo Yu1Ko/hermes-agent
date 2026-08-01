@@ -1,0 +1,12 @@
+CommandName	WaitTime	Description
+/cmd CreateEmptyFile("BeginRunMap")	20	开始跑图
+/cmd UINodeControl.BtnTrigger("BtnGm")	10	点击下面板
+/cmd UINodeControl.BtnTriggerByLable("BtnClose","GM")	5	关闭面板
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RobotControl.CMD("Start")	60	初始化副本操作
+/gm player.SwitchMap(587,128000,116593,1054976)	20	传送前置条件
+/cmd DungeonApi.SetPlayerBuff(2)	10	设置副本难度
+/cmd CreateEmptyFile("Dungeons")	10	启动副本
+/gm player.SwitchMap(642,119224, 80348, 928256)	30	传送前置条件
+/cmd RobotControl.CMD("TeleportRobot")	20	召唤机器人操作
+/cmd RobotControl.CMD("RequestLeaveTeam")	20	解除组队

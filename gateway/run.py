@@ -13087,19 +13087,37 @@ class GatewayRunner(GatewayAuthorizationMixin, GatewayKanbanWatchersMixin, Gatew
                 return None
             return BlueBubblesAdapter(config)
 
+        elif platform == Platform.QQ:
+            from gateway.platforms.qq import NapCatQQAdapter, check_qq_requirements
+            if not check_qq_requirements():
+                logger.warning("QQ: requests/websockets missing or NapCat OneBot not configured")
+                return None
+            return NapCatQQAdapter(config)
+
         elif platform == Platform.QQBOT:
             from gateway.platforms.qqbot import QQAdapter, check_qq_requirements
             if not check_qq_requirements():
                 logger.warning("QQBot: aiohttp/httpx missing or QQ_APP_ID/QQ_CLIENT_SECRET not configured")
                 return None
             return QQAdapter(config)
-
         elif platform == Platform.YUANBAO:
             from gateway.platforms.yuanbao import YuanbaoAdapter, WEBSOCKETS_AVAILABLE
             if not WEBSOCKETS_AVAILABLE:
                 logger.warning("Yuanbao: websockets not installed. Run: pip install websockets")
                 return None
             return YuanbaoAdapter(config)
+
+        # ── AgentSpace (WPS 数字员工平台) ──────────────────────────────
+        elif platform.value == "agentspace":
+            try:
+                from plugins.platforms.agentspace.adapter import AgentspaceAdapter, check_requirements as _as_check
+                if not _as_check():
+                    logger.warning("Agentspace: aiohttp not installed")
+                    return None
+                return AgentspaceAdapter(config, platform)
+            except ImportError as e:
+                logger.warning("Agentspace: adapter import failed: %s", e)
+                return None
 
         return None
 
@@ -16933,11 +16951,23 @@ class GatewayRunner(GatewayAuthorizationMixin, GatewayKanbanWatchersMixin, Gatew
             if _footer_line and response and not agent_result.get("already_sent") and not _intentional_silence:
                 response = f"{response}\n\n{_footer_line}"
 
-            # Emit agent:end hook
-            await self.hooks.emit("agent:end", {
+            # Emit agent:end hook with reply interception support.
+            # Hooks registered for agent:end can return {"action": "rewrite",
+            # "reason": "...", "fix_hint": "...", "new_text": "..."} to
+            # intercept and rewrite the response before delivery.
+            _end_results = await self.hooks.emit_collect("agent:end", {
                 **hook_ctx,
-                "response": (response or "")[:500],
+                "response": (response or ""),
             })
+            for _end_res in (_end_results or []):
+                if isinstance(_end_res, dict) and _end_res.get("action") == "rewrite":
+                    _new_text = _end_res.get("new_text", "")
+                    if _new_text:
+                        logger.info(
+                            "agent:end hook rewrite — reason: %s",
+                            _end_res.get("reason", ""),
+                        )
+                        response = _new_text
             
             # Check for pending process watchers (check_interval on background processes)
             try:
@@ -23770,7 +23800,6 @@ class GatewayRunner(GatewayAuthorizationMixin, GatewayKanbanWatchersMixin, Gatew
         # executor call below is unchanged).  Its closed-over locals travel
         # on turn_ctx; `nonlocal message` rebinds became ctx.message writes.
         run_sync = turn_runner.run_sync
-        
         # Start progress message sender if enabled. Gate on needs_progress_queue
         # (tool_progress OR thinking_progress), not tool_progress alone: the
         # sender drains BOTH tool-progress lines and _thinking scratch bubbles.

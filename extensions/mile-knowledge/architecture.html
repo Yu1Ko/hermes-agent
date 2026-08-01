@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiLe 记忆与知识系统架构</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'JetBrains Mono', monospace; background: #020617; min-height: 100vh; padding: 2rem; color: white; }
+    .container { max-width: 1300px; margin: 0 auto; }
+    .header { margin-bottom: 2rem; }
+    .header-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.5rem; }
+    .pulse-dot { width: 12px; height: 12px; background: #22d3ee; border-radius: 50%; animation: pulse 2s infinite; }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.025em; }
+    .subtitle { color: #94a3b8; font-size: 0.875rem; margin-left: 1.75rem; }
+    .diagram-container { background: rgba(15,23,42,0.5); border-radius: 1rem; border: 1px solid #1e293b; padding: 1.5rem; overflow-x: auto; }
+    svg { width: 100%; min-width: 1100px; display: block; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .card { background: rgba(15,23,42,0.5); border-radius: 0.75rem; border: 1px solid #1e293b; padding: 1.25rem; }
+    .card-header { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+    .card-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .card-dot.cyan { background: #22d3ee; } .card-dot.emerald { background: #34d399; }
+    .card-dot.violet { background: #a78bfa; } .card-dot.rose { background: #fb7185; }
+    .card-dot.amber { background: #fbbf24; } .card-dot.orange { background: #fb923c; }
+    .card h3 { font-size: 0.875rem; font-weight: 600; }
+    .card ul { list-style: none; color: #94a3b8; font-size: 0.75rem; }
+    .card li { margin-bottom: 0.375rem; }
+    .footer { text-align: center; margin-top: 1.5rem; color: #475569; font-size: 0.75rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-row">
+        <div class="pulse-dot"></div>
+        <h1>MiLe Memory &amp; Knowledge Architecture</h1>
+      </div>
+      <p class="subtitle">四层自进化系统：实时拦截 → 事后挖掘 → 知识过滤 → Prompt 进化</p>
+    </div>
+
+    <div class="diagram-container">
+      <svg viewBox="0 0 1100 900">
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+          </marker>
+          <marker id="arrow-cyan" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#22d3ee"/>
+          </marker>
+          <marker id="arrow-rose" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#fb7185"/>
+          </marker>
+          <marker id="arrow-emerald" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#34d399"/>
+          </marker>
+          <marker id="arrow-violet" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#a78bfa"/>
+          </marker>
+          <marker id="arrow-amber" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#fbbf24"/>
+          </marker>
+          <marker id="arrow-orange" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#fb923c"/>
+          </marker>
+          <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e293b" stroke-width="0.5"/>
+          </pattern>
+          <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+
+        <!-- Background -->
+        <rect width="100%" height="100%" fill="url(#grid)"/>
+
+        <!-- ============================================================
+             REGION: 对话层 (Conversation Layer)
+             ============================================================ -->
+        <rect x="20" y="20" width="1060" height="160" rx="12" fill="rgba(8,51,68,0.08)" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8,4"/>
+        <text x="40" y="42" fill="#22d3ee" font-size="11" font-weight="600">Conversation Layer</text>
+        <text x="200" y="42" fill="#475569" font-size="9">实时对话 &amp; L1 拦截</text>
+
+        <!-- QQ Bot -->
+        <rect x="60" y="65" width="140" height="55" rx="6" fill="#0f172a" stroke="#94a3b8" stroke-width="1.5"/>
+        <rect x="60" y="65" width="140" height="55" rx="6" fill="rgba(30,41,59,0.5)"/>
+        <text x="130" y="88" fill="white" font-size="12" font-weight="600" text-anchor="middle">QQ Bot</text>
+        <text x="130" y="106" fill="#94a3b8" font-size="9" text-anchor="middle">用户消息入口</text>
+
+        <!-- MiLe Agent -->
+        <rect x="300" y="65" width="200" height="55" rx="6" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+        <rect x="300" y="65" width="200" height="55" rx="6" fill="rgba(8,51,68,0.4)"/>
+        <text x="400" y="88" fill="white" font-size="12" font-weight="600" text-anchor="middle">MiLe Agent</text>
+        <text x="400" y="106" fill="#94a3b8" font-size="9" text-anchor="middle">deepseek-v4-pro</text>
+
+        <!-- Critic L1 -->
+        <rect x="600" y="65" width="170" height="55" rx="6" fill="#0f172a" stroke="#fb7185" stroke-width="1.5"/>
+        <rect x="600" y="65" width="170" height="55" rx="6" fill="rgba(136,19,55,0.35)"/>
+        <text x="685" y="88" fill="white" font-size="12" font-weight="600" text-anchor="middle">Critic (L1)</text>
+        <text x="685" y="106" fill="#fb7185" font-size="9" text-anchor="middle">实时拦截 / 打回重写</text>
+
+        <!-- Arrows: Conversation flow -->
+        <line x1="200" y1="92" x2="298" y2="92" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow-cyan)"/>
+        <text x="249" y="86" fill="#64748b" font-size="8" text-anchor="middle">message</text>
+        <line x1="500" y1="85" x2="598" y2="85" stroke="#fb7185" stroke-width="1.5" marker-end="url(#arrow-rose)"/>
+        <text x="550" y="79" fill="#fb7185" font-size="8" text-anchor="middle">check</text>
+        <line x1="685" y1="120" x2="685" y2="148" stroke="#fb7185" stroke-width="1.5" stroke-dasharray="4,3"/>
+        <text x="700" y="138" fill="#fb7185" font-size="7">fail → retry</text>
+        <line x1="770" y1="92" x2="960" y2="92" stroke="#22d3ee" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <text x="865" y="86" fill="#64748b" font-size="8" text-anchor="middle">pass → deliver</text>
+
+        <!-- Case library feed to Critic -->
+        <line x1="830" y1="185" x2="830" y2="245" stroke="#fb923c" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-orange)"/>
+        <text x="860" y="220" fill="#fb923c" font-size="7">检索案例</text>
+
+        <!-- ============================================================
+             REGION: 存储层 (Storage Layer)
+             ============================================================ -->
+        <rect x="20" y="195" width="1060" height="210" rx="12" fill="rgba(76,29,149,0.06)" stroke="#a78bfa" stroke-width="1" stroke-dasharray="8,4"/>
+        <text x="40" y="217" fill="#a78bfa" font-size="11" font-weight="600">Storage Layer</text>
+        <text x="180" y="217" fill="#475569" font-size="9">数据持久化</text>
+
+        <!-- state.db -->
+        <rect x="60" y="240" width="150" height="65" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+        <rect x="60" y="240" width="150" height="65" rx="6" fill="rgba(76,29,149,0.35)"/>
+        <text x="135" y="263" fill="white" font-size="11" font-weight="600" text-anchor="middle">state.db</text>
+        <text x="135" y="280" fill="#94a3b8" font-size="8" text-anchor="middle">SQLite 对话历史</text>
+        <text x="135" y="294" fill="#a78bfa" font-size="7" text-anchor="middle">原始 user/assistant 消息</text>
+
+        <!-- evolution_memory -->
+        <rect x="260" y="240" width="170" height="65" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+        <rect x="260" y="240" width="170" height="65" rx="6" fill="rgba(76,29,149,0.35)"/>
+        <text x="345" y="263" fill="white" font-size="11" font-weight="600" text-anchor="middle">evolution_memory/</text>
+        <text x="345" y="280" fill="#94a3b8" font-size="8" text-anchor="middle">反思报告 + 进化条目</text>
+        <text x="345" y="294" fill="#a78bfa" font-size="7" text-anchor="middle">reflect_*.json</text>
+
+        <!-- memories -->
+        <rect x="480" y="240" width="150" height="65" rx="6" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+        <rect x="480" y="240" width="150" height="65" rx="6" fill="rgba(8,51,68,0.35)"/>
+        <text x="555" y="263" fill="white" font-size="11" font-weight="600" text-anchor="middle">memories/</text>
+        <text x="555" y="280" fill="#94a3b8" font-size="8" text-anchor="middle">永久记忆</text>
+        <text x="555" y="294" fill="#22d3ee" font-size="7" text-anchor="middle">MEMORY.md 注入上下文</text>
+
+        <!-- case_library -->
+        <rect x="680" y="240" width="170" height="65" rx="6" fill="#0f172a" stroke="#fb923c" stroke-width="1.5"/>
+        <rect x="680" y="240" width="170" height="65" rx="6" fill="rgba(251,146,60,0.25)"/>
+        <text x="765" y="263" fill="white" font-size="11" font-weight="600" text-anchor="middle">case_library.json</text>
+        <text x="765" y="280" fill="#94a3b8" font-size="8" text-anchor="middle">失败案例库</text>
+        <text x="765" y="294" fill="#fb923c" font-size="7" text-anchor="middle">scenario + bad → good</text>
+
+        <!-- eval reports row -->
+        <rect x="60" y="330" width="200" height="50" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+        <rect x="60" y="330" width="200" height="50" rx="6" fill="rgba(76,29,149,0.25)"/>
+        <text x="160" y="350" fill="white" font-size="11" font-weight="600" text-anchor="middle">daily_eval_*.json</text>
+        <text x="160" y="366" fill="#94a3b8" font-size="8" text-anchor="middle">每日评分报告</text>
+
+        <rect x="310" y="330" width="170" height="50" rx="6" fill="#0f172a" stroke="#a78bfa" stroke-width="1.5"/>
+        <rect x="310" y="330" width="170" height="50" rx="6" fill="rgba(76,29,149,0.25)"/>
+        <text x="395" y="350" fill="white" font-size="11" font-weight="600" text-anchor="middle">eval_trend.json</text>
+        <text x="395" y="366" fill="#94a3b8" font-size="8" text-anchor="middle">评分趋势 + WARNING</text>
+
+        <rect x="530" y="330" width="150" height="50" rx="6" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+        <rect x="530" y="330" width="150" height="50" rx="6" fill="rgba(30,41,59,0.4)"/>
+        <text x="605" y="350" fill="#94a3b8" font-size="11" font-weight="600" text-anchor="middle">archived/</text>
+        <text x="605" y="366" fill="#64748b" font-size="8" text-anchor="middle">低分记忆归档</text>
+
+        <!-- context injection arrow -->
+        <line x1="555" y1="240" x2="555" y2="195" stroke="#22d3ee" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-cyan)"/>
+        <text x="570" y="210" fill="#22d3ee" font-size="7">注入上下文</text>
+
+        <!-- ============================================================
+             REGION: 知识图谱 (GraphRAG)
+             ============================================================ -->
+        <rect x="20" y="420" width="480" height="180" rx="12" fill="rgba(34,211,238,0.04)" stroke="#22d3ee" stroke-width="1" stroke-dasharray="8,4"/>
+        <text x="40" y="442" fill="#22d3ee" font-size="11" font-weight="600">Knowledge Graph (GraphRAG)</text>
+        <text x="280" y="442" fill="#475569" font-size="9">结构化知识 &amp; 语义搜索</text>
+
+        <rect x="60" y="465" width="130" height="50" rx="6" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+        <rect x="60" y="465" width="130" height="50" rx="6" fill="rgba(8,51,68,0.35)"/>
+        <text x="125" y="485" fill="white" font-size="11" font-weight="600" text-anchor="middle">graph.pkl</text>
+        <text x="125" y="501" fill="#94a3b8" font-size="8" text-anchor="middle">NetworkX 有向图</text>
+
+        <rect x="220" y="465" width="130" height="50" rx="6" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+        <rect x="220" y="465" width="130" height="50" rx="6" fill="rgba(8,51,68,0.35)"/>
+        <text x="285" y="485" fill="white" font-size="11" font-weight="600" text-anchor="middle">embeddings.npz</text>
+        <text x="285" y="501" fill="#94a3b8" font-size="8" text-anchor="middle">向量索引</text>
+
+        <rect x="60" y="535" width="290" height="45" rx="6" fill="#0f172a" stroke="#22d3ee" stroke-width="1.5"/>
+        <rect x="60" y="535" width="290" height="45" rx="6" fill="rgba(8,51,68,0.35)"/>
+        <text x="205" y="555" fill="white" font-size="11" font-weight="600" text-anchor="middle">communities.json</text>
+        <text x="205" y="571" fill="#94a3b8" font-size="8" text-anchor="middle">Louvain 社区检测 + 摘要</text>
+
+        <rect x="390" y="465" width="90" height="50" rx="6" fill="#0f172a" stroke="#22d3ee" stroke-width="1"/>
+        <rect x="390" y="465" width="90" height="50" rx="6" fill="rgba(34,211,238,0.15)"/>
+        <text x="435" y="485" fill="#22d3ee" font-size="10" font-weight="600" text-anchor="middle">graphrag</text>
+        <text x="435" y="501" fill="#94a3b8" font-size="8" text-anchor="middle">_search tool</text>
+
+        <!-- GraphRAG query arrow -->
+        <line x1="435" y1="465" x2="435" y2="408" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-cyan)"/>
+        <text x="460" y="440" fill="#22d3ee" font-size="7">按需查询</text>
+
+        <!-- ============================================================
+             REGION: 后台 Agent (Background Agents)
+             ============================================================ -->
+        <rect x="520" y="420" width="560" height="180" rx="12" fill="rgba(6,78,59,0.06)" stroke="#34d399" stroke-width="1" stroke-dasharray="8,4"/>
+        <text x="540" y="442" fill="#34d399" font-size="11" font-weight="600">Background Agents (Cron)</text>
+        <text x="780" y="442" fill="#475569" font-size="9">每天凌晨自动运行</text>
+
+        <!-- reflect -->
+        <rect x="550" y="465" width="160" height="55" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="550" y="465" width="160" height="55" rx="6" fill="rgba(6,78,59,0.35)"/>
+        <text x="630" y="486" fill="white" font-size="11" font-weight="600" text-anchor="middle">reflect.py</text>
+        <text x="630" y="502" fill="#94a3b8" font-size="8" text-anchor="middle">反思循环 · 03:00</text>
+        <text x="630" y="514" fill="#34d399" font-size="7" text-anchor="middle">发现错误模式 → 改进项</text>
+
+        <!-- evaluate -->
+        <rect x="740" y="465" width="160" height="55" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="740" y="465" width="160" height="55" rx="6" fill="rgba(6,78,59,0.35)"/>
+        <text x="820" y="486" fill="white" font-size="11" font-weight="600" text-anchor="middle">evaluate.py</text>
+        <text x="820" y="502" fill="#94a3b8" font-size="8" text-anchor="middle">评价体系 · 04:00</text>
+        <text x="820" y="514" fill="#34d399" font-size="7" text-anchor="middle">打分 + 案例提取</text>
+
+        <!-- consolidate -->
+        <rect x="550" y="535" width="160" height="50" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="550" y="535" width="160" height="50" rx="6" fill="rgba(6,78,59,0.35)"/>
+        <text x="630" y="555" fill="white" font-size="11" font-weight="600" text-anchor="middle">consolidate.py</text>
+        <text x="630" y="571" fill="#94a3b8" font-size="8" text-anchor="middle">整合器 · 05:00</text>
+
+        <!-- optimize -->
+        <rect x="740" y="535" width="160" height="50" rx="6" fill="#0f172a" stroke="#34d399" stroke-width="1.5"/>
+        <rect x="740" y="535" width="160" height="50" rx="6" fill="rgba(6,78,59,0.35)"/>
+        <text x="820" y="555" fill="white" font-size="11" font-weight="600" text-anchor="middle">optimize.py (L4)</text>
+        <text x="820" y="571" fill="#94a3b8" font-size="8" text-anchor="middle">Prompt 进化 · 手动触发</text>
+
+        <!-- ============================================================
+             DATA FLOW ARROWS
+             ============================================================ -->
+
+        <!-- state.db → evaluate / reflect -->
+        <line x1="210" y1="265" x2="548" y2="480" stroke="#a78bfa" stroke-width="1" marker-end="url(#arrow-violet)"/>
+        <line x1="135" y1="305" x2="630" y2="463" stroke="#a78bfa" stroke-width="1" marker-end="url(#arrow-violet)"/>
+
+        <!-- evaluate → case_library -->
+        <line x1="820" y1="465" x2="820" y2="408" stroke="#fb923c" stroke-width="1" marker-end="url(#arrow-orange)"/>
+        <text x="845" y="440" fill="#fb923c" font-size="7">案例提取</text>
+
+        <!-- reflect → case_library -->
+        <line x1="630" y1="463" x2="700" y2="408" stroke="#fb923c" stroke-width="1" marker-end="url(#arrow-orange)"/>
+
+        <!-- reflect → evolution_memory -->
+        <line x1="550" y1="480" x2="432" y2="303" stroke="#a78bfa" stroke-width="1" marker-end="url(#arrow-violet)"/>
+        <text x="490" y="395" fill="#a78bfa" font-size="7">反思报告</text>
+
+        <!-- evaluate → eval reports -->
+        <line x1="740" y1="465" x2="395" y2="378" stroke="#a78bfa" stroke-width="1" marker-end="url(#arrow-violet)"/>
+
+        <!-- consolidate → memories -->
+        <line x1="550" y1="555" x2="555" y2="440" stroke="#22d3ee" stroke-width="1" marker-end="url(#arrow-cyan)"/>
+        <text x="535" y="505" fill="#22d3ee" font-size="7">升级</text>
+
+        <!-- consolidate → archived -->
+        <line x1="630" y1="585" x2="630" y2="610" stroke="#475569" stroke-width="1" marker-end="url(#arrow)"/>
+        <line x1="630" y1="610" x2="605" y2="610" stroke="#475569" stroke-width="1" marker-end="url(#arrow)"/>
+        <text x="635" y="625" fill="#475569" font-size="7">低分归档</text>
+
+        <!-- consolidate → GraphRAG -->
+        <line x1="550" y1="555" x2="510" y2="555" stroke="#22d3ee" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow-cyan)"/>
+        <text x="540" y="545" fill="#22d3ee" font-size="6">同步实体</text>
+
+        <!-- optimize → SOUL.md suggestion -->
+        <line x1="820" y1="585" x2="820" y2="630" stroke="#34d399" stroke-width="1" stroke-dasharray="4,3" marker-end="url(#arrow-emerald)"/>
+        <text x="835" y="612" fill="#34d399" font-size="7">建议修改</text>
+
+        <!-- SOUL.md target -->
+        <rect x="740" y="640" width="160" height="35" rx="5" fill="#0f172a" stroke="#34d399" stroke-width="1" stroke-dasharray="3,3"/>
+        <rect x="740" y="640" width="160" height="35" rx="5" fill="rgba(6,78,59,0.3)"/>
+        <text x="820" y="655" fill="#34d399" font-size="10" font-weight="600" text-anchor="middle">SOUL.md</text>
+        <text x="820" y="668" fill="#94a3b8" font-size="7" text-anchor="middle">System Prompt</text>
+
+        <!-- ============================================================
+             MODEL USAGE LEGEND
+             ============================================================ -->
+        <rect x="60" y="630" width="370" height="100" rx="8" fill="rgba(15,23,42,0.6)" stroke="#1e293b" stroke-width="1"/>
+        <text x="80" y="652" fill="#94a3b8" font-size="10" font-weight="600">Model Usage</text>
+
+        <rect x="80" y="662" width="12" height="8" rx="2" fill="rgba(8,51,68,0.6)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="100" y="670" fill="#94a3b8" font-size="8">MiLe 主对话: deepseek-v4-pro</text>
+
+        <rect x="80" y="678" width="12" height="8" rx="2" fill="rgba(6,78,59,0.6)" stroke="#34d399" stroke-width="1"/>
+        <text x="100" y="686" fill="#94a3b8" font-size="8">Agent / Critic: deepseek-v4-flash</text>
+
+        <rect x="80" y="694" width="12" height="8" rx="2" fill="rgba(136,19,55,0.6)" stroke="#fb7185" stroke-width="1"/>
+        <text x="100" y="702" fill="#94a3b8" font-size="8">L4 Optimize: claude-opus-4-7 @ ai.centos.hk</text>
+
+        <!-- ============================================================
+             LEGEND
+             ============================================================ -->
+        <rect x="750" y="700" width="330" height="130" rx="8" fill="rgba(15,23,42,0.6)" stroke="#1e293b" stroke-width="1"/>
+        <text x="770" y="720" fill="white" font-size="10" font-weight="600">Legend</text>
+
+        <rect x="770" y="732" width="14" height="9" rx="2" fill="rgba(8,51,68,0.4)" stroke="#22d3ee" stroke-width="1"/>
+        <text x="790" y="740" fill="#94a3b8" font-size="8">对话 / 知识图谱</text>
+
+        <rect x="770" y="746" width="14" height="9" rx="2" fill="rgba(76,29,149,0.4)" stroke="#a78bfa" stroke-width="1"/>
+        <text x="790" y="754" fill="#94a3b8" font-size="8">存储 / 对话数据</text>
+
+        <rect x="770" y="760" width="14" height="9" rx="2" fill="rgba(6,78,59,0.4)" stroke="#34d399" stroke-width="1"/>
+        <text x="790" y="768" fill="#94a3b8" font-size="8">后台 Agent</text>
+
+        <rect x="770" y="774" width="14" height="9" rx="2" fill="rgba(136,19,55,0.4)" stroke="#fb7185" stroke-width="1"/>
+        <text x="790" y="782" fill="#94a3b8" font-size="8">Critic / 安全</text>
+
+        <rect x="770" y="788" width="14" height="9" rx="2" fill="rgba(251,146,60,0.3)" stroke="#fb923c" stroke-width="1"/>
+        <text x="790" y="796" fill="#94a3b8" font-size="8">案例库</text>
+
+        <line x1="770" y1="810" x2="784" y2="810" stroke="#475569" stroke-width="1" stroke-dasharray="3,3"/>
+        <text x="790" y="813" fill="#94a3b8" font-size="8">异步 / 查询</text>
+
+        <line x1="930" y1="810" x2="944" y2="810" stroke="#64748b" stroke-width="1"/>
+        <text x="950" y="813" fill="#94a3b8" font-size="8">数据流</text>
+      </svg>
+    </div>
+
+    <!-- Info Cards -->
+    <div class="cards">
+      <div class="card">
+        <div class="card-header"><div class="card-dot rose"></div><h3>L1 实时拦截</h3></div>
+        <ul>
+          <li>· Critic 在回复发出前检查质量</li>
+          <li>· 3 项检查: 只总结不执行 / 上下文污染 / 分段黏连</li>
+          <li>· 检索 case_library 相似案例作 Few-Shot</li>
+          <li>· 不合格打回 MiLe 重写</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot emerald"></div><h3>L2 事后挖掘 → 案例库</h3></div>
+        <ul>
+          <li>· evaluate 低分会话 → 提取失败案例卡</li>
+          <li>· reflect 高优先级改进项 → 入案例库</li>
+          <li>· 案例卡含 scenario/bad/good/keywords</li>
+          <li>· 案例库反哺 L1 Critic 检索</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot violet"></div><h3>L3 知识过滤</h3></div>
+        <ul>
+          <li>· consolidate 检查来源会话评分</li>
+          <li>· 评分 ≥7 → 升级到永久记忆</li>
+          <li>· 评分 &lt;7 → 归档到 archived/</li>
+          <li>· 防知识污染</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><div class="card-dot amber"></div><h3>L4 Prompt 进化</h3></div>
+        <ul>
+          <li>· optimize.py 扫描案例库聚类</li>
+          <li>· 同类错误 ≥10 条触发分析</li>
+          <li>· claude-opus-4-7 分析 SOUL.md 缺陷</li>
+          <li>· 输出修改建议 → 人工审批</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="footer">MiLe Memory &amp; Knowledge System · Hermes Agent + DeepSeek + GraphRAG</p>
+  </div>
+</body>
+</html>
